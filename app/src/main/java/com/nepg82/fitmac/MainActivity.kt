@@ -15,10 +15,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.nepg82.fitmac.data.database.entities.Meal
+import com.nepg82.fitmac.repository.MealRepository
 import com.nepg82.fitmac.ui.theme.FitMacTheme
-import kotlinx.coroutines.launch
+import com.nepg82.fitmac.viewmodel.MealViewModel
+import com.nepg82.fitmac.viewmodel.MealViewModelFactory
 
 class MainActivity : ComponentActivity() {
 
@@ -26,55 +28,71 @@ class MainActivity : ComponentActivity() {
         (application as FitMacApplication).database
     }
 
+    private val repository by lazy {
+        MealRepository(
+            database.mealDao()
+        )
+    }
+
+    private val viewModelFactory by lazy {
+        MealViewModelFactory(
+            repository
+        )
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
 
         setContent {
             FitMacTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+
+                val mealViewModel: MealViewModel = viewModel(
+                    factory = viewModelFactory
+                )
+
+                Scaffold(
+                    modifier = Modifier.fillMaxSize()
+                ) { innerPadding ->
 
                     MealTestScreen(
+                        viewModel = mealViewModel,
                         modifier = Modifier.padding(innerPadding)
                     )
-
                 }
             }
         }
     }
+}
 
-    @Composable
-    private fun MealTestScreen(
-        modifier: Modifier = Modifier
+@Composable
+fun MealTestScreen(
+    viewModel: MealViewModel,
+    modifier: Modifier = Modifier
+) {
+    val meals by viewModel.meals
+        .collectAsState(initial = emptyList())
+
+    Column(
+        modifier = modifier.padding(16.dp)
     ) {
-        val meals by database.mealDao()
-            .getAllMeals()
-            .collectAsState(initial = emptyList())
 
-        Column(
-            modifier = modifier.padding(16.dp)
-        ) {
-
-            Button(
-                onClick = {
-                    lifecycleScope.launch {
-                        database.mealDao().insertMeal(
-                            Meal(
-                                name = "Test Breakfast"
-                            )
-                        )
-                    }
-                }
-            ) {
-                Text("Add Test Meal")
-            }
-
-            meals.forEach { meal ->
-                Text(
-                    text = meal.name,
-                    modifier = Modifier.padding(top = 8.dp)
+        Button(
+            onClick = {
+                viewModel.addMeal(
+                    "Test Breakfast"
                 )
             }
+        ) {
+            Text("Add Test Meal")
+        }
+
+        meals.forEach { meal ->
+            Text(
+                text = meal.name,
+                modifier = Modifier.padding(top = 8.dp)
+            )
         }
     }
 }
