@@ -11,6 +11,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
+import androidx.compose.material.icons.filled.FitnessCenter
 
 data class BottomNavItem(
     val route: String,
@@ -33,6 +34,11 @@ private val items = listOf(
         route = "weight",
         label = "Weight",
         icon = Icons.Default.Scale
+    ),
+    BottomNavItem(
+        route = "workout",
+        label = "Workout",
+        icon = Icons.Default.FitnessCenter
     ),
     BottomNavItem(
         route = "settings",

@@ -11,6 +11,7 @@ import com.nepg82.fitmac.ui.dashboard.DashboardScreen
 import com.nepg82.fitmac.ui.meals.MealsScreen
 import com.nepg82.fitmac.ui.settings.SettingsScreen
 import com.nepg82.fitmac.ui.weight.WeightScreen
+import com.nepg82.fitmac.ui.workout.WorkoutScreen
 
 @Composable
 fun FitMacNavigation(
@@ -34,6 +35,10 @@ fun FitMacNavigation(
 
         composable("weight") {
             WeightScreen()
+        }
+
+        composable("workout") {
+            WorkoutScreen()
         }
 
         composable("settings") {
