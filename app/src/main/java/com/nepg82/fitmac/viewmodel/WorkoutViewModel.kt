@@ -14,6 +14,7 @@ class WorkoutViewModel(
     val workouts: Flow<List<WorkoutEntry>> = repository.allWorkouts
 
     fun addWorkout(
+        workoutName: String,
         exercise: String,
         sets: Int,
         reps: Int,
@@ -23,6 +24,7 @@ class WorkoutViewModel(
         viewModelScope.launch {
             repository.insertWorkout(
                 WorkoutEntry(
+                    workoutName = workoutName,
                     exercise = exercise,
                     sets = sets,
                     reps = reps,

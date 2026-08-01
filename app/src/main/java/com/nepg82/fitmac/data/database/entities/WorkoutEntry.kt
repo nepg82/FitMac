@@ -8,6 +8,8 @@ data class WorkoutEntry(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
 
+    val workoutName: String,
+
     val exercise: String,
 
     val sets: Int,
