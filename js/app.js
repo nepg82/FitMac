@@ -1,0 +1,123 @@
+// app.js — router + shared UI helpers
+const ICONS = {
+  dashboard: '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>',
+  meals: '<svg viewBox="0 0 24 24"><path d="M6 3v7a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V3"/><path d="M8 12v9"/><path d="M17 3c-1.5 0-3 1.5-3 4v3.5c0 1 .8 1.5 1.5 1.5H17M17 3v18"/></svg>',
+  weight: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2.5 2.5"/></svg>',
+  workout: '<svg viewBox="0 0 24 24"><path d="M6 7v10M18 7v10M2 10v4M22 10v4M6 12h12"/></svg>'
+};
+
+const ROUTES = {
+  dashboard: { label: 'Dashboard', icon: ICONS.dashboard, render: renderDashboard },
+  meals: { label: 'Meals', icon: ICONS.meals, render: renderMeals },
+  weight: { label: 'Weight', icon: ICONS.weight, render: renderWeight },
+  workout: { label: 'Workout', icon: ICONS.workout, render: renderWorkout }
+};
+
+let currentRoute = 'dashboard';
+
+function navigate(route) {
+  currentRoute = route;
+  location.hash = '#/' + route;
+  renderApp();
+}
+
+function renderNav() {
+  const nav = document.getElementById('bottom-nav');
+  nav.innerHTML = '';
+  Object.entries(ROUTES).forEach(([key, r]) => {
+    const btn = document.createElement('button');
+    btn.className = 'nav-btn' + (key === currentRoute ? ' active' : '');
+    btn.innerHTML = r.icon + '<span>' + r.label + '</span>';
+    btn.onclick = () => navigate(key);
+    nav.appendChild(btn);
+  });
+}
+
+async function renderApp() {
+  renderNav();
+  const content = document.getElementById('app-content');
+  content.innerHTML = '<div class="empty-state">Loading…</div>';
+  await ROUTES[currentRoute].render(content);
+}
+
+function initRouteFromHash() {
+  const hash = location.hash.replace('#/', '');
+  currentRoute = ROUTES[hash] ? hash : 'dashboard';
+}
+
+window.addEventListener('hashchange', () => {
+  initRouteFromHash();
+  renderApp();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  initRouteFromHash();
+  renderApp();
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js').catch(() => {});
+  }
+});
+
+// ---------- Shared UI helpers ----------
+
+function el(html) {
+  const t = document.createElement('template');
+  t.innerHTML = html.trim();
+  return t.content.firstElementChild;
+}
+
+function showToast(msg) {
+  const existing = document.querySelector('.toast');
+  if (existing) existing.remove();
+  const t = el(`<div class="toast">${msg}</div>`);
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2200);
+}
+
+function openSheet(titleHtml, bodyHtml, onMount) {
+  closeSheet();
+  const backdrop = el(`
+    <div class="sheet-backdrop" id="active-sheet">
+      <div class="sheet">
+        <div class="sheet-handle"></div>
+        <h3 class="sheet-title">${titleHtml}</h3>
+        <div class="sheet-body">${bodyHtml}</div>
+      </div>
+    </div>
+  `);
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) closeSheet();
+  });
+  document.body.appendChild(backdrop);
+  if (onMount) onMount(backdrop.querySelector('.sheet-body'));
+  return backdrop;
+}
+
+function closeSheet() {
+  const s = document.getElementById('active-sheet');
+  if (s) s.remove();
+}
+
+function formatDate(iso) {
+  const [y, m, d] = iso.split('-').map(Number);
+  const dt = new Date(y, m - 1, d);
+  return dt.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+}
+
+function formatDateShort(iso) {
+  const [y, m, d] = iso.split('-').map(Number);
+  return `${m}/${d}`;
+}
+
+function groupByDate(items) {
+  const groups = new Map();
+  for (const item of items) {
+    if (!groups.has(item.date)) groups.set(item.date, []);
+    groups.get(item.date).push(item);
+  }
+  return groups;
+}
+
+function round1(n) {
+  return Math.round((Number(n) || 0) * 10) / 10;
+}
