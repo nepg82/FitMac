@@ -1,112 +1,62 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-29T01:36:01.542Z",
-  "foodItems": [
-    {
-      "id": "45e74106-a5ff-4a9d-8168-dca6a2aea2bf",
-      "name": "Chicken Souvlaki",
-      "protein": 50,
-      "carbs": 30,
-      "fat": 20,
-      "createdAt": 1787963807919
-    },
-    {
-      "id": "aa8ba8d7-cd1f-4e5c-8fab-a8a39f00680e",
-      "name": "cup of mushroom soup",
-      "protein": 2,
-      "carbs": 8,
-      "fat": 6,
-      "createdAt": 1787963807920
-    }
-  ],
-  "mealEntries": [
-    {
-      "id": "0ac0b20a-01f0-436c-a8dc-6e8283017b99",
-      "date": "2026-08-28",
-      "name": "Kalamata's Dinner",
-      "items": [
-        {
-          "name": "Chicken Souvlaki",
-          "protein": 50,
-          "carbs": 30,
-          "fat": 20
-        },
-        {
-          "name": "cup of mushroom soup",
-          "protein": 2,
-          "carbs": 8,
-          "fat": 6
-        }
-      ],
-      "totals": {
-        "protein": 52,
-        "carbs": 38,
-        "fat": 26
-      },
-      "createdAt": 1787963807917
-    }
-  ],
+  "exportedAt": "2026-08-29T02:02:14.133Z",
+  "foodItems": [],
+  "mealEntries": [],
   "weightEntries": [
     {
-      "id": "1e88c92e-cf07-4689-9f91-cd509b752bb5",
-      "date": "2026-08-15",
-      "weight": 256.8,
-      "createdAt": 1787963871883
+      "id": "00512f53-fdbd-44c8-bd2e-3c155d4434a6",
+      "date": "2026-08-16",
+      "weight": 255,
+      "createdAt": 1787968868772
     },
     {
-      "id": "3c5b0c02-2ad9-48b9-aa5b-06c2fe6950b3",
-      "date": "2026-08-01",
-      "weight": 255.8,
-      "createdAt": 1787963850616
+      "id": "036e205b-6814-4e3c-9d14-823d1152e4e3",
+      "date": "2026-07-26",
+      "weight": 260.2,
+      "createdAt": 1787968823690
     },
     {
-      "id": "5d8a562f-fb55-4f01-b02b-f828e4c70dbf",
-      "date": "2026-08-08",
-      "weight": 255.6,
-      "createdAt": 1787963862416
-    }
-  ],
-  "workoutSessions": [
+      "id": "38252a72-47c3-4b47-8ede-b2d344b370e5",
+      "date": "2026-07-12",
+      "weight": 262.6,
+      "createdAt": 1787968782214
+    },
     {
-      "id": "f8527054-efb4-4ead-bdd2-9f3e4acfab5d",
-      "name": "260828",
-      "date": "2026-08-28",
-      "exercises": [
-        {
-          "exercise": "situps",
-          "sets": "3",
-          "reps": "15",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "bicep curls",
-          "sets": "3",
-          "reps": "15",
-          "weight": "20",
-          "notes": ""
-        },
-        {
-          "exercise": "squats",
-          "sets": "3",
-          "reps": "15",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "treadmill",
-          "sets": "1",
-          "reps": "40",
-          "weight": "",
-          "notes": "3% incline"
-        }
-      ],
-      "createdAt": 1787963555502
+      "id": "3ccaf5f4-d75c-438f-9fb3-c6b60c9139a9",
+      "date": "2026-08-02",
+      "weight": 258.6,
+      "createdAt": 1787968842080
+    },
+    {
+      "id": "6e73927c-4340-42bb-8f58-c8a4a5433743",
+      "date": "2026-07-05",
+      "weight": 259,
+      "createdAt": 1787968766880
+    },
+    {
+      "id": "9b15d2d5-5a8d-4a24-b38a-5c6d7635ae8b",
+      "date": "2026-08-23",
+      "weight": 259.8,
+      "createdAt": 1787968883286
+    },
+    {
+      "id": "def0e8e2-d81e-4de1-8cb3-6600bbe7e2cc",
+      "date": "2026-07-19",
+      "weight": 260.8,
+      "createdAt": 1787968807862
+    },
+    {
+      "id": "e46a3c32-771f-4c64-a818-879621b63a5e",
+      "date": "2026-08-09",
+      "weight": 258.4,
+      "createdAt": 1787968854899
     }
   ],
+  "workoutSessions": [],
   "settings": {
     "id": "main",
-    "targetWeight": 225,
+    "targetWeight": 230,
     "calorieGoal": null,
     "proteinGoal": null,
     "carbsGoal": null,
