@@ -1,8 +1,65 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-29T12:10:12.032Z",
-  "foodItems": [],
-  "mealEntries": [],
+  "exportedAt": "2026-08-29T15:51:33.114Z",
+  "foodItems": [
+    {
+      "id": "3c30b27e-efaa-43ef-a4ce-bce7dee8850b",
+      "name": "Wheat toast",
+      "protein": 7,
+      "carbs": 26,
+      "fat": 12,
+      "createdAt": 1788018594779
+    },
+    {
+      "id": "44b025c5-5253-4542-a91a-b111c4830120",
+      "name": "Greek Slam (no cheese)",
+      "protein": 31,
+      "carbs": 9,
+      "fat": 34,
+      "createdAt": 1788018594770
+    },
+    {
+      "id": "9d9d4c41-5d6b-4b4c-a4d5-f7eea558c817",
+      "name": "Decaf coffee (3 cups)",
+      "protein": 1,
+      "carbs": 0,
+      "fat": 3,
+      "createdAt": 1788018594781
+    }
+  ],
+  "mealEntries": [
+    {
+      "id": "de03b5fc-6835-4fdf-bd1f-32fd8b520752",
+      "date": "2026-08-29",
+      "name": "Kalamata lunch",
+      "items": [
+        {
+          "name": "Greek Slam (no cheese)",
+          "protein": 31,
+          "carbs": 9,
+          "fat": 34
+        },
+        {
+          "name": "Wheat toast",
+          "protein": 7,
+          "carbs": 26,
+          "fat": 12
+        },
+        {
+          "name": "Decaf coffee (3 cups)",
+          "protein": 1,
+          "carbs": 0,
+          "fat": 3
+        }
+      ],
+      "totals": {
+        "protein": 39,
+        "carbs": 35,
+        "fat": 49
+      },
+      "createdAt": 1788018594749
+    }
+  ],
   "weightEntries": [
     {
       "id": "00512f53-fdbd-44c8-bd2e-3c155d4434a6",
@@ -15,6 +72,12 @@
       "date": "2026-07-26",
       "weight": 260.2,
       "createdAt": 1787968823690
+    },
+    {
+      "id": "359ff04b-e8b2-4f27-9911-cc801c6eec1d",
+      "date": "2026-07-12",
+      "weight": 215.2,
+      "createdAt": 1788005938302
     },
     {
       "id": "38252a72-47c3-4b47-8ede-b2d344b370e5",
@@ -41,10 +104,22 @@
       "createdAt": 1787968883286
     },
     {
+      "id": "b0fee0a2-ff17-4537-b215-f4baf2faa880",
+      "date": "2026-08-09",
+      "weight": 210.6,
+      "createdAt": 1788005999199
+    },
+    {
       "id": "b1a3d97b-9a47-409c-b446-48b32fe95a6b",
       "date": "2026-08-29",
       "weight": 257.4,
       "createdAt": 1788005146702
+    },
+    {
+      "id": "cd61257b-ce22-4548-b6ea-9aa8e846ff9e",
+      "date": "2026-07-19",
+      "weight": 210.6,
+      "createdAt": 1788005950937
     },
     {
       "id": "def0e8e2-d81e-4de1-8cb3-6600bbe7e2cc",
@@ -57,9 +132,43 @@
       "date": "2026-08-09",
       "weight": 258.4,
       "createdAt": 1787968854899
+    },
+    {
+      "id": "ea6f6f80-0624-4d50-ae4d-18e01630eb33",
+      "date": "2026-08-02",
+      "weight": 209.2,
+      "createdAt": 1788005981138
+    },
+    {
+      "id": "f0716cd8-3c53-4c8c-8440-88dcc63dfa0d",
+      "date": "2026-07-26",
+      "weight": 211.6,
+      "createdAt": 1788005966321
+    },
+    {
+      "id": "fa33f430-e1e5-4f10-90fb-300a05dd2e30",
+      "date": "2026-07-05",
+      "weight": 213.4,
+      "createdAt": 1788005923581
     }
   ],
-  "workoutSessions": [],
+  "workoutSessions": [
+    {
+      "id": "113084c4-6a25-422a-ac5a-04f29cb41df8",
+      "name": "Hike Lockport",
+      "date": "2026-08-29",
+      "exercises": [
+        {
+          "exercise": "Hike",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "70 minutes"
+        }
+      ],
+      "createdAt": 1788018672366
+    }
+  ],
   "settings": {
     "id": "main",
     "targetWeight": 230,
