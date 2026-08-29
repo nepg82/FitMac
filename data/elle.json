@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "exportedAt": "2026-08-29T12:14:02.167Z",
+  "foodItems": [],
+  "mealEntries": [],
+  "weightEntries": [],
+  "workoutSessions": [],
+  "settings": {
+    "id": "main",
+    "targetWeight": null,
+    "calorieGoal": null,
+    "proteinGoal": null,
+    "carbsGoal": null,
+    "fatGoal": null,
+    "username": "elle"
+  }
+}
