@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "exportedAt": "2026-08-29T01:36:01.542Z",
+  "foodItems": [
+    {
+      "id": "45e74106-a5ff-4a9d-8168-dca6a2aea2bf",
+      "name": "Chicken Souvlaki",
+      "protein": 50,
+      "carbs": 30,
+      "fat": 20,
+      "createdAt": 1787963807919
+    },
+    {
+      "id": "aa8ba8d7-cd1f-4e5c-8fab-a8a39f00680e",
+      "name": "cup of mushroom soup",
+      "protein": 2,
+      "carbs": 8,
+      "fat": 6,
+      "createdAt": 1787963807920
+    }
+  ],
+  "mealEntries": [
+    {
+      "id": "0ac0b20a-01f0-436c-a8dc-6e8283017b99",
+      "date": "2026-08-28",
+      "name": "Kalamata's Dinner",
+      "items": [
+        {
+          "name": "Chicken Souvlaki",
+          "protein": 50,
+          "carbs": 30,
+          "fat": 20
+        },
+        {
+          "name": "cup of mushroom soup",
+          "protein": 2,
+          "carbs": 8,
+          "fat": 6
+        }
+      ],
+      "totals": {
+        "protein": 52,
+        "carbs": 38,
+        "fat": 26
+      },
+      "createdAt": 1787963807917
+    }
+  ],
+  "weightEntries": [
+    {
+      "id": "1e88c92e-cf07-4689-9f91-cd509b752bb5",
+      "date": "2026-08-15",
+      "weight": 256.8,
+      "createdAt": 1787963871883
+    },
+    {
+      "id": "3c5b0c02-2ad9-48b9-aa5b-06c2fe6950b3",
+      "date": "2026-08-01",
+      "weight": 255.8,
+      "createdAt": 1787963850616
+    },
+    {
+      "id": "5d8a562f-fb55-4f01-b02b-f828e4c70dbf",
+      "date": "2026-08-08",
+      "weight": 255.6,
+      "createdAt": 1787963862416
+    }
+  ],
+  "workoutSessions": [
+    {
+      "id": "f8527054-efb4-4ead-bdd2-9f3e4acfab5d",
+      "name": "260828",
+      "date": "2026-08-28",
+      "exercises": [
+        {
+          "exercise": "situps",
+          "sets": "3",
+          "reps": "15",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "bicep curls",
+          "sets": "3",
+          "reps": "15",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "squats",
+          "sets": "3",
+          "reps": "15",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "treadmill",
+          "sets": "1",
+          "reps": "40",
+          "weight": "",
+          "notes": "3% incline"
+        }
+      ],
+      "createdAt": 1787963555502
+    }
+  ],
+  "settings": {
+    "id": "main",
+    "targetWeight": 225,
+    "calorieGoal": null,
+    "proteinGoal": null,
+    "carbsGoal": null,
+    "fatGoal": null,
+    "username": "nick"
+  }
+}
