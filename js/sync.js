@@ -143,7 +143,7 @@ async function renderSettings(content) {
       const path = dataPathFor(c.username);
       const result = await GitHubAPI.getJsonFile({ owner: c.owner, repo: c.repo, path, token: c.token, branch: c.branch || undefined });
       if (!result) { showToast('No backup found for this username yet'); return; }
-      await DB.importAll(result.json);
+      await DB.replaceAll(result.json);
       showToast('Restore complete');
       renderApp();
     } catch (e) {
@@ -197,7 +197,7 @@ async function renderSettings(content) {
           if (!confirm(`Restore "${username}"'s data into THIS device? This merges into your current local data.`)) return;
           try {
             const result = await GitHubAPI.getJsonFile({ owner: c.owner, repo: c.repo, path: f.path, token: c.token, branch: c.branch || undefined });
-            await DB.importAll(result.json);
+            await DB.replaceAll(result.json);
             showToast(`Restored ${username}'s data to this device`);
             renderApp();
           } catch (e) {

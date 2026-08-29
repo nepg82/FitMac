@@ -196,17 +196,33 @@ const DB = {
     return updated;
   },
 
+  // --- Wipe + replace (used for "switch user" restores) ---
+  async wipeAppData() {
+    const stores = ['foodItems', 'mealEntries', 'weightEntries', 'workoutSessions'];
+    for (const store of stores) {
+      const s = await tx(store, 'readwrite');
+      await new Promise((res, rej) => {
+        const r = s.clear();
+        r.onsuccess = () => res();
+        r.onerror = (e) => rej(e.target.error);
+      });
+    }
+  },
+
+  async replaceAll(data) {
+    await DB.wipeAppData();
+    await DB.importAll(data);
+  },
+
   // --- Export (also basis for future GitHub sync) ---
-	async exportAll() {
-	  const [foodItems, mealEntries, weightEntries, workoutSessions, settingsRaw] = await Promise.all([
-	    DB.getAll('foodItems'), DB.getAll('mealEntries'), DB.getAll('weightEntries'),
-	    DB.getAll('workoutSessions'), DB.getSettings()
-	  ]);
-	  // Never include GitHub connection fields (token especially) in exported data —
-	  // this file gets committed to a repo, so secrets must not ride along.
-	  const { githubToken, githubOwner, githubRepo, githubBranch, lastSyncedAt, ...settings } = settingsRaw;
-	  return { version: 1, exportedAt: new Date().toISOString(), foodItems, mealEntries, weightEntries, workoutSessions, settings };
-	},
+  async exportAll() {
+    const [foodItems, mealEntries, weightEntries, workoutSessions, settingsRaw] = await Promise.all([
+      DB.getAll('foodItems'), DB.getAll('mealEntries'), DB.getAll('weightEntries'),
+      DB.getAll('workoutSessions'), DB.getSettings()
+    ]);
+    const { githubToken, githubOwner, githubRepo, githubBranch, lastSyncedAt, ...settings } = settingsRaw;
+    return { version: 1, exportedAt: new Date().toISOString(), foodItems, mealEntries, weightEntries, workoutSessions, settings };
+  },
 
 	async importAll(data) {
 	  const stores = ['foodItems', 'mealEntries', 'weightEntries', 'workoutSessions'];
