@@ -6,10 +6,12 @@ const ASSETS = [
   './css/styles.css',
   './js/db.js',
   './js/charts.js',
+  './js/github-api.js',
   './js/dashboard.js',
   './js/meals.js',
   './js/weight.js',
   './js/workout.js',
+  './js/sync.js',
   './js/app.js',
   './icons/icon-192.png',
   './icons/icon-512.png'

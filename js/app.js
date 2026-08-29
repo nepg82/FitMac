@@ -3,14 +3,18 @@ const ICONS = {
   dashboard: '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>',
   meals: '<svg viewBox="0 0 24 24"><path d="M6 3v7a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V3"/><path d="M8 12v9"/><path d="M17 3c-1.5 0-3 1.5-3 4v3.5c0 1 .8 1.5 1.5 1.5H17M17 3v18"/></svg>',
   weight: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2.5 2.5"/></svg>',
-  workout: '<svg viewBox="0 0 24 24"><path d="M6 7v10M18 7v10M2 10v4M22 10v4M6 12h12"/></svg>'
+  workout: '<svg viewBox="0 0 24 24"><path d="M6 7v10M18 7v10M2 10v4M22 10v4M6 12h12"/></svg>',
+  settings: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>'
 };
+
+const NAV_KEYS = ['dashboard', 'meals', 'weight', 'workout'];
 
 const ROUTES = {
   dashboard: { label: 'Dashboard', icon: ICONS.dashboard, render: renderDashboard },
   meals: { label: 'Meals', icon: ICONS.meals, render: renderMeals },
   weight: { label: 'Weight', icon: ICONS.weight, render: renderWeight },
-  workout: { label: 'Workout', icon: ICONS.workout, render: renderWorkout }
+  workout: { label: 'Workout', icon: ICONS.workout, render: renderWorkout },
+  settings: { label: 'Settings', render: renderSettings }
 };
 
 let currentRoute = 'dashboard';
@@ -24,7 +28,8 @@ function navigate(route) {
 function renderNav() {
   const nav = document.getElementById('bottom-nav');
   nav.innerHTML = '';
-  Object.entries(ROUTES).forEach(([key, r]) => {
+  NAV_KEYS.forEach((key) => {
+    const r = ROUTES[key];
     const btn = document.createElement('button');
     btn.className = 'nav-btn' + (key === currentRoute ? ' active' : '');
     btn.innerHTML = r.icon + '<span>' + r.label + '</span>';

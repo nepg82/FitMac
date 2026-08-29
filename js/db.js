@@ -197,19 +197,28 @@ const DB = {
   },
 
   // --- Export (also basis for future GitHub sync) ---
-  async exportAll() {
-    const [foodItems, mealEntries, weightEntries, workoutSessions, settings] = await Promise.all([
-      DB.getAll('foodItems'), DB.getAll('mealEntries'), DB.getAll('weightEntries'),
-      DB.getAll('workoutSessions'), DB.getSettings()
-    ]);
-    return { version: 1, exportedAt: new Date().toISOString(), foodItems, mealEntries, weightEntries, workoutSessions, settings };
-  },
+	async exportAll() {
+	  const [foodItems, mealEntries, weightEntries, workoutSessions, settingsRaw] = await Promise.all([
+	    DB.getAll('foodItems'), DB.getAll('mealEntries'), DB.getAll('weightEntries'),
+	    DB.getAll('workoutSessions'), DB.getSettings()
+	  ]);
+	  // Never include GitHub connection fields (token especially) in exported data —
+	  // this file gets committed to a repo, so secrets must not ride along.
+	  const { githubToken, githubOwner, githubRepo, githubBranch, lastSyncedAt, ...settings } = settingsRaw;
+	  return { version: 1, exportedAt: new Date().toISOString(), foodItems, mealEntries, weightEntries, workoutSessions, settings };
+	},
 
-  async importAll(data) {
-    const stores = ['foodItems', 'mealEntries', 'weightEntries', 'workoutSessions'];
-    for (const store of stores) {
-      for (const item of (data[store] || [])) await DB.put(store, item);
-    }
-    if (data.settings) await DB.put('settings', { ...data.settings, id: 'main' });
-  }
+	async importAll(data) {
+	  const stores = ['foodItems', 'mealEntries', 'weightEntries', 'workoutSessions'];
+	  for (const store of stores) {
+	    for (const item of (data[store] || [])) await DB.put(store, item);
+	  }
+	  if (data.settings) {
+	    // Merge in non-connection settings only — never let an imported file
+	    // overwrite this device's own GitHub token/owner/repo.
+	    const current = await DB.getSettings();
+	    const { githubToken, githubOwner, githubRepo, githubBranch, username, lastSyncedAt, ...rest } = data.settings;
+	    await DB.put('settings', { ...current, ...rest, id: 'main' });
+	  }
+	}
 };
