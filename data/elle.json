@@ -1,13 +1,50 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-29T12:14:02.167Z",
+  "exportedAt": "2026-08-29T12:20:11.058Z",
   "foodItems": [],
   "mealEntries": [],
-  "weightEntries": [],
+  "weightEntries": [
+    {
+      "id": "359ff04b-e8b2-4f27-9911-cc801c6eec1d",
+      "date": "2026-07-12",
+      "weight": 215.2,
+      "createdAt": 1788005938302
+    },
+    {
+      "id": "b0fee0a2-ff17-4537-b215-f4baf2faa880",
+      "date": "2026-08-09",
+      "weight": 210.6,
+      "createdAt": 1788005999199
+    },
+    {
+      "id": "cd61257b-ce22-4548-b6ea-9aa8e846ff9e",
+      "date": "2026-07-19",
+      "weight": 210.6,
+      "createdAt": 1788005950937
+    },
+    {
+      "id": "ea6f6f80-0624-4d50-ae4d-18e01630eb33",
+      "date": "2026-08-02",
+      "weight": 209.2,
+      "createdAt": 1788005981138
+    },
+    {
+      "id": "f0716cd8-3c53-4c8c-8440-88dcc63dfa0d",
+      "date": "2026-07-26",
+      "weight": 211.6,
+      "createdAt": 1788005966321
+    },
+    {
+      "id": "fa33f430-e1e5-4f10-90fb-300a05dd2e30",
+      "date": "2026-07-05",
+      "weight": 213.4,
+      "createdAt": 1788005923581
+    }
+  ],
   "workoutSessions": [],
   "settings": {
     "id": "main",
-    "targetWeight": null,
+    "targetWeight": 185,
     "calorieGoal": null,
     "proteinGoal": null,
     "carbsGoal": null,
