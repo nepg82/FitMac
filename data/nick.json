@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-29T02:02:14.133Z",
+  "exportedAt": "2026-08-29T12:10:12.032Z",
   "foodItems": [],
   "mealEntries": [],
   "weightEntries": [
@@ -39,6 +39,12 @@
       "date": "2026-08-23",
       "weight": 259.8,
       "createdAt": 1787968883286
+    },
+    {
+      "id": "b1a3d97b-9a47-409c-b446-48b32fe95a6b",
+      "date": "2026-08-29",
+      "weight": 257.4,
+      "createdAt": 1788005146702
     },
     {
       "id": "def0e8e2-d81e-4de1-8cb3-6600bbe7e2cc",
