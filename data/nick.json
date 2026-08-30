@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-30T12:56:34.241Z",
+  "exportedAt": "2026-08-30T13:36:09.883Z",
   "foodItems": [
     {
       "id": "127d86c4-580d-4c22-91a4-f1b494e19d31",
@@ -33,9 +33,36 @@
       "carbs": 0,
       "fat": 3,
       "createdAt": 1788018594781
+    },
+    {
+      "id": "d1d5be4b-0391-4858-b2e3-3a37f538d76c",
+      "name": "One Scramble",
+      "protein": 19.2,
+      "carbs": 3.8,
+      "fat": 29.8,
+      "createdAt": 1788096886164
     }
   ],
   "mealEntries": [
+    {
+      "id": "377a39ab-986a-4682-a861-fd1f2a054bba",
+      "date": "2026-08-30",
+      "name": "Breakfast Scramble",
+      "items": [
+        {
+          "name": "One Scramble",
+          "protein": 19.2,
+          "carbs": 3.8,
+          "fat": 29.8
+        }
+      ],
+      "totals": {
+        "protein": 19.2,
+        "carbs": 3.8,
+        "fat": 29.8
+      },
+      "createdAt": 1788096886162
+    },
     {
       "id": "3a03e7db-ced0-4691-af67-fa789e109c9b",
       "date": "2026-08-29",
