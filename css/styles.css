@@ -22,6 +22,22 @@
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
+:root[data-user="nick"] {
+  --bg: #16131F;
+  --surface: #1E1830;
+  --surface-2: #251D3A;
+  --accent: #7C5CFF;
+  --accent-dim: #7C5CFF33;
+}
+
+:root[data-user="elle"] {
+  --bg: #0F1A16;
+  --surface: #17241F;
+  --surface-2: #1D2C26;
+  --accent: #3DA35C;
+  --accent-dim: #3DA35C33;
+}
+
 * { box-sizing: border-box; }
 
 html, body {

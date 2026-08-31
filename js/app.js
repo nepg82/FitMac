@@ -49,6 +49,7 @@ async function updateHeaderUsername() {
   const settings = await DB.getSettings();
   const el = document.getElementById('header-username');
   if (el) el.textContent = settings.activeUsername || '';
+  document.documentElement.dataset.user = settings.activeUsername || '';
 }
 
 function initRouteFromHash() {
