@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-30T13:36:09.883Z",
+  "exportedAt": "2026-08-31T01:08:56.454Z",
   "foodItems": [
     {
       "id": "127d86c4-580d-4c22-91a4-f1b494e19d31",
@@ -41,6 +41,14 @@
       "carbs": 3.8,
       "fat": 29.8,
       "createdAt": 1788096886164
+    },
+    {
+      "id": "d2bc7f62-70b6-4009-a896-2340a16c02bb",
+      "name": "Big Boss",
+      "protein": 65,
+      "carbs": 70,
+      "fat": 40,
+      "createdAt": 1788138527728
     }
   ],
   "mealEntries": [
@@ -112,6 +120,25 @@
         "fat": 49
       },
       "createdAt": 1788018594749
+    },
+    {
+      "id": "f0e6be14-b5e5-4264-91d4-ea624c41b37c",
+      "date": "2026-08-30",
+      "name": "Manito's \"Big Boss\"",
+      "items": [
+        {
+          "name": "Big Boss",
+          "protein": 65,
+          "carbs": 70,
+          "fat": 40
+        }
+      ],
+      "totals": {
+        "protein": 65,
+        "carbs": 70,
+        "fat": 40
+      },
+      "createdAt": 1788138527726
     }
   ],
   "weightEntries": [
