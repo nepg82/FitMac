@@ -1,6 +1,8 @@
 // db.js — IndexedDB wrapper + data access helpers
 const DB_NAME = 'fitness-tracker';
-const DB_VERSION = 1;
+const DB_VERSION = 2;
+const DATA_STORES = ['foodItems', 'mealEntries', 'weightEntries', 'workoutSessions'];
+
 let _dbPromise = null;
 
 function openDB() {
@@ -9,6 +11,9 @@ function openDB() {
     const req = indexedDB.open(DB_NAME, DB_VERSION);
     req.onupgradeneeded = (e) => {
       const db = e.target.result;
+      if (!db.objectStoreNames.contains('profiles')) {
+        db.createObjectStore('profiles', { keyPath: 'username' });
+      }
       if (!db.objectStoreNames.contains('foodItems')) {
         const s = db.createObjectStore('foodItems', { keyPath: 'id' });
         s.createIndex('name', 'name', { unique: false });
@@ -56,16 +61,36 @@ function todayISO() {
   return local.toISOString().slice(0, 10);
 }
 
+function markDirty() {
+  return tx('settings', 'readwrite').then(s => new Promise((res) => {
+    const getReq = s.get('main');
+    getReq.onsuccess = () => {
+      const current = getReq.result || { id: 'main' };
+      if (current.dataDirty) { res(); return; }
+      const putReq = s.put({ ...current, dataDirty: true });
+      putReq.onsuccess = () => res();
+      putReq.onerror = () => res();
+    };
+    getReq.onerror = () => res();
+  }));
+}
+
 const DB = {
   uuid, todayISO,
 
   put(store, obj) {
-    return tx(store, 'readwrite').then(s => new Promise((res, rej) => {
-      const r = s.put(obj);
-      r.onsuccess = () => res(obj);
-      r.onerror = (e) => rej(e.target.error);
-    }));
-  },
+  return tx(store, 'readwrite').then(s => new Promise((res, rej) => {
+    const r = s.put(obj);
+    r.onsuccess = () => {
+      if (DATA_STORES.includes(store)) {
+        markDirty().then(() => res(obj));
+      } else {
+        res(obj);
+      }
+    };
+    r.onerror = (e) => rej(e.target.error);
+  }));
+},
 
   get(store, id) {
     return tx(store).then(s => new Promise((res, rej) => {
@@ -75,13 +100,19 @@ const DB = {
     }));
   },
 
-  delete(store, id) {
-    return tx(store, 'readwrite').then(s => new Promise((res, rej) => {
-      const r = s.delete(id);
-      r.onsuccess = () => res();
-      r.onerror = (e) => rej(e.target.error);
-    }));
-  },
+delete(store, id) {
+  return tx(store, 'readwrite').then(s => new Promise((res, rej) => {
+    const r = s.delete(id);
+    r.onsuccess = () => {
+      if (DATA_STORES.includes(store)) {
+        markDirty().then(() => res());
+      } else {
+        res();
+      }
+    };
+    r.onerror = (e) => rej(e.target.error);
+  }));
+},
 
   getAll(store) {
     return tx(store).then(s => new Promise((res, rej) => {
@@ -220,21 +251,19 @@ const DB = {
       DB.getAll('foodItems'), DB.getAll('mealEntries'), DB.getAll('weightEntries'),
       DB.getAll('workoutSessions'), DB.getSettings()
     ]);
-    const { githubToken, githubOwner, githubRepo, githubBranch, lastSyncedAt, ...settings } = settingsRaw;
+	const { githubToken, githubOwner, githubRepo, githubBranch, lastSyncedAt, activeUsername, dataDirty, loadedAt, ...settings } = settingsRaw;
     return { version: 1, exportedAt: new Date().toISOString(), foodItems, mealEntries, weightEntries, workoutSessions, settings };
   },
 
-	async importAll(data) {
-	  const stores = ['foodItems', 'mealEntries', 'weightEntries', 'workoutSessions'];
-	  for (const store of stores) {
-	    for (const item of (data[store] || [])) await DB.put(store, item);
-	  }
-	  if (data.settings) {
-	    // Merge in non-connection settings only — never let an imported file
-	    // overwrite this device's own GitHub token/owner/repo.
-	    const current = await DB.getSettings();
-	    const { githubToken, githubOwner, githubRepo, githubBranch, username, lastSyncedAt, ...rest } = data.settings;
-	    await DB.put('settings', { ...current, ...rest, id: 'main' });
-	  }
+  async importAll(data) {
+    const stores = ['foodItems', 'mealEntries', 'weightEntries', 'workoutSessions'];
+    for (const store of stores) {
+      for (const item of (data[store] || [])) await DB.put(store, item);
+  	}
+	if (data.settings) {
+	  const current = await DB.getSettings();
+	  const { githubToken, githubOwner, githubRepo, githubBranch, username, activeUsername, lastSyncedAt, dataDirty, loadedAt, ...rest } = data.settings;
+	  await DB.put('settings', { ...current, ...rest, id: 'main', activeUsername: username || null, dataDirty: false, loadedAt: Date.now() });
 	}
+  }
 };

@@ -22,7 +22,6 @@ let currentRoute = 'dashboard';
 function navigate(route) {
   currentRoute = route;
   location.hash = '#/' + route;
-  renderApp();
 }
 
 function renderNav() {
@@ -40,9 +39,16 @@ function renderNav() {
 
 async function renderApp() {
   renderNav();
+  await updateHeaderUsername();
   const content = document.getElementById('app-content');
   content.innerHTML = '<div class="empty-state">Loading…</div>';
   await ROUTES[currentRoute].render(content);
+}
+
+async function updateHeaderUsername() {
+  const settings = await DB.getSettings();
+  const el = document.getElementById('header-username');
+  if (el) el.textContent = settings.activeUsername || '';
 }
 
 function initRouteFromHash() {

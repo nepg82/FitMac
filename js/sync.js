@@ -1,4 +1,4 @@
-// sync.js — device identity + GitHub backup/restore + multi-user admin view
+// sync.js — GitHub backup/restore + user switching
 
 function sanitizeUsername(name) {
   return (name || '').trim().toLowerCase().replace(/[^a-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '') || '';
@@ -19,17 +19,33 @@ async function renderSettings(content) {
 
   content.innerHTML = `
     <div class="card">
-      <div class="card-title">This Device</div>
-      <div class="field">
-        <label>Username</label>
-        <input type="text" id="set-username" placeholder="e.g. sarah or dads-phone" value="${s.username ? escapeHtml(s.username) : ''}" />
-      </div>
-      <div class="stat-label">Backups from this device are saved as <span class="mono">${dataPathFor(s.username || 'username')}</span></div>
+      <div class="card-title">Backup</div>
+      ${s.lastSyncedAt ? `<div class="stat-label" style="margin-bottom:10px;">Last backed up: ${new Date(s.lastSyncedAt).toLocaleString()}</div>` : ''}
+      ${s.dataDirty ? `<div class="stat-label" style="margin-bottom:10px;color:var(--carbs);">You have unsaved changes</div>` : ''}
+      <button class="btn btn-primary btn-block" id="backup-btn">Back Up ${s.activeUsername ? escapeHtml(s.activeUsername) : ''} Now</button>
     </div>
 
     <div class="card">
-      <div class="card-title">GitHub Connection</div>
-      <div class="field">
+      <div class="card-title">Switch User</div>
+      <div class="stat-label" style="margin-bottom:10px;">
+        Currently viewing: <strong>${s.activeUsername ? escapeHtml(s.activeUsername) : 'nobody yet'}</strong>
+      </div>
+      <button class="btn btn-ghost btn-block" id="load-users-btn" style="margin-bottom:10px;">Find Users on GitHub</button>
+      <div id="remote-user-list"></div>
+
+      <details style="margin-top:14px;">
+        <summary class="card-title" style="cursor:pointer;">Add a new user</summary>
+        <div class="field" style="margin-top:12px;">
+          <label>New username</label>
+          <input type="text" id="switch-username-input" placeholder="e.g. elle" />
+        </div>
+        <button class="btn btn-ghost btn-block" id="switch-user-btn">Create &amp; Switch</button>
+      </details>
+    </div>
+
+    <details class="card">
+      <summary class="card-title" style="cursor:pointer;">GitHub Connection</summary>
+      <div class="field" style="margin-top:12px;">
         <label>Repository Owner</label>
         <input type="text" id="set-owner" placeholder="e.g. yourname" value="${s.githubOwner ? escapeHtml(s.githubOwner) : ''}" />
       </div>
@@ -53,22 +69,7 @@ async function renderSettings(content) {
         <button class="btn btn-ghost btn-block" id="save-settings-btn">Save Settings</button>
         <button class="btn btn-ghost" id="verify-btn">Verify</button>
       </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Backup &amp; Restore</div>
-      ${s.lastSyncedAt ? `<div class="stat-label" style="margin-bottom:10px;">Last backed up: ${new Date(s.lastSyncedAt).toLocaleString()}</div>` : ''}
-      <div class="btn-row">
-        <button class="btn btn-primary btn-block" id="backup-btn">Back Up Now</button>
-        <button class="btn btn-ghost" id="restore-btn">Restore</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">All Users (Admin)</div>
-      <button class="btn btn-ghost btn-block" id="load-admin-btn" style="margin-bottom:10px;">Load User List</button>
-      <div id="admin-list"></div>
-    </div>
+    </details>
   `;
 
   const tokenInput = content.querySelector('#set-token');
@@ -78,7 +79,6 @@ async function renderSettings(content) {
 
   function getConn() {
     return {
-      username: content.querySelector('#set-username').value.trim(),
       owner: content.querySelector('#set-owner').value.trim(),
       repo: content.querySelector('#set-repo').value.trim(),
       branch: content.querySelector('#set-branch').value.trim(),
@@ -88,8 +88,64 @@ async function renderSettings(content) {
 
   async function persistSettings() {
     const c = getConn();
-    await DB.saveSettings({ username: c.username, githubOwner: c.owner, githubRepo: c.repo, githubBranch: c.branch, githubToken: c.token });
+    await DB.saveSettings({ githubOwner: c.owner, githubRepo: c.repo, githubBranch: c.branch, githubToken: c.token });
     return c;
+  }
+
+  // Pushes the currently loaded data to GitHub and clears the dirty flag.
+  async function doBackup(c, username) {
+    try {
+      const path = dataPathFor(username);
+      const existing = await GitHubAPI.getJsonFile({ owner: c.owner, repo: c.repo, path, token: c.token, branch: c.branch || undefined });
+      const data = await DB.exportAll();
+      await GitHubAPI.putJsonFile({
+        owner: c.owner, repo: c.repo, path, token: c.token, branch: c.branch || undefined,
+        json: data, sha: existing ? existing.sha : undefined,
+        message: `Backup for ${username} — ${new Date().toISOString()}`
+      });
+      await DB.saveSettings({ lastSyncedAt: Date.now(), dataDirty: false, loadedAt: Date.now() });
+      return true;
+    } catch (e) {
+      showToast('Backup failed: ' + e.message);
+      return false;
+    }
+  }
+
+  async function switchUser(targetUsernameRaw) {
+    const target = sanitizeUsername(targetUsernameRaw);
+    if (!target) { showToast('Enter a username'); return; }
+    const current = await DB.getSettings();
+    if (target === current.activeUsername) { showToast(`Already viewing ${target}`); return; }
+
+    if (current.dataDirty && current.activeUsername) {
+      const wantsBackup = confirm(`You have unsaved changes for "${current.activeUsername}". Click OK to back them up before switching, or Cancel to choose whether to discard them.`);
+      if (wantsBackup) {
+        const c = getConn();
+        if (!c.owner || !c.repo || !c.token) { showToast('Fill in GitHub owner, repo, and token to back up'); return; }
+        const ok = await doBackup(c, current.activeUsername);
+        if (!ok) { showToast('Switch cancelled — backup failed'); return; }
+      } else {
+        const wantsDiscard = confirm(`Discard unsaved changes for "${current.activeUsername}" and switch to "${target}"?`);
+        if (!wantsDiscard) return;
+      }
+    }
+
+    const c = getConn();
+    if (!c.owner || !c.repo || !c.token) { showToast('Fill in GitHub owner, repo, and token'); return; }
+
+    await DB.wipeAppData();
+    try {
+      const result = await GitHubAPI.getJsonFile({ owner: c.owner, repo: c.repo, path: dataPathFor(target), token: c.token, branch: c.branch || undefined });
+      if (result) {
+        await DB.importAll(result.json);
+      } else {
+        await DB.saveSettings({ activeUsername: target, dataDirty: false, loadedAt: Date.now() });
+      }
+      showToast(result ? `Switched to ${target}` : `Switched to ${target} (new user)`);
+      renderApp();
+    } catch (e) {
+      showToast('Switch failed: ' + e.message);
+    }
   }
 
   content.querySelector('#save-settings-btn').onclick = async () => {
@@ -97,6 +153,8 @@ async function renderSettings(content) {
     showToast('Settings saved');
     renderApp();
   };
+
+  content.querySelector('#switch-user-btn').onclick = () => switchUser(content.querySelector('#switch-username-input').value);
 
   content.querySelector('#verify-btn').onclick = async () => {
     const c = getConn();
@@ -111,50 +169,21 @@ async function renderSettings(content) {
 
   content.querySelector('#backup-btn').onclick = async () => {
     const c = await persistSettings();
-    if (!c.username) { showToast('Set a username first'); return; }
+    const s2 = await DB.getSettings();
+    if (!s2.activeUsername) { showToast('Switch to a user first'); return; }
     if (!c.owner || !c.repo || !c.token) { showToast('Fill in GitHub owner, repo, and token'); return; }
     const btn = content.querySelector('#backup-btn');
+    const label = `Back Up ${s2.activeUsername} Now`;
     btn.disabled = true; btn.textContent = 'Backing up…';
-    try {
-      const path = dataPathFor(c.username);
-      const existing = await GitHubAPI.getJsonFile({ owner: c.owner, repo: c.repo, path, token: c.token, branch: c.branch || undefined });
-      const data = await DB.exportAll();
-      await GitHubAPI.putJsonFile({
-        owner: c.owner, repo: c.repo, path, token: c.token, branch: c.branch || undefined,
-        json: data, sha: existing ? existing.sha : undefined,
-        message: `Backup for ${c.username} — ${new Date().toISOString()}`
-      });
-      await DB.saveSettings({ lastSyncedAt: Date.now() });
-      showToast('Backup complete');
-      renderApp();
-    } catch (e) {
-      showToast('Backup failed: ' + e.message);
-    } finally {
-      btn.disabled = false; btn.textContent = 'Back Up Now';
-    }
+    const ok = await doBackup(c, s2.activeUsername);
+    btn.disabled = false; btn.textContent = label;
+    if (ok) { showToast('Backup complete'); renderApp(); }
   };
 
-  content.querySelector('#restore-btn').onclick = async () => {
-    const c = await persistSettings();
-    if (!c.username) { showToast('Set a username first'); return; }
-    if (!c.owner || !c.repo || !c.token) { showToast('Fill in GitHub owner, repo, and token'); return; }
-    if (!confirm('Restore will merge the backed-up data into this device. Continue?')) return;
-    try {
-      const path = dataPathFor(c.username);
-      const result = await GitHubAPI.getJsonFile({ owner: c.owner, repo: c.repo, path, token: c.token, branch: c.branch || undefined });
-      if (!result) { showToast('No backup found for this username yet'); return; }
-      await DB.replaceAll(result.json);
-      showToast('Restore complete');
-      renderApp();
-    } catch (e) {
-      showToast('Restore failed: ' + e.message);
-    }
-  };
-
-  content.querySelector('#load-admin-btn').onclick = async () => {
+  content.querySelector('#load-users-btn').onclick = async () => {
     const c = getConn();
     if (!c.owner || !c.repo || !c.token) { showToast('Fill in GitHub owner, repo, and token'); return; }
-    const listEl = content.querySelector('#admin-list');
+    const listEl = content.querySelector('#remote-user-list');
     listEl.innerHTML = `<div class="empty-state">Loading…</div>`;
     try {
       const files = await GitHubAPI.listDirectory({ owner: c.owner, repo: c.repo, path: 'data', token: c.token, branch: c.branch || undefined });
@@ -172,38 +201,10 @@ async function renderSettings(content) {
               <div class="list-item-title">${escapeHtml(username)}</div>
               <div class="list-item-sub">${fmtBytes(f.size)}</div>
             </div>
-            <div class="btn-row" style="gap:6px;">
-              <button class="btn btn-sm btn-ghost" data-action="view">View</button>
-              <button class="btn btn-sm btn-danger" data-action="restore">Restore</button>
-            </div>
+            <button class="btn btn-sm btn-ghost">Switch</button>
           </div>
         `);
-        row.querySelector('[data-action="view"]').onclick = async () => {
-          try {
-            const result = await GitHubAPI.getJsonFile({ owner: c.owner, repo: c.repo, path: f.path, token: c.token, branch: c.branch || undefined });
-            const d = result.json;
-            openSheet(escapeHtml(username), `
-              <div class="stat-row"><span class="stat-label">Meals logged</span><span class="mono">${(d.mealEntries || []).length}</span></div>
-              <div class="stat-row"><span class="stat-label">Weight entries</span><span class="mono">${(d.weightEntries || []).length}</span></div>
-              <div class="stat-row"><span class="stat-label">Workout sessions</span><span class="mono">${(d.workoutSessions || []).length}</span></div>
-              <div class="stat-row"><span class="stat-label">Food items saved</span><span class="mono">${(d.foodItems || []).length}</span></div>
-              <div class="stat-label" style="margin-top:10px;">Exported: ${d.exportedAt ? new Date(d.exportedAt).toLocaleString() : '—'}</div>
-            `);
-          } catch (e) {
-            showToast('Failed to load: ' + e.message);
-          }
-        };
-        row.querySelector('[data-action="restore"]').onclick = async () => {
-          if (!confirm(`Restore "${username}"'s data into THIS device? This merges into your current local data.`)) return;
-          try {
-            const result = await GitHubAPI.getJsonFile({ owner: c.owner, repo: c.repo, path: f.path, token: c.token, branch: c.branch || undefined });
-            await DB.replaceAll(result.json);
-            showToast(`Restored ${username}'s data to this device`);
-            renderApp();
-          } catch (e) {
-            showToast('Restore failed: ' + e.message);
-          }
-        };
+        row.querySelector('button').onclick = () => switchUser(username);
         listEl.appendChild(row);
       });
     } catch (e) {
