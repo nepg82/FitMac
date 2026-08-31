@@ -30,7 +30,7 @@ async function renderSettings(content) {
       <div class="stat-label" style="margin-bottom:10px;">
         Currently viewing: <strong>${s.activeUsername ? escapeHtml(s.activeUsername) : 'nobody yet'}</strong>
       </div>
-      <button class="btn btn-ghost btn-block" id="load-users-btn" style="margin-bottom:10px;">Find Users on GitHub</button>
+      <button class="btn btn-ghost btn-block" id="load-users-btn" style="margin-bottom:10px;">User List</button>
       <div id="remote-user-list"></div>
 
       <details style="margin-top:14px;">
