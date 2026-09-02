@@ -1,13 +1,16 @@
 // meals.js
 async function renderMeals(content) {
   const entries = await DB.getMealEntries();
+  const settings = await DB.getSettings();
   const groups = groupByDate(entries);
 
   content.innerHTML = `
-    <div class="btn-row" style="margin-bottom:16px;">
+    <div class="btn-row" style="margin-bottom:${settings.calorieGoal ? '6px' : '16px'};">
+      <button class="btn btn-ghost" id="repeat-meal-btn">Past</button>
       <button class="btn btn-primary btn-block" id="log-meal-btn">+ Log Meal</button>
-      <button class="btn btn-ghost" id="repeat-meal-btn">Repeat Past</button>
+      <button class="btn btn-ghost" id="calorie-target-btn">Target</button>
     </div>
+    ${settings.calorieGoal ? `<div class="stat-label" style="margin-bottom:16px;">Daily target: ${settings.calorieGoal} cal</div>` : ''}
     <div id="meals-list"></div>
   `;
 
@@ -38,6 +41,26 @@ async function renderMeals(content) {
 
   document.getElementById('log-meal-btn').onclick = () => openMealForm();
   document.getElementById('repeat-meal-btn').onclick = () => openRepeatPicker();
+  document.getElementById('calorie-target-btn').onclick = () => openCalorieTargetForm(settings);
+}
+
+function openCalorieTargetForm(settings) {
+  const bodyHtml = `
+    <div class="field">
+      <label>Daily Calorie Target</label>
+      <input type="number" inputmode="numeric" id="calorie-target" value="${settings.calorieGoal || ''}" placeholder="e.g. 2200" />
+    </div>
+    <button class="btn btn-primary btn-block" id="calorie-target-save">Save</button>
+  `;
+  openSheet('Set Daily Calorie Target', bodyHtml, (body) => {
+    body.querySelector('#calorie-target-save').onclick = async () => {
+      const calorieGoal = Number(body.querySelector('#calorie-target').value) || null;
+      await DB.saveSettings({ calorieGoal });
+      closeSheet();
+      showToast('Target updated');
+      renderApp();
+    };
+  });
 }
 
 function escapeHtml(s) {
@@ -58,8 +81,12 @@ function openMealDetail(meal) {
         </div>
       `).join('')}
     </div>
-    <div class="btn-row">
+    <div class="btn-row" style="margin-bottom:10px;">
       <button class="btn btn-primary btn-block" id="duplicate-btn">Duplicate to Today</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-ghost btn-block" id="edit-meal-btn">Edit</button>
+      <button class="btn btn-danger btn-block" id="delete-meal-btn">Delete</button>
     </div>
   `;
   const sheet = openSheet(escapeHtml(meal.name), bodyHtml, (body) => {
@@ -67,6 +94,17 @@ function openMealDetail(meal) {
       await DB.saveMealEntry({ date: DB.todayISO(), name: meal.name, items: meal.items.map(it => ({ name: it.name, protein: it.protein, carbs: it.carbs, fat: it.fat })) });
       closeSheet();
       showToast('Meal added to today');
+      renderApp();
+    };
+    body.querySelector('#edit-meal-btn').onclick = () => {
+      closeSheet();
+      openMealForm(meal);
+    };
+    body.querySelector('#delete-meal-btn').onclick = async () => {
+      if (!confirm(`Delete "${meal.name}"? This can't be undone.`)) return;
+      await DB.delete('mealEntries', meal.id);
+      closeSheet();
+      showToast('Meal deleted');
       renderApp();
     };
   });
@@ -117,22 +155,23 @@ async function openRepeatPicker() {
   });
 }
 
-function openMealForm() {
+function openMealForm(existingMeal) {
   let itemCount = 0;
+  const isEdit = !!existingMeal;
   const bodyHtml = `
     <div class="field">
       <label>Meal Name</label>
-      <input type="text" id="meal-name" placeholder="e.g. Caesar Salad – Cheesecake Factory" />
+      <input type="text" id="meal-name" placeholder="e.g. Caesar Salad – Cheesecake Factory" value="${isEdit ? escapeHtml(existingMeal.name) : ''}" />
     </div>
     <div class="field">
       <label>Date</label>
-      <input type="date" id="meal-date" value="${DB.todayISO()}" />
+      <input type="date" id="meal-date" value="${isEdit ? existingMeal.date : DB.todayISO()}" />
     </div>
     <div id="item-rows"></div>
     <button class="btn btn-ghost btn-block" id="add-item-btn" style="margin-bottom:16px;">+ Add Food Item</button>
-    <button class="btn btn-primary btn-block" id="save-meal-btn">Save Meal</button>
+    <button class="btn btn-primary btn-block" id="save-meal-btn">${isEdit ? 'Save Changes' : 'Save Meal'}</button>
   `;
-  const sheet = openSheet('Log Meal', bodyHtml, (body) => {
+  const sheet = openSheet(isEdit ? 'Edit Meal' : 'Log Meal', bodyHtml, (body) => {
     const rowsEl = body.querySelector('#item-rows');
 
     function addItemRow(prefill) {
@@ -201,7 +240,11 @@ function openMealForm() {
       rowsEl.appendChild(row);
     }
 
-    addItemRow();
+    if (isEdit && existingMeal.items.length) {
+      existingMeal.items.forEach(it => addItemRow(it));
+    } else {
+      addItemRow();
+    }
     body.querySelector('#add-item-btn').onclick = () => addItemRow();
 
     body.querySelector('#save-meal-btn').onclick = async () => {
@@ -216,9 +259,9 @@ function openMealForm() {
         fat: Number(r.querySelector('.item-fat').value) || 0
       })).filter(it => it.name);
       if (items.length === 0) { showToast('Add at least one food item'); return; }
-      await DB.saveMealEntry({ date, name, items });
+      await DB.saveMealEntry({ id: isEdit ? existingMeal.id : undefined, date, name, items });
       closeSheet();
-      showToast('Meal saved');
+      showToast(isEdit ? 'Meal updated' : 'Meal saved');
       renderApp();
     };
   });

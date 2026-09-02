@@ -48,7 +48,10 @@ async function renderApp() {
 async function updateHeaderUsername() {
   const settings = await DB.getSettings();
   const el = document.getElementById('header-username');
-  if (el) el.textContent = settings.activeUsername || '';
+  if (el) {
+    el.textContent = settings.activeUsername || '';
+    el.classList.toggle('dirty', !!settings.dataDirty && !!settings.activeUsername);
+  }
   document.documentElement.dataset.user = settings.activeUsername || '';
 }
 
@@ -68,6 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js').catch(() => {});
   }
+
+  document.getElementById('header-username').addEventListener('click', async () => {
+    const s = await DB.getSettings();
+    if (!s.dataDirty || !s.activeUsername) return;
+    if (!confirm(`Back up unsaved changes for "${s.activeUsername}" now?`)) return;
+    const ok = await backupNow();
+    if (ok) { showToast('Backup complete'); renderApp(); }
+  });
 });
 
 // ---------- Shared UI helpers ----------
@@ -119,6 +130,21 @@ function formatDate(iso) {
 function formatDateShort(iso) {
   const [y, m, d] = iso.split('-').map(Number);
   return `${m}/${d}`;
+}
+
+function isoDaysAgo(n) {
+  const d = new Date();
+  d.setDate(d.getDate() - n);
+  const off = d.getTimezoneOffset();
+  const local = new Date(d.getTime() - off * 60000);
+  return local.toISOString().slice(0, 10);
+}
+
+function formatDateWeekdayShort(iso) {
+  const [y, m, d] = iso.split('-').map(Number);
+  const dt = new Date(y, m - 1, d);
+  const wd = dt.toLocaleDateString(undefined, { weekday: 'narrow' });
+  return `${wd} ${m}/${d}`;
 }
 
 function groupByDate(items) {

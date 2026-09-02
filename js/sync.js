@@ -14,6 +14,33 @@ function fmtBytes(n) {
   return (n / 1024).toFixed(1) + ' KB';
 }
 
+// Runs a backup using the currently *saved* GitHub settings (as opposed to
+// renderSettings' internal doBackup(), which reads live, possibly-unsaved
+// form fields). Used by the header "unsaved changes" tap. Returns true/false.
+async function backupNow() {
+  const s = await DB.getSettings();
+  if (!s.activeUsername) { showToast('Switch to a user first'); return false; }
+  if (!s.githubOwner || !s.githubRepo || !s.githubToken) {
+    showToast('Add your GitHub owner, repo, and token in Settings');
+    return false;
+  }
+  const path = dataPathFor(s.activeUsername);
+  try {
+    const existing = await GitHubAPI.getJsonFile({ owner: s.githubOwner, repo: s.githubRepo, path, token: s.githubToken, branch: s.githubBranch || undefined });
+    const data = await DB.exportAll();
+    await GitHubAPI.putJsonFile({
+      owner: s.githubOwner, repo: s.githubRepo, path, token: s.githubToken, branch: s.githubBranch || undefined,
+      json: data, sha: existing ? existing.sha : undefined,
+      message: `Backup for ${s.activeUsername} — ${new Date().toISOString()}`
+    });
+    await DB.saveSettings({ lastSyncedAt: Date.now(), dataDirty: false, loadedAt: Date.now() });
+    return true;
+  } catch (e) {
+    showToast('Backup failed: ' + e.message);
+    return false;
+  }
+}
+
 async function renderSettings(content) {
   const s = await DB.getSettings();
 
@@ -70,6 +97,10 @@ async function renderSettings(content) {
         <button class="btn btn-ghost" id="verify-btn">Verify</button>
       </div>
     </details>
+
+    <div class="btn-row" style="margin-top:4px;">
+      <button class="btn btn-ghost btn-block" id="export-btn">Export Backup (JSON)</button>
+    </div>
   `;
 
   const tokenInput = content.querySelector('#set-token');
@@ -138,6 +169,7 @@ async function renderSettings(content) {
       const result = await GitHubAPI.getJsonFile({ owner: c.owner, repo: c.repo, path: dataPathFor(target), token: c.token, branch: c.branch || undefined });
       if (result) {
         await DB.importAll(result.json);
+        await DB.saveSettings({ activeUsername: target, dataDirty: false, loadedAt: Date.now() });
       } else {
         await DB.saveSettings({ activeUsername: target, dataDirty: false, loadedAt: Date.now() });
       }
@@ -165,6 +197,17 @@ async function renderSettings(content) {
     } catch (e) {
       showToast('Verify failed: ' + e.message);
     }
+  };
+
+  content.querySelector('#export-btn').onclick = async () => {
+    const data = await DB.exportAll();
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `tracker-backup-${DB.todayISO()}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   content.querySelector('#backup-btn').onclick = async () => {

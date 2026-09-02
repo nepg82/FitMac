@@ -47,22 +47,39 @@ function openSessionDetail(session) {
         ${ex.notes ? `<div class="list-item-sub" style="margin-top:4px;">${escapeHtml(ex.notes)}</div>` : ''}
       </div>
     `).join('')}
+    <div class="btn-row" style="margin-top:14px;">
+      <button class="btn btn-ghost btn-block" id="edit-session-btn">Edit</button>
+      <button class="btn btn-danger btn-block" id="delete-session-btn">Delete</button>
+    </div>
   `;
-  openSheet(escapeHtml(session.name), bodyHtml);
+  openSheet(escapeHtml(session.name), bodyHtml, (body) => {
+    body.querySelector('#edit-session-btn').onclick = () => {
+      closeSheet();
+      openSessionForm(session);
+    };
+    body.querySelector('#delete-session-btn').onclick = async () => {
+      if (!confirm(`Delete "${session.name}"? This can't be undone.`)) return;
+      await DB.delete('workoutSessions', session.id);
+      closeSheet();
+      showToast('Session deleted');
+      renderApp();
+    };
+  });
 }
 
-async function openSessionForm() {
+async function openSessionForm(existingSession) {
   const exerciseNames = await DB.getUniqueExerciseNames();
-  const sessionExercises = [];
+  const isEdit = !!existingSession;
+  const sessionExercises = isEdit ? existingSession.exercises.map(ex => ({ ...ex })) : [];
 
   const bodyHtml = `
     <div class="field">
       <label>Workout Name</label>
-      <input type="text" id="session-name" placeholder="e.g. Push Day" />
+      <input type="text" id="session-name" placeholder="e.g. Push Day" value="${isEdit ? escapeHtml(existingSession.name) : ''}" />
     </div>
     <div class="field">
       <label>Date</label>
-      <input type="date" id="session-date" value="${DB.todayISO()}" />
+      <input type="date" id="session-date" value="${isEdit ? existingSession.date : DB.todayISO()}" />
     </div>
 
     <div class="card-title" style="margin-top:8px;">Add Exercise</div>
@@ -93,10 +110,10 @@ async function openSessionForm() {
     <div class="card-title">This Session</div>
     <div id="session-ex-list" class="card" style="min-height:20px;"></div>
 
-    <button class="btn btn-primary btn-block" id="save-session-btn" style="margin-top:14px;">Save Session</button>
+    <button class="btn btn-primary btn-block" id="save-session-btn" style="margin-top:14px;">${isEdit ? 'Save Changes' : 'Save Session'}</button>
   `;
 
-  openSheet('New Workout Session', bodyHtml, (body) => {
+  openSheet(isEdit ? 'Edit Workout Session' : 'New Workout Session', bodyHtml, (body) => {
     const exNameInput = body.querySelector('#ex-name');
     const acList = body.querySelector('#ex-autocomplete');
     const sessionListEl = body.querySelector('#session-ex-list');
@@ -164,9 +181,9 @@ async function openSessionForm() {
       const date = body.querySelector('#session-date').value || DB.todayISO();
       if (!name) { showToast('Workout name is required'); return; }
       if (sessionExercises.length === 0) { showToast('Add at least one exercise'); return; }
-      await DB.saveWorkoutSession({ name, date, exercises: sessionExercises });
+      await DB.saveWorkoutSession({ id: isEdit ? existingSession.id : undefined, name, date, exercises: sessionExercises });
       closeSheet();
-      showToast('Session saved');
+      showToast(isEdit ? 'Session updated' : 'Session saved');
       renderApp();
     };
   });

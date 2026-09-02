@@ -262,8 +262,11 @@ delete(store, id) {
   	}
 	if (data.settings) {
 	  const current = await DB.getSettings();
-	  const { githubToken, githubOwner, githubRepo, githubBranch, username, activeUsername, lastSyncedAt, dataDirty, loadedAt, ...rest } = data.settings;
-	  await DB.put('settings', { ...current, ...rest, id: 'main', activeUsername: username || null, dataDirty: false, loadedAt: Date.now() });
+	  const { githubToken, githubOwner, githubRepo, githubBranch, activeUsername, lastSyncedAt, dataDirty, loadedAt, ...rest } = data.settings;
+	  // Note: activeUsername is intentionally NOT set here — exportAll() never
+	  // round-trips it, so callers (e.g. switchUser in sync.js) are responsible
+	  // for setting activeUsername themselves after importAll() resolves.
+	  await DB.put('settings', { ...current, ...rest, id: 'main', dataDirty: false, loadedAt: Date.now() });
 	}
   }
 };
