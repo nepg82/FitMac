@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-02T20:09:44.179Z",
+  "exportedAt": "2026-09-02T20:20:51.015Z",
   "foodItems": [
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -117,7 +117,7 @@
           "notes": ""
         }
       ],
-      "createdAt": 1788318040200
+      "createdAt": 1788380437104
     }
   ],
   "settings": {
