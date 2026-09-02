@@ -1,9 +1,71 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-29T12:20:11.058Z",
-  "foodItems": [],
-  "mealEntries": [],
+  "exportedAt": "2026-09-02T20:09:44.179Z",
+  "foodItems": [
+    {
+      "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
+      "name": "Dinner- chicken parm, ziti, bread, chocolate",
+      "protein": 50,
+      "carbs": 150,
+      "fat": 100,
+      "createdAt": 1788318230592
+    },
+    {
+      "id": "82e1f3fb-78a4-4a9a-a500-2a43ea5b8b6d",
+      "name": "Lunch- watermelon, tuna mac salad, shrimp",
+      "protein": 18,
+      "carbs": 40,
+      "fat": 18,
+      "createdAt": 1788318343096
+    }
+  ],
+  "mealEntries": [
+    {
+      "id": "4ba499ad-7d17-4bfa-958f-26692450ba7a",
+      "date": "2026-09-01",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Lunch- watermelon, tuna mac salad, shrimp",
+          "protein": 18,
+          "carbs": 40,
+          "fat": 18
+        }
+      ],
+      "totals": {
+        "protein": 18,
+        "carbs": 40,
+        "fat": 18
+      },
+      "createdAt": 1788318343081
+    },
+    {
+      "id": "923b3ef4-9dcd-4e36-8ce9-fd1eb2331535",
+      "date": "2026-09-01",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Dinner- chicken parm, ziti, bread, chocolate",
+          "protein": 50,
+          "carbs": 150,
+          "fat": 100
+        }
+      ],
+      "totals": {
+        "protein": 50,
+        "carbs": 150,
+        "fat": 100
+      },
+      "createdAt": 1788318230576
+    }
+  ],
   "weightEntries": [
+    {
+      "id": "18a114da-c93e-4cb4-bf1d-ebc82ac98548",
+      "date": "2026-09-01",
+      "weight": 209.6,
+      "createdAt": 1788317973629
+    },
     {
       "id": "359ff04b-e8b2-4f27-9911-cc801c6eec1d",
       "date": "2026-07-12",
@@ -41,7 +103,23 @@
       "createdAt": 1788005923581
     }
   ],
-  "workoutSessions": [],
+  "workoutSessions": [
+    {
+      "id": "33d9c153-7500-4b03-8a5c-26c3ba47d951",
+      "name": "Treadmill",
+      "date": "2026-09-01",
+      "exercises": [
+        {
+          "exercise": "Treadmill",
+          "sets": "35",
+          "reps": "3",
+          "weight": "5",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1788318040200
+    }
+  ],
   "settings": {
     "id": "main",
     "targetWeight": 185,
