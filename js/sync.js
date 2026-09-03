@@ -92,10 +92,11 @@ async function renderSettings(content) {
         </label>
       </div>
       <div class="stat-label" style="margin-bottom:12px;">Use a fine-grained token scoped to just this repo, with read/write access to contents.</div>
-      <div class="btn-row">
+      <div class="btn-row" style="margin-bottom:10px;">
         <button class="btn btn-ghost btn-block" id="save-settings-btn">Save Settings</button>
         <button class="btn btn-ghost" id="verify-btn">Verify</button>
       </div>
+      <button class="btn btn-ghost btn-block" id="refresh-git-btn">Refresh from Git</button>
     </details>
 
     <div class="btn-row" style="margin-top:4px;">
@@ -180,6 +181,30 @@ async function renderSettings(content) {
     }
   }
 
+  // Force-refreshes the app itself: unregisters the service worker, clears
+  // its caches, then hard-reloads so the browser re-fetches every asset from
+  // the server. This is for when the PWA is showing stale code/assets and
+  // pull-to-refresh isn't doing the job — it does NOT touch your IndexedDB
+  // data (meals, weight, workouts, settings all stay put).
+  async function refreshApp() {
+    if (!confirm('Reload the app and fetch the latest version from the server?')) return;
+    const btn = content.querySelector('#refresh-git-btn');
+    btn.disabled = true; btn.textContent = 'Refreshing…';
+    try {
+      if ('serviceWorker' in navigator) {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map(r => r.unregister()));
+      }
+      if ('caches' in window) {
+        const keys = await caches.keys();
+        await Promise.all(keys.map(k => caches.delete(k)));
+      }
+    } catch (e) {
+      // Best-effort — fall through to reload regardless.
+    }
+    location.reload();
+  }
+
   content.querySelector('#save-settings-btn').onclick = async () => {
     await persistSettings();
     showToast('Settings saved');
@@ -222,6 +247,8 @@ async function renderSettings(content) {
     btn.disabled = false; btn.textContent = label;
     if (ok) { showToast('Backup complete'); renderApp(); }
   };
+
+  content.querySelector('#refresh-git-btn').onclick = () => refreshApp();
 
   content.querySelector('#load-users-btn').onclick = async () => {
     const c = getConn();
