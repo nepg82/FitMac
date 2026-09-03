@@ -47,12 +47,25 @@ function openSessionDetail(session) {
         ${ex.notes ? `<div class="list-item-sub" style="margin-top:4px;">${escapeHtml(ex.notes)}</div>` : ''}
       </div>
     `).join('')}
-    <div class="btn-row" style="margin-top:14px;">
+    <div class="btn-row" style="margin-top:14px;margin-bottom:10px;">
+      <button class="btn btn-primary btn-block" id="duplicate-session-btn">Duplicate to Today</button>
+    </div>
+    <div class="btn-row">
       <button class="btn btn-ghost btn-block" id="edit-session-btn">Edit</button>
       <button class="btn btn-danger btn-block" id="delete-session-btn">Delete</button>
     </div>
   `;
   openSheet(escapeHtml(session.name), bodyHtml, (body) => {
+    body.querySelector('#duplicate-session-btn').onclick = async () => {
+      await DB.saveWorkoutSession({
+        name: session.name,
+        date: DB.todayISO(),
+        exercises: session.exercises.map(ex => ({ ...ex }))
+      });
+      closeSheet();
+      showToast('Workout added to today');
+      renderApp();
+    };
     body.querySelector('#edit-session-btn').onclick = () => {
       closeSheet();
       openSessionForm(session);

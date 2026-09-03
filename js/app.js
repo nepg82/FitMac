@@ -159,3 +159,29 @@ function groupByDate(items) {
 function round1(n) {
   return Math.round((Number(n) || 0) * 10) / 10;
 }
+
+// ---------------------------------------------------------------------------
+// Calories-only tracking helpers.
+//
+// Food items now store a single `calories` field instead of protein/carbs/fat.
+// These helpers also understand *old* entries that were logged back when the
+// app tracked macros (protein/carbs/fat) — for those we derive calories from
+// the macros (P*4 + C*4 + F*9) on the fly so nothing breaks or needs a
+// destructive migration. New entries just have `calories` set directly.
+// See dashboard.js for the (disabled) macro breakdown UI that used to read
+// protein/carbs/fat directly.
+// ---------------------------------------------------------------------------
+
+function caloriesForItem(it) {
+  if (!it) return 0;
+  if (it.calories != null) return Number(it.calories) || 0;
+  // Legacy macro-based item — convert so calorie totals stay correct.
+  return (Number(it.protein) || 0) * 4 + (Number(it.carbs) || 0) * 4 + (Number(it.fat) || 0) * 9;
+}
+
+function mealTotalCalories(meal) {
+  if (!meal || !meal.totals) return 0;
+  if (meal.totals.calories != null) return Number(meal.totals.calories) || 0;
+  // Legacy macro-based meal — convert so calorie totals stay correct.
+  return (Number(meal.totals.protein) || 0) * 4 + (Number(meal.totals.carbs) || 0) * 4 + (Number(meal.totals.fat) || 0) * 9;
+}

@@ -1,4 +1,18 @@
 // dashboard.js
+
+// ---------------------------------------------------------------------------
+// MACROS FEATURE — DISABLED
+// The dashboard used to show a "Today's Macros" card with a protein/carbs/fat
+// breakdown bar + legend. The app is now calories-only, so that card has been
+// removed and its total-calories number folded into a plain "Today's
+// Calories" card below. The macro-computing code is kept here (inert) in
+// case we want to bring the feature back — flip MACROS_ENABLED to true and
+// the breakdown bar/legend will render again inside the calories card.
+// Related: meals.js item form (calories-only) and app.js `caloriesForItem` /
+// `mealTotalCalories` (macro→calorie fallback for old data).
+// ---------------------------------------------------------------------------
+const MACROS_ENABLED = false;
+
 async function renderDashboard(content) {
   const today = DB.todayISO();
   const [allMeals, weightEntries, sessions, settings] = await Promise.all([
@@ -9,23 +23,42 @@ async function renderDashboard(content) {
   ]);
   const todayMeals = allMeals.filter(m => m.date === today);
 
-  const totals = todayMeals.reduce((acc, m) => {
-    acc.protein += m.totals.protein;
-    acc.carbs += m.totals.carbs;
-    acc.fat += m.totals.fat;
-    return acc;
-  }, { protein: 0, carbs: 0, fat: 0 });
-  const totalCal = totals.protein * 4 + totals.carbs * 4 + totals.fat * 9;
-  const pPct = totalCal ? (totals.protein * 4 / totalCal) * 100 : 0;
-  const cPct = totalCal ? (totals.carbs * 4 / totalCal) * 100 : 0;
-  const fPct = totalCal ? (totals.fat * 9 / totalCal) * 100 : 0;
+  const todayCalories = todayMeals.reduce((sum, m) => sum + mealTotalCalories(m), 0);
+
+  // --- Macro breakdown (disabled) — see comment block above ---
+  let macroBarHtml = '';
+  if (MACROS_ENABLED) {
+    const macroTotals = todayMeals.reduce((acc, m) => {
+      acc.protein += m.totals.protein || 0;
+      acc.carbs += m.totals.carbs || 0;
+      acc.fat += m.totals.fat || 0;
+      return acc;
+    }, { protein: 0, carbs: 0, fat: 0 });
+    const macroCal = macroTotals.protein * 4 + macroTotals.carbs * 4 + macroTotals.fat * 9;
+    const pPct = macroCal ? (macroTotals.protein * 4 / macroCal) * 100 : 0;
+    const cPct = macroCal ? (macroTotals.carbs * 4 / macroCal) * 100 : 0;
+    const fPct = macroCal ? (macroTotals.fat * 9 / macroCal) * 100 : 0;
+    macroBarHtml = `
+      <div class="macro-bar">
+        <div class="p" style="width:${pPct}%"></div>
+        <div class="c" style="width:${cPct}%"></div>
+        <div class="f" style="width:${fPct}%"></div>
+      </div>
+      <div class="macro-legend">
+        <span><span class="dot p"></span>Protein <span class="val">${round1(macroTotals.protein)}g</span></span>
+        <span><span class="dot c"></span>Carbs <span class="val">${round1(macroTotals.carbs)}g</span></span>
+        <span><span class="dot f"></span>Fat <span class="val">${round1(macroTotals.fat)}g</span></span>
+      </div>
+    `;
+  }
+  // --- end macro breakdown ---
 
   const mealsByDate = groupByDate(allMeals);
   const caloriePoints = [];
   for (let i = 6; i >= 0; i--) {
     const date = isoDaysAgo(i);
     const items = mealsByDate.get(date) || [];
-    const cal = items.reduce((sum, m) => sum + m.totals.protein * 4 + m.totals.carbs * 4 + m.totals.fat * 9, 0);
+    const cal = items.reduce((sum, m) => sum + mealTotalCalories(m), 0);
     caloriePoints.push({ x: formatDateWeekdayShort(date), y: Math.round(cal) });
   }
 
@@ -41,18 +74,9 @@ async function renderDashboard(content) {
 
   content.innerHTML = `
     <div class="card">
-      <div class="card-title">Today's Macros</div>
-      <div class="big-number">${Math.round(totalCal)} <span style="font-size:14px;color:var(--text-dim);">cal</span></div>
-      <div class="macro-bar">
-        <div class="p" style="width:${pPct}%"></div>
-        <div class="c" style="width:${cPct}%"></div>
-        <div class="f" style="width:${fPct}%"></div>
-      </div>
-      <div class="macro-legend">
-        <span><span class="dot p"></span>Protein <span class="val">${round1(totals.protein)}g</span></span>
-        <span><span class="dot c"></span>Carbs <span class="val">${round1(totals.carbs)}g</span></span>
-        <span><span class="dot f"></span>Fat <span class="val">${round1(totals.fat)}g</span></span>
-      </div>
+      <div class="card-title">Today's Calories</div>
+      <div class="big-number">${Math.round(todayCalories)} <span style="font-size:14px;color:var(--text-dim);">cal</span></div>
+      ${macroBarHtml}
       ${todayMeals.length === 0 ? `<div class="stat-label" style="margin-top:10px;">No meals logged today yet</div>` : ''}
     </div>
 

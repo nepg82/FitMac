@@ -27,9 +27,9 @@ async function renderMeals(content) {
           <div class="list-item" data-id="${m.id}" style="cursor:pointer;">
             <div class="list-item-main">
               <div class="list-item-title">${escapeHtml(m.name)}</div>
-              <div class="list-item-sub">${m.items.length} item${m.items.length !== 1 ? 's' : ''} · P${round1(m.totals.protein)} C${round1(m.totals.carbs)} F${round1(m.totals.fat)}</div>
+              <div class="list-item-sub">${m.items.length} item${m.items.length !== 1 ? 's' : ''}</div>
             </div>
-            <div class="list-item-meta">${Math.round(m.totals.protein * 4 + m.totals.carbs * 4 + m.totals.fat * 9)} cal</div>
+            <div class="list-item-meta">${Math.round(mealTotalCalories(m))} cal</div>
           </div>
         `);
         row.onclick = () => openMealDetail(m);
@@ -77,7 +77,7 @@ function openMealDetail(meal) {
           <div class="list-item-main">
             <div class="list-item-title">${escapeHtml(it.name)}</div>
           </div>
-          <div class="list-item-meta">P${round1(it.protein)} C${round1(it.carbs)} F${round1(it.fat)}</div>
+          <div class="list-item-meta">${Math.round(caloriesForItem(it))} cal</div>
         </div>
       `).join('')}
     </div>
@@ -91,7 +91,7 @@ function openMealDetail(meal) {
   `;
   const sheet = openSheet(escapeHtml(meal.name), bodyHtml, (body) => {
     body.querySelector('#duplicate-btn').onclick = async () => {
-      await DB.saveMealEntry({ date: DB.todayISO(), name: meal.name, items: meal.items.map(it => ({ name: it.name, protein: it.protein, carbs: it.carbs, fat: it.fat })) });
+      await DB.saveMealEntry({ date: DB.todayISO(), name: meal.name, items: meal.items.map(it => ({ name: it.name, calories: caloriesForItem(it) })) });
       closeSheet();
       showToast('Meal added to today');
       renderApp();
@@ -134,14 +134,14 @@ async function openRepeatPicker() {
           <div class="list-item" style="cursor:pointer;">
             <div class="list-item-main">
               <div class="list-item-title">${escapeHtml(m.name)}</div>
-              <div class="list-item-sub">P${round1(m.totals.protein)} C${round1(m.totals.carbs)} F${round1(m.totals.fat)}</div>
+              <div class="list-item-sub">${m.items.length} item${m.items.length !== 1 ? 's' : ''}</div>
             </div>
-            <button class="btn btn-sm btn-primary">Add</button>
+            <button class="btn btn-sm btn-primary">${Math.round(mealTotalCalories(m))} cal · Add</button>
           </div>
         `);
         row.querySelector('button').onclick = async (e) => {
           e.stopPropagation();
-          await DB.saveMealEntry({ date: DB.todayISO(), name: m.name, items: m.items.map(it => ({ name: it.name, protein: it.protein, carbs: it.carbs, fat: it.fat })) });
+          await DB.saveMealEntry({ date: DB.todayISO(), name: m.name, items: m.items.map(it => ({ name: it.name, calories: caloriesForItem(it) })) });
           closeSheet();
           showToast('Meal added to today');
           renderApp();
@@ -187,18 +187,10 @@ function openMealForm(existingMeal) {
             </div>
             <div class="autocomplete-list" style="display:none;"></div>
           </div>
-          <div class="item-row-grid">
+          <div class="item-row-grid item-row-grid-single">
             <div>
-              <div class="mini-label">Protein (g)</div>
-              <input type="number" inputmode="decimal" class="item-protein" value="${prefill ? prefill.protein : ''}" placeholder="0" />
-            </div>
-            <div>
-              <div class="mini-label">Carbs (g)</div>
-              <input type="number" inputmode="decimal" class="item-carbs" value="${prefill ? prefill.carbs : ''}" placeholder="0" />
-            </div>
-            <div>
-              <div class="mini-label">Fat (g)</div>
-              <input type="number" inputmode="decimal" class="item-fat" value="${prefill ? prefill.fat : ''}" placeholder="0" />
+              <div class="mini-label">Calories</div>
+              <input type="number" inputmode="numeric" class="item-calories" value="${prefill ? Math.round(caloriesForItem(prefill)) : ''}" placeholder="0" />
             </div>
           </div>
         </div>
@@ -220,14 +212,12 @@ function openMealForm(existingMeal) {
             const item = el(`
               <div class="autocomplete-item">
                 <span>${escapeHtml(r.name)}</span>
-                <span class="ac-macro">P${round1(r.protein)} C${round1(r.carbs)} F${round1(r.fat)}</span>
+                <span class="ac-macro">${Math.round(caloriesForItem(r))} cal</span>
               </div>
             `);
             item.onclick = () => {
               nameInput.value = r.name;
-              row.querySelector('.item-protein').value = r.protein;
-              row.querySelector('.item-carbs').value = r.carbs;
-              row.querySelector('.item-fat').value = r.fat;
+              row.querySelector('.item-calories').value = Math.round(caloriesForItem(r));
               acList.style.display = 'none';
             };
             acList.appendChild(item);
@@ -254,9 +244,7 @@ function openMealForm(existingMeal) {
       const rows = Array.from(rowsEl.querySelectorAll('.item-row'));
       const items = rows.map(r => ({
         name: r.querySelector('.item-name').value.trim(),
-        protein: Number(r.querySelector('.item-protein').value) || 0,
-        carbs: Number(r.querySelector('.item-carbs').value) || 0,
-        fat: Number(r.querySelector('.item-fat').value) || 0
+        calories: Number(r.querySelector('.item-calories').value) || 0
       })).filter(it => it.name);
       if (items.length === 0) { showToast('Add at least one food item'); return; }
       await DB.saveMealEntry({ id: isEdit ? existingMeal.id : undefined, date, name, items });

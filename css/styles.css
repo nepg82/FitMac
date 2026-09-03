@@ -241,7 +241,9 @@ label {
 
 .btn-row { display: flex; gap: 10px; }
 
-/* Macro balance bar - signature dashboard element */
+/* Macro balance bar — RETAINED BUT CURRENTLY UNUSED.
+   The dashboard's macro breakdown card is disabled (see MACROS_ENABLED in
+   dashboard.js). Kept here so the feature can be reactivated later. */
 .macro-bar {
   display: flex;
   height: 12px;
@@ -336,6 +338,10 @@ label {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
   margin-top: 8px;
+}
+/* Used for the calories-only item row (macros feature is disabled — see dashboard.js/meals.js) */
+.item-row-grid-single {
+  grid-template-columns: 1fr;
 }
 .item-row .remove-btn {
   position: absolute;

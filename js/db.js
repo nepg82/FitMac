@@ -123,12 +123,15 @@ delete(store, id) {
   },
 
   // --- Food items (reusable library) ---
-  async upsertFoodItem({ name, protein, carbs, fat }) {
+  async upsertFoodItem({ name, calories }) {
     const all = await DB.getAll('foodItems');
     const existing = all.find(f => f.name.trim().toLowerCase() === name.trim().toLowerCase());
+    // Note: if `existing` was created back when the app tracked macros, it may
+    // still carry protein/carbs/fat fields. We leave those alone (harmless,
+    // unused) rather than stripping them — see app.js `caloriesForItem`.
     const item = existing
-      ? { ...existing, protein, carbs, fat }
-      : { id: uuid(), name: name.trim(), protein, carbs, fat, createdAt: Date.now() };
+      ? { ...existing, calories }
+      : { id: uuid(), name: name.trim(), calories, createdAt: Date.now() };
     await DB.put('foodItems', item);
     return item;
   },
@@ -142,20 +145,16 @@ delete(store, id) {
 
   // --- Meals ---
   async saveMealEntry(meal) {
-    // meal: { id?, date, name, items: [{name, protein, carbs, fat}] }
+    // meal: { id?, date, name, items: [{name, calories}] }
     const id = meal.id || uuid();
-    const totals = meal.items.reduce((acc, it) => {
-      acc.protein += Number(it.protein) || 0;
-      acc.carbs += Number(it.carbs) || 0;
-      acc.fat += Number(it.fat) || 0;
-      return acc;
-    }, { protein: 0, carbs: 0, fat: 0 });
+    const totalCalories = meal.items.reduce((sum, it) => sum + (Number(it.calories) || 0), 0);
+    const totals = { calories: totalCalories };
     const entry = { id, date: meal.date, name: meal.name, items: meal.items, totals, createdAt: meal.createdAt || Date.now() };
     await DB.put('mealEntries', entry);
     // upsert each item into the food library for reuse
     for (const it of meal.items) {
       if (it.name && it.name.trim()) {
-        await DB.upsertFoodItem({ name: it.name, protein: it.protein, carbs: it.carbs, fat: it.fat });
+        await DB.upsertFoodItem({ name: it.name, calories: it.calories });
       }
     }
     return entry;
