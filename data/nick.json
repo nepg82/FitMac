@@ -1,6 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-02T23:09:23.643Z",
+  "exportedAt": "2026-09-04T13:09:25.053Z",
+  "lastModified": 1788527348243,
   "foodItems": [
     {
       "id": "127d86c4-580d-4c22-91a4-f1b494e19d31",
@@ -40,7 +41,8 @@
       "protein": 19.2,
       "carbs": 3.8,
       "fat": 29.8,
-      "createdAt": 1788096886164
+      "createdAt": 1788096886164,
+      "calories": 360
     },
     {
       "id": "d2bc7f62-70b6-4009-a896-2340a16c02bb",
@@ -127,6 +129,21 @@
         "fat": 80
       },
       "createdAt": 1788092623101
+    },
+    {
+      "id": "a36be586-3c0d-4605-b921-94225f063cc4",
+      "date": "2026-09-03",
+      "name": "Breakfast Scramble",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 360
+        }
+      ],
+      "totals": {
+        "calories": 360
+      },
+      "createdAt": 1788527348232
     },
     {
       "id": "de03b5fc-6835-4fdf-bd1f-32fd8b520752",
