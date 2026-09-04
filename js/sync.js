@@ -91,6 +91,11 @@ async function pullLatest(username) {
       token: s.githubToken, branch: s.githubBranch || undefined
     });
     if (!existing) { showToast('No backup found on GitHub'); return; }
+    const confirmed = confirm(
+      `Replace local data with the GitHub backup for "${username}"? ` +
+      `This will discard anything on this device that hasn't been backed up yet.`
+    );
+    if (!confirmed) return;
     await DB.replaceAll(existing.json);
     await DB.saveSettings({ activeUsername: username, dataDirty: false, loadedAt: Date.now() });
     showToast('Pulled latest from GitHub');
@@ -260,7 +265,23 @@ async function renderSettings(content) {
         await DB.importAll(result.json);
         await DB.saveSettings({ activeUsername: target, dataDirty: false, loadedAt: Date.now() });
       } else {
-        await DB.saveSettings({ activeUsername: target, dataDirty: false, loadedAt: Date.now() });
+        // No existing backup for this user — it's a brand new profile, so
+        // reset the user-scoped fields (target weight, calorie goal, etc.)
+        // instead of carrying over whatever the previous user had set.
+        // githubOwner/githubRepo/githubBranch/githubToken/lastSyncedAt are
+        // left untouched since those describe this device's GitHub
+        // connection, not the user.
+        await DB.saveSettings({
+          targetWeight: null,
+          calorieGoal: null,
+          proteinGoal: null,
+          carbsGoal: null,
+          fatGoal: null,
+          activeUsername: target,
+          dataDirty: false,
+          loadedAt: Date.now(),
+          lastModified: Date.now()
+        });
       }
       showToast(result ? `Switched to ${target}` : `Switched to ${target} (new user)`);
       renderApp();

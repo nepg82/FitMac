@@ -4,6 +4,7 @@
 
 const GitHubAPI = (() => {
     const API_BASE = "https://api.github.com";
+    const REQUEST_TIMEOUT_MS = 15000;
 
     function unicodeToBase64(str) {
         const bytes = new TextEncoder().encode(str);
@@ -21,15 +22,34 @@ const GitHubAPI = (() => {
 
     async function request(path, { method = "GET", token, body } = {}) {
 
-        const res = await fetch(`${API_BASE}${path}`, {
-            method,
-            headers: {
-                "Accept": "application/vnd.github+json",
-                ...(token ? { "Authorization": `Bearer ${token}` } : {}),
-                ...(body ? { "Content-Type": "application/json" } : {})
-            },
-            body: body ? JSON.stringify(body) : undefined
-        });
+        // Live data calls (unlike the service worker's cached static assets)
+        // have no stale copy to fall back to, so on a dead/laggy connection
+        // the right move is to fail fast with a clear message rather than
+        // hang on the browser's own (much longer) default timeout — that's
+        // what left callers like the "Backing up…" button looking frozen.
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
+        let res;
+        try {
+            res = await fetch(`${API_BASE}${path}`, {
+                method,
+                signal: controller.signal,
+                headers: {
+                    "Accept": "application/vnd.github+json",
+                    ...(token ? { "Authorization": `Bearer ${token}` } : {}),
+                    ...(body ? { "Content-Type": "application/json" } : {})
+                },
+                body: body ? JSON.stringify(body) : undefined
+            });
+        } catch (e) {
+            if (e.name === "AbortError") {
+                throw new Error("GitHub request timed out — check your connection and try again.");
+            }
+            throw e;
+        } finally {
+            clearTimeout(timer);
+        }
 
         if (!res.ok) {
             let detail = "";
