@@ -41,6 +41,94 @@ async function backupNow() {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Launch-time "is GitHub newer than what I've got?" check.
+//
+// Mirrors the pattern from our other GitHub-backed PWA: every local write
+// stamps `settings.lastModified` (see db.js `markDirty()`), and that same
+// timestamp travels inside the exported JSON (`exportAll()`'s top-level
+// `lastModified`). So checking "is GitHub ahead of me" never needs to
+// download and diff the full dataset — just fetch the remote file and
+// compare one number.
+//
+// Unlike the single-file GarageLog app, FitMac is multi-user: the comparison
+// is scoped to whichever user is currently active on this device, comparing
+// against that user's `data/<username>.json` on GitHub.
+// ---------------------------------------------------------------------------
+
+// Returns "behind" (GitHub has a newer copy for the active user — probably
+// edited on another device), "ahead" (this device has edits GitHub doesn't
+// have yet), "current", or null if there's nothing to compare (no active
+// user, no saved GitHub connection, or no backup exists yet for this user).
+async function checkRemoteStatus() {
+  const s = await DB.getSettings();
+  if (!s.activeUsername || !s.githubOwner || !s.githubRepo || !s.githubToken) return null;
+  try {
+    const existing = await GitHubAPI.getJsonFile({
+      owner: s.githubOwner, repo: s.githubRepo, path: dataPathFor(s.activeUsername),
+      token: s.githubToken, branch: s.githubBranch || undefined
+    });
+    if (!existing || !existing.json || !existing.json.lastModified) return null;
+    const remoteTime = existing.json.lastModified;
+    const localTime = s.lastModified || 0;
+    if (remoteTime > localTime) return 'behind';
+    if (localTime > remoteTime) return 'ahead';
+    return 'current';
+  } catch (e) {
+    console.error('GitHub status check failed:', e);
+    return null;
+  }
+}
+
+// Pulls the given user's backup down from GitHub and replaces local data —
+// same underlying operation as switchUser()'s restore path, just without the
+// "you're switching to a different user" framing.
+async function pullLatest(username) {
+  const s = await DB.getSettings();
+  try {
+    const existing = await GitHubAPI.getJsonFile({
+      owner: s.githubOwner, repo: s.githubRepo, path: dataPathFor(username),
+      token: s.githubToken, branch: s.githubBranch || undefined
+    });
+    if (!existing) { showToast('No backup found on GitHub'); return; }
+    await DB.replaceAll(existing.json);
+    await DB.saveSettings({ activeUsername: username, dataDirty: false, loadedAt: Date.now() });
+    showToast('Pulled latest from GitHub');
+    renderApp();
+  } catch (e) {
+    showToast('Pull failed: ' + e.message);
+  }
+}
+
+// Kicks off a background check against GitHub at launch, once, for whoever
+// is the active user. Silent no-op in the common case (no connection
+// configured yet, nothing on GitHub yet, or GitHub matches/lags local data)
+// — this never blocks the UI or interrupts someone mid-edit. Only surfaces a
+// sheet when GitHub is strictly ahead, since that's the one case where
+// silently continuing risks working on top of stale data.
+async function runLaunchCheck() {
+  const status = await checkRemoteStatus();
+  if (status !== 'behind') return;
+  if (document.getElementById('active-sheet')) return; // don't interrupt whatever's already open
+
+  const s = await DB.getSettings();
+  const bodyHtml = `
+    <p class="stat-label" style="margin-bottom:16px;">
+      GitHub has a newer backup for <strong>${escapeHtml(s.activeUsername)}</strong> — probably from another device.
+      ${s.dataDirty ? ' You also have unsaved local changes that would be discarded if you pull it in.' : ''}
+    </p>
+    <button class="btn btn-primary btn-block" id="launch-check-pull" style="margin-bottom:10px;">Pull Latest from GitHub</button>
+    <button class="btn btn-ghost btn-block" id="launch-check-dismiss">Continue with Local Data</button>
+  `;
+  openSheet('Newer Data on GitHub', bodyHtml, (body) => {
+    body.querySelector('#launch-check-pull').onclick = async () => {
+      closeSheet();
+      await pullLatest(s.activeUsername);
+    };
+    body.querySelector('#launch-check-dismiss').onclick = () => closeSheet();
+  });
+}
+
 async function renderSettings(content) {
   const s = await DB.getSettings();
 

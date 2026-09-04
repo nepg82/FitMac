@@ -61,13 +61,19 @@ function todayISO() {
   return local.toISOString().slice(0, 10);
 }
 
+// Bumps dataDirty + lastModified on every write to a tracked data store.
+// lastModified is a plain epoch-ms timestamp (unlike GitHub's own commit
+// metadata) so it can be embedded directly in exportAll()'s payload and
+// compared, unit-for-unit, against the same field on a remote backup — see
+// sync.js `checkRemoteStatus()`. Unlike the old dataDirty-only version, this
+// always updates the timestamp (not just on the false->true transition) so
+// it reflects the most recent edit, not just "some edit happened".
 function markDirty() {
   return tx('settings', 'readwrite').then(s => new Promise((res) => {
     const getReq = s.get('main');
     getReq.onsuccess = () => {
       const current = getReq.result || { id: 'main' };
-      if (current.dataDirty) { res(); return; }
-      const putReq = s.put({ ...current, dataDirty: true });
+      const putReq = s.put({ ...current, dataDirty: true, lastModified: Date.now() });
       putReq.onsuccess = () => res();
       putReq.onerror = () => res();
     };
@@ -244,14 +250,20 @@ delete(store, id) {
     await DB.importAll(data);
   },
 
-  // --- Export (also basis for future GitHub sync) ---
+  // --- Export (also basis for GitHub sync) ---
+  //
+  // `lastModified` is embedded at the top level of the export (sibling to
+  // `foodItems`/`mealEntries`/etc, not nested inside `settings`) so it
+  // travels with the data itself. That's what lets a *different* device
+  // compare "how recent is the copy on GitHub" against its own local clock
+  // without needing to fetch full content — see sync.js `checkRemoteStatus()`.
   async exportAll() {
     const [foodItems, mealEntries, weightEntries, workoutSessions, settingsRaw] = await Promise.all([
       DB.getAll('foodItems'), DB.getAll('mealEntries'), DB.getAll('weightEntries'),
       DB.getAll('workoutSessions'), DB.getSettings()
     ]);
-	const { githubToken, githubOwner, githubRepo, githubBranch, lastSyncedAt, activeUsername, dataDirty, loadedAt, ...settings } = settingsRaw;
-    return { version: 1, exportedAt: new Date().toISOString(), foodItems, mealEntries, weightEntries, workoutSessions, settings };
+	const { githubToken, githubOwner, githubRepo, githubBranch, lastSyncedAt, activeUsername, dataDirty, loadedAt, lastModified, ...settings } = settingsRaw;
+    return { version: 1, exportedAt: new Date().toISOString(), lastModified: lastModified || Date.now(), foodItems, mealEntries, weightEntries, workoutSessions, settings };
   },
 
   async importAll(data) {
@@ -261,11 +273,15 @@ delete(store, id) {
   	}
 	if (data.settings) {
 	  const current = await DB.getSettings();
-	  const { githubToken, githubOwner, githubRepo, githubBranch, activeUsername, lastSyncedAt, dataDirty, loadedAt, ...rest } = data.settings;
+	  const { githubToken, githubOwner, githubRepo, githubBranch, activeUsername, lastSyncedAt, dataDirty, loadedAt, lastModified, ...rest } = data.settings;
 	  // Note: activeUsername is intentionally NOT set here — exportAll() never
-	  // round-trips it, so callers (e.g. switchUser in sync.js) are responsible
-	  // for setting activeUsername themselves after importAll() resolves.
-	  await DB.put('settings', { ...current, ...rest, id: 'main', dataDirty: false, loadedAt: Date.now() });
+	  // round-trips it, so callers (e.g. switchUser/pullLatest in sync.js) are
+	  // responsible for setting activeUsername themselves after importAll()
+	  // resolves. `lastModified` is adopted from the top-level `data.lastModified`
+	  // (the imported data's own edit time), not from `data.settings` — so this
+	  // device's notion of "how fresh is my local copy" matches what was
+	  // actually imported, rather than this device's edit clock.
+	  await DB.put('settings', { ...current, ...rest, id: 'main', dataDirty: false, loadedAt: Date.now(), lastModified: data.lastModified || Date.now() });
 	}
   }
 };
