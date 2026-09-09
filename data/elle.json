@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-09T20:55:21.472Z",
-  "lastModified": 1788987309108,
+  "exportedAt": "2026-09-09T20:56:30.607Z",
+  "lastModified": 1788987353708,
   "foodItems": [
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -24,6 +24,12 @@
       "carbs": 40,
       "fat": 18,
       "createdAt": 1788318343096
+    },
+    {
+      "id": "a0dfb5d7-800e-4a96-b0b2-512952845060",
+      "name": "Homemade lunch",
+      "calories": 330,
+      "createdAt": 1788987353704
     },
     {
       "id": "c6ad5477-4494-4f56-9ba3-3698af8a4e08",
@@ -80,6 +86,21 @@
         "fat": 3
       },
       "createdAt": 1788400978894
+    },
+    {
+      "id": "046f639b-b5db-4482-9bcf-5ab46000c2ab",
+      "date": "2026-09-08",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Homemade lunch",
+          "calories": 330
+        }
+      ],
+      "totals": {
+        "calories": 330
+      },
+      "createdAt": 1788987353687
     },
     {
       "id": "17e14f7a-30d9-4191-8c0d-0da4dcb6a965",
