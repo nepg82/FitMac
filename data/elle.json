@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-09T11:01:40.892Z",
+  "exportedAt": "2026-09-09T11:02:47.525Z",
   "foodItems": [
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -111,6 +111,25 @@
         "fat": 57
       },
       "createdAt": 1788401103019
+    },
+    {
+      "date": "2026-09-08",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Anderson's double burger",
+          "calories": 450
+        },
+        {
+          "name": "Curly fries",
+          "calories": 200
+        }
+      ],
+      "totals": {
+        "calories": 650
+      },
+      "id": "f93760c8-70ba-49c5-b6ac-4790bc34c65e",
+      "createdAt": 1788951767525
     }
   ],
   "weightEntries": [
@@ -255,5 +274,5 @@
     "fatGoal": null,
     "username": "elle"
   },
-  "lastModified": 1788951700892
+  "lastModified": 1788951767525
 }
