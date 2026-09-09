@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-09T11:02:47.525Z",
+  "exportedAt": "2026-09-09T20:51:41.062Z",
   "foodItems": [
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -263,6 +263,49 @@
       ],
       "id": "ce044457-d9ac-4109-9014-9c05a33be8a2",
       "createdAt": 1788951700892
+    },
+    {
+      "name": "260909",
+      "date": "2026-09-09",
+      "exercises": [
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "5",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "5",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "id": "00af4f09-208b-4e10-8b50-10be232a5316",
+      "createdAt": 1788987101062
     }
   ],
   "settings": {
@@ -274,5 +317,5 @@
     "fatGoal": null,
     "username": "elle"
   },
-  "lastModified": 1788951767525
+  "lastModified": 1788987101062
 }
