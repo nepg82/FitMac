@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-09T20:56:30.607Z",
-  "lastModified": 1788987353708,
+  "exportedAt": "2026-09-09T20:56:57.091Z",
+  "lastModified": 1788987402805,
   "foodItems": [
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -225,6 +225,12 @@
       "date": "2026-07-12",
       "weight": 215.2,
       "createdAt": 1788005938302
+    },
+    {
+      "id": "3df5d4bc-d970-4968-b985-003b9148c040",
+      "date": "2026-09-09",
+      "weight": 207.8,
+      "createdAt": 1788987402796
     },
     {
       "id": "b0fee0a2-ff17-4537-b215-f4baf2faa880",
