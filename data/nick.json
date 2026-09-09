@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-09T11:03:38.941Z",
-  "lastModified": 1788951810699,
+  "exportedAt": "2026-09-09T20:52:03.490Z",
+  "lastModified": 1788987094380,
   "foodItems": [
     {
       "id": "127d86c4-580d-4c22-91a4-f1b494e19d31",
@@ -54,7 +54,7 @@
       "carbs": 3.8,
       "fat": 29.8,
       "createdAt": 1788096886164,
-      "calories": 360
+      "calories": 210
     },
     {
       "id": "d2bc7f62-70b6-4009-a896-2340a16c02bb",
@@ -67,7 +67,7 @@
     {
       "id": "f4d885c4-ba38-4c7b-91f7-4f6214adc099",
       "name": "Homemade lunch",
-      "calories": 500,
+      "calories": 400,
       "createdAt": 1788905085436
     },
     {
@@ -187,6 +187,25 @@
         "calories": 150
       },
       "createdAt": 1788905030023
+    },
+    {
+      "id": "88ad1287-d84e-41c8-82d6-254ab898a572",
+      "date": "2026-09-09",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1788986915754
     },
     {
       "id": "a36be586-3c0d-4605-b921-94225f063cc4",
@@ -441,6 +460,49 @@
         }
       ],
       "createdAt": 1788904961747
+    },
+    {
+      "id": "ff90970d-baf0-4284-91d7-8250e9fa4217",
+      "name": "260909",
+      "date": "2026-09-09",
+      "exercises": [
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "5",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "5",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "createdAt": 1788987094365
     }
   ],
   "settings": {

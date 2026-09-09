@@ -1,6 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-09T11:02:47.525Z",
+  "exportedAt": "2026-09-09T20:57:51.213Z",
+  "lastModified": 1788987471213,
   "foodItems": [
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -11,6 +12,12 @@
       "createdAt": 1788318230592
     },
     {
+      "id": "1fb88e1c-1f22-4acc-9529-24f02f2379a7",
+      "name": "Anderson's Carl's Choice (or something)",
+      "calories": 400,
+      "createdAt": 1788987222701
+    },
+    {
       "id": "82e1f3fb-78a4-4a9a-a500-2a43ea5b8b6d",
       "name": "Lunch- watermelon, tuna mac salad, shrimp",
       "protein": 18,
@@ -19,12 +26,37 @@
       "createdAt": 1788318343096
     },
     {
+      "id": "a0dfb5d7-800e-4a96-b0b2-512952845060",
+      "name": "Homemade lunch",
+      "calories": 330,
+      "createdAt": 1788987353704
+    },
+    {
       "id": "c6ad5477-4494-4f56-9ba3-3698af8a4e08",
       "name": "Fairlife",
       "protein": 30,
       "carbs": 4,
       "fat": 3,
-      "createdAt": 1788400978901
+      "createdAt": 1788400978901,
+      "calories": 150
+    },
+    {
+      "id": "d8654314-62fa-4e25-83a0-8136252e7f0f",
+      "name": "Pizza (2 slices)",
+      "calories": 800,
+      "createdAt": 1788987287863
+    },
+    {
+      "id": "da1270af-d2a1-48a4-b28a-6f369ab1a289",
+      "name": "Curly fries",
+      "calories": 100,
+      "createdAt": 1788987222711
+    },
+    {
+      "id": "f2c62b90-f474-416e-83e3-419d9f0bfd74",
+      "name": "Zucchini bread slice",
+      "calories": 380,
+      "createdAt": 1788987287871
     },
     {
       "id": "f4f5607c-f7a1-4159-9e38-d580300c116e",
@@ -54,6 +86,55 @@
         "fat": 3
       },
       "createdAt": 1788400978894
+    },
+    {
+      "id": "046f639b-b5db-4482-9bcf-5ab46000c2ab",
+      "date": "2026-09-08",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Homemade lunch",
+          "calories": 330
+        }
+      ],
+      "totals": {
+        "calories": 330
+      },
+      "createdAt": 1788987353687
+    },
+    {
+      "id": "17e14f7a-30d9-4191-8c0d-0da4dcb6a965",
+      "date": "2026-09-09",
+      "name": "Fairlife",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1788987309094
+    },
+    {
+      "id": "2944af59-c3ac-4228-985d-265f19cf98a9",
+      "date": "2026-09-09",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Pizza (2 slices)",
+          "calories": 800
+        },
+        {
+          "name": "Zucchini bread slice",
+          "calories": 380
+        }
+      ],
+      "totals": {
+        "calories": 1180
+      },
+      "createdAt": 1788987287844
     },
     {
       "id": "4ba499ad-7d17-4bfa-958f-26692450ba7a",
@@ -113,23 +194,23 @@
       "createdAt": 1788401103019
     },
     {
+      "id": "f93760c8-70ba-49c5-b6ac-4790bc34c65e",
       "date": "2026-09-08",
       "name": "Dinner",
       "items": [
         {
-          "name": "Anderson's double burger",
-          "calories": 450
+          "name": "Anderson's Carl's Choice (or something)",
+          "calories": 400
         },
         {
           "name": "Curly fries",
-          "calories": 200
+          "calories": 100
         }
       ],
       "totals": {
-        "calories": 650
+        "calories": 500
       },
-      "id": "f93760c8-70ba-49c5-b6ac-4790bc34c65e",
-      "createdAt": 1788951767525
+      "createdAt": 1788987222674
     }
   ],
   "weightEntries": [
@@ -144,6 +225,12 @@
       "date": "2026-07-12",
       "weight": 215.2,
       "createdAt": 1788005938302
+    },
+    {
+      "id": "3df5d4bc-d970-4968-b985-003b9148c040",
+      "date": "2026-09-09",
+      "weight": 207.8,
+      "createdAt": 1788987402796
     },
     {
       "id": "b0fee0a2-ff17-4537-b215-f4baf2faa880",
@@ -191,21 +278,6 @@
         }
       ],
       "createdAt": 1788380437104
-    },
-    {
-      "id": "f0095740-366a-48d1-adc1-6e28ba431ef1",
-      "name": "Treadmill",
-      "date": "2026-09-02",
-      "exercises": [
-        {
-          "exercise": "Treadmill",
-          "sets": "35",
-          "reps": "5",
-          "weight": "3",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1788400838680
     },
     {
       "name": "260908",
@@ -263,6 +335,64 @@
       ],
       "id": "ce044457-d9ac-4109-9014-9c05a33be8a2",
       "createdAt": 1788951700892
+    },
+    {
+      "id": "f0095740-366a-48d1-adc1-6e28ba431ef1",
+      "name": "Treadmill",
+      "date": "2026-09-02",
+      "exercises": [
+        {
+          "exercise": "Treadmill",
+          "sets": "35",
+          "reps": "5",
+          "weight": "3",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1788400838680
+    },
+    {
+      "name": "260909",
+      "date": "2026-09-09",
+      "exercises": [
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "5",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "5",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "id": "c776649c-283a-4122-894c-a4c28d1adff4",
+      "createdAt": 1788987471213
     }
   ],
   "settings": {
@@ -273,6 +403,5 @@
     "carbsGoal": null,
     "fatGoal": null,
     "username": "elle"
-  },
-  "lastModified": 1788951767525
+  }
 }
