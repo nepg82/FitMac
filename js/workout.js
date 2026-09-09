@@ -95,7 +95,7 @@ async function openSessionForm(existingSession) {
   const bodyHtml = `
     <div class="field">
       <label>Workout Name</label>
-      <input type="text" id="session-name" placeholder="e.g. Push Day" value="${isEdit ? escapeHtml(existingSession.name) : ''}" />
+      <input type="text" id="session-name" placeholder="e.g. Push Day" value="${isEdit ? escapeHtml(existingSession.name) : 'daily workout'}" />
     </div>
     <div class="field">
       <label>Date</label>
