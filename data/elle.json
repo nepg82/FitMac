@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-09T20:56:57.091Z",
-  "lastModified": 1788987402805,
+  "exportedAt": "2026-09-09T20:57:51.213Z",
+  "lastModified": 1788987471213,
   "foodItems": [
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -350,6 +350,49 @@
         }
       ],
       "createdAt": 1788400838680
+    },
+    {
+      "name": "260909",
+      "date": "2026-09-09",
+      "exercises": [
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "5",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "5",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "id": "c776649c-283a-4122-894c-a4c28d1adff4",
+      "createdAt": 1788987471213
     }
   ],
   "settings": {
