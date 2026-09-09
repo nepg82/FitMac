@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-03T02:05:19.827Z",
+  "exportedAt": "2026-09-09T11:02:47.525Z",
   "foodItems": [
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -111,6 +111,25 @@
         "fat": 57
       },
       "createdAt": 1788401103019
+    },
+    {
+      "date": "2026-09-08",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Anderson's double burger",
+          "calories": 450
+        },
+        {
+          "name": "Curly fries",
+          "calories": 200
+        }
+      ],
+      "totals": {
+        "calories": 650
+      },
+      "id": "f93760c8-70ba-49c5-b6ac-4790bc34c65e",
+      "createdAt": 1788951767525
     }
   ],
   "weightEntries": [
@@ -187,6 +206,63 @@
         }
       ],
       "createdAt": 1788400838680
+    },
+    {
+      "name": "260908",
+      "date": "2026-09-08",
+      "exercises": [
+        {
+          "exercise": "Bicep curl",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Bicep hammers",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Preacher curl",
+          "sets": "3",
+          "reps": "10",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Tricep extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        },
+        {
+          "exercise": "Tricep push down",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Tricep pull down",
+          "sets": "3",
+          "reps": "10",
+          "weight": "45",
+          "notes": ""
+        }
+      ],
+      "id": "ce044457-d9ac-4109-9014-9c05a33be8a2",
+      "createdAt": 1788951700892
     }
   ],
   "settings": {
@@ -197,5 +273,6 @@
     "carbsGoal": null,
     "fatGoal": null,
     "username": "elle"
-  }
+  },
+  "lastModified": 1788951767525
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-08T22:06:51.209Z",
-  "lastModified": 1788905181972,
+  "exportedAt": "2026-09-09T11:03:38.941Z",
+  "lastModified": 1788951810699,
   "foodItems": [
     {
       "id": "127d86c4-580d-4c22-91a4-f1b494e19d31",
@@ -271,6 +271,21 @@
         "fat": 29.8
       },
       "createdAt": 1788375005318
+    },
+    {
+      "id": "e8f6a967-939e-48d3-a138-4aa01643bb35",
+      "date": "2026-09-09",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1788951810696
     },
     {
       "id": "f0e6be14-b5e5-4264-91d4-ea624c41b37c",
