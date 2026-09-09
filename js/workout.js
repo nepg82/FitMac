@@ -50,6 +50,9 @@ function openSessionDetail(session) {
     <div class="btn-row" style="margin-top:14px;margin-bottom:10px;">
       <button class="btn btn-primary btn-block" id="duplicate-session-btn">Duplicate to Today</button>
     </div>
+    <div class="btn-row" style="margin-bottom:10px;">
+      <button class="btn btn-ghost btn-block" id="copy-to-user-btn">Copy to Family Member</button>
+    </div>
     <div class="btn-row">
       <button class="btn btn-ghost btn-block" id="edit-session-btn">Edit</button>
       <button class="btn btn-danger btn-block" id="delete-session-btn">Delete</button>
@@ -65,6 +68,10 @@ function openSessionDetail(session) {
       closeSheet();
       showToast('Workout added to today');
       renderApp();
+    };
+    body.querySelector('#copy-to-user-btn').onclick = () => {
+      closeSheet();
+      openSharePicker('workoutSessions', session);
     };
     body.querySelector('#edit-session-btn').onclick = () => {
       closeSheet();
@@ -146,6 +153,36 @@ async function openSessionForm(existingSession) {
     exNameInput.addEventListener('focus', () => { if (exerciseNames.length) exNameInput.dispatchEvent(new Event('input')); });
     exNameInput.addEventListener('blur', () => setTimeout(() => acList.style.display = 'none', 150));
 
+    // editingIndex tracks whether the form fields above currently represent
+    // a brand-new exercise (null) or an in-place edit of an existing one
+    // (the index into sessionExercises). This is what lets someone — e.g.
+    // your wife, after you copy today's session to her account — tap an
+    // exercise and just tweak her own weight/reps instead of deleting and
+    // re-adding it.
+    let editingIndex = null;
+    const addExBtn = body.querySelector('#add-ex-btn');
+
+    function fillExerciseFields(ex) {
+      body.querySelector('#ex-name').value = ex.exercise || '';
+      body.querySelector('#ex-sets').value = ex.sets || '';
+      body.querySelector('#ex-reps').value = ex.reps || '';
+      body.querySelector('#ex-weight').value = ex.weight || '';
+      body.querySelector('#ex-notes').value = ex.notes || '';
+    }
+
+    function stopEditing() {
+      editingIndex = null;
+      fillExerciseFields({});
+      addExBtn.textContent = '+ Add to Session';
+    }
+
+    function startEditingExercise(i) {
+      editingIndex = i;
+      fillExerciseFields(sessionExercises[i]);
+      addExBtn.textContent = 'Update Exercise';
+      body.querySelector('#ex-name').focus();
+    }
+
     function renderSessionList() {
       if (sessionExercises.length === 0) {
         sessionListEl.innerHTML = `<div class="empty-state" style="padding:16px;">No exercises added yet</div>`;
@@ -154,7 +191,7 @@ async function openSessionForm(existingSession) {
       sessionListEl.innerHTML = '';
       sessionExercises.forEach((ex, i) => {
         const row = el(`
-          <div class="exercise-log-item" style="position:relative;">
+          <div class="exercise-log-item" style="position:relative;cursor:pointer;">
             <button type="button" class="remove-btn" style="position:absolute;top:8px;right:8px;background:none;border:none;color:var(--text-faint);font-size:18px;">&times;</button>
             <div class="ex-name">${escapeHtml(ex.exercise)}</div>
             <div class="ex-meta">${[
@@ -162,31 +199,40 @@ async function openSessionForm(existingSession) {
               ex.reps ? `${ex.reps} reps` : null,
               ex.weight ? `${ex.weight} lbs` : null
             ].filter(Boolean).join(' · ') || 'No sets/reps/weight'}</div>
+            ${ex.notes ? `<div class="list-item-sub" style="margin-top:4px;">${escapeHtml(ex.notes)}</div>` : ''}
+            ${editingIndex === i ? `<div class="stat-label" style="margin-top:6px;color:var(--text-dim);">Editing…</div>` : ''}
           </div>
         `);
-        row.querySelector('.remove-btn').onclick = () => { sessionExercises.splice(i, 1); renderSessionList(); };
+        row.querySelector('.remove-btn').onclick = (e) => {
+          e.stopPropagation();
+          sessionExercises.splice(i, 1);
+          if (editingIndex === i) stopEditing();
+          renderSessionList();
+        };
+        row.addEventListener('click', () => startEditingExercise(i));
         sessionListEl.appendChild(row);
       });
     }
     renderSessionList();
 
-    body.querySelector('#add-ex-btn').onclick = () => {
+    addExBtn.onclick = () => {
       const exercise = body.querySelector('#ex-name').value.trim();
       if (!exercise) { showToast('Exercise name is required'); return; }
-      sessionExercises.push({
+      const data = {
         exercise,
         sets: body.querySelector('#ex-sets').value || '',
         reps: body.querySelector('#ex-reps').value || '',
         weight: body.querySelector('#ex-weight').value || '',
         notes: body.querySelector('#ex-notes').value.trim()
-      });
-      body.querySelector('#ex-name').value = '';
-      body.querySelector('#ex-sets').value = '';
-      body.querySelector('#ex-reps').value = '';
-      body.querySelector('#ex-weight').value = '';
-      body.querySelector('#ex-notes').value = '';
+      };
+      if (editingIndex !== null) {
+        sessionExercises[editingIndex] = data;
+      } else {
+        sessionExercises.push(data);
+        if (!exerciseNames.includes(exercise)) exerciseNames.push(exercise);
+      }
+      stopEditing();
       renderSessionList();
-      if (!exerciseNames.includes(exercise)) exerciseNames.push(exercise);
     };
 
     body.querySelector('#save-session-btn').onclick = async () => {

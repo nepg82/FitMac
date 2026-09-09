@@ -134,6 +134,136 @@ async function runLaunchCheck() {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Share a single entry (a whole meal or workout session) to another user's
+// GitHub backup — without switching accounts and without touching this
+// device's local data at all.
+//
+// Unlike backupNow()/doBackup(), which overwrite the target file with a full
+// DB.exportAll() snapshot, this reads the target's existing remote JSON (or
+// starts a blank skeleton if they don't have one yet), appends a *copy* of
+// the entry with a fresh id, and writes that back. So it never touches the
+// rest of their data.
+//
+// LIMITATION: this writes directly to GitHub, bypassing the recipient's
+// local IndexedDB. If their device backs up (a full overwrite) before they
+// pull this change down, the shared entry will be lost. runLaunchCheck() on
+// their end will flag the file as newer on GitHub the next time they open
+// the app — that's the current safety net — but there's no locking, so a
+// pull is still on them to do before their own next backup.
+// ---------------------------------------------------------------------------
+async function shareEntryToUser(targetUsernameRaw, storeKey, entry) {
+  const target = sanitizeUsername(targetUsernameRaw);
+  if (!target) { showToast('Enter a username'); return false; }
+  const s = await DB.getSettings();
+  if (target === sanitizeUsername(s.activeUsername || '')) {
+    showToast("That's your own account");
+    return false;
+  }
+  if (!s.githubOwner || !s.githubRepo || !s.githubToken) {
+    showToast('Add your GitHub owner, repo, and token in Settings first');
+    return false;
+  }
+  const path = dataPathFor(target);
+  try {
+    const existing = await GitHubAPI.getJsonFile({
+      owner: s.githubOwner, repo: s.githubRepo, path,
+      token: s.githubToken, branch: s.githubBranch || undefined
+    });
+    const remoteData = existing ? existing.json : {
+      version: 1, foodItems: [], mealEntries: [], weightEntries: [], workoutSessions: [], settings: {}
+    };
+    // Fresh id so it doesn't collide with the sender's own copy of the
+    // entry; fresh createdAt so it sorts as newly-added on the recipient's
+    // side rather than wherever it happened to fall in the sender's history.
+    const { id, createdAt, ...rest } = entry;
+    const copy = { ...rest, id: DB.uuid(), createdAt: Date.now() };
+    remoteData[storeKey] = [...(remoteData[storeKey] || []), copy];
+    remoteData.lastModified = Date.now();
+    remoteData.exportedAt = new Date().toISOString();
+    remoteData.version = remoteData.version || 1;
+
+    const label = storeKey === 'workoutSessions' ? 'workout session' : 'meal';
+    await GitHubAPI.putJsonFile({
+      owner: s.githubOwner, repo: s.githubRepo, path,
+      token: s.githubToken, branch: s.githubBranch || undefined,
+      json: remoteData, sha: existing ? existing.sha : undefined,
+      message: `Share ${label} "${entry.name}"${s.activeUsername ? ` from ${s.activeUsername}` : ''} to ${target}`
+    });
+    return true;
+  } catch (e) {
+    showToast('Share failed: ' + e.message);
+    return false;
+  }
+}
+
+// Opens a small sheet to pick (or type) a target username and share `entry`
+// into their remote data under `storeKey` ('workoutSessions' | 'mealEntries').
+async function openSharePicker(storeKey, entry) {
+  const s = await DB.getSettings();
+  if (!s.githubOwner || !s.githubRepo || !s.githubToken) {
+    showToast('Add your GitHub owner, repo, and token in Settings first');
+    return;
+  }
+  const bodyHtml = `
+    <div class="field">
+      <label>Username</label>
+      <input type="text" id="share-username-input" placeholder="e.g. elle" autocomplete="off" />
+    </div>
+    <div id="share-user-list" style="margin-bottom:14px;"></div>
+    <p class="stat-label" style="margin-bottom:14px;">
+      This copies "${escapeHtml(entry.name)}" straight to their GitHub backup. If they haven't opened
+      the app since, they'll be prompted to pull it in next time they do.
+    </p>
+    <button class="btn btn-primary btn-block" id="share-confirm-btn">Copy Over</button>
+  `;
+  openSheet(`Copy "${escapeHtml(entry.name)}" To…`, bodyHtml, async (body) => {
+    const listEl = body.querySelector('#share-user-list');
+    const input = body.querySelector('#share-username-input');
+
+    // Best-effort: list known users so this is tap-to-pick instead of
+    // requiring exact spelling every time. Silently falls back to manual
+    // entry if the listing fails for any reason.
+    try {
+      const files = await GitHubAPI.listDirectory({
+        owner: s.githubOwner, repo: s.githubRepo, path: 'data',
+        token: s.githubToken, branch: s.githubBranch || undefined
+      });
+      const others = files
+        .filter(f => f.name && f.name.endsWith('.json'))
+        .map(f => f.name.replace(/\.json$/, ''))
+        .filter(u => u !== sanitizeUsername(s.activeUsername || ''));
+      if (others.length) {
+        const card = el('<div class="card"></div>');
+        others.forEach(u => {
+          const row = el(`
+            <div class="list-item" style="cursor:pointer;">
+              <div class="list-item-main"><div class="list-item-title">${escapeHtml(u)}</div></div>
+            </div>
+          `);
+          row.onclick = () => { input.value = u; };
+          card.appendChild(row);
+        });
+        listEl.appendChild(card);
+      }
+    } catch (e) {
+      // Non-fatal — manual entry still works.
+    }
+
+    body.querySelector('#share-confirm-btn').onclick = async () => {
+      const btn = body.querySelector('#share-confirm-btn');
+      const targetLabel = sanitizeUsername(input.value);
+      btn.disabled = true; btn.textContent = 'Copying…';
+      const ok = await shareEntryToUser(input.value, storeKey, entry);
+      btn.disabled = false; btn.textContent = 'Copy Over';
+      if (ok) {
+        closeSheet();
+        showToast(`Copied to ${targetLabel}`);
+      }
+    };
+  });
+}
+
 async function renderSettings(content) {
   const s = await DB.getSettings();
 

@@ -84,6 +84,9 @@ function openMealDetail(meal) {
     <div class="btn-row" style="margin-bottom:10px;">
       <button class="btn btn-primary btn-block" id="duplicate-btn">Duplicate to Today</button>
     </div>
+    <div class="btn-row" style="margin-bottom:10px;">
+      <button class="btn btn-ghost btn-block" id="copy-to-user-btn">Copy to Family Member</button>
+    </div>
     <div class="btn-row">
       <button class="btn btn-ghost btn-block" id="edit-meal-btn">Edit</button>
       <button class="btn btn-danger btn-block" id="delete-meal-btn">Delete</button>
@@ -95,6 +98,10 @@ function openMealDetail(meal) {
       closeSheet();
       showToast('Meal added to today');
       renderApp();
+    };
+    body.querySelector('#copy-to-user-btn').onclick = () => {
+      closeSheet();
+      openSharePicker('mealEntries', meal);
     };
     body.querySelector('#edit-meal-btn').onclick = () => {
       closeSheet();
