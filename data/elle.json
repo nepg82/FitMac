@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-11T09:44:49.674Z",
-  "lastModified": 1789119883476,
+  "exportedAt": "2026-09-11T09:47:22.802Z",
+  "lastModified": 1789120019148,
   "foodItems": [
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -10,6 +10,12 @@
       "carbs": 150,
       "fat": 100,
       "createdAt": 1788318230592
+    },
+    {
+      "id": "19613513-37dc-472e-9218-aff2f08f53f0",
+      "name": "Manito's (2 carnitas)",
+      "calories": 800,
+      "createdAt": 1789120019147
     },
     {
       "id": "1fb88e1c-1f22-4acc-9529-24f02f2379a7",
@@ -88,6 +94,21 @@
       "createdAt": 1788400978894
     },
     {
+      "id": "0415b715-58c0-4e90-ad60-e8c9bcf6f0bd",
+      "date": "2026-09-11",
+      "name": "Fairlife",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1789119951374
+    },
+    {
       "id": "046f639b-b5db-4482-9bcf-5ab46000c2ab",
       "date": "2026-09-08",
       "name": "Lunch",
@@ -101,6 +122,25 @@
         "calories": 330
       },
       "createdAt": 1788987353687
+    },
+    {
+      "id": "1255ecff-80d1-4c49-b1ee-1aafa6f8f59a",
+      "date": "2026-09-10",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Pizza (2 slices)",
+          "calories": 800
+        },
+        {
+          "name": "Zucchini bread slice",
+          "calories": 380
+        }
+      ],
+      "totals": {
+        "calories": 1180
+      },
+      "createdAt": 1789119946838
     },
     {
       "id": "17e14f7a-30d9-4191-8c0d-0da4dcb6a965",
@@ -173,6 +213,36 @@
         "fat": 100
       },
       "createdAt": 1788318230576
+    },
+    {
+      "id": "bde338c8-155b-4a40-92af-892852d6c9cf",
+      "date": "2026-09-10",
+      "name": "Diner",
+      "items": [
+        {
+          "name": "Manito's (2 carnitas)",
+          "calories": 800
+        }
+      ],
+      "totals": {
+        "calories": 800
+      },
+      "createdAt": 1789120019142
+    },
+    {
+      "id": "bf9fd2de-39ad-46d5-a9de-173ae83ddbe0",
+      "date": "2026-09-10",
+      "name": "Fairlife",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1789119939102
     },
     {
       "id": "ed4d0866-bdbc-4c20-91a8-1614fe33f958",
