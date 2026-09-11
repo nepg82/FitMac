@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-11T10:06:27.653Z",
-  "lastModified": 1789121042818,
+  "exportedAt": "2026-09-11T10:26:24.366Z",
+  "lastModified": 1789122369161,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -475,6 +475,12 @@
       "date": "2026-08-09",
       "weight": 258.4,
       "createdAt": 1787968854899
+    },
+    {
+      "id": "f30e8118-b177-4404-b8c9-74fe267ba8ab",
+      "date": "2026-09-11",
+      "weight": 254.2,
+      "createdAt": 1789122369147
     }
   ],
   "workoutSessions": [
