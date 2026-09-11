@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-09T20:57:51.213Z",
-  "lastModified": 1788987471213,
+  "exportedAt": "2026-09-11T09:44:49.674Z",
+  "lastModified": 1789119883476,
   "foodItems": [
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -280,7 +280,87 @@
       "createdAt": 1788380437104
     },
     {
-      "name": "260908",
+      "id": "ad047976-32db-4cbd-b757-4a619f97bfbc",
+      "name": "daily workout home",
+      "date": "2026-09-11",
+      "exercises": [
+        {
+          "exercise": "Side shoulder ext",
+          "sets": "3",
+          "reps": "10",
+          "weight": "3",
+          "notes": ""
+        },
+        {
+          "exercise": "Front shoulder ext",
+          "sets": "3",
+          "reps": "10",
+          "weight": "3",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat extension (wall)",
+          "sets": "3",
+          "reps": "10",
+          "weight": "3",
+          "notes": ""
+        },
+        {
+          "exercise": "Elliptical",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "1/2.5 20 minutes"
+        }
+      ],
+      "createdAt": 1789119805408
+    },
+    {
+      "id": "c776649c-283a-4122-894c-a4c28d1adff4",
+      "name": "daily workout Armory",
+      "date": "2026-09-09",
+      "exercises": [
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "5",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "5",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "createdAt": 1789119883470
+    },
+    {
+      "id": "ce044457-d9ac-4109-9014-9c05a33be8a2",
+      "name": "daily workout Armory",
       "date": "2026-09-08",
       "exercises": [
         {
@@ -333,8 +413,7 @@
           "notes": ""
         }
       ],
-      "id": "ce044457-d9ac-4109-9014-9c05a33be8a2",
-      "createdAt": 1788951700892
+      "createdAt": 1789119861302
     },
     {
       "id": "f0095740-366a-48d1-adc1-6e28ba431ef1",
@@ -350,49 +429,6 @@
         }
       ],
       "createdAt": 1788400838680
-    },
-    {
-      "name": "260909",
-      "date": "2026-09-09",
-      "exercises": [
-        {
-          "exercise": "Squats",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Lunges",
-          "sets": "3",
-          "reps": "5",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Leg press",
-          "sets": "3",
-          "reps": "5",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Deadlift",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
-        }
-      ],
-      "id": "c776649c-283a-4122-894c-a4c28d1adff4",
-      "createdAt": 1788987471213
     }
   ],
   "settings": {
