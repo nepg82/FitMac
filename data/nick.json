@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-11T09:43:43.761Z",
-  "lastModified": 1789119823761,
+  "exportedAt": "2026-09-11T09:51:29.792Z",
+  "lastModified": 1789120289792,
   "foodItems": [
     {
       "id": "127d86c4-580d-4c22-91a4-f1b494e19d31",
@@ -539,6 +539,63 @@
       ],
       "id": "49f45423-3b67-4310-9d2f-e8ecae6792bd",
       "createdAt": 1789119823761
+    },
+    {
+      "name": "daily workout Armory",
+      "date": "2026-09-10",
+      "exercises": [
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Incline press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "10",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "5",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "5",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Flutter kicks",
+          "sets": "3",
+          "reps": "10",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 15 minutes"
+        }
+      ],
+      "id": "01285c64-110e-483f-87c2-d7a4254f8f90",
+      "createdAt": 1789120289792
     }
   ],
   "settings": {
