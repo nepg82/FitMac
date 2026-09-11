@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-09T20:52:03.490Z",
-  "lastModified": 1788987094380,
+  "exportedAt": "2026-09-11T09:43:43.761Z",
+  "lastModified": 1789119823761,
   "foodItems": [
     {
       "id": "127d86c4-580d-4c22-91a4-f1b494e19d31",
@@ -503,6 +503,42 @@
         }
       ],
       "createdAt": 1788987094365
+    },
+    {
+      "name": "daily workout home",
+      "date": "2026-09-11",
+      "exercises": [
+        {
+          "exercise": "Side shoulder ext",
+          "sets": "3",
+          "reps": "10",
+          "weight": "3",
+          "notes": ""
+        },
+        {
+          "exercise": "Front shoulder ext",
+          "sets": "3",
+          "reps": "10",
+          "weight": "3",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat extension (wall)",
+          "sets": "3",
+          "reps": "10",
+          "weight": "3",
+          "notes": ""
+        },
+        {
+          "exercise": "Elliptical",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "1/2.5 20 minutes"
+        }
+      ],
+      "id": "49f45423-3b67-4310-9d2f-e8ecae6792bd",
+      "createdAt": 1789119823761
     }
   ],
   "settings": {
