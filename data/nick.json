@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-11T09:54:23.910Z",
-  "lastModified": 1789120456348,
+  "exportedAt": "2026-09-11T10:06:27.653Z",
+  "lastModified": 1789121042818,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -551,6 +551,7 @@
       "createdAt": 1788018672366
     },
     {
+      "id": "49f45423-3b67-4310-9d2f-e8ecae6792bd",
       "name": "daily workout home",
       "date": "2026-09-11",
       "exercises": [
@@ -558,33 +559,32 @@
           "exercise": "Side shoulder ext",
           "sets": "3",
           "reps": "10",
-          "weight": "3",
+          "weight": "5",
           "notes": ""
         },
         {
           "exercise": "Front shoulder ext",
           "sets": "3",
           "reps": "10",
-          "weight": "3",
+          "weight": "5",
           "notes": ""
         },
         {
           "exercise": "Lat extension (wall)",
           "sets": "3",
           "reps": "10",
-          "weight": "3",
+          "weight": "5",
           "notes": ""
         },
         {
-          "exercise": "Elliptical",
+          "exercise": "Treadmill",
           "sets": "1",
           "reps": "",
           "weight": "",
-          "notes": "1/2.5 20 minutes"
+          "notes": "3/2.2; 20 minutes"
         }
       ],
-      "id": "49f45423-3b67-4310-9d2f-e8ecae6792bd",
-      "createdAt": 1789119823761
+      "createdAt": 1789121042794
     },
     {
       "id": "8a517c5a-07a8-43f8-a548-6500ac81d0c5",
