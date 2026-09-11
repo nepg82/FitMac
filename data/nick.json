@@ -1,8 +1,14 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-11T09:51:29.792Z",
-  "lastModified": 1789120289792,
+  "exportedAt": "2026-09-11T09:54:23.910Z",
+  "lastModified": 1789120456348,
   "foodItems": [
+    {
+      "id": "00b91093-86d2-4025-9813-1591a6b34611",
+      "name": "Manito's (3 beef tacos)",
+      "calories": 1050,
+      "createdAt": 1789120449164
+    },
     {
       "id": "127d86c4-580d-4c22-91a4-f1b494e19d31",
       "name": "Four slices",
@@ -155,6 +161,21 @@
       "createdAt": 1788092623101
     },
     {
+      "id": "583e2133-dd38-4242-9772-338f6b06e8ac",
+      "date": "2026-09-10",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Manito's (3 beef tacos)",
+          "calories": 1050
+        }
+      ],
+      "totals": {
+        "calories": 1050
+      },
+      "createdAt": 1789120449147
+    },
+    {
       "id": "5aed04cc-35f9-4cf3-831f-088fe362a78d",
       "date": "2026-09-08",
       "name": "Dinner",
@@ -172,6 +193,21 @@
         "calories": 650
       },
       "createdAt": 1788905181943
+    },
+    {
+      "id": "72ed97c1-6277-4301-921b-6aa8986f9903",
+      "date": "2026-09-11",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1789120453412
     },
     {
       "id": "7ccea7d7-81e8-4364-850c-ea19d44aa24c",
@@ -221,6 +257,40 @@
         "calories": 360
       },
       "createdAt": 1788527348232
+    },
+    {
+      "id": "b1613d54-337c-4e4f-8e70-326bd515898a",
+      "date": "2026-09-10",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1789120409877
+    },
+    {
+      "id": "ce52b46c-a6b5-4b38-ace0-d00b2ea0aa20",
+      "date": "2026-09-10",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1789120388153
     },
     {
       "id": "d2ffb8a0-81d5-4b0e-9458-384c3a671847",
@@ -324,6 +394,25 @@
         "fat": 40
       },
       "createdAt": 1788138527726
+    },
+    {
+      "id": "f73203a6-1d68-4e48-8ecb-1cab9630590a",
+      "date": "2026-09-11",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1789120456339
     }
   ],
   "weightEntries": [
@@ -390,6 +479,63 @@
   ],
   "workoutSessions": [
     {
+      "id": "01285c64-110e-483f-87c2-d7a4254f8f90",
+      "name": "daily workout Armory",
+      "date": "2026-09-10",
+      "exercises": [
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Incline press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "5",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "5",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Flutter kicks",
+          "sets": "3",
+          "reps": "10",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 15 minutes"
+        }
+      ],
+      "createdAt": 1789120369374
+    },
+    {
       "id": "113084c4-6a25-422a-ac5a-04f29cb41df8",
       "name": "Hike Lockport",
       "date": "2026-08-29",
@@ -403,6 +549,42 @@
         }
       ],
       "createdAt": 1788018672366
+    },
+    {
+      "name": "daily workout home",
+      "date": "2026-09-11",
+      "exercises": [
+        {
+          "exercise": "Side shoulder ext",
+          "sets": "3",
+          "reps": "10",
+          "weight": "3",
+          "notes": ""
+        },
+        {
+          "exercise": "Front shoulder ext",
+          "sets": "3",
+          "reps": "10",
+          "weight": "3",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat extension (wall)",
+          "sets": "3",
+          "reps": "10",
+          "weight": "3",
+          "notes": ""
+        },
+        {
+          "exercise": "Elliptical",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "1/2.5 20 minutes"
+        }
+      ],
+      "id": "49f45423-3b67-4310-9d2f-e8ecae6792bd",
+      "createdAt": 1789119823761
     },
     {
       "id": "8a517c5a-07a8-43f8-a548-6500ac81d0c5",
@@ -503,99 +685,6 @@
         }
       ],
       "createdAt": 1788987094365
-    },
-    {
-      "name": "daily workout home",
-      "date": "2026-09-11",
-      "exercises": [
-        {
-          "exercise": "Side shoulder ext",
-          "sets": "3",
-          "reps": "10",
-          "weight": "3",
-          "notes": ""
-        },
-        {
-          "exercise": "Front shoulder ext",
-          "sets": "3",
-          "reps": "10",
-          "weight": "3",
-          "notes": ""
-        },
-        {
-          "exercise": "Lat extension (wall)",
-          "sets": "3",
-          "reps": "10",
-          "weight": "3",
-          "notes": ""
-        },
-        {
-          "exercise": "Elliptical",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "1/2.5 20 minutes"
-        }
-      ],
-      "id": "49f45423-3b67-4310-9d2f-e8ecae6792bd",
-      "createdAt": 1789119823761
-    },
-    {
-      "name": "daily workout Armory",
-      "date": "2026-09-10",
-      "exercises": [
-        {
-          "exercise": "Bench press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "0",
-          "notes": ""
-        },
-        {
-          "exercise": "Incline press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "10",
-          "notes": ""
-        },
-        {
-          "exercise": "Cable press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "30",
-          "notes": ""
-        },
-        {
-          "exercise": "Dead bugs",
-          "sets": "3",
-          "reps": "5",
-          "weight": "0",
-          "notes": ""
-        },
-        {
-          "exercise": "Bird dogs",
-          "sets": "3",
-          "reps": "5",
-          "weight": "0",
-          "notes": ""
-        },
-        {
-          "exercise": "Flutter kicks",
-          "sets": "3",
-          "reps": "10",
-          "weight": "0",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 15 minutes"
-        }
-      ],
-      "id": "01285c64-110e-483f-87c2-d7a4254f8f90",
-      "createdAt": 1789120289792
     }
   ],
   "settings": {
