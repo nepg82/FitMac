@@ -1,13 +1,19 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-11T10:26:24.366Z",
-  "lastModified": 1789122369161,
+  "exportedAt": "2026-09-12T00:59:45.325Z",
+  "lastModified": 1789174753967,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
       "name": "Manito's (3 beef tacos)",
       "calories": 1050,
       "createdAt": 1789120449164
+    },
+    {
+      "id": "08306c12-5eb1-47eb-a055-6d7ec55fcd7e",
+      "name": "Hot dogs (4)",
+      "calories": 1100,
+      "createdAt": 1789174679926
     },
     {
       "id": "127d86c4-580d-4c22-91a4-f1b494e19d31",
@@ -257,6 +263,21 @@
         "calories": 360
       },
       "createdAt": 1788527348232
+    },
+    {
+      "id": "ab3a7ebb-b64a-4cd7-a477-c95152acee49",
+      "date": "2026-09-11",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Hot dogs (4)",
+          "calories": 1100
+        }
+      ],
+      "totals": {
+        "calories": 1100
+      },
+      "createdAt": 1789174679899
     },
     {
       "id": "b1613d54-337c-4e4f-8e70-326bd515898a",
@@ -594,7 +615,7 @@
     },
     {
       "id": "8a517c5a-07a8-43f8-a548-6500ac81d0c5",
-      "name": "260908",
+      "name": "daily workout Armory",
       "date": "2026-09-08",
       "exercises": [
         {
@@ -647,11 +668,11 @@
           "notes": ""
         }
       ],
-      "createdAt": 1788904961747
+      "createdAt": 1789174732722
     },
     {
       "id": "ff90970d-baf0-4284-91d7-8250e9fa4217",
-      "name": "260909",
+      "name": "daily workout Armory",
       "date": "2026-09-09",
       "exercises": [
         {
@@ -690,7 +711,7 @@
           "notes": "3/3; 20 minutes"
         }
       ],
-      "createdAt": 1788987094365
+      "createdAt": 1789174753866
     }
   ],
   "settings": {
