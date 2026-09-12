@@ -98,7 +98,7 @@ async function renderDashboard(content) {
         </div>
       </div>
       ${latestWeight
-        ? `<canvas class="chart-canvas" id="dash-weight-chart" style="margin-top:6px;"></canvas>`
+        ? `<div class="chart-scroll" style="overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:6px;"><canvas class="chart-canvas" id="dash-weight-chart"></canvas></div>`
         : `<div class="empty-state">No weight entries yet</div>`}
     </div>
 
@@ -116,7 +116,7 @@ async function renderDashboard(content) {
   `;
 
   if (latestWeight) {
-    const points = recentWeights.map(e => ({ x: formatDateShort(e.date), y: e.weight }));
+    const points = recentWeights.map(e => ({ date: e.date, y: e.weight }));
     drawLineChart(document.getElementById('dash-weight-chart'), points, { color: '#7C5CFF', height: 100 });
   }
 

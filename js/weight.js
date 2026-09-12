@@ -8,7 +8,9 @@ async function renderWeight(content) {
   content.innerHTML = `
     <div class="card">
       <div class="card-title">Trend</div>
-      <canvas class="chart-canvas" id="weight-chart"></canvas>
+      <div class="chart-scroll" style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+        <canvas class="chart-canvas" id="weight-chart"></canvas>
+      </div>
     </div>
 
     <div class="btn-row" style="margin-bottom:16px;">
@@ -31,7 +33,7 @@ async function renderWeight(content) {
     <div id="weight-list"></div>
   `;
 
-  const chartPoints = entries.map(e => ({ x: formatDateShort(e.date), y: e.weight }));
+  const chartPoints = entries.map(e => ({ date: e.date, y: e.weight }));
   drawLineChart(document.getElementById('weight-chart'), chartPoints, { color: '#7C5CFF', height: 160 });
 
   const listEl = document.getElementById('weight-list');
