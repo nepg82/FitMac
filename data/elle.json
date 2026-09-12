@@ -1,8 +1,14 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-12T14:54:49.911Z",
-  "lastModified": 1789224884446,
+  "exportedAt": "2026-09-12T23:59:57.952Z",
+  "lastModified": 1789257518637,
   "foodItems": [
+    {
+      "id": "09d163c6-c46a-4889-ae7b-d046ae5caf9e",
+      "name": "M&M's Fun Size (Peanut)",
+      "calories": 90,
+      "createdAt": 1789257518636
+    },
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
       "name": "Dinner- chicken parm, ziti, bread, chocolate",
@@ -24,6 +30,18 @@
       "createdAt": 1788987222701
     },
     {
+      "id": "41f5bca2-c533-402b-8346-66421766e2cb",
+      "name": "Mighty Taco Super Mighty",
+      "calories": 500,
+      "createdAt": 1789257483819
+    },
+    {
+      "id": "5b4703db-f8bf-43b6-9f62-813a9834839b",
+      "name": "Mighty Taco Hard Shell",
+      "calories": 220,
+      "createdAt": 1789257483820
+    },
+    {
       "id": "6a675662-2694-4c8e-b4f5-a6f8a58559a2",
       "name": "Hot dog",
       "calories": 300,
@@ -36,12 +54,24 @@
       "createdAt": 1789174955362
     },
     {
+      "id": "818a4a85-c082-4a01-8f8f-2f127e559699",
+      "name": "Snacks at Aunt Patti's",
+      "calories": 380,
+      "createdAt": 1789257434902
+    },
+    {
       "id": "82e1f3fb-78a4-4a9a-a500-2a43ea5b8b6d",
       "name": "Lunch- watermelon, tuna mac salad, shrimp",
       "protein": 18,
       "carbs": 40,
       "fat": 18,
       "createdAt": 1788318343096
+    },
+    {
+      "id": "92327051-1169-4d02-830b-fff76814c702",
+      "name": "Shrimp Omelette",
+      "calories": 250,
+      "createdAt": 1789257411670
     },
     {
       "id": "a0dfb5d7-800e-4a96-b0b2-512952845060",
@@ -136,6 +166,25 @@
       "createdAt": 1788987353687
     },
     {
+      "id": "0b641eca-f979-4739-bbc2-18dc6c200411",
+      "date": "2026-09-12",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Snacks at Aunt Patti's",
+          "calories": 380
+        },
+        {
+          "name": "M&M's Fun Size (Peanut)",
+          "calories": 90
+        }
+      ],
+      "totals": {
+        "calories": 470
+      },
+      "createdAt": 1789257518633
+    },
+    {
       "id": "1255ecff-80d1-4c49-b1ee-1aafa6f8f59a",
       "date": "2026-09-10",
       "name": "Lunch",
@@ -164,6 +213,25 @@
         "calories": 150
       },
       "createdAt": 1788987309094
+    },
+    {
+      "id": "27e418ee-6344-4e54-b812-ed9ab447cf72",
+      "date": "2026-09-12",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Mighty Taco Super Mighty",
+          "calories": 500
+        },
+        {
+          "name": "Mighty Taco Hard Shell",
+          "calories": 220
+        }
+      ],
+      "totals": {
+        "calories": 720
+      },
+      "createdAt": 1789257483816
     },
     {
       "id": "2944af59-c3ac-4228-985d-265f19cf98a9",
@@ -294,12 +362,16 @@
         {
           "name": "Zucchini bread slice",
           "calories": 380
+        },
+        {
+          "name": "Shrimp Omelette",
+          "calories": 250
         }
       ],
       "totals": {
-        "calories": 380
+        "calories": 630
       },
-      "createdAt": 1789224884435
+      "createdAt": 1789257411666
     },
     {
       "id": "ed4d0866-bdbc-4c20-91a8-1614fe33f958",
