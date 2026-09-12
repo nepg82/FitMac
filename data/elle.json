@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-12T01:04:14.479Z",
-  "lastModified": 1789175043836,
+  "exportedAt": "2026-09-12T14:54:49.911Z",
+  "lastModified": 1789224884446,
   "foodItems": [
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -285,6 +285,21 @@
         "calories": 150
       },
       "createdAt": 1789119939102
+    },
+    {
+      "id": "c87c7e4a-a4b5-40e7-aac4-dab94ef54177",
+      "date": "2026-09-12",
+      "name": "Breakfast",
+      "items": [
+        {
+          "name": "Zucchini bread slice",
+          "calories": 380
+        }
+      ],
+      "totals": {
+        "calories": 380
+      },
+      "createdAt": 1789224884435
     },
     {
       "id": "ed4d0866-bdbc-4c20-91a8-1614fe33f958",
