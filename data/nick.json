@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-12T00:59:45.325Z",
-  "lastModified": 1789174753967,
+  "exportedAt": "2026-09-12T14:53:07.693Z",
+  "lastModified": 1789224773458,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -75,6 +75,12 @@
       "carbs": 70,
       "fat": 40,
       "createdAt": 1788138527728
+    },
+    {
+      "id": "d42ac8cd-f31a-47b4-b205-24faad014765",
+      "name": "Zucchini bread",
+      "calories": 380,
+      "createdAt": 1789224773455
     },
     {
       "id": "f4d885c4-ba38-4c7b-91f7-4f6214adc099",
@@ -248,6 +254,21 @@
         "calories": 610
       },
       "createdAt": 1788986915754
+    },
+    {
+      "id": "908fe3b8-ac5d-4e2b-b20a-dd068ce06b2b",
+      "date": "2026-09-12",
+      "name": "Breakfast",
+      "items": [
+        {
+          "name": "Zucchini bread",
+          "calories": 380
+        }
+      ],
+      "totals": {
+        "calories": 380
+      },
+      "createdAt": 1789224773446
     },
     {
       "id": "a36be586-3c0d-4605-b921-94225f063cc4",
