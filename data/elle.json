@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-11T09:51:41.375Z",
-  "lastModified": 1789120275264,
+  "exportedAt": "2026-09-12T01:04:14.479Z",
+  "lastModified": 1789175043836,
   "foodItems": [
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -22,6 +22,18 @@
       "name": "Anderson's Carl's Choice (or something)",
       "calories": 400,
       "createdAt": 1788987222701
+    },
+    {
+      "id": "6a675662-2694-4c8e-b4f5-a6f8a58559a2",
+      "name": "Hot dog",
+      "calories": 300,
+      "createdAt": 1789174955170
+    },
+    {
+      "id": "7b419ea2-483f-4749-8426-c9adbf0cc474",
+      "name": "Bag of Cheetos",
+      "calories": 220,
+      "createdAt": 1789174955362
     },
     {
       "id": "82e1f3fb-78a4-4a9a-a500-2a43ea5b8b6d",
@@ -129,18 +141,14 @@
       "name": "Lunch",
       "items": [
         {
-          "name": "Pizza (2 slices)",
-          "calories": 800
-        },
-        {
-          "name": "Zucchini bread slice",
-          "calories": 380
+          "name": "Homemade lunch",
+          "calories": 330
         }
       ],
       "totals": {
-        "calories": 1180
+        "calories": 330
       },
-      "createdAt": 1789119946838
+      "createdAt": 1789175043803
     },
     {
       "id": "17e14f7a-30d9-4191-8c0d-0da4dcb6a965",
@@ -196,6 +204,25 @@
       "createdAt": 1788318343081
     },
     {
+      "id": "58dafc3e-738f-4c0f-ab4f-08cd8570f753",
+      "date": "2026-09-11",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Hot dog",
+          "calories": 300
+        },
+        {
+          "name": "Bag of Cheetos",
+          "calories": 220
+        }
+      ],
+      "totals": {
+        "calories": 520
+      },
+      "createdAt": 1789174955099
+    },
+    {
       "id": "923b3ef4-9dcd-4e36-8ce9-fd1eb2331535",
       "date": "2026-09-01",
       "name": "Dinner",
@@ -213,6 +240,21 @@
         "fat": 100
       },
       "createdAt": 1788318230576
+    },
+    {
+      "id": "9a728fed-e197-42ce-b2c9-a85b0e4c0627",
+      "date": "2026-09-11",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Pizza (2 slices)",
+          "calories": 800
+        }
+      ],
+      "totals": {
+        "calories": 800
+      },
+      "createdAt": 1789174909914
     },
     {
       "id": "bde338c8-155b-4a40-92af-892852d6c9cf",
