@@ -98,7 +98,12 @@ async function renderDashboard(content) {
         </div>
       </div>
       ${latestWeight
-        ? `<div class="chart-scroll" style="overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:6px;"><canvas class="chart-canvas" id="dash-weight-chart"></canvas></div>`
+        ? `<div style="display:flex; align-items:stretch; margin-top:6px;">
+            <canvas class="chart-axis-canvas" id="dash-weight-chart-axis" style="border-right:1px solid #2C303C; flex-shrink:0;"></canvas>
+            <div class="chart-scroll" style="overflow-x:auto; -webkit-overflow-scrolling:touch; flex:1; min-width:0;">
+              <canvas class="chart-canvas" id="dash-weight-chart"></canvas>
+            </div>
+          </div>`
         : `<div class="empty-state">No weight entries yet</div>`}
     </div>
 
@@ -117,7 +122,7 @@ async function renderDashboard(content) {
 
   if (latestWeight) {
     const points = recentWeights.map(e => ({ date: e.date, y: e.weight }));
-    drawLineChart(document.getElementById('dash-weight-chart'), points, { color: '#7C5CFF', height: 100 });
+    drawLineChart(document.getElementById('dash-weight-chart'), points, { color: '#7C5CFF', height: 150, minPxPerDay: 7, axisCanvas: document.getElementById('dash-weight-chart-axis') });
   }
 
   drawBarChart(document.getElementById('dash-calorie-chart'), caloriePoints, { color: '#7C5CFF', height: 140, target: settings.calorieGoal || 0, yStep: 500 });

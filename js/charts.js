@@ -137,6 +137,16 @@ function chooseTickIntervalDays(totalDays, pxAvailable) {
   return niceIntervals[niceIntervals.length - 1];
 }
 
+// Pick a "nice" whole-number step between y-axis gridlines (1, 2, 5, 10, 20, 25, 50...)
+// so labels read as clean integers regardless of the data's actual decimals.
+function chooseNiceStep(range, maxTicks) {
+  const niceSteps = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000, 5000];
+  for (const step of niceSteps) {
+    if (range / step <= maxTicks) return step;
+  }
+  return niceSteps[niceSteps.length - 1];
+}
+
 function drawLineChart(canvas, points, opts = {}) {
   // points: [{date: 'YYYY-MM-DD', y: number}]
   // Points are spaced true-to-scale by calendar date rather than by index, so
@@ -146,21 +156,35 @@ function drawLineChart(canvas, points, opts = {}) {
   // be a horizontally-scrollable wrapper (overflow-x: auto) to accommodate
   // that width. We scroll it to the right edge so the latest entries show
   // by default.
+  //
+  // If opts.axisCanvas is given, y-axis labels are drawn on that separate,
+  // non-scrolling canvas instead of on `canvas` itself, so the scale stays
+  // visible while the plot scrolls underneath it. Labels are snapped to
+  // clean whole numbers; the actual data points are still placed at their
+  // exact (unrounded) values.
   const cssHeight = opts.height || 140;
   const dpr = window.devicePixelRatio || 1;
+  const axisCanvas = opts.axisCanvas || null;
+
+  function sizeCanvas(cv, width, height) {
+    cv.width = width * dpr;
+    cv.height = height * dpr;
+    cv.style.width = width + 'px';
+    cv.style.height = height + 'px';
+    const cctx = cv.getContext('2d');
+    cctx.setTransform(1, 0, 0, 1, 0, 0);
+    cctx.scale(dpr, dpr);
+    cctx.clearRect(0, 0, width, height);
+    return cctx;
+  }
 
   if (!points || points.length === 0) {
-    const cssWidth = canvas.clientWidth || canvas.parentElement.clientWidth;
-    canvas.width = cssWidth * dpr;
-    canvas.height = cssHeight * dpr;
-    canvas.style.width = cssWidth + 'px';
-    canvas.style.height = cssHeight + 'px';
-    const ctx = canvas.getContext('2d');
-    ctx.scale(dpr, dpr);
-    ctx.clearRect(0, 0, cssWidth, cssHeight);
+    const cssWidth = canvas.clientWidth || canvas.parentElement.clientWidth || 300;
+    const ctx = sizeCanvas(canvas, cssWidth, cssHeight);
     ctx.fillStyle = '#5B5F70';
     ctx.font = '13px Inter, sans-serif';
     ctx.fillText('No data yet', 12, cssHeight / 2);
+    if (axisCanvas) sizeCanvas(axisCanvas, 28, cssHeight);
     return;
   }
 
@@ -169,7 +193,8 @@ function drawLineChart(canvas, points, opts = {}) {
   const maxDate = sorted[sorted.length - 1].date;
   const totalDays = daysBetweenISO(minDate, maxDate);
 
-  const padL = 38, padR = 12, padT = 14, padB = 22;
+  const padT = 14, padB = 22, padR = 12;
+  const padL = axisCanvas ? 8 : 38; // less left padding needed when labels live on the axis canvas
   const wrapper = canvas.parentElement;
   const visibleWidth = wrapper.clientWidth || 300;
   const minPxPerDay = opts.minPxPerDay || 28;
@@ -179,40 +204,62 @@ function drawLineChart(canvas, points, opts = {}) {
   const w = cssWidth - padL - padR;
   const h = cssHeight - padT - padB;
 
-  canvas.width = cssWidth * dpr;
-  canvas.height = cssHeight * dpr;
-  canvas.style.width = cssWidth + 'px';
-  canvas.style.height = cssHeight + 'px';
-  const ctx = canvas.getContext('2d');
-  ctx.scale(dpr, dpr);
-  ctx.clearRect(0, 0, cssWidth, cssHeight);
-
   const xFor = (dateStr) => (totalDays === 0
     ? padL + w / 2
     : padL + (daysBetweenISO(minDate, dateStr) / totalDays) * w);
 
   const ys = sorted.map(p => p.y);
-  let minY = Math.min(...ys), maxY = Math.max(...ys);
-  if (minY === maxY) { minY -= 1; maxY += 1; }
-  const range = maxY - minY;
-  minY -= range * 0.1;
-  maxY += range * 0.1;
-  const yFor = (v) => padT + h - ((v - minY) / (maxY - minY)) * h;
+  let dataMinY = Math.min(...ys), dataMaxY = Math.max(...ys);
+  if (dataMinY === dataMaxY) { dataMinY -= 1; dataMaxY += 1; }
+  const dataRange = dataMaxY - dataMinY;
+  const minY = dataMinY - dataRange * 0.1;
+  const maxY = dataMaxY + dataRange * 0.1;
+  const yFor = (v) => padT + h - ((v - minY) / (maxY - minY)) * h; // precise, used for actual points too
 
-  // horizontal gridlines + y labels
+  // Whole-number gridline values (labels only — point placement above stays exact)
+  const step = chooseNiceStep(maxY - minY, 4);
+  const tickValues = [];
+  for (let v = Math.ceil(minY / step) * step; v <= maxY; v += step) tickValues.push(Math.round(v));
+  if (tickValues.length === 0) tickValues.push(Math.round((minY + maxY) / 2));
+
+  // Fixed y-axis canvas (doesn't scroll)
+  if (axisCanvas) {
+    const measureCtx = axisCanvas.getContext('2d');
+    measureCtx.font = '11px "JetBrains Mono", monospace';
+    let maxLabelWidth = 0;
+    tickValues.forEach(tv => {
+      const tw = measureCtx.measureText(String(tv)).width;
+      if (tw > maxLabelWidth) maxLabelWidth = tw;
+    });
+    const axisWidth = Math.ceil(maxLabelWidth) + 14;
+    const axisCtx = sizeCanvas(axisCanvas, axisWidth, cssHeight);
+    axisCtx.fillStyle = '#5B5F70';
+    axisCtx.font = '11px "JetBrains Mono", monospace';
+    tickValues.forEach(tv => {
+      const y = yFor(tv);
+      const text = String(tv);
+      const tw = axisCtx.measureText(text).width;
+      axisCtx.fillText(text, axisWidth - tw - 6, y + 3);
+    });
+  }
+
+  // Scrollable plot canvas
+  const ctx = sizeCanvas(canvas, cssWidth, cssHeight);
+
+  // horizontal gridlines (labels drawn separately above if axisCanvas is set)
   ctx.strokeStyle = '#2C303C';
-  ctx.fillStyle = '#5B5F70';
-  ctx.font = '11px "JetBrains Mono", monospace';
   ctx.lineWidth = 1;
-  const gridLines = 3;
-  for (let i = 0; i <= gridLines; i++) {
-    const v = minY + (maxY - minY) * (i / gridLines);
-    const y = yFor(v);
+  tickValues.forEach(tv => {
+    const y = yFor(tv);
     ctx.beginPath();
     ctx.moveTo(padL, y);
     ctx.lineTo(padL + w, y);
     ctx.stroke();
-    ctx.fillText(v.toFixed(1), 2, y + 3);
+  });
+  if (!axisCanvas) {
+    ctx.fillStyle = '#5B5F70';
+    ctx.font = '11px "JetBrains Mono", monospace';
+    tickValues.forEach(tv => ctx.fillText(String(tv), 2, yFor(tv) + 3));
   }
 
   // line
@@ -237,7 +284,7 @@ function drawLineChart(canvas, points, opts = {}) {
   ctx.fillStyle = grad;
   ctx.fill();
 
-  // points
+  // points — placed at exact (unrounded) values, independent of the whole-number gridlines
   ctx.fillStyle = accent;
   sorted.forEach((p, i) => {
     const x = xFor(p.date), y = yFor(p.y);
