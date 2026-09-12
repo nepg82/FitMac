@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-12T14:54:27.193Z",
-  "lastModified": 1789224863881,
+  "exportedAt": "2026-09-12T23:55:43.008Z",
+  "lastModified": 1789257337687,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -28,6 +28,12 @@
       "name": "Fairlife",
       "calories": 150,
       "createdAt": 1788905030034
+    },
+    {
+      "id": "395bfa9f-d070-4123-ae27-50db6bf41993",
+      "name": "El Niño",
+      "calories": 800,
+      "createdAt": 1789257337686
     },
     {
       "id": "3c30b27e-efaa-43ef-a4ce-bce7dee8850b",
@@ -81,6 +87,12 @@
       "name": "Zucchini bread",
       "calories": 380,
       "createdAt": 1789224773455
+    },
+    {
+      "id": "e41dd3f0-7fb5-40dc-bce6-97ca67f77aa8",
+      "name": "snacks @ Aunt Patti's",
+      "calories": 350,
+      "createdAt": 1789257298353
     },
     {
       "id": "f4d885c4-ba38-4c7b-91f7-4f6214adc099",
@@ -292,6 +304,21 @@
       "createdAt": 1788527348232
     },
     {
+      "id": "a43da078-c9f9-4aa3-bd73-1d618263ee26",
+      "date": "2026-09-12",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "El Niño",
+          "calories": 800
+        }
+      ],
+      "totals": {
+        "calories": 800
+      },
+      "createdAt": 1789257337684
+    },
+    {
       "id": "ab3a7ebb-b64a-4cd7-a477-c95152acee49",
       "date": "2026-09-11",
       "name": "Dinner",
@@ -324,6 +351,21 @@
         "calories": 610
       },
       "createdAt": 1789120409877
+    },
+    {
+      "id": "bf12d78b-3651-4da2-8fe6-681b8dbc0f58",
+      "date": "2026-09-12",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "snacks @ Aunt Patti's",
+          "calories": 350
+        }
+      ],
+      "totals": {
+        "calories": 350
+      },
+      "createdAt": 1789257298351
     },
     {
       "id": "ce52b46c-a6b5-4b38-ace0-d00b2ea0aa20",
