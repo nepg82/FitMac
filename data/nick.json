@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-12T14:53:07.693Z",
-  "lastModified": 1789224773458,
+  "exportedAt": "2026-09-12T14:54:27.193Z",
+  "lastModified": 1789224863881,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -87,6 +87,12 @@
       "name": "Homemade lunch",
       "calories": 400,
       "createdAt": 1788905085436
+    },
+    {
+      "id": "fdde3390-837c-4c47-8e29-e0d11b42fd8c",
+      "name": "Zucchini bread slice",
+      "calories": 380,
+      "createdAt": 1789224863876
     },
     {
       "id": "ff25e4c2-7b9f-45f7-9cc2-b59d85414506",
@@ -261,14 +267,14 @@
       "name": "Breakfast",
       "items": [
         {
-          "name": "Zucchini bread",
+          "name": "Zucchini bread slice",
           "calories": 380
         }
       ],
       "totals": {
         "calories": 380
       },
-      "createdAt": 1789224773446
+      "createdAt": 1789224863857
     },
     {
       "id": "a36be586-3c0d-4605-b921-94225f063cc4",
