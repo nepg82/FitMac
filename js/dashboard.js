@@ -64,7 +64,6 @@ async function renderDashboard(content) {
 
   const latestWeight = weightEntries[weightEntries.length - 1];
   const prevWeight = weightEntries[weightEntries.length - 2];
-  const recentWeights = weightEntries.slice(-14);
 
   const lastSession = sessions[0];
   const last7 = sessions.filter(s => {
@@ -98,12 +97,12 @@ async function renderDashboard(content) {
         </div>
       </div>
       ${latestWeight
-        ? `<div style="display:flex; align-items:stretch; margin-top:6px;">
-            <canvas class="chart-axis-canvas" id="dash-weight-chart-axis" style="border-right:1px solid #2C303C; flex-shrink:0;"></canvas>
-            <div class="chart-scroll" style="overflow-x:auto; -webkit-overflow-scrolling:touch; flex:1; min-width:0;">
-              <canvas class="chart-canvas" id="dash-weight-chart"></canvas>
-            </div>
-          </div>`
+        ? `<canvas class="chart-canvas" id="dash-weight-chart"></canvas>
+           <div class="chart-nav-row">
+             <button type="button" class="chart-nav-btn" id="dash-weight-prev" aria-label="Earlier">&lsaquo;</button>
+             <div class="chart-nav-label mono" id="dash-weight-window-label"></div>
+             <button type="button" class="chart-nav-btn" id="dash-weight-next" aria-label="Later">&rsaquo;</button>
+           </div>`
         : `<div class="empty-state">No weight entries yet</div>`}
     </div>
 
@@ -111,7 +110,7 @@ async function renderDashboard(content) {
       <div class="card-title">Workouts</div>
       ${lastSession ? `
         <div class="stat-row">
-          <span class="list-item-title">${escapeHtml(lastSession.name)}</span>
+          <span class="list-item-title">${escapeHtml(lastSession.name)}${lastSession.location ? ' - ' + escapeHtml(lastSession.location) : ''}</span>
           <span class="stat-label mono">${formatDate(lastSession.date)}</span>
         </div>
         <div class="list-item-sub" style="margin-top:4px;">${lastSession.exercises.map(e => escapeHtml(e.exercise)).join(', ')}</div>
@@ -121,8 +120,26 @@ async function renderDashboard(content) {
   `;
 
   if (latestWeight) {
-    const points = recentWeights.map(e => ({ date: e.date, y: e.weight }));
-    drawLineChart(document.getElementById('dash-weight-chart'), points, { color: '#7C5CFF', height: 150, minPxPerDay: 7, axisCanvas: document.getElementById('dash-weight-chart-axis') });
+    const weightPoints = weightEntries.map(e => ({ date: e.date, y: e.weight }));
+    let weightWindowOffset = 0; // 0 = most recent 90-day window; higher = further back
+
+    const drawWeightWindow = () => {
+      const canvas = document.getElementById('dash-weight-chart');
+      if (!canvas) return; // dashboard has since re-rendered / navigated away
+      const result = drawWindowedLineChart(canvas, weightPoints, {
+        color: '#7C5CFF', height: 150, windowDays: 60, tickWeekday: 0, windowOffset: weightWindowOffset
+      });
+      const label = document.getElementById('dash-weight-window-label');
+      if (label) label.textContent = `${formatDateShort(result.rangeStart)} – ${formatDateShort(result.rangeEnd)}`;
+      const prevBtn = document.getElementById('dash-weight-prev');
+      const nextBtn = document.getElementById('dash-weight-next');
+      if (prevBtn) prevBtn.disabled = !result.hasOlder;
+      if (nextBtn) nextBtn.disabled = !result.hasNewer;
+    };
+
+    document.getElementById('dash-weight-prev').onclick = () => { weightWindowOffset += 1; drawWeightWindow(); };
+    document.getElementById('dash-weight-next').onclick = () => { weightWindowOffset = Math.max(0, weightWindowOffset - 1); drawWeightWindow(); };
+    drawWeightWindow();
   }
 
   drawBarChart(document.getElementById('dash-calorie-chart'), caloriePoints, { color: '#7C5CFF', height: 140, target: settings.calorieGoal || 0, yStep: 500 });

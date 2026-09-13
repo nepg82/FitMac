@@ -19,7 +19,7 @@ function drawBarChart(canvas, points, opts = {}) {
     return;
   }
 
-  const padL = 38, padR = 12, padT = 14, padB = 22;
+  const padL = 38, padR = 12, padT = 14, padB = 34;
   const w = cssWidth - padL - padR;
   const h = cssHeight - padT - padB;
 
@@ -108,7 +108,16 @@ function drawBarChart(canvas, points, opts = {}) {
   points.forEach((p, i) => {
     const cx = padL + slot * i + slot / 2;
     const tw = ctx.measureText(p.x).width;
-    ctx.fillText(p.x, cx - tw / 2, cssHeight - 4);
+    ctx.fillText(p.x, cx - tw / 2, cssHeight - 16);
+  });
+
+  // calorie total, second line under the date
+  ctx.font = '10.5px "JetBrains Mono", monospace';
+  points.forEach((p, i) => {
+    const cx = padL + slot * i + slot / 2;
+    const text = p.y ? String(Math.round(p.y)) : '—';
+    const tw = ctx.measureText(text).width;
+    ctx.fillText(text, cx - tw / 2, cssHeight - 4);
   });
 }
 
@@ -293,11 +302,27 @@ function drawLineChart(canvas, points, opts = {}) {
     ctx.fill();
   });
 
-  // x labels — calendar-spaced ticks (e.g. every week/month), not one per point
+  // x labels — calendar-spaced ticks (e.g. every week/month), not one per point.
+  // If opts.tickWeekday is set (0=Sunday..6=Saturday), ticks are every
+  // occurrence of that weekday in range instead of the adaptive interval
+  // below — appropriate here because the chart's width already scales with
+  // totalDays (minPxPerDay), so there's no fixed-width crowding to avoid by
+  // thinning ticks as the range grows; scrolling handles that instead.
   ctx.fillStyle = '#5B5F70';
   ctx.font = '10.5px Inter, sans-serif';
   let tickDates;
-  if (totalDays === 0) {
+  if (opts.tickWeekday != null) {
+    tickDates = [];
+    const start = parseISODate(minDate);
+    const end = parseISODate(maxDate);
+    const d = new Date(start);
+    d.setDate(d.getDate() + ((opts.tickWeekday - d.getDay() + 7) % 7));
+    while (d <= end) {
+      tickDates.push(isoFromDate(d));
+      d.setDate(d.getDate() + 7);
+    }
+    if (tickDates.length === 0) tickDates = [minDate];
+  } else if (totalDays === 0) {
     tickDates = [minDate];
   } else {
     const interval = chooseTickIntervalDays(totalDays, w);
@@ -324,4 +349,152 @@ function drawLineChart(canvas, points, opts = {}) {
 
   // default to showing the most recent entries
   wrapper.scrollLeft = wrapper.scrollWidth;
+}
+
+// Fixed-width, paginated variant of a line chart, for series (like weight)
+// that span a wide range over the long run but where recent fluctuations
+// matter more than the full-history extremes. Rather than one wide
+// scrollable canvas with a single y-axis scale for all of history (see
+// drawLineChart above), this draws one calendar "window" of opts.windowDays
+// at a time (default 90 = ~3 months) and rescales the y-axis to just the
+// points inside that window — so a 2 lb wobble over a quarter is still
+// legible even if your weight has ranged 50+ lbs over the years. Windows are
+// anchored on the most recent data point's date, not "today", so paging
+// always starts from your actual last entry: windowOffset 0 is the window
+// ending on that date, 1 is the window immediately before it, and so on.
+//
+// Returns { rangeStart, rangeEnd, hasOlder, hasNewer } so the caller can
+// render a "date range" label and enable/disable prev/next controls —
+// hasOlder is true if there's data further back than this window, hasNewer
+// is true if windowOffset > 0 (i.e. there's a more-recent window to page
+// forward to).
+function drawWindowedLineChart(canvas, points, opts = {}) {
+  const windowDays = opts.windowDays || 90;
+  const windowOffset = opts.windowOffset || 0;
+  const cssHeight = opts.height || 140;
+  const dpr = window.devicePixelRatio || 1;
+
+  const cssWidth = canvas.clientWidth || canvas.parentElement.clientWidth || 300;
+  canvas.width = cssWidth * dpr;
+  canvas.height = cssHeight * dpr;
+  canvas.style.width = cssWidth + 'px';
+  canvas.style.height = cssHeight + 'px';
+  const ctx = canvas.getContext('2d');
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, cssWidth, cssHeight);
+
+  const sortedAll = (points || []).slice().sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+
+  const anchor = sortedAll.length ? parseISODate(sortedAll[sortedAll.length - 1].date) : parseISODate(isoFromDate(new Date()));
+  const rangeEndDate = new Date(anchor.getTime() - windowOffset * windowDays * 86400000);
+  const rangeStartDate = new Date(rangeEndDate.getTime() - (windowDays - 1) * 86400000);
+  const rangeStart = isoFromDate(rangeStartDate);
+  const rangeEnd = isoFromDate(rangeEndDate);
+
+  const windowed = sortedAll.filter(p => p.date >= rangeStart && p.date <= rangeEnd);
+  const hasOlder = sortedAll.some(p => p.date < rangeStart);
+  const hasNewer = windowOffset > 0;
+
+  const padL = 44, padR = 12, padT = 14, padB = 22;
+  const w = cssWidth - padL - padR;
+  const h = cssHeight - padT - padB;
+
+  if (windowed.length === 0) {
+    ctx.fillStyle = '#5B5F70';
+    ctx.font = '13px Inter, sans-serif';
+    ctx.fillText('No entries in this range', 12, cssHeight / 2);
+    return { rangeStart, rangeEnd, hasOlder, hasNewer };
+  }
+
+  const totalDays = daysBetweenISO(rangeStart, rangeEnd);
+  const xFor = (dateStr) => padL + (daysBetweenISO(rangeStart, dateStr) / totalDays) * w;
+
+  const ys = windowed.map(p => p.y);
+  let dataMinY = Math.min(...ys), dataMaxY = Math.max(...ys);
+  if (dataMinY === dataMaxY) { dataMinY -= 1; dataMaxY += 1; }
+  const dataRange = dataMaxY - dataMinY;
+  const minY = dataMinY - dataRange * 0.15;
+  const maxY = dataMaxY + dataRange * 0.15;
+  const yFor = (v) => padT + h - ((v - minY) / (maxY - minY)) * h;
+
+  const step = chooseNiceStep(maxY - minY, 4);
+  const tickValues = [];
+  for (let v = Math.ceil(minY / step) * step; v <= maxY; v += step) tickValues.push(Math.round(v));
+  if (tickValues.length === 0) tickValues.push(Math.round((minY + maxY) / 2));
+
+  // gridlines + y labels (inline, since this chart never scrolls)
+  ctx.strokeStyle = '#2C303C';
+  ctx.fillStyle = '#5B5F70';
+  ctx.font = '11px "JetBrains Mono", monospace';
+  ctx.lineWidth = 1;
+  tickValues.forEach(tv => {
+    const y = yFor(tv);
+    ctx.beginPath();
+    ctx.moveTo(padL, y);
+    ctx.lineTo(padL + w, y);
+    ctx.stroke();
+    const text = String(tv);
+    const tw = ctx.measureText(text).width;
+    ctx.fillText(text, padL - tw - 8, y + 3);
+  });
+
+  // line
+  const accent = opts.color || '#7C5CFF';
+  ctx.strokeStyle = accent;
+  ctx.lineWidth = 2.2;
+  ctx.lineJoin = 'round';
+  ctx.beginPath();
+  windowed.forEach((p, i) => {
+    const x = xFor(p.date), y = yFor(p.y);
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  // fill under line
+  const grad = ctx.createLinearGradient(0, padT, 0, padT + h);
+  grad.addColorStop(0, accent + '33');
+  grad.addColorStop(1, accent + '00');
+  ctx.lineTo(xFor(windowed[windowed.length - 1].date), padT + h);
+  ctx.lineTo(xFor(windowed[0].date), padT + h);
+  ctx.closePath();
+  ctx.fillStyle = grad;
+  ctx.fill();
+
+  // points — the most recent point across all history (not just this
+  // window) gets the larger "current" dot
+  ctx.fillStyle = accent;
+  windowed.forEach((p, i) => {
+    const x = xFor(p.date), y = yFor(p.y);
+    const isLatestOverall = windowOffset === 0 && i === windowed.length - 1;
+    ctx.beginPath();
+    ctx.arc(x, y, isLatestOverall ? 3.5 : 2.2, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  // x labels — every occurrence of opts.tickWeekday (default Sunday) inside
+  // this window. A fixed 90-day window never has enough weeks to need
+  // thinning, unlike drawLineChart's adaptive interval.
+  ctx.fillStyle = '#5B5F70';
+  ctx.font = '10.5px Inter, sans-serif';
+  const tickWeekday = opts.tickWeekday != null ? opts.tickWeekday : 0;
+  const tickDates = [];
+  {
+    const d = new Date(rangeStartDate);
+    d.setDate(d.getDate() + ((tickWeekday - d.getDay() + 7) % 7));
+    while (d <= rangeEndDate) {
+      tickDates.push(isoFromDate(d));
+      d.setDate(d.getDate() + 7);
+    }
+  }
+  tickDates.forEach((d) => {
+    const x = xFor(d);
+    const text = typeof formatDateShort === 'function' ? formatDateShort(d) : d;
+    const tw = ctx.measureText(text).width;
+    let tx = x - tw / 2;
+    tx = Math.max(padL, Math.min(tx, padL + w - tw));
+    ctx.fillText(text, tx, cssHeight - 4);
+  });
+
+  return { rangeStart, rangeEnd, hasOlder, hasNewer };
 }

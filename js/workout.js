@@ -18,7 +18,7 @@ async function renderWorkout(content) {
         const card = el(`
           <div class="card" style="cursor:pointer;" data-id="${s.id}">
             <div class="stat-row">
-              <div class="list-item-title">${escapeHtml(s.name)}</div>
+              <div class="list-item-title">${escapeHtml(s.name)}${s.location ? ' - ' + escapeHtml(s.location) : ''}</div>
               <div class="list-item-meta">${s.exercises.length} exercise${s.exercises.length !== 1 ? 's' : ''}</div>
             </div>
             <div class="list-item-sub" style="margin-top:6px;">${s.exercises.map(ex => escapeHtml(ex.exercise)).join(', ')}</div>
@@ -35,7 +35,7 @@ async function renderWorkout(content) {
 
 function openSessionDetail(session) {
   const bodyHtml = `
-    <div class="stat-label mono" style="margin-bottom:12px;">${formatDate(session.date)}</div>
+    <div class="stat-label mono" style="margin-bottom:12px;">${formatDate(session.date)}${session.location ? ' · ' + escapeHtml(session.location) : ''}</div>
     ${session.exercises.map(ex => `
       <div class="exercise-log-item">
         <div class="ex-name">${escapeHtml(ex.exercise)}</div>
@@ -63,6 +63,7 @@ function openSessionDetail(session) {
       await DB.saveWorkoutSession({
         name: session.name,
         date: DB.todayISO(),
+        location: session.location || '',
         exercises: session.exercises.map(ex => ({ ...ex }))
       });
       closeSheet();
@@ -89,6 +90,7 @@ function openSessionDetail(session) {
 
 async function openSessionForm(existingSession) {
   const exerciseNames = await DB.getUniqueExerciseNames();
+  const locations = await DB.getUniqueLocations();
   const isEdit = !!existingSession;
   const sessionExercises = isEdit ? existingSession.exercises.map(ex => ({ ...ex })) : [];
 
@@ -100,6 +102,11 @@ async function openSessionForm(existingSession) {
     <div class="field">
       <label>Date</label>
       <input type="date" id="session-date" value="${isEdit ? existingSession.date : DB.todayISO()}" />
+    </div>
+    <div class="field autocomplete-wrap">
+      <label>Location</label>
+      <input type="text" id="session-location" placeholder="e.g. home, Armory" autocomplete="off" value="${isEdit ? escapeHtml(existingSession.location || '') : ''}" />
+      <div class="autocomplete-list" id="location-autocomplete" style="display:none;"></div>
     </div>
 
     <div class="card-title" style="margin-top:8px;">Add Exercise</div>
@@ -137,6 +144,23 @@ async function openSessionForm(existingSession) {
     const exNameInput = body.querySelector('#ex-name');
     const acList = body.querySelector('#ex-autocomplete');
     const sessionListEl = body.querySelector('#session-ex-list');
+
+    const locationInput = body.querySelector('#session-location');
+    const locationAcList = body.querySelector('#location-autocomplete');
+    locationInput.addEventListener('input', () => {
+      const q = locationInput.value.trim().toLowerCase();
+      const matches = q ? locations.filter(l => l.toLowerCase().includes(q)) : locations.slice(0, 6);
+      if (matches.length === 0) { locationAcList.style.display = 'none'; return; }
+      locationAcList.innerHTML = '';
+      matches.slice(0, 6).forEach(l => {
+        const item = el(`<div class="autocomplete-item"><span>${escapeHtml(l)}</span></div>`);
+        item.onclick = () => { locationInput.value = l; locationAcList.style.display = 'none'; };
+        locationAcList.appendChild(item);
+      });
+      locationAcList.style.display = 'block';
+    });
+    locationInput.addEventListener('focus', () => { if (locations.length) locationInput.dispatchEvent(new Event('input')); });
+    locationInput.addEventListener('blur', () => setTimeout(() => locationAcList.style.display = 'none', 150));
 
     exNameInput.addEventListener('input', () => {
       const q = exNameInput.value.trim().toLowerCase();
@@ -238,9 +262,10 @@ async function openSessionForm(existingSession) {
     body.querySelector('#save-session-btn').onclick = async () => {
       const name = body.querySelector('#session-name').value.trim();
       const date = body.querySelector('#session-date').value || DB.todayISO();
+      const location = body.querySelector('#session-location').value.trim();
       if (!name) { showToast('Workout name is required'); return; }
       if (sessionExercises.length === 0) { showToast('Add at least one exercise'); return; }
-      await DB.saveWorkoutSession({ id: isEdit ? existingSession.id : undefined, name, date, exercises: sessionExercises });
+      await DB.saveWorkoutSession({ id: isEdit ? existingSession.id : undefined, name, date, location, exercises: sessionExercises });
       closeSheet();
       showToast(isEdit ? 'Session updated' : 'Session saved');
       renderApp();

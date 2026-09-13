@@ -200,9 +200,9 @@ delete(store, id) {
 
   // --- Workouts ---
   async saveWorkoutSession(session) {
-    // session: { id?, name, date, exercises: [{exercise, sets, reps, weight, notes}] }
+    // session: { id?, name, date, location?, exercises: [{exercise, sets, reps, weight, notes}] }
     const id = session.id || uuid();
-    const entry = { id, name: session.name, date: session.date, exercises: session.exercises, createdAt: session.createdAt || Date.now() };
+    const entry = { id, name: session.name, date: session.date, location: session.location || '', exercises: session.exercises, createdAt: session.createdAt || Date.now() };
     await DB.put('workoutSessions', entry);
     return entry;
   },
@@ -216,6 +216,13 @@ delete(store, id) {
     const all = await DB.getAll('workoutSessions');
     const set = new Set();
     for (const s of all) for (const ex of s.exercises) if (ex.exercise) set.add(ex.exercise);
+    return Array.from(set).sort();
+  },
+
+  async getUniqueLocations() {
+    const all = await DB.getAll('workoutSessions');
+    const set = new Set();
+    for (const s of all) if (s.location) set.add(s.location);
     return Array.from(set).sort();
   },
 
