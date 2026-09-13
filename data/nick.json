@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-13T00:00:53.279Z",
-  "lastModified": 1789257649702,
+  "exportedAt": "2026-09-13T01:25:09.223Z",
+  "lastModified": 1789259559539,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -22,6 +22,12 @@
       "carbs": 170,
       "fat": 80,
       "createdAt": 1788092623136
+    },
+    {
+      "id": "137dfed4-d847-45cf-9ce3-14e4900557d4",
+      "name": "Manito's Beef Taco",
+      "calories": 350,
+      "createdAt": 1789258797297
     },
     {
       "id": "29506427-1769-470d-b28e-54e971fa5ce6",
@@ -56,6 +62,12 @@
       "name": "Curly fries",
       "calories": 200,
       "createdAt": 1788905181969
+    },
+    {
+      "id": "6e18bb31-380e-4537-952e-f7147e6c9e8e",
+      "name": "Hot dogs",
+      "calories": 275,
+      "createdAt": 1789258764332
     },
     {
       "id": "9d9d4c41-5d6b-4b4c-a4d5-f7eea558c817",
@@ -202,14 +214,15 @@
       "name": "Dinner",
       "items": [
         {
-          "name": "Manito's (3 beef tacos)",
-          "calories": 1050
+          "name": "Manito's Beef Taco",
+          "calories": 350,
+          "quantity": 3
         }
       ],
       "totals": {
         "calories": 1050
       },
-      "createdAt": 1789120449147
+      "createdAt": 1789258797294
     },
     {
       "id": "5aed04cc-35f9-4cf3-831f-088fe362a78d",
@@ -330,14 +343,15 @@
       "name": "Dinner",
       "items": [
         {
-          "name": "Hot dogs (4)",
-          "calories": 1100
+          "name": "Hot dogs",
+          "calories": 275,
+          "quantity": 4
         }
       ],
       "totals": {
         "calories": 1100
       },
-      "createdAt": 1789174679899
+      "createdAt": 1789258764328
     },
     {
       "id": "b1613d54-337c-4e4f-8e70-326bd515898a",
@@ -582,8 +596,9 @@
   "workoutSessions": [
     {
       "id": "01285c64-110e-483f-87c2-d7a4254f8f90",
-      "name": "daily workout Armory",
+      "name": "daily workout",
       "date": "2026-09-10",
+      "location": "Armory",
       "exercises": [
         {
           "exercise": "Bench press",
@@ -635,12 +650,13 @@
           "notes": "3/3; 15 minutes"
         }
       ],
-      "createdAt": 1789120369374
+      "createdAt": 1789259525672
     },
     {
       "id": "113084c4-6a25-422a-ac5a-04f29cb41df8",
-      "name": "Hike Lockport",
+      "name": "Hike",
       "date": "2026-08-29",
+      "location": "Lockport",
       "exercises": [
         {
           "exercise": "Hike",
@@ -650,12 +666,13 @@
           "notes": "70 minutes"
         }
       ],
-      "createdAt": 1788018672366
+      "createdAt": 1789259559538
     },
     {
       "id": "49f45423-3b67-4310-9d2f-e8ecae6792bd",
-      "name": "daily workout home",
+      "name": "daily workout",
       "date": "2026-09-11",
+      "location": "home",
       "exercises": [
         {
           "exercise": "Side shoulder ext",
@@ -686,12 +703,13 @@
           "notes": "3/2.2; 20 minutes"
         }
       ],
-      "createdAt": 1789121042794
+      "createdAt": 1789259511373
     },
     {
       "id": "8a517c5a-07a8-43f8-a548-6500ac81d0c5",
-      "name": "daily workout Armory",
+      "name": "daily workout",
       "date": "2026-09-08",
+      "location": "Armory",
       "exercises": [
         {
           "exercise": "Bicep curl",
@@ -743,12 +761,13 @@
           "notes": ""
         }
       ],
-      "createdAt": 1789174732722
+      "createdAt": 1789259546438
     },
     {
       "id": "ff90970d-baf0-4284-91d7-8250e9fa4217",
-      "name": "daily workout Armory",
+      "name": "daily workout",
       "date": "2026-09-09",
+      "location": "Armory",
       "exercises": [
         {
           "exercise": "Squats",
@@ -786,7 +805,7 @@
           "notes": "3/3; 20 minutes"
         }
       ],
-      "createdAt": 1789174753866
+      "createdAt": 1789259537105
     }
   ],
   "settings": {
