@@ -151,9 +151,9 @@ delete(store, id) {
 
   // --- Meals ---
   async saveMealEntry(meal) {
-    // meal: { id?, date, name, items: [{name, calories}] }
+    // meal: { id?, date, name, items: [{name, calories, quantity?}] }
     const id = meal.id || uuid();
-    const totalCalories = meal.items.reduce((sum, it) => sum + (Number(it.calories) || 0), 0);
+    const totalCalories = meal.items.reduce((sum, it) => sum + (Number(it.calories) || 0) * (Number(it.quantity) || 1), 0);
     const totals = { calories: totalCalories };
     const entry = { id, date: meal.date, name: meal.name, items: meal.items, totals, createdAt: meal.createdAt || Date.now() };
     await DB.put('mealEntries', entry);

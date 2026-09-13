@@ -27,7 +27,7 @@ async function renderMeals(content) {
           <div class="list-item" data-id="${m.id}" style="cursor:pointer;">
             <div class="list-item-main">
               <div class="list-item-title">${escapeHtml(m.name)}</div>
-              <div class="list-item-sub">${m.items.length} item${m.items.length !== 1 ? 's' : ''}</div>
+              <div class="list-item-sub">${m.items.map(it => escapeHtml(it.name) + (it.quantity && it.quantity !== 1 ? ' \u00d7' + it.quantity : '')).join(', ')}</div>
             </div>
             <div class="list-item-meta">${Math.round(mealTotalCalories(m))} cal</div>
           </div>
@@ -75,7 +75,7 @@ function openMealDetail(meal) {
       ${meal.items.map(it => `
         <div class="list-item">
           <div class="list-item-main">
-            <div class="list-item-title">${escapeHtml(it.name)}</div>
+            <div class="list-item-title">${escapeHtml(it.name)}${it.quantity && it.quantity !== 1 ? ' \u00d7' + it.quantity : ''}</div>
           </div>
           <div class="list-item-meta">${Math.round(caloriesForItem(it))} cal</div>
         </div>
@@ -94,7 +94,7 @@ function openMealDetail(meal) {
   `;
   const sheet = openSheet(escapeHtml(meal.name), bodyHtml, (body) => {
     body.querySelector('#duplicate-btn').onclick = async () => {
-      await DB.saveMealEntry({ date: DB.todayISO(), name: meal.name, items: meal.items.map(it => ({ name: it.name, calories: caloriesForItem(it) })) });
+      await DB.saveMealEntry({ date: DB.todayISO(), name: meal.name, items: meal.items.map(it => ({ name: it.name, calories: perUnitCaloriesForItem(it), quantity: it.quantity || 1 })) });
       closeSheet();
       showToast('Meal added to today');
       renderApp();
@@ -148,7 +148,7 @@ async function openRepeatPicker() {
         `);
         row.querySelector('button').onclick = async (e) => {
           e.stopPropagation();
-          await DB.saveMealEntry({ date: DB.todayISO(), name: m.name, items: m.items.map(it => ({ name: it.name, calories: caloriesForItem(it) })) });
+          await DB.saveMealEntry({ date: DB.todayISO(), name: m.name, items: m.items.map(it => ({ name: it.name, calories: perUnitCaloriesForItem(it), quantity: it.quantity || 1 })) });
           closeSheet();
           showToast('Meal added to today');
           renderApp();
@@ -194,10 +194,14 @@ function openMealForm(existingMeal) {
             </div>
             <div class="autocomplete-list" style="display:none;"></div>
           </div>
-          <div class="item-row-grid item-row-grid-single">
+          <div class="item-row-grid item-row-grid-double">
             <div>
               <div class="mini-label">Calories</div>
-              <input type="number" inputmode="numeric" class="item-calories" value="${prefill ? Math.round(caloriesForItem(prefill)) : ''}" placeholder="0" />
+              <input type="number" inputmode="numeric" class="item-calories" value="${prefill ? Math.round(perUnitCaloriesForItem(prefill)) : ''}" placeholder="0" />
+            </div>
+            <div>
+              <div class="mini-label">Quantity</div>
+              <input type="number" inputmode="decimal" class="item-quantity" value="${prefill ? (prefill.quantity || 1) : 1}" min="1" step="1" />
             </div>
           </div>
         </div>
@@ -219,12 +223,12 @@ function openMealForm(existingMeal) {
             const item = el(`
               <div class="autocomplete-item">
                 <span>${escapeHtml(r.name)}</span>
-                <span class="ac-macro">${Math.round(caloriesForItem(r))} cal</span>
+                <span class="ac-macro">${Math.round(perUnitCaloriesForItem(r))} cal</span>
               </div>
             `);
             item.onclick = () => {
               nameInput.value = r.name;
-              row.querySelector('.item-calories').value = Math.round(caloriesForItem(r));
+              row.querySelector('.item-calories').value = Math.round(perUnitCaloriesForItem(r));
               acList.style.display = 'none';
             };
             acList.appendChild(item);
@@ -251,7 +255,8 @@ function openMealForm(existingMeal) {
       const rows = Array.from(rowsEl.querySelectorAll('.item-row'));
       const items = rows.map(r => ({
         name: r.querySelector('.item-name').value.trim(),
-        calories: Number(r.querySelector('.item-calories').value) || 0
+        calories: Number(r.querySelector('.item-calories').value) || 0,
+        quantity: Number(r.querySelector('.item-quantity').value) || 1
       })).filter(it => it.name);
       if (items.length === 0) { showToast('Add at least one food item'); return; }
       await DB.saveMealEntry({ id: isEdit ? existingMeal.id : undefined, date, name, items });

@@ -339,9 +339,15 @@ label {
   gap: 8px;
   margin-top: 8px;
 }
-/* Used for the calories-only item row (macros feature is disabled — see dashboard.js/meals.js) */
+/* RETAINED BUT CURRENTLY UNUSED — was used for the calories-only item row
+   before the Quantity field was added below. Kept in case a single-field
+   item row is needed again (see .item-row-grid-double, meals.js). */
 .item-row-grid-single {
   grid-template-columns: 1fr;
+}
+/* Calories + Quantity side-by-side in the meal item row (see meals.js) */
+.item-row-grid-double {
+  grid-template-columns: 1fr 1fr;
 }
 .item-row .remove-btn {
   position: absolute;

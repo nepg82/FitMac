@@ -177,11 +177,23 @@ function round1(n) {
 // protein/carbs/fat directly.
 // ---------------------------------------------------------------------------
 
-function caloriesForItem(it) {
+// perUnitCaloriesForItem returns calories for a single unit of the item —
+// this is what's actually stored on `it.calories` (or derived from legacy
+// macros). caloriesForItem multiplies that by quantity to get the line
+// item's total, which is what meal detail views / duplication should use.
+// Anywhere reading or prefilling the raw per-unit value (e.g. the Calories
+// field when editing an item) should call perUnitCaloriesForItem directly —
+// calling caloriesForItem there would show the already-multiplied total.
+function perUnitCaloriesForItem(it) {
   if (!it) return 0;
   if (it.calories != null) return Number(it.calories) || 0;
   // Legacy macro-based item — convert so calorie totals stay correct.
   return (Number(it.protein) || 0) * 4 + (Number(it.carbs) || 0) * 4 + (Number(it.fat) || 0) * 9;
+}
+
+function caloriesForItem(it) {
+  if (!it) return 0;
+  return perUnitCaloriesForItem(it) * (Number(it.quantity) || 1);
 }
 
 function mealTotalCalories(meal) {
