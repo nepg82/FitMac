@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-13T01:25:09.223Z",
-  "lastModified": 1789259559539,
+  "exportedAt": "2026-09-13T14:59:01.629Z",
+  "lastModified": 1789311536080,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -68,6 +68,12 @@
       "name": "Hot dogs",
       "calories": 275,
       "createdAt": 1789258764332
+    },
+    {
+      "id": "8f8efcb4-2983-4e40-adea-7aea9e83e7ad",
+      "name": "Fit Crunch Bar",
+      "calories": 190,
+      "createdAt": 1789311536073
     },
     {
       "id": "9d9d4c41-5d6b-4b4c-a4d5-f7eea558c817",
@@ -150,6 +156,22 @@
         "fat": 29.8
       },
       "createdAt": 1788374606207
+    },
+    {
+      "id": "27287c82-c3ea-4f08-b161-998c966cf952",
+      "date": "2026-09-13",
+      "name": "Breakfast",
+      "items": [
+        {
+          "name": "Fit Crunch Bar",
+          "calories": 190,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 190
+      },
+      "createdAt": 1789311536057
     },
     {
       "id": "35876624-bcff-45e6-8795-4d66df433e22",
