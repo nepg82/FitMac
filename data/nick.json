@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-13T14:59:01.629Z",
-  "lastModified": 1789311536080,
+  "exportedAt": "2026-09-13T20:17:54.002Z",
+  "lastModified": 1789316535645,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -279,6 +279,22 @@
         "calories": 150
       },
       "createdAt": 1789120453412
+    },
+    {
+      "id": "7405454b-a950-4140-9872-a57edb6d7494",
+      "date": "2026-09-13",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Manito's Beef Taco",
+          "calories": 350,
+          "quantity": 3
+        }
+      ],
+      "totals": {
+        "calories": 1050
+      },
+      "createdAt": 1789316535626
     },
     {
       "id": "7ccea7d7-81e8-4364-850c-ea19d44aa24c",
