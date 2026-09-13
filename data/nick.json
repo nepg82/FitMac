@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-12T23:55:43.008Z",
-  "lastModified": 1789257337687,
+  "exportedAt": "2026-09-13T00:00:53.279Z",
+  "lastModified": 1789257649702,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -64,6 +64,12 @@
       "carbs": 0,
       "fat": 3,
       "createdAt": 1788018594781
+    },
+    {
+      "id": "c8af345a-d878-48ae-aef8-eb7da98b044e",
+      "name": "Mighty Taco El Niño",
+      "calories": 800,
+      "createdAt": 1789257649701
     },
     {
       "id": "d1d5be4b-0391-4858-b2e3-3a37f538d76c",
@@ -309,14 +315,14 @@
       "name": "Dinner",
       "items": [
         {
-          "name": "El Niño",
+          "name": "Mighty Taco El Niño",
           "calories": 800
         }
       ],
       "totals": {
         "calories": 800
       },
-      "createdAt": 1789257337684
+      "createdAt": 1789257649699
     },
     {
       "id": "ab3a7ebb-b64a-4cd7-a477-c95152acee49",
