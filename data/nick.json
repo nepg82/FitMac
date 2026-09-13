@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-13T20:17:54.002Z",
-  "lastModified": 1789316535645,
+  "exportedAt": "2026-09-13T22:19:46.058Z",
+  "lastModified": 1789337972279,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -82,6 +82,12 @@
       "carbs": 0,
       "fat": 3,
       "createdAt": 1788018594781
+    },
+    {
+      "id": "c3bd9489-a884-47fd-b545-5e6d6611e1d7",
+      "name": "Stuffed Hungarian Peppers",
+      "calories": 250,
+      "createdAt": 1789337972277
     },
     {
       "id": "c8af345a-d878-48ae-aef8-eb7da98b044e",
@@ -458,6 +464,22 @@
         "calories": 860
       },
       "createdAt": 1788905085410
+    },
+    {
+      "id": "d784c5d2-80c9-4b0e-9656-5073b171ec33",
+      "date": "2026-09-13",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Stuffed Hungarian Peppers",
+          "calories": 250,
+          "quantity": 3
+        }
+      ],
+      "totals": {
+        "calories": 750
+      },
+      "createdAt": 1789337972249
     },
     {
       "id": "de03b5fc-6835-4fdf-bd1f-32fd8b520752",
