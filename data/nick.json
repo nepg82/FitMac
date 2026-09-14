@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-14T22:50:46.883Z",
-  "lastModified": 1789417844535,
+  "exportedAt": "2026-09-14T23:29:40.319Z",
+  "lastModified": 1789428554677,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -28,6 +28,12 @@
       "name": "Manito's Beef Taco",
       "calories": 350,
       "createdAt": 1789258797297
+    },
+    {
+      "id": "1ad85d92-9e7c-4836-a594-0714d85d7e5b",
+      "name": "Fuji Grill Special roll",
+      "calories": 500,
+      "createdAt": 1789426278145
     },
     {
       "id": "29506427-1769-470d-b28e-54e971fa5ce6",
@@ -501,6 +507,22 @@
         "calories": 860
       },
       "createdAt": 1788905085410
+    },
+    {
+      "id": "d339f5d5-c6ef-4ea2-afa9-0113a239bbe8",
+      "date": "2026-09-14",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Fuji Grill Special roll",
+          "calories": 500,
+          "quantity": 2.5
+        }
+      ],
+      "totals": {
+        "calories": 1250
+      },
+      "createdAt": 1789428554659
     },
     {
       "id": "d784c5d2-80c9-4b0e-9656-5073b171ec33",
