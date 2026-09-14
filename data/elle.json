@@ -1,8 +1,14 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-13T01:29:39.623Z",
-  "lastModified": 1789258662051,
+  "exportedAt": "2026-09-14T20:29:00.056Z",
+  "lastModified": 1789417691348,
   "foodItems": [
+    {
+      "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
+      "name": "Shrimp-medium",
+      "calories": 5.3,
+      "createdAt": 1789417691347
+    },
     {
       "id": "09d163c6-c46a-4889-ae7b-d046ae5caf9e",
       "name": "M&M's Fun Size (Peanut)",
@@ -66,6 +72,12 @@
       "carbs": 40,
       "fat": 18,
       "createdAt": 1788318343096
+    },
+    {
+      "id": "8c49fba4-d466-4e26-bd1b-952441ec0d8f",
+      "name": "Broccoli and stuffed pepper",
+      "calories": 150,
+      "createdAt": 1789417691343
     },
     {
       "id": "92327051-1169-4d02-830b-fff76814c702",
@@ -164,6 +176,27 @@
         "calories": 330
       },
       "createdAt": 1788987353687
+    },
+    {
+      "id": "0614a167-d0ba-41fa-aedd-7ab84f067602",
+      "date": "2026-09-14",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Broccoli and stuffed pepper",
+          "calories": 150,
+          "quantity": 1
+        },
+        {
+          "name": "Shrimp-medium",
+          "calories": 5.3,
+          "quantity": 8
+        }
+      ],
+      "totals": {
+        "calories": 192.4
+      },
+      "createdAt": 1789417691324
     },
     {
       "id": "0b641eca-f979-4739-bbc2-18dc6c200411",
@@ -289,6 +322,22 @@
         "calories": 520
       },
       "createdAt": 1789174955099
+    },
+    {
+      "id": "887c81fe-c98d-4142-8700-4d6e53eca442",
+      "date": "2026-09-14",
+      "name": "Fairlife",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1789417602384
     },
     {
       "id": "923b3ef4-9dcd-4e36-8ce9-fd1eb2331535",
