@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-14T11:18:45.752Z",
-  "lastModified": 1789384716422,
+  "exportedAt": "2026-09-14T22:50:46.883Z",
+  "lastModified": 1789417844535,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -431,6 +431,27 @@
         "calories": 610
       },
       "createdAt": 1789120409877
+    },
+    {
+      "id": "b197d546-68ec-43cf-b756-fca769882cdb",
+      "date": "2026-09-14",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1789417844515
     },
     {
       "id": "bf12d78b-3651-4da2-8fe6-681b8dbc0f58",
