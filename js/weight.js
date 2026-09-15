@@ -17,6 +17,7 @@ async function renderWeight(content) {
     </div>
 
     <div class="btn-row" style="margin-bottom:16px;">
+      <button class="btn btn-ghost" id="export-pdf-btn">Export PDF</button>
       <button class="btn btn-primary btn-block" id="add-weight-btn">+ Log Weight</button>
       <button class="btn btn-ghost" id="set-target-btn">Target</button>
     </div>
@@ -66,6 +67,7 @@ async function renderWeight(content) {
 
   document.getElementById('add-weight-btn').onclick = () => openWeightForm();
   document.getElementById('set-target-btn').onclick = () => openTargetForm(settings);
+  document.getElementById('export-pdf-btn').onclick = () => exportWeightPDF();
 }
 
 function openWeightForm() {
