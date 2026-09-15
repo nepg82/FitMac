@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-14T23:32:59.649Z",
-  "lastModified": 1789428767469,
+  "exportedAt": "2026-09-15T09:45:35.572Z",
+  "lastModified": 1789465521728,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -99,12 +99,6 @@
       "fat": 3,
       "createdAt": 1788400978901,
       "calories": 150
-    },
-    {
-      "id": "d5e09e61-df3f-482c-8395-0d2c0861a410",
-      "name": "Manito's Nachos Carnitas",
-      "calories": 1650,
-      "createdAt": 1789428767468
     },
     {
       "id": "d8654314-62fa-4e25-83a0-8136252e7f0f",
@@ -292,22 +286,6 @@
       "createdAt": 1788987287844
     },
     {
-      "date": "2026-09-14",
-      "name": "Dinner",
-      "items": [
-        {
-          "name": "Fuji Grill Special roll",
-          "calories": 500,
-          "quantity": 2.5
-        }
-      ],
-      "totals": {
-        "calories": 1250
-      },
-      "id": "4a613162-ffa0-43e6-829d-cc1c2a499e61",
-      "createdAt": 1789428592324
-    },
-    {
       "id": "4ba499ad-7d17-4bfa-958f-26692450ba7a",
       "date": "2026-09-01",
       "name": "Lunch",
@@ -379,22 +357,6 @@
         "fat": 100
       },
       "createdAt": 1788318230576
-    },
-    {
-      "id": "992839c1-f8ad-471c-88c5-8fb6d64e03d4",
-      "date": "2026-09-13",
-      "name": "Lunch",
-      "items": [
-        {
-          "name": "Manito's Nachos Carnitas",
-          "calories": 1650,
-          "quantity": 1
-        }
-      ],
-      "totals": {
-        "calories": 1650
-      },
-      "createdAt": 1789428767432
     },
     {
       "id": "9a728fed-e197-42ce-b2c9-a85b0e4c0627",
@@ -627,6 +589,50 @@
         }
       ],
       "createdAt": 1789120275257
+    },
+    {
+      "id": "91a5ce55-7110-410c-a3b1-e1b231168153",
+      "name": "daily workout",
+      "date": "2026-09-14",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "5",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "8",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Reverse Lunges",
+          "sets": "3",
+          "reps": "5",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "createdAt": 1789465521724
     },
     {
       "id": "ad047976-32db-4cbd-b757-4a619f97bfbc",
