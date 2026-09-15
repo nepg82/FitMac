@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-15T09:57:42.759Z",
-  "lastModified": 1789466255850,
+  "exportedAt": "2026-09-15T16:31:10.788Z",
+  "lastModified": 1789489857242,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -14,6 +14,12 @@
       "name": "M&M's Fun Size (Peanut)",
       "calories": 90,
       "createdAt": 1789257518636
+    },
+    {
+      "id": "134aa9d7-342b-4f9f-b09e-c50665478d60",
+      "name": "Mixed unsalted nuts 1/4 cup",
+      "calories": 220,
+      "createdAt": 1789489857241
     },
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -90,6 +96,12 @@
       "name": "Homemade lunch",
       "calories": 330,
       "createdAt": 1788987353704
+    },
+    {
+      "id": "a36d4d31-f325-4c61-a998-eb5b6fd5d2f9",
+      "name": "Tuna- hickory smoked",
+      "calories": 110,
+      "createdAt": 1789489857239
     },
     {
       "id": "c6ad5477-4494-4f56-9ba3-3698af8a4e08",
@@ -421,6 +433,43 @@
         "calories": 630
       },
       "createdAt": 1789257411666
+    },
+    {
+      "id": "cb49a22a-c6b8-4db4-b3e7-65086388e338",
+      "date": "2026-09-15",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Tuna- hickory smoked",
+          "calories": 110,
+          "quantity": 1
+        },
+        {
+          "name": "Mixed unsalted nuts 1/4 cup",
+          "calories": 220,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 330
+      },
+      "createdAt": 1789489857223
+    },
+    {
+      "id": "d761437b-be30-4bd0-bbbd-0e0f25aa5b84",
+      "date": "2026-09-15",
+      "name": "Fairlife",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1789489807927
     },
     {
       "id": "ed4d0866-bdbc-4c20-91a8-1614fe33f958",
