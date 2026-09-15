@@ -136,9 +136,7 @@ function formatDateWithYear(iso) {
   const [y, m, d] = iso.split('-').map(Number);
   const dt = new Date(y, m - 1, d);
   const weekday = dt.toLocaleDateString(undefined, { weekday: 'short' });
-  const month = dt.toLocaleDateString(undefined, { month: 'short' });
-  const yy = String(y).slice(-2);
-  return `${weekday} ${d} ${month} ${yy}`;
+  return `${weekday}, ${m}/${d}/${y}`;
 }
 
 function formatDateShort(iso) {
