@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-15T09:57:03.989Z",
-  "lastModified": 1789466223989,
+  "exportedAt": "2026-09-15T10:59:29.446Z",
+  "lastModified": 1789469948018,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -309,6 +309,22 @@
       "createdAt": 1789316535626
     },
     {
+      "id": "7a6f81f9-856d-43e0-9c48-15a9d38b59a0",
+      "date": "2026-09-15",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1789469942081
+    },
+    {
       "id": "7ccea7d7-81e8-4364-850c-ea19d44aa24c",
       "date": "2026-09-08",
       "name": "Protein shake",
@@ -341,6 +357,27 @@
         "calories": 610
       },
       "createdAt": 1788986915754
+    },
+    {
+      "id": "90124b91-7283-4650-8c8f-2da45014e21d",
+      "date": "2026-09-15",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1789469948014
     },
     {
       "id": "908fe3b8-ac5d-4e2b-b20a-dd068ce06b2b",
@@ -1226,6 +1263,50 @@
       "createdAt": 1789259559538
     },
     {
+      "id": "36397032-6b53-465a-9f67-7d7b4fe17b9b",
+      "name": "daily workout",
+      "date": "2026-09-15",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bicep hammers",
+          "sets": "3",
+          "reps": "8",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Preacher curl",
+          "sets": "3",
+          "reps": "8",
+          "weight": "10",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat pulldown",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        },
+        {
+          "exercise": "Lat row",
+          "sets": "3",
+          "reps": "15",
+          "weight": "105",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1789469836450
+    },
+    {
       "id": "49f45423-3b67-4310-9d2f-e8ecae6792bd",
       "name": "daily workout",
       "date": "2026-09-11",
@@ -1321,50 +1402,6 @@
       "createdAt": 1789259546438
     },
     {
-      "id": "ff90970d-baf0-4284-91d7-8250e9fa4217",
-      "name": "daily workout",
-      "date": "2026-09-09",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Squats",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Lunges",
-          "sets": "3",
-          "reps": "5",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Leg press",
-          "sets": "3",
-          "reps": "5",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Deadlift",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
-        }
-      ],
-      "createdAt": 1789259537105
-    },
-    {
       "name": "daily workout",
       "date": "2026-09-14",
       "location": "Armory",
@@ -1409,36 +1446,37 @@
       "createdAt": 1789465527648
     },
     {
+      "id": "ff90970d-baf0-4284-91d7-8250e9fa4217",
       "name": "daily workout",
-      "date": "2026-09-15",
+      "date": "2026-09-09",
       "location": "Armory",
       "exercises": [
         {
-          "exercise": "Bicep curl",
+          "exercise": "Squats",
           "sets": "3",
-          "reps": "8",
-          "weight": "15",
+          "reps": "10",
+          "weight": "",
           "notes": ""
         },
         {
-          "exercise": "Bicep hammers",
+          "exercise": "Lunges",
           "sets": "3",
-          "reps": "8",
-          "weight": "15",
+          "reps": "5",
+          "weight": "",
           "notes": ""
         },
         {
-          "exercise": "Preacher curl",
+          "exercise": "Leg press",
           "sets": "3",
-          "reps": "8",
-          "weight": "10",
+          "reps": "5",
+          "weight": "",
           "notes": ""
         },
         {
-          "exercise": "Lat row",
+          "exercise": "Deadlift",
           "sets": "3",
-          "reps": "15",
-          "weight": "60",
+          "reps": "10",
+          "weight": "",
           "notes": ""
         },
         {
@@ -1449,8 +1487,7 @@
           "notes": "3/3; 20 minutes"
         }
       ],
-      "id": "36397032-6b53-465a-9f67-7d7b4fe17b9b",
-      "createdAt": 1789466223989
+      "createdAt": 1789259537105
     }
   ],
   "settings": {
