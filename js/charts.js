@@ -271,17 +271,24 @@ function drawLineChart(canvas, points, opts = {}) {
     tickValues.forEach(tv => ctx.fillText(String(tv), 2, yFor(tv) + 3));
   }
 
-  // line
+  // line — drawn as one stroke per segment (rather than a single path) so
+  // that a segment bridging a long gap between entries (opts.gapDashDays,
+  // default 6 weeks) can be dashed while the rest of the line stays solid.
   const accent = opts.color || '#7C5CFF';
+  const gapDashDays = opts.gapDashDays || 42;
   ctx.strokeStyle = accent;
   ctx.lineWidth = 2.2;
   ctx.lineJoin = 'round';
-  ctx.beginPath();
-  sorted.forEach((p, i) => {
-    const x = xFor(p.date), y = yFor(p.y);
-    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-  });
-  ctx.stroke();
+  for (let i = 1; i < sorted.length; i++) {
+    const prev = sorted[i - 1], cur = sorted[i];
+    const isGap = daysBetweenISO(prev.date, cur.date) >= gapDashDays;
+    ctx.setLineDash(isGap ? [6, 5] : []);
+    ctx.beginPath();
+    ctx.moveTo(xFor(prev.date), yFor(prev.y));
+    ctx.lineTo(xFor(cur.date), yFor(cur.y));
+    ctx.stroke();
+  }
+  ctx.setLineDash([]);
 
   // fill under line
   const grad = ctx.createLinearGradient(0, padT, 0, padT + h);
@@ -439,17 +446,24 @@ function drawWindowedLineChart(canvas, points, opts = {}) {
     ctx.fillText(text, padL - tw - 8, y + 3);
   });
 
-  // line
+  // line — see drawLineChart's comment above for why this is per-segment
+  // strokes rather than one path: it lets a long gap between entries render
+  // dashed while the rest of the line stays solid.
   const accent = opts.color || '#7C5CFF';
+  const gapDashDays = opts.gapDashDays || 42;
   ctx.strokeStyle = accent;
   ctx.lineWidth = 2.2;
   ctx.lineJoin = 'round';
-  ctx.beginPath();
-  windowed.forEach((p, i) => {
-    const x = xFor(p.date), y = yFor(p.y);
-    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-  });
-  ctx.stroke();
+  for (let i = 1; i < windowed.length; i++) {
+    const prev = windowed[i - 1], cur = windowed[i];
+    const isGap = daysBetweenISO(prev.date, cur.date) >= gapDashDays;
+    ctx.setLineDash(isGap ? [6, 5] : []);
+    ctx.beginPath();
+    ctx.moveTo(xFor(prev.date), yFor(prev.y));
+    ctx.lineTo(xFor(cur.date), yFor(cur.y));
+    ctx.stroke();
+  }
+  ctx.setLineDash([]);
 
   // fill under line
   const grad = ctx.createLinearGradient(0, padT, 0, padT + h);

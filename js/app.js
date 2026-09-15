@@ -132,6 +132,15 @@ function formatDate(iso) {
   return dt.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
 }
 
+function formatDateWithYear(iso) {
+  const [y, m, d] = iso.split('-').map(Number);
+  const dt = new Date(y, m - 1, d);
+  const weekday = dt.toLocaleDateString(undefined, { weekday: 'short' });
+  const month = dt.toLocaleDateString(undefined, { month: 'short' });
+  const yy = String(y).slice(-2);
+  return `${weekday} ${d} ${month} ${yy}`;
+}
+
 function formatDateShort(iso) {
   const [y, m, d] = iso.split('-').map(Number);
   return `${m}/${d}`;

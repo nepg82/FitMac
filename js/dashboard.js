@@ -100,7 +100,10 @@ async function renderDashboard(content) {
         ? `<canvas class="chart-canvas" id="dash-weight-chart"></canvas>
            <div class="chart-nav-row">
              <button type="button" class="chart-nav-btn" id="dash-weight-prev" aria-label="Earlier">&lsaquo;</button>
-             <div class="chart-nav-label mono" id="dash-weight-window-label"></div>
+             <div style="text-align:center;">
+               <div class="chart-nav-label mono" id="dash-weight-window-label"></div>
+               <div class="stat-label mono" id="dash-weight-window-year" style="font-size:10px;margin-top:1px;"></div>
+             </div>
              <button type="button" class="chart-nav-btn" id="dash-weight-next" aria-label="Later">&rsaquo;</button>
            </div>`
         : `<div class="empty-state">No weight entries yet</div>`}
@@ -131,6 +134,15 @@ async function renderDashboard(content) {
       });
       const label = document.getElementById('dash-weight-window-label');
       if (label) label.textContent = `${formatDateShort(result.rangeStart)} – ${formatDateShort(result.rangeEnd)}`;
+      const yearEl = document.getElementById('dash-weight-window-year');
+      if (yearEl) {
+        const startYear = result.rangeStart.slice(0, 4);
+        const endYear = result.rangeEnd.slice(0, 4);
+        // If the window straddles a year boundary (e.g. Dec into Jan), showing
+        // both years ("2025 – 2026") is clutter for a small label — just show
+        // the end year, since windows are anchored on the most recent side.
+        yearEl.textContent = startYear === endYear ? startYear : endYear;
+      }
       const prevBtn = document.getElementById('dash-weight-prev');
       const nextBtn = document.getElementById('dash-weight-next');
       if (prevBtn) prevBtn.disabled = !result.hasOlder;

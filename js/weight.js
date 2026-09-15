@@ -48,7 +48,7 @@ async function renderWeight(content) {
       const row = el(`
         <div class="list-item">
           <div class="list-item-main">
-            <div class="list-item-title">${formatDate(e.date)}</div>
+            <div class="list-item-title">${formatDateWithYear(e.date)}</div>
           </div>
           <div class="list-item-meta">${round1(e.weight)} lbs</div>
           <button class="btn btn-sm btn-ghost" style="border:none;color:var(--text-faint);">&times;</button>
