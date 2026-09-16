@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-16T10:20:18.308Z",
-  "lastModified": 1789554018308,
+  "exportedAt": "2026-09-16T10:21:59.147Z",
+  "lastModified": 1789554097142,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -399,6 +399,22 @@
       "createdAt": 1788318230576
     },
     {
+      "date": "2026-09-14",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Fuji Grill Special roll",
+          "calories": 500,
+          "quantity": 2.5
+        }
+      ],
+      "totals": {
+        "calories": 1250
+      },
+      "id": "96982f78-4cb9-442e-9b20-12163affb704",
+      "createdAt": 1789554018307
+    },
+    {
       "id": "9a728fed-e197-42ce-b2c9-a85b0e4c0627",
       "date": "2026-09-11",
       "name": "Lunch",
@@ -552,22 +568,6 @@
         "calories": 500
       },
       "createdAt": 1788987222674
-    },
-    {
-      "date": "2026-09-14",
-      "name": "Dinner",
-      "items": [
-        {
-          "name": "Fuji Grill Special roll",
-          "calories": 500,
-          "quantity": 2.5
-        }
-      ],
-      "totals": {
-        "calories": 1250
-      },
-      "id": "96982f78-4cb9-442e-9b20-12163affb704",
-      "createdAt": 1789554018307
     }
   ],
   "weightEntries": [
@@ -600,6 +600,12 @@
       "date": "2026-08-09",
       "weight": 210.6,
       "createdAt": 1788005999199
+    },
+    {
+      "id": "b7bbb683-561b-4c2b-9d36-fdfbc7d0d51a",
+      "date": "2026-09-16",
+      "weight": 205.8,
+      "createdAt": 1789554097133
     },
     {
       "id": "cd61257b-ce22-4548-b6ea-9aa8e846ff9e",
