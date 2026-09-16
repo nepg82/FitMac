@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-16T10:21:59.147Z",
-  "lastModified": 1789554097142,
+  "exportedAt": "2026-09-16T17:34:10.002Z",
+  "lastModified": 1789580042674,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -135,6 +135,12 @@
       "name": "Curly fries",
       "calories": 100,
       "createdAt": 1788987222711
+    },
+    {
+      "id": "e555ba0a-281c-4f50-be04-d037438925e4",
+      "name": "Orange ginger chicken",
+      "calories": 350,
+      "createdAt": 1789580042667
     },
     {
       "id": "f2c62b90-f474-416e-83e3-419d9f0bfd74",
@@ -326,6 +332,22 @@
       "createdAt": 1788987287844
     },
     {
+      "id": "3510add2-6439-412c-ab5c-ac51175d50fd",
+      "date": "2026-09-16",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Orange ginger chicken",
+          "calories": 350,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 350
+      },
+      "createdAt": 1789580042658
+    },
+    {
       "id": "4ba499ad-7d17-4bfa-958f-26692450ba7a",
       "date": "2026-09-01",
       "name": "Lunch",
@@ -362,6 +384,22 @@
         "calories": 520
       },
       "createdAt": 1789174955099
+    },
+    {
+      "id": "59a4617a-a5ad-442b-af1a-4fcd127420bc",
+      "date": "2026-09-16",
+      "name": "Fairlife",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1789579998470
     },
     {
       "id": "887c81fe-c98d-4142-8700-4d6e53eca442",
