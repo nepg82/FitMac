@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-16T10:18:17.705Z",
-  "lastModified": 1789553890777,
+  "exportedAt": "2026-09-16T10:21:17.410Z",
+  "lastModified": 1789554077410,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -679,6 +679,22 @@
         "calories": 610
       },
       "createdAt": 1789120456339
+    },
+    {
+      "date": "2026-09-15",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Orange ginger chicken w/rice",
+          "calories": 860,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 860
+      },
+      "id": "0128e796-6e90-4746-810f-38f696129666",
+      "createdAt": 1789554077410
     }
   ],
   "weightEntries": [
