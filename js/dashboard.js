@@ -24,6 +24,7 @@ async function renderDashboard(content) {
   const todayMeals = allMeals.filter(m => m.date === today);
 
   const todayCalories = todayMeals.reduce((sum, m) => sum + mealTotalCalories(m), 0);
+  const remainingCalories = settings.calorieGoal ? settings.calorieGoal - todayCalories : 0;
 
   // --- Macro breakdown (disabled) — see comment block above ---
   let macroBarHtml = '';
@@ -73,8 +74,13 @@ async function renderDashboard(content) {
 
   content.innerHTML = `
     <div class="card">
-      <div class="card-title">Today's Calories</div>
-      <div class="big-number">${Math.round(todayCalories)} <span style="font-size:14px;color:var(--text-dim);">cal</span></div>
+      <div class="stat-row" style="align-items:flex-start;">
+        <div>
+          <div class="card-title">Today's Calories</div>
+          <div class="big-number">${Math.round(todayCalories)} <span style="font-size:14px;color:var(--text-dim);">cal</span></div>
+        </div>
+        ${settings.calorieGoal ? `<div class="stat-label mono" style="text-align:right;white-space:nowrap;">${remainingCalories >= 0 ? Math.round(remainingCalories) + ' left' : Math.round(Math.abs(remainingCalories)) + ' over'}</div>` : ''}
+      </div>
       ${macroBarHtml}
       ${todayMeals.length === 0 ? `<div class="stat-label" style="margin-top:10px;">No meals logged today yet</div>` : ''}
     </div>
