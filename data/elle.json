@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-15T16:31:10.788Z",
-  "lastModified": 1789489857242,
+  "exportedAt": "2026-09-16T10:21:59.147Z",
+  "lastModified": 1789554097142,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -92,6 +92,12 @@
       "createdAt": 1789257411670
     },
     {
+      "id": "9543c4e5-6241-4b8a-a15d-b6bf0e151e7c",
+      "name": "Orange ginger chicken w/rice",
+      "calories": 860,
+      "createdAt": 1789553685775
+    },
+    {
       "id": "a0dfb5d7-800e-4a96-b0b2-512952845060",
       "name": "Homemade lunch",
       "calories": 330,
@@ -102,6 +108,12 @@
       "name": "Tuna- hickory smoked",
       "calories": 110,
       "createdAt": 1789489857239
+    },
+    {
+      "id": "b93ac8bf-092f-4a7b-84db-b497fabc01b2",
+      "name": "Manito's Nachos Carnitas",
+      "calories": 1400,
+      "createdAt": 1789553735008
     },
     {
       "id": "c6ad5477-4494-4f56-9ba3-3698af8a4e08",
@@ -245,6 +257,22 @@
       "createdAt": 1789175043803
     },
     {
+      "id": "14c51b01-3334-4f04-989f-187e6d0d2c5e",
+      "date": "2026-09-15",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Orange ginger chicken w/rice",
+          "calories": 860,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 860
+      },
+      "createdAt": 1789553685761
+    },
+    {
       "id": "17e14f7a-30d9-4191-8c0d-0da4dcb6a965",
       "date": "2026-09-09",
       "name": "Fairlife",
@@ -371,6 +399,22 @@
       "createdAt": 1788318230576
     },
     {
+      "date": "2026-09-14",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Fuji Grill Special roll",
+          "calories": 500,
+          "quantity": 2.5
+        }
+      ],
+      "totals": {
+        "calories": 1250
+      },
+      "id": "96982f78-4cb9-442e-9b20-12163affb704",
+      "createdAt": 1789554018307
+    },
+    {
       "id": "9a728fed-e197-42ce-b2c9-a85b0e4c0627",
       "date": "2026-09-11",
       "name": "Lunch",
@@ -472,6 +516,22 @@
       "createdAt": 1789489807927
     },
     {
+      "id": "d82c651d-321f-4671-8669-3bdf92566223",
+      "date": "2026-09-13",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Manito's Nachos Carnitas",
+          "calories": 1400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 1400
+      },
+      "createdAt": 1789553735001
+    },
+    {
       "id": "ed4d0866-bdbc-4c20-91a8-1614fe33f958",
       "date": "2026-09-02",
       "name": "Dinner",
@@ -542,6 +602,12 @@
       "createdAt": 1788005999199
     },
     {
+      "id": "b7bbb683-561b-4c2b-9d36-fdfbc7d0d51a",
+      "date": "2026-09-16",
+      "weight": 205.8,
+      "createdAt": 1789554097133
+    },
+    {
       "id": "cd61257b-ce22-4548-b6ea-9aa8e846ff9e",
       "date": "2026-07-19",
       "weight": 210.6,
@@ -567,6 +633,64 @@
     }
   ],
   "workoutSessions": [
+    {
+      "id": "03d916bd-92cf-4033-8a08-e2183b0ab295",
+      "name": "daily workout",
+      "date": "2026-09-16",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "8",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Incline press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "10",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable press",
+          "sets": "3",
+          "reps": "8",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Tricep extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "10",
+          "notes": ""
+        },
+        {
+          "exercise": "Skull crushers",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Tricep push down",
+          "sets": "3",
+          "reps": "10",
+          "weight": "45",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "createdAt": 1789553615864
+    },
     {
       "id": "04bedf0c-faad-444e-a599-88267a6882eb",
       "name": "daily workout",
