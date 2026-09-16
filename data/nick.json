@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-16T10:21:17.410Z",
-  "lastModified": 1789554077410,
+  "exportedAt": "2026-09-16T10:57:30.264Z",
+  "lastModified": 1789555951036,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -151,6 +151,22 @@
   ],
   "mealEntries": [
     {
+      "date": "2026-09-15",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Orange ginger chicken w/rice",
+          "calories": 860,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 860
+      },
+      "id": "0128e796-6e90-4746-810f-38f696129666",
+      "createdAt": 1789554077410
+    },
+    {
       "id": "189b0e67-89b4-426b-b58f-5fce6cfed6d8",
       "date": "2026-09-01",
       "name": "Breakfast Scramble",
@@ -168,6 +184,22 @@
         "fat": 29.8
       },
       "createdAt": 1788374606207
+    },
+    {
+      "id": "266323f9-e2be-41d9-ad38-54cc46da56e2",
+      "date": "2026-09-16",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1789555948981
     },
     {
       "id": "27287c82-c3ea-4f08-b161-998c966cf952",
@@ -393,6 +425,27 @@
         "calories": 380
       },
       "createdAt": 1789224863857
+    },
+    {
+      "id": "9d42cd3d-378b-4bc2-ae3d-18545bc73852",
+      "date": "2026-09-16",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1789555951032
     },
     {
       "id": "a36be586-3c0d-4605-b921-94225f063cc4",
@@ -679,22 +732,6 @@
         "calories": 610
       },
       "createdAt": 1789120456339
-    },
-    {
-      "date": "2026-09-15",
-      "name": "Dinner",
-      "items": [
-        {
-          "name": "Orange ginger chicken w/rice",
-          "calories": 860,
-          "quantity": 1
-        }
-      ],
-      "totals": {
-        "calories": 860
-      },
-      "id": "0128e796-6e90-4746-810f-38f696129666",
-      "createdAt": 1789554077410
     }
   ],
   "weightEntries": [
