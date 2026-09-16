@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-16T10:57:30.264Z",
-  "lastModified": 1789555951036,
+  "exportedAt": "2026-09-16T21:25:04.492Z",
+  "lastModified": 1789593899177,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -62,6 +62,12 @@
       "carbs": 9,
       "fat": 34,
       "createdAt": 1788018594770
+    },
+    {
+      "id": "45cfc355-bf64-46b6-b225-c50a7b9cd430",
+      "name": "Pizza logs",
+      "calories": 180,
+      "createdAt": 1789593867011
     },
     {
       "id": "46d78271-d75f-435a-8d26-eb6c11e84520",
@@ -660,6 +666,22 @@
         "fat": 49
       },
       "createdAt": 1788018594749
+    },
+    {
+      "id": "de604c08-7a4f-49d7-b761-4f6b1d7366a4",
+      "date": "2026-09-16",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Pizza logs",
+          "calories": 180,
+          "quantity": 6
+        }
+      ],
+      "totals": {
+        "calories": 1080
+      },
+      "createdAt": 1789593899160
     },
     {
       "id": "e007d552-5ea2-46c5-bebc-5f50410a9e08",
