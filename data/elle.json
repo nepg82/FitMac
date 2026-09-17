@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-16T17:34:10.002Z",
-  "lastModified": 1789580042674,
+  "exportedAt": "2026-09-17T10:08:14.551Z",
+  "lastModified": 1789639688813,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -1024,6 +1024,64 @@
         }
       ],
       "createdAt": 1789119861302
+    },
+    {
+      "id": "e07146a5-f53a-4d23-a017-03996d414780",
+      "name": "daily workout",
+      "date": "2026-09-17",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Crunches",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Reverse crunches",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Planks",
+          "sets": "3",
+          "reps": "",
+          "weight": "",
+          "notes": "30 seconds"
+        },
+        {
+          "exercise": "Superman",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "createdAt": 1789639688805
     },
     {
       "id": "f0095740-366a-48d1-adc1-6e28ba431ef1",
