@@ -351,14 +351,14 @@ label {
 }
 .item-row .remove-btn {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 4px;
+  right: 4px;
   background: none;
   border: none;
   color: var(--text-faint);
   font-size: 18px;
   line-height: 1;
-  padding: 4px;
+  padding: 10px;
 }
 
 .mini-label { font-size: 10.5px; color: var(--text-faint); margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.04em; }
