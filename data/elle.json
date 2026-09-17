@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-17T10:08:14.551Z",
-  "lastModified": 1789639688813,
+  "exportedAt": "2026-09-17T10:10:14.450Z",
+  "lastModified": 1789639794918,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -40,6 +40,12 @@
       "name": "Anderson's Carl's Choice (or something)",
       "calories": 400,
       "createdAt": 1788987222701
+    },
+    {
+      "id": "3670e2a5-0d4e-458c-8338-2f600add9878",
+      "name": "Popcorn (movie theater)",
+      "calories": 500,
+      "createdAt": 1789639787129
     },
     {
       "id": "41f5bca2-c533-402b-8346-66421766e2cb",
@@ -135,6 +141,12 @@
       "name": "Curly fries",
       "calories": 100,
       "createdAt": 1788987222711
+    },
+    {
+      "id": "e0397950-ae4f-4631-8db4-03e83be96a61",
+      "name": "Cracker Barrel Chicken Fingers",
+      "calories": 650,
+      "createdAt": 1789639787126
     },
     {
       "id": "e555ba0a-281c-4f50-be04-d037438925e4",
@@ -400,6 +412,27 @@
         "calories": 150
       },
       "createdAt": 1789579998470
+    },
+    {
+      "id": "5fbd481f-4fcc-45fd-abab-19cbe8ddbebf",
+      "date": "2026-09-16",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Cracker Barrel Chicken Fingers",
+          "calories": 650,
+          "quantity": 1
+        },
+        {
+          "name": "Popcorn (movie theater)",
+          "calories": 500,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 1150
+      },
+      "createdAt": 1789639794904
     },
     {
       "id": "887c81fe-c98d-4142-8700-4d6e53eca442",
