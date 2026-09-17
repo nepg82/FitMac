@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-17T10:13:45.364Z",
-  "lastModified": 1789639794918,
+  "exportedAt": "2026-09-17T10:18:43.399Z",
+  "lastModified": 1789640318185,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -52,6 +52,12 @@
       "name": "Mighty Taco Super Mighty",
       "calories": 500,
       "createdAt": 1789257483819
+    },
+    {
+      "id": "454f7d02-1645-4d81-88e2-7657fe4bb2f0",
+      "name": "Cracker Barrel leftovers",
+      "calories": 400,
+      "createdAt": 1789640318183
     },
     {
       "id": "5b4703db-f8bf-43b6-9f62-813a9834839b",
@@ -344,6 +350,22 @@
       "createdAt": 1788987287844
     },
     {
+      "id": "2c2136e1-951f-4c5b-ae57-1cbb3dcc19e3",
+      "date": "2026-09-17",
+      "name": "Fairlife",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1789640205315
+    },
+    {
       "id": "3510add2-6439-412c-ab5c-ac51175d50fd",
       "date": "2026-09-16",
       "name": "Lunch",
@@ -449,6 +471,22 @@
         "calories": 150
       },
       "createdAt": 1789417602384
+    },
+    {
+      "id": "90a6e6d4-2ace-4b9e-9cd3-506c84d0ecb3",
+      "date": "2026-09-17",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Cracker Barrel leftovers",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 400
+      },
+      "createdAt": 1789640318172
     },
     {
       "id": "923b3ef4-9dcd-4e36-8ce9-fd1eb2331535",
