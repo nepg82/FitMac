@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-17T10:08:33.430Z",
-  "lastModified": 1789639713430,
+  "exportedAt": "2026-09-17T10:16:24.703Z",
+  "lastModified": 1789640170444,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -190,6 +190,27 @@
         "fat": 29.8
       },
       "createdAt": 1788374606207
+    },
+    {
+      "id": "2519b066-4042-4b8c-a3c8-5d95a279bfc8",
+      "date": "2026-09-17",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1789640170430
     },
     {
       "id": "266323f9-e2be-41d9-ad38-54cc46da56e2",
@@ -584,6 +605,22 @@
         "calories": 150
       },
       "createdAt": 1789120388153
+    },
+    {
+      "id": "d2def57f-6a70-4318-b830-c5052ee6e35b",
+      "date": "2026-09-17",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1789640164824
     },
     {
       "id": "d2ffb8a0-81d5-4b0e-9458-384c3a671847",
@@ -1338,6 +1375,57 @@
       "createdAt": 1789259559538
     },
     {
+      "id": "1c53e4c6-fc4a-4fb3-8e41-6c03a622b277",
+      "name": "daily workout",
+      "date": "2026-09-17",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Crunches",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Reverse crunches",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Planks",
+          "sets": "3",
+          "reps": "",
+          "weight": "",
+          "notes": "30 seconds"
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "createdAt": 1789640158648
+    },
+    {
       "id": "36397032-6b53-465a-9f67-7d7b4fe17b9b",
       "name": "daily workout",
       "date": "2026-09-15",
@@ -1621,64 +1709,6 @@
         }
       ],
       "createdAt": 1789259537105
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-09-17",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Crunches",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Reverse crunches",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Dead bugs",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Bird dogs",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Planks",
-          "sets": "3",
-          "reps": "",
-          "weight": "",
-          "notes": "30 seconds"
-        },
-        {
-          "exercise": "Superman",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
-        }
-      ],
-      "id": "1c53e4c6-fc4a-4fb3-8e41-6c03a622b277",
-      "createdAt": 1789639713430
     }
   ],
   "settings": {
