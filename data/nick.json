@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-18T21:38:58.739Z",
-  "lastModified": 1789767538739,
+  "exportedAt": "2026-09-18T21:39:48.325Z",
+  "lastModified": 1789767573266,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -34,6 +34,12 @@
       "name": "Fuji Grill Special roll",
       "calories": 500,
       "createdAt": 1789426278145
+    },
+    {
+      "id": "254644a3-27e8-441f-b9cf-21f8e6b4e8a7",
+      "name": "Pizza",
+      "calories": 500,
+      "createdAt": 1789767573265
     },
     {
       "id": "279de9df-3044-49ba-9765-457c3d49b5a9",
@@ -642,6 +648,22 @@
       "createdAt": 1789417844515
     },
     {
+      "id": "b5f690d0-82c4-46c8-a993-8d915bfe450b",
+      "date": "2026-09-18",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Pizza",
+          "calories": 500,
+          "quantity": 3
+        }
+      ],
+      "totals": {
+        "calories": 1500
+      },
+      "createdAt": 1789767573263
+    },
+    {
       "id": "bf12d78b-3651-4da2-8fe6-681b8dbc0f58",
       "date": "2026-09-12",
       "name": "Lunch",
@@ -872,22 +894,6 @@
         "calories": 150
       },
       "createdAt": 1789724753085
-    },
-    {
-      "date": "2026-09-18",
-      "name": "Dinner",
-      "items": [
-        {
-          "name": "Pizza",
-          "calories": 500,
-          "quantity": 1.5
-        }
-      ],
-      "totals": {
-        "calories": 750
-      },
-      "id": "b5f690d0-82c4-46c8-a993-8d915bfe450b",
-      "createdAt": 1789767538739
     }
   ],
   "weightEntries": [
