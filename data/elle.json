@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-17T10:18:43.399Z",
-  "lastModified": 1789640318185,
+  "exportedAt": "2026-09-18T01:30:45.228Z",
+  "lastModified": 1789695033099,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -40,6 +40,12 @@
       "name": "Anderson's Carl's Choice (or something)",
       "calories": 400,
       "createdAt": 1788987222701
+    },
+    {
+      "id": "26cd6279-3b28-4e8a-8066-a2df88a7f725",
+      "name": "Big Ditch nachos",
+      "calories": 600,
+      "createdAt": 1789695033095
     },
     {
       "id": "3670e2a5-0d4e-458c-8338-2f600add9878",
@@ -122,6 +128,12 @@
       "createdAt": 1789489857239
     },
     {
+      "id": "a845458f-7224-438f-ad8c-2cab2a39b4b0",
+      "name": "Big Ditch garlic knot",
+      "calories": 125,
+      "createdAt": 1789695033098
+    },
+    {
       "id": "b93ac8bf-092f-4a7b-84db-b497fabc01b2",
       "name": "Manito's Nachos Carnitas",
       "calories": 1400,
@@ -135,6 +147,12 @@
       "fat": 3,
       "createdAt": 1788400978901,
       "calories": 150
+    },
+    {
+      "id": "d6430917-19cf-4735-918f-37d90c95ec42",
+      "name": "Big Ditch Cobb Salad",
+      "calories": 400,
+      "createdAt": 1789695033092
     },
     {
       "id": "d8654314-62fa-4e25-83a0-8136252e7f0f",
@@ -658,6 +676,32 @@
         "fat": 57
       },
       "createdAt": 1788401103019
+    },
+    {
+      "id": "f63b8f51-d259-430a-9a82-305c5949d996",
+      "date": "2026-09-17",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Big Ditch Cobb Salad",
+          "calories": 400,
+          "quantity": 1
+        },
+        {
+          "name": "Big Ditch nachos",
+          "calories": 600,
+          "quantity": 1
+        },
+        {
+          "name": "Big Ditch garlic knot",
+          "calories": 125,
+          "quantity": 0.5
+        }
+      ],
+      "totals": {
+        "calories": 1062.5
+      },
+      "createdAt": 1789695033082
     },
     {
       "id": "f93760c8-70ba-49c5-b6ac-4790bc34c65e",
