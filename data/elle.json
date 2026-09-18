@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-18T09:42:32.388Z",
-  "lastModified": 1789724552388,
+  "exportedAt": "2026-09-18T09:45:33.173Z",
+  "lastModified": 1789724724665,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -108,6 +108,12 @@
       "name": "Shrimp Omelette",
       "calories": 250,
       "createdAt": 1789257411670
+    },
+    {
+      "id": "93e92867-7f61-4b23-bf9d-1680e53cc174",
+      "name": "Big Ditch Leftovers",
+      "calories": 400,
+      "createdAt": 1789724724662
     },
     {
       "id": "9543c4e5-6241-4b8a-a15d-b6bf0e151e7c",
@@ -473,6 +479,38 @@
         "calories": 1150
       },
       "createdAt": 1789639794904
+    },
+    {
+      "id": "6ec1e228-0f0d-46ef-8fd8-613fde501cda",
+      "date": "2026-09-18",
+      "name": "Breakfast",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1789724702565
+    },
+    {
+      "id": "845c5d1f-3169-44da-aa84-7fbc72633f0d",
+      "date": "2026-09-18",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Big Ditch Leftovers",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 400
+      },
+      "createdAt": 1789724724643
     },
     {
       "id": "887c81fe-c98d-4142-8700-4d6e53eca442",
@@ -1199,6 +1237,29 @@
       "createdAt": 1789639688805
     },
     {
+      "id": "e9379a83-5738-4cfe-8f76-8e070b0d52c7",
+      "name": "daily workout",
+      "date": "2026-09-18",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "HIIT",
+          "sets": "5",
+          "reps": "5",
+          "weight": "",
+          "notes": "Jumping jacks\nSquats\nPushups\nKettlebell swings"
+        },
+        {
+          "exercise": "Elliptical",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "20 minutes"
+        }
+      ],
+      "createdAt": 1789724675795
+    },
+    {
       "id": "f0095740-366a-48d1-adc1-6e28ba431ef1",
       "name": "Treadmill",
       "date": "2026-09-02",
@@ -1212,29 +1273,6 @@
         }
       ],
       "createdAt": 1788400838680
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-09-18",
-      "location": "home",
-      "exercises": [
-        {
-          "exercise": "HIIT",
-          "sets": "5",
-          "reps": "5",
-          "weight": "",
-          "notes": "Jumping jacks\nSquats\nPushups\nKettlebell swings"
-        },
-        {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
-        }
-      ],
-      "id": "e9379a83-5738-4cfe-8f76-8e070b0d52c7",
-      "createdAt": 1789724552387
     }
   ],
   "settings": {
