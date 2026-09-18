@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-18T09:46:34.910Z",
-  "lastModified": 1789724755253,
+  "exportedAt": "2026-09-18T21:38:58.739Z",
+  "lastModified": 1789767538739,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -872,6 +872,22 @@
         "calories": 150
       },
       "createdAt": 1789724753085
+    },
+    {
+      "date": "2026-09-18",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Pizza",
+          "calories": 500,
+          "quantity": 1.5
+        }
+      ],
+      "totals": {
+        "calories": 750
+      },
+      "id": "b5f690d0-82c4-46c8-a993-8d915bfe450b",
+      "createdAt": 1789767538739
     }
   ],
   "weightEntries": [
