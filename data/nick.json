@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-18T01:28:46.629Z",
-  "lastModified": 1789694910611,
+  "exportedAt": "2026-09-18T09:42:43.635Z",
+  "lastModified": 1789724546329,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -1468,6 +1468,29 @@
         }
       ],
       "createdAt": 1789640158648
+    },
+    {
+      "id": "2d95a8d5-1ee8-45cb-8976-cd4ab9b36719",
+      "name": "daily workout",
+      "date": "2026-09-18",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "HIIT",
+          "sets": "5",
+          "reps": "5",
+          "weight": "",
+          "notes": "Jumping jacks\nSquats\nPushups\nKettlebell swings"
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "createdAt": 1789724546321
     },
     {
       "id": "36397032-6b53-465a-9f67-7d7b4fe17b9b",
