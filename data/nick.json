@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-18T09:42:43.635Z",
-  "lastModified": 1789724546329,
+  "exportedAt": "2026-09-18T09:46:34.910Z",
+  "lastModified": 1789724755253,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -189,6 +189,27 @@
       },
       "id": "0128e796-6e90-4746-810f-38f696129666",
       "createdAt": 1789554077410
+    },
+    {
+      "id": "09d32734-1912-47ff-80a1-514432aa797f",
+      "date": "2026-09-18",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1789724755233
     },
     {
       "id": "189b0e67-89b4-426b-b58f-5fce6cfed6d8",
@@ -835,6 +856,22 @@
         "calories": 610
       },
       "createdAt": 1789120456339
+    },
+    {
+      "id": "fc4f4324-4f91-4e09-83d0-7ae6b69c1073",
+      "date": "2026-09-18",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1789724753085
     }
   ],
   "weightEntries": [
