@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-17T10:16:24.703Z",
-  "lastModified": 1789640170444,
+  "exportedAt": "2026-09-18T01:28:46.629Z",
+  "lastModified": 1789694910611,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -34,6 +34,12 @@
       "name": "Fuji Grill Special roll",
       "calories": 500,
       "createdAt": 1789426278145
+    },
+    {
+      "id": "279de9df-3044-49ba-9765-457c3d49b5a9",
+      "name": "Big Ditch onion rings",
+      "calories": 400,
+      "createdAt": 1789694910605
     },
     {
       "id": "29506427-1769-470d-b28e-54e971fa5ce6",
@@ -76,10 +82,22 @@
       "createdAt": 1788905181969
     },
     {
+      "id": "4790b1d8-ea17-4434-a88e-e387c105d2e7",
+      "name": "Big Ditch garlic knots",
+      "calories": 125,
+      "createdAt": 1789694910609
+    },
+    {
       "id": "6e18bb31-380e-4537-952e-f7147e6c9e8e",
       "name": "Hot dogs",
       "calories": 275,
       "createdAt": 1789258764332
+    },
+    {
+      "id": "807d6065-5563-44af-b3c9-b27c6a4ea5c2",
+      "name": "Big Ditch Stinger",
+      "calories": 1500,
+      "createdAt": 1789694910600
     },
     {
       "id": "8f8efcb4-2983-4e40-adea-7aea9e83e7ad",
@@ -190,6 +208,32 @@
         "fat": 29.8
       },
       "createdAt": 1788374606207
+    },
+    {
+      "id": "1cad3533-cfa2-4bcf-ab2e-c67c4bda6151",
+      "date": "2026-09-17",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Big Ditch Stinger",
+          "calories": 1500,
+          "quantity": 1
+        },
+        {
+          "name": "Big Ditch onion rings",
+          "calories": 400,
+          "quantity": 1
+        },
+        {
+          "name": "Big Ditch garlic knots",
+          "calories": 125,
+          "quantity": 3
+        }
+      ],
+      "totals": {
+        "calories": 2275
+      },
+      "createdAt": 1789694910575
     },
     {
       "id": "2519b066-4042-4b8c-a3c8-5d95a279bfc8",
