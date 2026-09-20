@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-19T16:31:09.352Z",
-  "lastModified": 1789835465348,
+  "exportedAt": "2026-09-20T11:35:27.658Z",
+  "lastModified": 1789904089194,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -195,6 +195,22 @@
       },
       "id": "0128e796-6e90-4746-810f-38f696129666",
       "createdAt": 1789554077410
+    },
+    {
+      "id": "06a90108-a476-448c-b070-96dbb24b7505",
+      "date": "2026-09-19",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Pizza",
+          "calories": 500,
+          "quantity": 4
+        }
+      ],
+      "totals": {
+        "calories": 2000
+      },
+      "createdAt": 1789904089173
     },
     {
       "id": "09d32734-1912-47ff-80a1-514432aa797f",
@@ -406,6 +422,22 @@
         "calories": 650
       },
       "createdAt": 1788905181943
+    },
+    {
+      "id": "5b0d97b6-bcd6-4d1f-84f3-caa738c20dae",
+      "date": "2026-09-19",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Hot dogs",
+          "calories": 275,
+          "quantity": 3
+        }
+      ],
+      "totals": {
+        "calories": 825
+      },
+      "createdAt": 1789904053630
     },
     {
       "id": "72ed97c1-6277-4301-921b-6aa8986f9903",
