@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-21T18:58:54.863Z",
-  "lastModified": 1790014341359,
+  "exportedAt": "2026-09-21T22:04:46.188Z",
+  "lastModified": 1790028274518,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -68,6 +68,12 @@
       "createdAt": 1788018594779
     },
     {
+      "id": "3f5dfb6c-5764-40c6-92c6-a0c8ac452d21",
+      "name": "Ribeye",
+      "calories": 660,
+      "createdAt": 1790028112090
+    },
+    {
       "id": "44b025c5-5253-4542-a91a-b111c4830120",
       "name": "Greek Slam (no cheese)",
       "protein": 31,
@@ -126,6 +132,12 @@
       "createdAt": 1788018594781
     },
     {
+      "id": "be98dcd9-a67b-4a93-b136-e765eb73f285",
+      "name": "Baked potato",
+      "calories": 160,
+      "createdAt": 1790028112093
+    },
+    {
       "id": "c3bd9489-a884-47fd-b545-5e6d6611e1d7",
       "name": "Stuffed Hungarian Peppers",
       "calories": 250,
@@ -159,6 +171,12 @@
       "name": "Zucchini bread",
       "calories": 380,
       "createdAt": 1789224773455
+    },
+    {
+      "id": "dc77a269-51fb-42ed-b1c0-e5d9cd230a70",
+      "name": "Ice cream",
+      "calories": 380,
+      "createdAt": 1790028274516
     },
     {
       "id": "e41dd3f0-7fb5-40dc-bce6-97ca67f77aa8",
@@ -352,6 +370,22 @@
         "calories": 190
       },
       "createdAt": 1789311536057
+    },
+    {
+      "id": "27d7adcf-a1da-4542-9048-c409eb67e514",
+      "date": "2026-09-21",
+      "name": "Dessert",
+      "items": [
+        {
+          "name": "Ice cream",
+          "calories": 380,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 380
+      },
+      "createdAt": 1790028274501
     },
     {
       "id": "35876624-bcff-45e6-8795-4d66df433e22",
@@ -609,6 +643,27 @@
         "calories": 380
       },
       "createdAt": 1789224863857
+    },
+    {
+      "id": "93992912-53a1-4df1-b3f8-84b3f791e823",
+      "date": "2026-09-21",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Ribeye",
+          "calories": 660,
+          "quantity": 1
+        },
+        {
+          "name": "Baked potato",
+          "calories": 160,
+          "quantity": 2
+        }
+      ],
+      "totals": {
+        "calories": 980
+      },
+      "createdAt": 1790028112069
     },
     {
       "id": "9d42cd3d-378b-4bc2-ae3d-18545bc73852",
