@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-20T11:35:27.658Z",
-  "lastModified": 1789904089194,
+  "exportedAt": "2026-09-21T18:58:54.863Z",
+  "lastModified": 1790014341359,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -92,6 +92,12 @@
       "name": "Big Ditch garlic knots",
       "calories": 125,
       "createdAt": 1789694910609
+    },
+    {
+      "id": "5f3058fa-aa0c-464b-bc86-6453e2381252",
+      "name": "Aguacates Chicken Soup",
+      "calories": 1000,
+      "createdAt": 1790014243329
     },
     {
       "id": "6e18bb31-380e-4537-952e-f7147e6c9e8e",
@@ -195,6 +201,22 @@
       },
       "id": "0128e796-6e90-4746-810f-38f696129666",
       "createdAt": 1789554077410
+    },
+    {
+      "id": "0405837a-0436-4db3-8133-293f8c7f56da",
+      "date": "2026-09-20",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Aguacates Chicken Soup",
+          "calories": 1000,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 1000
+      },
+      "createdAt": 1790014341345
     },
     {
       "id": "06a90108-a476-448c-b070-96dbb24b7505",
@@ -440,6 +462,38 @@
       "createdAt": 1789904053630
     },
     {
+      "id": "61bfe8e7-28be-4ace-a186-45a7cdc3720b",
+      "date": "2026-09-20",
+      "name": "Breakfast",
+      "items": [
+        {
+          "name": "Fit Crunch Bar",
+          "calories": 190,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 190
+      },
+      "createdAt": 1790014205689
+    },
+    {
+      "id": "6ea08630-7cb9-40d6-979e-a9249000d4e8",
+      "date": "2026-09-21",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1790014078839
+    },
+    {
       "id": "72ed97c1-6277-4301-921b-6aa8986f9903",
       "date": "2026-09-11",
       "name": "Protein shake",
@@ -606,6 +660,27 @@
         "calories": 800
       },
       "createdAt": 1789257649699
+    },
+    {
+      "id": "a89e550c-5666-4032-91ff-4caf32508c00",
+      "date": "2026-09-21",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1790014080984
     },
     {
       "id": "ab09b496-f007-4fcc-8b69-9295fe0764ff",
@@ -1777,6 +1852,50 @@
       ],
       "id": "8ee02194-4c9a-479a-bc08-2549416e8e96",
       "createdAt": 1789465527648
+    },
+    {
+      "id": "ae939b59-7d45-48a6-bb0b-25ec6751ddb4",
+      "name": "daily workout",
+      "date": "2026-09-21",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "10",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "createdAt": 1790014181964
     },
     {
       "id": "aeb843bc-9561-4908-b0a8-1ce8a91c5f3e",
