@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-21T22:04:46.188Z",
-  "lastModified": 1790028274518,
+  "exportedAt": "2026-09-21T22:06:31.830Z",
+  "lastModified": 1790028380234,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -98,6 +98,12 @@
       "name": "Big Ditch garlic knots",
       "calories": 125,
       "createdAt": 1789694910609
+    },
+    {
+      "id": "5f21e892-f057-44dc-868a-687e1fe68374",
+      "name": "Chicken fingers",
+      "calories": 100,
+      "createdAt": 1790028380231
     },
     {
       "id": "5f3058fa-aa0c-464b-bc86-6453e2381252",
@@ -338,6 +344,22 @@
         "calories": 610
       },
       "createdAt": 1789640170430
+    },
+    {
+      "id": "25a88187-b3bd-4faf-a2c5-f8d173d9d126",
+      "date": "2026-09-20",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Chicken fingers",
+          "calories": 100,
+          "quantity": 5
+        }
+      ],
+      "totals": {
+        "calories": 500
+      },
+      "createdAt": 1790028380209
     },
     {
       "id": "266323f9-e2be-41d9-ad38-54cc46da56e2",
