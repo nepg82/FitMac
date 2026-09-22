@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-19T19:28:22.747Z",
-  "lastModified": 1789846099889,
+  "exportedAt": "2026-09-22T10:01:45.234Z",
+  "lastModified": 1790071305234,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -803,6 +803,22 @@
         "calories": 500
       },
       "createdAt": 1788987222674
+    },
+    {
+      "date": "2026-09-19",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Hot dogs",
+          "calories": 275,
+          "quantity": 3
+        }
+      ],
+      "totals": {
+        "calories": 825
+      },
+      "id": "7ac15a01-0fae-40b6-a926-08dbb726dd15",
+      "createdAt": 1790071305234
     }
   ],
   "weightEntries": [
