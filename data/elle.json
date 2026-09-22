@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-22T10:07:29.840Z",
-  "lastModified": 1790071649840,
+  "exportedAt": "2026-09-22T10:08:32.795Z",
+  "lastModified": 1790071703491,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -345,6 +345,27 @@
       "createdAt": 1789175043803
     },
     {
+      "date": "2026-09-21",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Ribeye",
+          "calories": 660,
+          "quantity": 1
+        },
+        {
+          "name": "Baked potato",
+          "calories": 160,
+          "quantity": 2
+        }
+      ],
+      "totals": {
+        "calories": 980
+      },
+      "id": "13bc4083-0c14-409c-b8b2-3e5631b8c952",
+      "createdAt": 1790071635190
+    },
+    {
       "id": "14c51b01-3334-4f04-989f-187e6d0d2c5e",
       "date": "2026-09-15",
       "name": "Dinner",
@@ -683,6 +704,38 @@
       "createdAt": 1789174909914
     },
     {
+      "date": "2026-09-21",
+      "name": "Dessert",
+      "items": [
+        {
+          "name": "Ice cream",
+          "calories": 380,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 380
+      },
+      "id": "9f62ff42-578c-48d4-abc2-c6d94689d52c",
+      "createdAt": 1790071649840
+    },
+    {
+      "id": "a55782cf-8c5f-4417-bcb5-c69809d2e4c5",
+      "date": "2026-09-22",
+      "name": "Breakfast",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1790071699681
+    },
+    {
       "id": "a8018db5-2cb1-4bc6-91d3-fd22c51b85e6",
       "date": "2026-09-21",
       "name": "Breakfast",
@@ -897,6 +950,22 @@
       "createdAt": 1788987222674
     },
     {
+      "id": "f958611d-0662-4490-81f6-28abb756b2a9",
+      "date": "2026-09-22",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Chicken enchilada",
+          "calories": 200,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 200
+      },
+      "createdAt": 1790071703481
+    },
+    {
       "id": "fce92ffe-8c25-42b5-b947-13e7d3647bec",
       "date": "2026-09-21",
       "name": "Lunch",
@@ -911,43 +980,6 @@
         "calories": 200
       },
       "createdAt": 1790071508576
-    },
-    {
-      "date": "2026-09-21",
-      "name": "Dinner",
-      "items": [
-        {
-          "name": "Ribeye",
-          "calories": 660,
-          "quantity": 1
-        },
-        {
-          "name": "Baked potato",
-          "calories": 160,
-          "quantity": 2
-        }
-      ],
-      "totals": {
-        "calories": 980
-      },
-      "id": "13bc4083-0c14-409c-b8b2-3e5631b8c952",
-      "createdAt": 1790071635190
-    },
-    {
-      "date": "2026-09-21",
-      "name": "Dessert",
-      "items": [
-        {
-          "name": "Ice cream",
-          "calories": 380,
-          "quantity": 1
-        }
-      ],
-      "totals": {
-        "calories": 380
-      },
-      "id": "9f62ff42-578c-48d4-abc2-c6d94689d52c",
-      "createdAt": 1790071649840
     }
   ],
   "weightEntries": [
