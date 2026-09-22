@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-22T10:07:15.190Z",
-  "lastModified": 1790071635190,
+  "exportedAt": "2026-09-22T10:07:29.840Z",
+  "lastModified": 1790071649840,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -932,6 +932,22 @@
       },
       "id": "13bc4083-0c14-409c-b8b2-3e5631b8c952",
       "createdAt": 1790071635190
+    },
+    {
+      "date": "2026-09-21",
+      "name": "Dessert",
+      "items": [
+        {
+          "name": "Ice cream",
+          "calories": 380,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 380
+      },
+      "id": "9f62ff42-578c-48d4-abc2-c6d94689d52c",
+      "createdAt": 1790071649840
     }
   ],
   "weightEntries": [
