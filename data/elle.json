@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-22T10:02:06.571Z",
-  "lastModified": 1790071326571,
+  "exportedAt": "2026-09-22T10:05:24.662Z",
+  "lastModified": 1790071508587,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -66,6 +66,12 @@
       "createdAt": 1789640318183
     },
     {
+      "id": "542a1f52-4323-45e5-909a-b04fcc57ffb6",
+      "name": "Chicken enchilada",
+      "calories": 200,
+      "createdAt": 1790071498246
+    },
+    {
       "id": "5b4703db-f8bf-43b6-9f62-813a9834839b",
       "name": "Mighty Taco Hard Shell",
       "calories": 220,
@@ -76,6 +82,12 @@
       "name": "Hot dog",
       "calories": 300,
       "createdAt": 1789174955170
+    },
+    {
+      "id": "6bae4341-52ea-4c0c-aace-bf72a806d5a9",
+      "name": "Hot dogs",
+      "calories": 275,
+      "createdAt": 1790071396494
     },
     {
       "id": "7b419ea2-483f-4749-8426-c9adbf0cc474",
@@ -418,6 +430,22 @@
       "createdAt": 1789640205315
     },
     {
+      "id": "32df10e1-fac3-427b-a51b-922e9cb4b0b4",
+      "date": "2026-09-20",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Manito's Nachos Carnitas",
+          "calories": 1400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 1400
+      },
+      "createdAt": 1790071438001
+    },
+    {
       "id": "3510add2-6439-412c-ab5c-ac51175d50fd",
       "date": "2026-09-16",
       "name": "Lunch",
@@ -432,6 +460,22 @@
         "calories": 350
       },
       "createdAt": 1789580042658
+    },
+    {
+      "id": "3c84d9b8-ab75-4203-8cb5-043e5550ed4a",
+      "date": "2026-09-20",
+      "name": "Snack",
+      "items": [
+        {
+          "name": "Ice Cream",
+          "calories": 380,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 380
+      },
+      "createdAt": 1790071458673
     },
     {
       "id": "4ba499ad-7d17-4bfa-958f-26692450ba7a",
@@ -523,6 +567,22 @@
         "calories": 150
       },
       "createdAt": 1789724702565
+    },
+    {
+      "id": "7ac15a01-0fae-40b6-a926-08dbb726dd15",
+      "date": "2026-09-19",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Hot dogs",
+          "calories": 275,
+          "quantity": 2
+        }
+      ],
+      "totals": {
+        "calories": 550
+      },
+      "createdAt": 1790071396483
     },
     {
       "id": "845c5d1f-3169-44da-aa84-7fbc72633f0d",
@@ -623,6 +683,22 @@
       "createdAt": 1789174909914
     },
     {
+      "id": "a8018db5-2cb1-4bc6-91d3-fd22c51b85e6",
+      "date": "2026-09-21",
+      "name": "Breakfast",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1790071477341
+    },
+    {
       "id": "bde338c8-155b-4a40-92af-892852d6c9cf",
       "date": "2026-09-10",
       "name": "Diner",
@@ -691,6 +767,22 @@
         "calories": 330
       },
       "createdAt": 1789489857223
+    },
+    {
+      "id": "cec35177-bf40-425a-9c98-7ff47df77302",
+      "date": "2026-09-19",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Pizza",
+          "calories": 500,
+          "quantity": 4
+        }
+      ],
+      "totals": {
+        "calories": 2000
+      },
+      "createdAt": 1790071407019
     },
     {
       "id": "d32fe8dd-6194-4fa7-8eae-2a1e034ae64a",
@@ -805,36 +897,20 @@
       "createdAt": 1788987222674
     },
     {
-      "date": "2026-09-19",
+      "id": "fce92ffe-8c25-42b5-b947-13e7d3647bec",
+      "date": "2026-09-21",
       "name": "Lunch",
       "items": [
         {
-          "name": "Hot dogs",
-          "calories": 275,
-          "quantity": 3
+          "name": "Chicken enchilada",
+          "calories": 200,
+          "quantity": 1
         }
       ],
       "totals": {
-        "calories": 825
+        "calories": 200
       },
-      "id": "7ac15a01-0fae-40b6-a926-08dbb726dd15",
-      "createdAt": 1790071305234
-    },
-    {
-      "date": "2026-09-19",
-      "name": "Dinner",
-      "items": [
-        {
-          "name": "Pizza",
-          "calories": 500,
-          "quantity": 4
-        }
-      ],
-      "totals": {
-        "calories": 2000
-      },
-      "id": "cec35177-bf40-425a-9c98-7ff47df77302",
-      "createdAt": 1790071326571
+      "createdAt": 1790071508576
     }
   ],
   "weightEntries": [
