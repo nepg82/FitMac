@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-21T22:06:31.830Z",
-  "lastModified": 1790028380234,
+  "exportedAt": "2026-09-22T10:12:41.348Z",
+  "lastModified": 1790071906416,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -1827,6 +1827,64 @@
         }
       ],
       "createdAt": 1789259511373
+    },
+    {
+      "id": "4efd02b2-1673-4de6-8ba8-bed8217bb65d",
+      "name": "daily workout",
+      "date": "2026-09-22",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Incline press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Skull crushers",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Tricep pull down",
+          "sets": "3",
+          "reps": "10",
+          "weight": "75",
+          "notes": ""
+        },
+        {
+          "exercise": "Tricep extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "createdAt": 1790071906410
     },
     {
       "id": "8a517c5a-07a8-43f8-a548-6500ac81d0c5",
