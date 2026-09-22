@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-22T10:16:56.169Z",
-  "lastModified": 1790072212256,
+  "exportedAt": "2026-09-22T23:46:22.736Z",
+  "lastModified": 1790120778228,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -14,6 +14,12 @@
       "name": "M&M's Fun Size (Peanut)",
       "calories": 90,
       "createdAt": 1789257518636
+    },
+    {
+      "id": "0c5993af-370f-4c00-b8b7-d91a0ca7e889",
+      "name": "Baked taco salad, turkey cheese sour cream",
+      "calories": 550,
+      "createdAt": 1790120778227
     },
     {
       "id": "134aa9d7-342b-4f9f-b09e-c50665478d60",
@@ -433,6 +439,22 @@
         "calories": 1180
       },
       "createdAt": 1788987287844
+    },
+    {
+      "id": "2afc2d9b-5612-4690-82b6-d45e6866d217",
+      "date": "2026-09-22",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Baked taco salad, turkey cheese sour cream",
+          "calories": 550,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 550
+      },
+      "createdAt": 1790120778209
     },
     {
       "id": "2c2136e1-951f-4c5b-ae57-1cbb3dcc19e3",
