@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-22T10:14:09.306Z",
-  "lastModified": 1790072049306,
+  "exportedAt": "2026-09-22T10:16:56.169Z",
+  "lastModified": 1790072212256,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -1786,6 +1786,64 @@
       "createdAt": 1789465521724
     },
     {
+      "id": "abfde426-dc2d-4f8e-9f69-79969b66f6a3",
+      "name": "daily workout",
+      "date": "2026-09-22",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "7",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Incline press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Skull crushers",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Tricep pull down",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Tricep extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "createdAt": 1790072212252
+    },
+    {
       "id": "ad047976-32db-4cbd-b757-4a619f97bfbc",
       "name": "daily workout home",
       "date": "2026-09-11",
@@ -1820,6 +1878,50 @@
         }
       ],
       "createdAt": 1789119805408
+    },
+    {
+      "name": "daily workout",
+      "date": "2026-09-21",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "10",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "id": "c51ea03b-8a2f-46c8-b5d3-d50165b711c2",
+      "createdAt": 1790071952259
     },
     {
       "id": "c776649c-283a-4122-894c-a4c28d1adff4",
@@ -2016,108 +2118,6 @@
         }
       ],
       "createdAt": 1788400838680
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-09-21",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Leg press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "0",
-          "notes": ""
-        },
-        {
-          "exercise": "Deadlift",
-          "sets": "3",
-          "reps": "10",
-          "weight": "10",
-          "notes": ""
-        },
-        {
-          "exercise": "Lunges",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Squats",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
-        }
-      ],
-      "id": "c51ea03b-8a2f-46c8-b5d3-d50165b711c2",
-      "createdAt": 1790071952259
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-09-22",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Bench press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Incline press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "20",
-          "notes": ""
-        },
-        {
-          "exercise": "Cable press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "60",
-          "notes": ""
-        },
-        {
-          "exercise": "Skull crushers",
-          "sets": "3",
-          "reps": "10",
-          "weight": "20",
-          "notes": ""
-        },
-        {
-          "exercise": "Tricep pull down",
-          "sets": "3",
-          "reps": "10",
-          "weight": "75",
-          "notes": ""
-        },
-        {
-          "exercise": "Tricep extension",
-          "sets": "3",
-          "reps": "10",
-          "weight": "25",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
-        }
-      ],
-      "id": "abfde426-dc2d-4f8e-9f69-79969b66f6a3",
-      "createdAt": 1790072049306
     }
   ],
   "settings": {
