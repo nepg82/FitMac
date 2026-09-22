@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-22T10:05:24.662Z",
-  "lastModified": 1790071508587,
+  "exportedAt": "2026-09-22T10:07:15.190Z",
+  "lastModified": 1790071635190,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -911,6 +911,27 @@
         "calories": 200
       },
       "createdAt": 1790071508576
+    },
+    {
+      "date": "2026-09-21",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Ribeye",
+          "calories": 660,
+          "quantity": 1
+        },
+        {
+          "name": "Baked potato",
+          "calories": 160,
+          "quantity": 2
+        }
+      ],
+      "totals": {
+        "calories": 980
+      },
+      "id": "13bc4083-0c14-409c-b8b2-3e5631b8c952",
+      "createdAt": 1790071635190
     }
   ],
   "weightEntries": [
