@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-23T10:11:57.817Z",
-  "lastModified": 1790158317817,
+  "exportedAt": "2026-09-23T10:19:03.688Z",
+  "lastModified": 1790158738245,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -40,6 +40,12 @@
       "name": "Pizza",
       "calories": 500,
       "createdAt": 1789767573265
+    },
+    {
+      "id": "261e4cd5-485a-4659-a9af-1c188cdf10ef",
+      "name": "Homemade steak taco salad",
+      "calories": 500,
+      "createdAt": 1790158605928
     },
     {
       "id": "279de9df-3044-49ba-9765-457c3d49b5a9",
@@ -138,6 +144,12 @@
       "createdAt": 1788018594781
     },
     {
+      "id": "aedcb3f4-81a4-400e-827a-6182365d82a3",
+      "name": "Pepperoni",
+      "calories": 130,
+      "createdAt": 1790158712476
+    },
+    {
       "id": "be98dcd9-a67b-4a93-b136-e765eb73f285",
       "name": "Baked potato",
       "calories": 160,
@@ -189,6 +201,12 @@
       "name": "snacks @ Aunt Patti's",
       "calories": 350,
       "createdAt": 1789257298353
+    },
+    {
+      "id": "f00d1fe2-f484-4d4d-ad6f-86c2f0e6eeae",
+      "name": "Black olives",
+      "calories": 15,
+      "createdAt": 1790158688340
     },
     {
       "id": "f4d885c4-ba38-4c7b-91f7-4f6214adc099",
@@ -534,6 +552,43 @@
       "createdAt": 1790014205689
     },
     {
+      "id": "64981b68-b91c-4b75-97dd-f5740d5fc037",
+      "date": "2026-09-23",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1790158727256
+    },
+    {
+      "id": "64d51e65-6c2c-4d0e-88f5-ab7f03c744d7",
+      "date": "2026-09-22",
+      "name": "Snack",
+      "items": [
+        {
+          "name": "Black olives",
+          "calories": 15,
+          "quantity": 5
+        },
+        {
+          "name": "Pepperoni",
+          "calories": 130,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 205
+      },
+      "createdAt": 1790158712465
+    },
+    {
       "id": "6ea08630-7cb9-40d6-979e-a9249000d4e8",
       "date": "2026-09-21",
       "name": "Protein shake",
@@ -832,6 +887,22 @@
       "createdAt": 1789417844515
     },
     {
+      "id": "b4d4ba27-a603-4a40-899a-08f8a8e1dee9",
+      "date": "2026-09-22",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Homemade steak taco salad",
+          "calories": 500,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 500
+      },
+      "createdAt": 1790158605912
+    },
+    {
       "id": "b5f690d0-82c4-46c8-a993-8d915bfe450b",
       "date": "2026-09-18",
       "name": "Dinner",
@@ -927,6 +998,27 @@
         "calories": 1250
       },
       "createdAt": 1789428554659
+    },
+    {
+      "id": "d41e519b-053f-4570-aa66-8d0aa2f22f4b",
+      "date": "2026-09-23",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1790158738228
     },
     {
       "id": "d784c5d2-80c9-4b0e-9656-5073b171ec33",
@@ -1829,6 +1921,64 @@
       "createdAt": 1789469836450
     },
     {
+      "id": "3f6ca7a9-8589-436e-8cee-60d524364eac",
+      "name": "daily workout",
+      "date": "2026-09-23",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bicep curl",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Preacher curl",
+          "sets": "3",
+          "reps": "10",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Bicep hammers",
+          "sets": "3",
+          "reps": "8",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat pulldown",
+          "sets": "3",
+          "reps": "10",
+          "weight": "90",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable row",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat row",
+          "sets": "3",
+          "reps": "10",
+          "weight": "105",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "createdAt": 1790158560607
+    },
+    {
       "id": "49f45423-3b67-4310-9d2f-e8ecae6792bd",
       "name": "daily workout",
       "date": "2026-09-11",
@@ -2170,64 +2320,6 @@
         }
       ],
       "createdAt": 1789259537105
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-09-23",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Bicep curl",
-          "sets": "3",
-          "reps": "10",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Preacher curl",
-          "sets": "3",
-          "reps": "10",
-          "weight": "5",
-          "notes": ""
-        },
-        {
-          "exercise": "Bicep hammers",
-          "sets": "3",
-          "reps": "8",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Lat pulldown",
-          "sets": "3",
-          "reps": "10",
-          "weight": "60",
-          "notes": ""
-        },
-        {
-          "exercise": "Cable row",
-          "sets": "3",
-          "reps": "10",
-          "weight": "45",
-          "notes": ""
-        },
-        {
-          "exercise": "Lat row",
-          "sets": "3",
-          "reps": "10",
-          "weight": "75",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill",
-          "sets": "",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
-        }
-      ],
-      "id": "3f6ca7a9-8589-436e-8cee-60d524364eac",
-      "createdAt": 1790158317817
     }
   ],
   "settings": {
