@@ -1,5 +1,5 @@
 {
-  "name": "FitMac Tracker",
+  "name": "FitMac",
   "short_name": "FitMac",
   "description": "Track meals, weight, and workouts.",
   "start_url": "./index.html",
