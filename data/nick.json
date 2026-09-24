@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-24T10:12:31.816Z",
-  "lastModified": 1790244751816,
+  "exportedAt": "2026-09-24T10:13:56.061Z",
+  "lastModified": 1790244826209,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -534,6 +534,22 @@
         "calories": 825
       },
       "createdAt": 1789904053630
+    },
+    {
+      "id": "5fa63b91-b56d-42e1-a965-b5e54156286a",
+      "date": "2026-09-24",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1790244807706
     },
     {
       "id": "61bfe8e7-28be-4ace-a186-45a7cdc3720b",
@@ -1151,6 +1167,27 @@
         "fat": 40
       },
       "createdAt": 1788138527726
+    },
+    {
+      "id": "f3c26c5d-5184-4000-a740-ff0c43f640bd",
+      "date": "2026-09-24",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1790244810513
     },
     {
       "id": "f73203a6-1d68-4e48-8ecb-1cab9630590a",
@@ -2300,6 +2337,50 @@
       "createdAt": 1789553890773
     },
     {
+      "id": "b06d7cea-a9c2-46c4-9c9a-ffb6818055c1",
+      "name": "daily workout",
+      "date": "2026-09-24",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Crunches",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Russian Twists",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "createdAt": 1790244826205
+    },
+    {
       "id": "ff90970d-baf0-4284-91d7-8250e9fa4217",
       "name": "daily workout",
       "date": "2026-09-09",
@@ -2342,50 +2423,6 @@
         }
       ],
       "createdAt": 1789259537105
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-09-24",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Bird dogs",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Dead bugs",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Crunches",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Russian Twists",
-          "sets": "3",
-          "reps": "10",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
-        }
-      ],
-      "id": "b06d7cea-a9c2-46c4-9c9a-ffb6818055c1",
-      "createdAt": 1790244751816
     }
   ],
   "settings": {
