@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-24T10:11:31.190Z",
-  "lastModified": 1790244678752,
+  "exportedAt": "2026-09-24T22:03:22.802Z",
+  "lastModified": 1790287397850,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -174,6 +174,12 @@
       "name": "Big Ditch garlic knot",
       "calories": 125,
       "createdAt": 1789695033098
+    },
+    {
+      "id": "b90a905b-3a3b-47f4-a8ad-98d480071849",
+      "name": "Buffalo Blasts (Cheesecake Factory)",
+      "calories": 1280,
+      "createdAt": 1790287397847
     },
     {
       "id": "b93ac8bf-092f-4a7b-84db-b497fabc01b2",
@@ -810,6 +816,22 @@
         "calories": 150
       },
       "createdAt": 1790071477341
+    },
+    {
+      "id": "b274e409-1771-430a-8369-92e4f8a5949d",
+      "date": "2026-09-24",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Buffalo Blasts (Cheesecake Factory)",
+          "calories": 1280,
+          "quantity": 0.25
+        }
+      ],
+      "totals": {
+        "calories": 320
+      },
+      "createdAt": 1790287397834
     },
     {
       "id": "bde338c8-155b-4a40-92af-892852d6c9cf",
