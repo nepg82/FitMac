@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-24T10:13:56.061Z",
-  "lastModified": 1790244826209,
+  "exportedAt": "2026-09-24T22:00:41.649Z",
+  "lastModified": 1790287218102,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -80,6 +80,12 @@
       "createdAt": 1790028112090
     },
     {
+      "id": "426efd6b-e661-424f-bb8f-2fed30d88b54",
+      "name": "Thai Chicken Salad (Cheesecake Factory)",
+      "calories": 1210,
+      "createdAt": 1790287218100
+    },
+    {
       "id": "44b025c5-5253-4542-a91a-b111c4830120",
       "name": "Greek Slam (no cheese)",
       "protein": 31,
@@ -122,6 +128,12 @@
       "name": "Hot dogs",
       "calories": 275,
       "createdAt": 1789258764332
+    },
+    {
+      "id": "7602b382-875f-4ef5-8460-99025ba8a67a",
+      "name": "Buffalo Blasts",
+      "calories": 1670,
+      "createdAt": 1790287089134
     },
     {
       "id": "807d6065-5563-44af-b3c9-b27c6a4ea5c2",
@@ -213,6 +225,12 @@
       "name": "Homemade lunch",
       "calories": 400,
       "createdAt": 1788905085436
+    },
+    {
+      "id": "fb838ac7-5718-4429-998d-02f041ff0535",
+      "name": "Buffalo Blasts (Cheesecake Factory)",
+      "calories": 1670,
+      "createdAt": 1790287218097
     },
     {
       "id": "fdde3390-837c-4c47-8e29-e0d11b42fd8c",
@@ -877,6 +895,27 @@
         "calories": 1100
       },
       "createdAt": 1789258764328
+    },
+    {
+      "id": "ac8dab0c-675d-4433-85b9-07f029580593",
+      "date": "2026-09-24",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Buffalo Blasts (Cheesecake Factory)",
+          "calories": 1670,
+          "quantity": 0.25
+        },
+        {
+          "name": "Thai Chicken Salad (Cheesecake Factory)",
+          "calories": 1210,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 1627.5
+      },
+      "createdAt": 1790287218074
     },
     {
       "id": "b1613d54-337c-4e4f-8e70-326bd515898a",
