@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-24T09:12:11.091Z",
-  "lastModified": 1790241123970,
+  "exportedAt": "2026-09-24T10:12:31.816Z",
+  "lastModified": 1790244751816,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -2342,6 +2342,50 @@
         }
       ],
       "createdAt": 1789259537105
+    },
+    {
+      "name": "daily workout",
+      "date": "2026-09-24",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Crunches",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Russian Twists",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/3; 20 minutes"
+        }
+      ],
+      "id": "b06d7cea-a9c2-46c4-9c9a-ffb6818055c1",
+      "createdAt": 1790244751816
     }
   ],
   "settings": {
