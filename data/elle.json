@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-24T22:03:22.802Z",
-  "lastModified": 1790287397850,
+  "exportedAt": "2026-09-24T22:08:17.096Z",
+  "lastModified": 1790287685334,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -26,6 +26,12 @@
       "name": "Mixed unsalted nuts 1/4 cup",
       "calories": 220,
       "createdAt": 1789489857241
+    },
+    {
+      "id": "16974426-1644-4cb8-8ff9-fad791be6a60",
+      "name": "Cream of Chicken with Artichoke Hearts and Mushroom Soup",
+      "calories": 400,
+      "createdAt": 1790287668277
     },
     {
       "id": "17593d6f-0aa4-47ad-8b26-2d56b681f6a1",
@@ -84,10 +90,22 @@
       "createdAt": 1789257483820
     },
     {
+      "id": "62b95421-f0f0-47d5-8a83-692ec18bcc5e",
+      "name": "Renee's Fresh Turkey Sandwich (Cheesecake Factory)",
+      "calories": 790,
+      "createdAt": 1790287563277
+    },
+    {
       "id": "6a675662-2694-4c8e-b4f5-a6f8a58559a2",
       "name": "Hot dog",
       "calories": 300,
       "createdAt": 1789174955170
+    },
+    {
+      "id": "6ba31758-4a0b-4ea8-9077-119618f7d28f",
+      "name": "Creamy Chicken Mushroom Soup",
+      "calories": 400,
+      "createdAt": 1790287515413
     },
     {
       "id": "6bae4341-52ea-4c0c-aace-bf72a806d5a9",
@@ -178,7 +196,7 @@
     {
       "id": "b90a905b-3a3b-47f4-a8ad-98d480071849",
       "name": "Buffalo Blasts (Cheesecake Factory)",
-      "calories": 1280,
+      "calories": 1670,
       "createdAt": 1790287397847
     },
     {
@@ -186,6 +204,12 @@
       "name": "Manito's Nachos Carnitas",
       "calories": 1400,
       "createdAt": 1789553735008
+    },
+    {
+      "id": "c4d234d9-e59a-4e47-8419-9edbe8ebf4fc",
+      "name": "Renee's Turkey Sandwich",
+      "calories": 790,
+      "createdAt": 1790287490376
     },
     {
       "id": "c6ad5477-4494-4f56-9ba3-3698af8a4e08",
@@ -215,6 +239,12 @@
       "createdAt": 1788987222711
     },
     {
+      "id": "db2580d8-5719-410d-b4fd-cfe240ba31ca",
+      "name": "Cream of Chicken with Artichoke Hearts and Mushroom Soup (Cheesecake Factory)",
+      "calories": 400,
+      "createdAt": 1790287685331
+    },
+    {
       "id": "e0397950-ae4f-4631-8db4-03e83be96a61",
       "name": "Cracker Barrel Chicken Fingers",
       "calories": 650,
@@ -225,6 +255,12 @@
       "name": "Orange ginger chicken",
       "calories": 350,
       "createdAt": 1789580042667
+    },
+    {
+      "id": "edbd1c4c-2c34-4951-80e7-8ca976f5be05",
+      "name": "Green salad",
+      "calories": 130,
+      "createdAt": 1790287490388
     },
     {
       "id": "f2c62b90-f474-416e-83e3-419d9f0bfd74",
@@ -824,14 +860,29 @@
       "items": [
         {
           "name": "Buffalo Blasts (Cheesecake Factory)",
-          "calories": 1280,
+          "calories": 1670,
           "quantity": 0.25
+        },
+        {
+          "name": "Renee's Fresh Turkey Sandwich (Cheesecake Factory)",
+          "calories": 790,
+          "quantity": 1
+        },
+        {
+          "name": "Green salad",
+          "calories": 130,
+          "quantity": 1
+        },
+        {
+          "name": "Cream of Chicken with Artichoke Hearts and Mushroom Soup (Cheesecake Factory)",
+          "calories": 400,
+          "quantity": 1
         }
       ],
       "totals": {
-        "calories": 320
+        "calories": 1737.5
       },
-      "createdAt": 1790287397834
+      "createdAt": 1790287685271
     },
     {
       "id": "bde338c8-155b-4a40-92af-892852d6c9cf",
