@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-24T22:00:41.649Z",
-  "lastModified": 1790287218102,
+  "exportedAt": "2026-09-25T10:04:56.093Z",
+  "lastModified": 1790330696093,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -2462,6 +2462,29 @@
         }
       ],
       "createdAt": 1789259537105
+    },
+    {
+      "name": "daily workout",
+      "date": "2026-09-25",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "HIIT",
+          "sets": "5",
+          "reps": "7",
+          "weight": "5",
+          "notes": "Jumping jacks\nJump Squats\nCurl to extension\nPush ups\nWall sit 30 sec"
+        },
+        {
+          "exercise": "Elliptical",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "20 minutes"
+        }
+      ],
+      "id": "d7f68983-d81d-4aaa-b73f-7dc61abbcba5",
+      "createdAt": 1790330696093
     }
   ],
   "settings": {
