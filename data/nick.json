@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-25T10:04:56.093Z",
-  "lastModified": 1790330696093,
+  "exportedAt": "2026-09-25T10:21:06.396Z",
+  "lastModified": 1790331663261,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -446,6 +446,22 @@
       "createdAt": 1790028274501
     },
     {
+      "id": "295143fa-c0e0-48a9-8c68-173736677253",
+      "date": "2026-09-25",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1790331661350
+    },
+    {
       "id": "35876624-bcff-45e6-8795-4d66df433e22",
       "date": "2026-08-31",
       "name": "Breakfast Scramble",
@@ -637,6 +653,27 @@
         "calories": 150
       },
       "createdAt": 1790014078839
+    },
+    {
+      "id": "6f42f6d4-9301-4e55-aa4d-eed9eb605431",
+      "date": "2026-09-25",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1790331663242
     },
     {
       "id": "72ed97c1-6277-4301-921b-6aa8986f9903",
@@ -2420,6 +2457,29 @@
       "createdAt": 1790244826205
     },
     {
+      "name": "daily workout",
+      "date": "2026-09-25",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "HIIT",
+          "sets": "5",
+          "reps": "7",
+          "weight": "5",
+          "notes": "Jumping jacks\nJump Squats\nCurl to extension\nPush ups\nWall sit 30 sec"
+        },
+        {
+          "exercise": "Elliptical",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "20 minutes"
+        }
+      ],
+      "id": "d7f68983-d81d-4aaa-b73f-7dc61abbcba5",
+      "createdAt": 1790330696093
+    },
+    {
       "id": "ff90970d-baf0-4284-91d7-8250e9fa4217",
       "name": "daily workout",
       "date": "2026-09-09",
@@ -2462,29 +2522,6 @@
         }
       ],
       "createdAt": 1789259537105
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-09-25",
-      "location": "home",
-      "exercises": [
-        {
-          "exercise": "HIIT",
-          "sets": "5",
-          "reps": "7",
-          "weight": "5",
-          "notes": "Jumping jacks\nJump Squats\nCurl to extension\nPush ups\nWall sit 30 sec"
-        },
-        {
-          "exercise": "Elliptical",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "20 minutes"
-        }
-      ],
-      "id": "d7f68983-d81d-4aaa-b73f-7dc61abbcba5",
-      "createdAt": 1790330696093
     }
   ],
   "settings": {
