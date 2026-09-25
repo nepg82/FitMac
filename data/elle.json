@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-25T22:40:51.617Z",
-  "lastModified": 1790376046368,
+  "exportedAt": "2026-09-25T22:42:27.567Z",
+  "lastModified": 1790376147567,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -1183,6 +1183,27 @@
         "calories": 200
       },
       "createdAt": 1790071508576
+    },
+    {
+      "date": "2026-09-25",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Elle's Chicken Tortellini (bowl)",
+          "calories": 352,
+          "quantity": 2
+        },
+        {
+          "name": "Elle's Homemade Rustic Bread (slice)",
+          "calories": 100,
+          "quantity": 4
+        }
+      ],
+      "totals": {
+        "calories": 1104
+      },
+      "id": "51afb33d-2d59-4ae5-9ede-40846edaa5b8",
+      "createdAt": 1790376147567
     }
   ],
   "weightEntries": [
