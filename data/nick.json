@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-25T10:21:06.396Z",
-  "lastModified": 1790331663261,
+  "exportedAt": "2026-09-25T22:38:52.909Z",
+  "lastModified": 1790375911596,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -58,6 +58,12 @@
       "name": "Fairlife",
       "calories": 150,
       "createdAt": 1788905030034
+    },
+    {
+      "id": "2aa7d8a2-93c4-4796-ab11-fcdb79255dc6",
+      "name": "Elle's Chicken Tortellini (bowl)",
+      "calories": 352,
+      "createdAt": 1790375911589
     },
     {
       "id": "395bfa9f-d070-4123-ae27-50db6bf41993",
@@ -122,6 +128,12 @@
       "name": "Aguacates Chicken Soup",
       "calories": 1000,
       "createdAt": 1790014243329
+    },
+    {
+      "id": "666a1ac1-4620-403e-b8b9-c90704c12c89",
+      "name": "Elle's Homemade Rustic Bread (slice)",
+      "calories": 100,
+      "createdAt": 1790375911594
     },
     {
       "id": "6e18bb31-380e-4537-952e-f7147e6c9e8e",
@@ -517,6 +529,27 @@
         "fat": 80
       },
       "createdAt": 1788092623101
+    },
+    {
+      "id": "50e5a0cb-fc2f-4bda-ac35-e48a7646afb4",
+      "date": "2026-09-25",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Elle's Chicken Tortellini (bowl)",
+          "calories": 352,
+          "quantity": 2
+        },
+        {
+          "name": "Elle's Homemade Rustic Bread (slice)",
+          "calories": 100,
+          "quantity": 4
+        }
+      ],
+      "totals": {
+        "calories": 1104
+      },
+      "createdAt": 1790375911566
     },
     {
       "id": "583e2133-dd38-4242-9772-338f6b06e8ac",
