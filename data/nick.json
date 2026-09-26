@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-26T13:42:26.320Z",
-  "lastModified": 1790430131676,
+  "exportedAt": "2026-09-26T20:27:46.952Z",
+  "lastModified": 1790454462292,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -529,6 +529,22 @@
         "fat": 80
       },
       "createdAt": 1788092623101
+    },
+    {
+      "id": "3f558562-a3b8-4241-a620-8ea592768b6f",
+      "date": "2026-09-26",
+      "name": "Dessert",
+      "items": [
+        {
+          "name": "Ice cream",
+          "calories": 380,
+          "quantity": 2
+        }
+      ],
+      "totals": {
+        "calories": 760
+      },
+      "createdAt": 1790454462270
     },
     {
       "id": "50e5a0cb-fc2f-4bda-ac35-e48a7646afb4",
@@ -1073,6 +1089,22 @@
         "calories": 350
       },
       "createdAt": 1789257298351
+    },
+    {
+      "id": "cc963705-3039-4db7-8fff-59457d661f4d",
+      "date": "2026-09-26",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Manito's Beef Taco",
+          "calories": 350,
+          "quantity": 3
+        }
+      ],
+      "totals": {
+        "calories": 1050
+      },
+      "createdAt": 1790454422923
     },
     {
       "id": "ce52b46c-a6b5-4b38-ace0-d00b2ea0aa20",
