@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-27T16:24:26.167Z",
-  "lastModified": 1790526246704,
+  "exportedAt": "2026-09-27T20:31:20.161Z",
+  "lastModified": 1790541075144,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -60,6 +60,12 @@
       "createdAt": 1788905030034
     },
     {
+      "id": "29de5e2d-b898-402b-a410-98b770e58103",
+      "name": "Toast - sourdough w/butter",
+      "calories": 160,
+      "createdAt": 1790540983579
+    },
+    {
       "id": "2aa7d8a2-93c4-4796-ab11-fcdb79255dc6",
       "name": "Elle's Chicken Tortellini (bowl)",
       "calories": 352,
@@ -98,7 +104,7 @@
       "carbs": 9,
       "fat": 34,
       "createdAt": 1788018594770,
-      "calories": 466
+      "calories": 670
     },
     {
       "id": "45cfc355-bf64-46b6-b225-c50a7b9cd430",
@@ -226,6 +232,12 @@
       "name": "snacks @ Aunt Patti's",
       "calories": 350,
       "createdAt": 1789257298353
+    },
+    {
+      "id": "eb049990-66f1-4101-bd4c-0c820e063f1b",
+      "name": "Peanut butter sundae",
+      "calories": 600,
+      "createdAt": 1790541075141
     },
     {
       "id": "f00d1fe2-f484-4d4d-ad6f-86c2f0e6eeae",
@@ -923,14 +935,19 @@
       "items": [
         {
           "name": "Greek Slam (no cheese)",
-          "calories": 466,
+          "calories": 670,
           "quantity": 1
+        },
+        {
+          "name": "Toast - sourdough w/butter",
+          "calories": 160,
+          "quantity": 2
         }
       ],
       "totals": {
-        "calories": 466
+        "calories": 990
       },
-      "createdAt": 1790526246696
+      "createdAt": 1790540983508
     },
     {
       "id": "a36be586-3c0d-4605-b921-94225f063cc4",
@@ -1122,6 +1139,22 @@
         "calories": 350
       },
       "createdAt": 1789257298351
+    },
+    {
+      "id": "c99e9bdf-af38-4b8f-8bc7-285e2f25702a",
+      "date": "2026-09-27",
+      "name": "Dessert",
+      "items": [
+        {
+          "name": "Peanut butter sundae",
+          "calories": 600,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 600
+      },
+      "createdAt": 1790541075116
     },
     {
       "id": "cc963705-3039-4db7-8fff-59457d661f4d",
