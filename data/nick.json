@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-27T10:18:26.416Z",
-  "lastModified": 1790504298873,
+  "exportedAt": "2026-09-27T16:24:26.167Z",
+  "lastModified": 1790526246704,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -97,7 +97,8 @@
       "protein": 31,
       "carbs": 9,
       "fat": 34,
-      "createdAt": 1788018594770
+      "createdAt": 1788018594770,
+      "calories": 466
     },
     {
       "id": "45cfc355-bf64-46b6-b225-c50a7b9cd430",
@@ -898,6 +899,38 @@
         "calories": 610
       },
       "createdAt": 1789555951032
+    },
+    {
+      "id": "9dd0e7ff-bc03-44a8-a285-cee238fbd999",
+      "date": "2026-09-27",
+      "name": "Breakfast",
+      "items": [
+        {
+          "name": "Fit Crunch Bar",
+          "calories": 190,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 190
+      },
+      "createdAt": 1790526219245
+    },
+    {
+      "id": "a2ffc9b6-2a2c-47f1-b106-5da9624ed42a",
+      "date": "2026-09-27",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Greek Slam (no cheese)",
+          "calories": 466,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 466
+      },
+      "createdAt": 1790526246696
     },
     {
       "id": "a36be586-3c0d-4605-b921-94225f063cc4",
