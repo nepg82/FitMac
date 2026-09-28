@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-27T20:31:20.161Z",
-  "lastModified": 1790541075144,
+  "exportedAt": "2026-09-28T13:58:31.046Z",
+  "lastModified": 1790603899767,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -339,6 +339,22 @@
         "calories": 610
       },
       "createdAt": 1789724755233
+    },
+    {
+      "id": "148bc041-571a-4e27-b0a9-980b0fbaf532",
+      "date": "2026-09-28",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1790603895347
     },
     {
       "id": "189b0e67-89b4-426b-b58f-5fce6cfed6d8",
@@ -833,6 +849,27 @@
         "calories": 610
       },
       "createdAt": 1788986915754
+    },
+    {
+      "id": "8b01775d-65e7-4695-aad7-d0300ff636cf",
+      "date": "2026-09-28",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1790603899763
     },
     {
       "id": "90124b91-7283-4650-8c8f-2da45014e21d",
@@ -2621,6 +2658,57 @@
       ],
       "id": "d7f68983-d81d-4aaa-b73f-7dc61abbcba5",
       "createdAt": 1790330696093
+    },
+    {
+      "id": "f2c6c717-a1d0-4725-9284-419feef7dd53",
+      "name": "daily workout",
+      "date": "2026-09-28",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes"
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "Speed: 3\nIncline: 4\nTime: 15 minutes"
+        }
+      ],
+      "createdAt": 1790603887329
     },
     {
       "id": "ff90970d-baf0-4284-91d7-8250e9fa4217",
