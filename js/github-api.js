@@ -35,6 +35,9 @@ const GitHubAPI = (() => {
             res = await fetch(`${API_BASE}${path}`, {
                 method,
                 signal: controller.signal,
+                // Sync checks must see GitHub's current state, not a copy from the
+                // browser HTTP cache (GitHub sends short max-age headers).
+                cache: "no-store",
                 headers: {
                     "Accept": "application/vnd.github+json",
                     ...(token ? { "Authorization": `Bearer ${token}` } : {}),

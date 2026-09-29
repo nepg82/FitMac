@@ -269,7 +269,7 @@ delete(store, id) {
       DB.getAll('foodItems'), DB.getAll('mealEntries'), DB.getAll('weightEntries'),
       DB.getAll('workoutSessions'), DB.getSettings()
     ]);
-	const { githubToken, githubOwner, githubRepo, githubBranch, lastSyncedAt, activeUsername, dataDirty, loadedAt, lastModified, ...settings } = settingsRaw;
+	const { githubToken, githubOwner, githubRepo, githubBranch, lastSyncedAt, activeUsername, dataDirty, loadedAt, lastModified, remoteSha, ...settings } = settingsRaw;
     return { version: 1, exportedAt: new Date().toISOString(), lastModified: lastModified || Date.now(), foodItems, mealEntries, weightEntries, workoutSessions, settings };
   },
 
@@ -280,7 +280,7 @@ delete(store, id) {
   	}
 	if (data.settings) {
 	  const current = await DB.getSettings();
-	  const { githubToken, githubOwner, githubRepo, githubBranch, activeUsername, lastSyncedAt, dataDirty, loadedAt, lastModified, ...rest } = data.settings;
+	  const { githubToken, githubOwner, githubRepo, githubBranch, activeUsername, lastSyncedAt, dataDirty, loadedAt, lastModified, remoteSha, ...rest } = data.settings;
 	  // Note: activeUsername is intentionally NOT set here — exportAll() never
 	  // round-trips it, so callers (e.g. switchUser/pullLatest in sync.js) are
 	  // responsible for setting activeUsername themselves after importAll()

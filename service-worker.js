@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tracker-cache-v1.0.10';
+const CACHE_NAME = 'tracker-cache-v1.0.11';
 const ASSETS = [
   './',
   './index.html',
@@ -10,6 +10,7 @@ const ASSETS = [
   './js/dashboard.js',
   './js/meals.js',
   './js/weight.js',
+  './js/weight-export.js',
   './js/workout.js',
   './js/sync.js',
   './js/app.js',
@@ -33,6 +34,10 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+  // Only handle same-origin app assets. Cross-origin requests (notably the
+  // GitHub API) must always hit the network — otherwise the cache-first
+  // strategy below serves stale sync data.
+  if (new URL(event.request.url).origin !== self.location.origin) return;
   event.respondWith(
     caches.match(event.request).then((cached) => {
       const network = fetch(event.request).then((response) => {

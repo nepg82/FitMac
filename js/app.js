@@ -72,10 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
     navigator.serviceWorker.register('service-worker.js').catch(() => {});
   }
 
-  // One-shot background check against GitHub — see sync.js. Fire-and-forget:
-  // it never blocks first render, and only ever surfaces UI (a sheet) if
-  // GitHub turns out to have a newer copy of the active user's data.
-  runLaunchCheck();
+  // Background checks against GitHub — see sync.js. Fire-and-forget: they
+  // never block first render, and only surface UI (a sheet) if GitHub has a
+  // newer copy of the active user's data. Besides this launch check, triggers
+  // also fire on resume/focus/online and on a slow foreground poll.
+  initSyncTriggers();
+  requestSyncCheck('launch', { force: true });
 
   document.getElementById('header-username').addEventListener('click', async () => {
     const s = await DB.getSettings();
