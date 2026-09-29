@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-29T11:15:53.903Z",
-  "lastModified": 1790680536201,
+  "exportedAt": "2026-09-29T11:18:08.523Z",
+  "lastModified": 1790680683473,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -2306,6 +2306,7 @@
       "createdAt": 1789469836450
     },
     {
+      "id": "3c709c4d-293d-4277-995e-b23c57f6aeeb",
       "name": "daily workout",
       "date": "2026-09-29",
       "location": "Armory",
@@ -2314,35 +2315,35 @@
           "exercise": "Tricep extension",
           "sets": "3",
           "reps": "10",
-          "weight": "15",
+          "weight": "25",
           "notes": ""
         },
         {
           "exercise": "Cable extension",
           "sets": "3",
           "reps": "10",
-          "weight": "60",
+          "weight": "90",
           "notes": ""
         },
         {
           "exercise": "Skull crushers",
           "sets": "3",
           "reps": "10",
-          "weight": "15",
+          "weight": "30",
           "notes": ""
         },
         {
           "exercise": "Lat pulldown",
           "sets": "3",
           "reps": "5",
-          "weight": "90",
+          "weight": "105",
           "notes": ""
         },
         {
           "exercise": "Lat row",
           "sets": "3",
           "reps": "10",
-          "weight": "105",
+          "weight": "160",
           "notes": ""
         },
         {
@@ -2350,14 +2351,14 @@
           "sets": "1",
           "reps": "",
           "weight": "",
-          "notes": "Level: 4\nTime: 5 minutes"
+          "notes": "Level: 5\nTime: 5 minutes"
         },
         {
           "exercise": "Row Machine",
           "sets": "1",
           "reps": "",
           "weight": "",
-          "notes": "Level 4"
+          "notes": "Level 5"
         },
         {
           "exercise": "Treadmill (s/i/t)",
@@ -2367,8 +2368,7 @@
           "notes": "3/4/10"
         }
       ],
-      "id": "3c709c4d-293d-4277-995e-b23c57f6aeeb",
-      "createdAt": 1790677436725
+      "createdAt": 1790680683434
     },
     {
       "id": "3f6ca7a9-8589-436e-8cee-60d524364eac",
