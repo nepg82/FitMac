@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-29T10:23:56.725Z",
-  "lastModified": 1790677436725,
+  "exportedAt": "2026-09-29T11:14:20.919Z",
+  "lastModified": 1790680460919,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -1504,6 +1504,27 @@
         "calories": 150
       },
       "createdAt": 1790072065796
+    },
+    {
+      "date": "2026-09-28",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Chicken Finger",
+          "calories": 180,
+          "quantity": 5
+        },
+        {
+          "name": "Stuffed Bananna Pepper Soup",
+          "calories": 600,
+          "quantity": 0.5
+        }
+      ],
+      "totals": {
+        "calories": 1200
+      },
+      "id": "de09692a-d0ab-4cb7-96cf-1e11bb4cd5e1",
+      "createdAt": 1790680460919
     }
   ],
   "weightEntries": [
