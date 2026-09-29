@@ -1,13 +1,19 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-29T10:19:23.509Z",
-  "lastModified": 1790677163509,
+  "exportedAt": "2026-09-29T10:29:02.724Z",
+  "lastModified": 1790677719856,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
       "name": "Shrimp-medium",
       "calories": 5.3,
       "createdAt": 1789417691347
+    },
+    {
+      "id": "0793b17f-c291-41f8-8863-53fd929a3211",
+      "name": "Open Gyro",
+      "calories": 600,
+      "createdAt": 1790677543659
     },
     {
       "id": "09d163c6-c46a-4889-ae7b-d046ae5caf9e",
@@ -66,10 +72,22 @@
       "createdAt": 1789695033095
     },
     {
+      "id": "305e0b9f-53c4-49a0-814f-e867647740a4",
+      "name": "Chicken Finger",
+      "calories": 180,
+      "createdAt": 1790677719850
+    },
+    {
       "id": "30f43ac8-f526-4481-add7-d82d3844144f",
       "name": "Mozzarella cheese",
       "calories": 120,
       "createdAt": 1790376046361
+    },
+    {
+      "id": "3160ee29-792c-4084-8b60-1d65dc7341ed",
+      "name": "Stuffed Bananna Pepper Soup",
+      "calories": 600,
+      "createdAt": 1790677719855
     },
     {
       "id": "3670e2a5-0d4e-458c-8338-2f600add9878",
@@ -182,6 +200,12 @@
       "createdAt": 1789553685775
     },
     {
+      "id": "9e82ec7c-af4a-4d4d-8149-6445b94c4f1c",
+      "name": "Chicken and Tortellini Soup",
+      "calories": 400,
+      "createdAt": 1790677627295
+    },
+    {
       "id": "a0dfb5d7-800e-4a96-b0b2-512952845060",
       "name": "Homemade lunch",
       "calories": 330,
@@ -204,6 +228,12 @@
       "name": "Big Ditch garlic knot",
       "calories": 125,
       "createdAt": 1789695033098
+    },
+    {
+      "id": "b891e091-5cbe-444b-8006-bfbabd0c28e2",
+      "name": "Chocolate Chips",
+      "calories": 300,
+      "createdAt": 1790677505051
     },
     {
       "id": "b90a905b-3a3b-47f4-a8ad-98d480071849",
@@ -378,6 +408,22 @@
         "calories": 470
       },
       "createdAt": 1789257518633
+    },
+    {
+      "id": "0d052e94-15d4-4928-b2dc-f3e347e5f907",
+      "date": "2026-09-27",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Open Gyro",
+          "calories": 600,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 600
+      },
+      "createdAt": 1790677549323
     },
     {
       "id": "118ef492-9a0e-48e3-8fc5-2af55661062d",
@@ -672,6 +718,22 @@
       "createdAt": 1789579998470
     },
     {
+      "id": "5cdc4c20-757c-4c98-8343-5b0e05cc59fc",
+      "date": "2026-09-26",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Manito's Nachos Carnitas",
+          "calories": 1400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 1400
+      },
+      "createdAt": 1790677477553
+    },
+    {
       "id": "5fbd481f-4fcc-45fd-abab-19cbe8ddbebf",
       "date": "2026-09-16",
       "name": "Dinner",
@@ -755,6 +817,22 @@
         "calories": 400
       },
       "createdAt": 1789724724643
+    },
+    {
+      "id": "84e8b1f1-b232-4ce3-9551-c8279b0a5c51",
+      "date": "2026-09-28",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Chicken and Tortellini Soup",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 400
+      },
+      "createdAt": 1790677627285
     },
     {
       "id": "887c81fe-c98d-4142-8700-4d6e53eca442",
@@ -887,6 +965,27 @@
       "createdAt": 1790071477341
     },
     {
+      "id": "b0f33439-740d-45be-9e64-98a6f85629b8",
+      "date": "2026-09-28",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Chicken Finger",
+          "calories": 180,
+          "quantity": 5
+        },
+        {
+          "name": "Stuffed Bananna Pepper Soup",
+          "calories": 600,
+          "quantity": 0.5
+        }
+      ],
+      "totals": {
+        "calories": 1200
+      },
+      "createdAt": 1790677719833
+    },
+    {
       "id": "b274e409-1771-430a-8369-92e4f8a5949d",
       "date": "2026-09-24",
       "name": "Dinner",
@@ -916,6 +1015,22 @@
         "calories": 1737.5
       },
       "createdAt": 1790287685271
+    },
+    {
+      "id": "b70c9402-e4ce-4204-b279-effe33df1a46",
+      "date": "2026-09-26",
+      "name": "Snack",
+      "items": [
+        {
+          "name": "Chocolate Chips",
+          "calories": 300,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 300
+      },
+      "createdAt": 1790677505044
     },
     {
       "id": "bde338c8-155b-4a40-92af-892852d6c9cf",
@@ -2053,6 +2168,57 @@
       "createdAt": 1789120275257
     },
     {
+      "name": "daily workout",
+      "date": "2026-09-28",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes"
+        },
+        {
+          "exercise": "Treadmill",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "Speed: 3\nIncline: 4\nTime: 15 minutes"
+        }
+      ],
+      "id": "6a81d24e-8c1e-4cae-a358-b48eac96a0c0",
+      "createdAt": 1790677163509
+    },
+    {
       "id": "91a5ce55-7110-410c-a3b1-e1b231168153",
       "name": "daily workout",
       "date": "2026-09-14",
@@ -2233,6 +2399,71 @@
         }
       ],
       "createdAt": 1790244531573
+    },
+    {
+      "id": "b50bf81a-89bb-460d-bb0f-9b1f6d97e7d8",
+      "name": "daily workout",
+      "date": "2026-09-29",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Tricep extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Skull crushers",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat pulldown",
+          "sets": "3",
+          "reps": "5",
+          "weight": "90",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat row",
+          "sets": "3",
+          "reps": "10",
+          "weight": "105",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "Level: 4\nTime: 5 minutes"
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "Level 4"
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/4/10"
+        }
+      ],
+      "createdAt": 1790677429773
     },
     {
       "name": "daily workout",
@@ -2473,57 +2704,6 @@
         }
       ],
       "createdAt": 1788400838680
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-09-28",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Leg press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Deadlift",
-          "sets": "3",
-          "reps": "10",
-          "weight": "5",
-          "notes": ""
-        },
-        {
-          "exercise": "Lunges",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Squats",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Row Machine",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "5 minutes"
-        },
-        {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "Speed: 3\nIncline: 4\nTime: 15 minutes"
-        }
-      ],
-      "id": "6a81d24e-8c1e-4cae-a358-b48eac96a0c0",
-      "createdAt": 1790677163509
     }
   ],
   "settings": {
