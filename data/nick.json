@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-28T13:58:31.046Z",
-  "lastModified": 1790603899767,
+  "exportedAt": "2026-09-29T10:23:56.725Z",
+  "lastModified": 1790677436725,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -2753,6 +2753,71 @@
         }
       ],
       "createdAt": 1789259537105
+    },
+    {
+      "name": "daily workout",
+      "date": "2026-09-29",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Tricep extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Skull crushers",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat pulldown",
+          "sets": "3",
+          "reps": "5",
+          "weight": "90",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat row",
+          "sets": "3",
+          "reps": "10",
+          "weight": "105",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "Level: 4\nTime: 5 minutes"
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "Level 4"
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/4/10"
+        }
+      ],
+      "id": "3c709c4d-293d-4277-995e-b23c57f6aeeb",
+      "createdAt": 1790677436725
     }
   ],
   "settings": {
