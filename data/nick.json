@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-29T11:14:20.919Z",
-  "lastModified": 1790680460919,
+  "exportedAt": "2026-09-29T11:15:53.903Z",
+  "lastModified": 1790680536201,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -72,6 +72,12 @@
       "createdAt": 1790375911589
     },
     {
+      "id": "383701e1-4dfa-4bfd-b0a2-534a5af45b33",
+      "name": "Stuffed Bananna Pepper Soup",
+      "calories": 600,
+      "createdAt": 1790680524859
+    },
+    {
       "id": "395bfa9f-d070-4123-ae27-50db6bf41993",
       "name": "El Niño",
       "calories": 800,
@@ -123,6 +129,12 @@
       "name": "Big Ditch garlic knots",
       "calories": 125,
       "createdAt": 1789694910609
+    },
+    {
+      "id": "59f3182e-bbba-4e0a-b3e0-5edfcc7b40ac",
+      "name": "Bacon Burger No Bun Salad (Brookside)",
+      "calories": 1800,
+      "createdAt": 1790680524858
     },
     {
       "id": "5f21e892-f057-44dc-868a-687e1fe68374",
@@ -355,6 +367,27 @@
         "calories": 150
       },
       "createdAt": 1790603895347
+    },
+    {
+      "id": "15d98bb3-71d6-42f2-8531-57fefff3d1de",
+      "date": "2026-09-29",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1790680536189
     },
     {
       "id": "189b0e67-89b4-426b-b58f-5fce6cfed6d8",
@@ -1344,6 +1377,27 @@
       "createdAt": 1788018594749
     },
     {
+      "id": "de09692a-d0ab-4cb7-96cf-1e11bb4cd5e1",
+      "date": "2026-09-28",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Bacon Burger No Bun Salad (Brookside)",
+          "calories": 1800,
+          "quantity": 1
+        },
+        {
+          "name": "Stuffed Bananna Pepper Soup",
+          "calories": 600,
+          "quantity": 0.5
+        }
+      ],
+      "totals": {
+        "calories": 2100
+      },
+      "createdAt": 1790680524855
+    },
+    {
       "id": "de604c08-7a4f-49d7-b761-4f6b1d7366a4",
       "date": "2026-09-16",
       "name": "Dinner",
@@ -1392,6 +1446,22 @@
         "calories": 150
       },
       "createdAt": 1788951810696
+    },
+    {
+      "id": "e9ffa6f4-1337-46e6-b0e9-6d9ab4e36a1a",
+      "date": "2026-09-29",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1790680533938
     },
     {
       "id": "f0e6be14-b5e5-4264-91d4-ea624c41b37c",
@@ -1504,27 +1574,6 @@
         "calories": 150
       },
       "createdAt": 1790072065796
-    },
-    {
-      "date": "2026-09-28",
-      "name": "Dinner",
-      "items": [
-        {
-          "name": "Chicken Finger",
-          "calories": 180,
-          "quantity": 5
-        },
-        {
-          "name": "Stuffed Bananna Pepper Soup",
-          "calories": 600,
-          "quantity": 0.5
-        }
-      ],
-      "totals": {
-        "calories": 1200
-      },
-      "id": "de09692a-d0ab-4cb7-96cf-1e11bb4cd5e1",
-      "createdAt": 1790680460919
     }
   ],
   "weightEntries": [
@@ -2257,6 +2306,71 @@
       "createdAt": 1789469836450
     },
     {
+      "name": "daily workout",
+      "date": "2026-09-29",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Tricep extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Skull crushers",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat pulldown",
+          "sets": "3",
+          "reps": "5",
+          "weight": "90",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat row",
+          "sets": "3",
+          "reps": "10",
+          "weight": "105",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "Level: 4\nTime: 5 minutes"
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "Level 4"
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/4/10"
+        }
+      ],
+      "id": "3c709c4d-293d-4277-995e-b23c57f6aeeb",
+      "createdAt": 1790677436725
+    },
+    {
       "id": "3f6ca7a9-8589-436e-8cee-60d524364eac",
       "name": "daily workout",
       "date": "2026-09-23",
@@ -2774,71 +2888,6 @@
         }
       ],
       "createdAt": 1789259537105
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-09-29",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Tricep extension",
-          "sets": "3",
-          "reps": "10",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Cable extension",
-          "sets": "3",
-          "reps": "10",
-          "weight": "60",
-          "notes": ""
-        },
-        {
-          "exercise": "Skull crushers",
-          "sets": "3",
-          "reps": "10",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Lat pulldown",
-          "sets": "3",
-          "reps": "5",
-          "weight": "90",
-          "notes": ""
-        },
-        {
-          "exercise": "Lat row",
-          "sets": "3",
-          "reps": "10",
-          "weight": "105",
-          "notes": ""
-        },
-        {
-          "exercise": "Stationary Bike",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "Level: 4\nTime: 5 minutes"
-        },
-        {
-          "exercise": "Row Machine",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "Level 4"
-        },
-        {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/4/10"
-        }
-      ],
-      "id": "3c709c4d-293d-4277-995e-b23c57f6aeeb",
-      "createdAt": 1790677436725
     }
   ],
   "settings": {
