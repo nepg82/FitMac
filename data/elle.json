@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-29T10:29:02.724Z",
-  "lastModified": 1790677719856,
+  "exportedAt": "2026-09-30T10:31:51.344Z",
+  "lastModified": 1790764306000,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -198,6 +198,12 @@
       "name": "Orange ginger chicken w/rice",
       "calories": 860,
       "createdAt": 1789553685775
+    },
+    {
+      "id": "956844ec-cef1-439e-aef6-e63d7a565e24",
+      "name": "Snacks at BC",
+      "calories": 1000,
+      "createdAt": 1790764077436
     },
     {
       "id": "9e82ec7c-af4a-4d4d-8149-6445b94c4f1c",
@@ -509,6 +515,22 @@
       "createdAt": 1788987309094
     },
     {
+      "id": "26e9037d-0f8d-4781-95ef-9e40b7427248",
+      "date": "2026-09-29",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Chicken and Tortellini Soup",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 400
+      },
+      "createdAt": 1790764046567
+    },
+    {
       "id": "27e418ee-6344-4e54-b812-ed9ab447cf72",
       "date": "2026-09-12",
       "name": "Dinner",
@@ -643,6 +665,22 @@
       "createdAt": 1790071458673
     },
     {
+      "id": "40c1e00b-23c2-4d9f-b0d6-abc0dd391406",
+      "date": "2026-09-29",
+      "name": "Breakfast",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1790764029829
+    },
+    {
       "id": "4ba499ad-7d17-4bfa-958f-26692450ba7a",
       "date": "2026-09-01",
       "name": "Lunch",
@@ -753,6 +791,22 @@
         "calories": 1150
       },
       "createdAt": 1789639794904
+    },
+    {
+      "id": "63ab2acc-18ab-431c-84e4-058ed2da58ac",
+      "date": "2026-09-29",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Snacks at BC",
+          "calories": 1000,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 1000
+      },
+      "createdAt": 1790764085943
     },
     {
       "id": "6ec1e228-0f0d-46ef-8fd8-613fde501cda",
@@ -1031,6 +1085,22 @@
         "calories": 300
       },
       "createdAt": 1790677505044
+    },
+    {
+      "id": "bb40ff4c-3dd2-48e7-a66b-dbdde5082226",
+      "date": "2026-09-30",
+      "name": "Breakfast",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1790764305991
     },
     {
       "id": "bde338c8-155b-4a40-92af-892852d6c9cf",
@@ -2704,6 +2774,78 @@
         }
       ],
       "createdAt": 1788400838680
+    },
+    {
+      "id": "fb345445-8c21-4ced-af23-7bd787cbf7a8",
+      "name": "daily workout",
+      "date": "2026-09-30",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "10",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable fly",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Incline press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Preacher curl",
+          "sets": "3",
+          "reps": "10",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Bicep curl",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Bicep hammers",
+          "sets": "3",
+          "reps": "8",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "Level 4, 5 minutes"
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "Level 5, 5 minutes"
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/4/10"
+        }
+      ],
+      "createdAt": 1790764290935
     }
   ],
   "settings": {
