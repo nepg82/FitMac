@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-09-30T10:32:02.718Z",
-  "lastModified": 1790764322718,
+  "exportedAt": "2026-10-01T10:59:56.926Z",
+  "lastModified": 1790852390494,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -131,6 +131,12 @@
       "createdAt": 1789694910609
     },
     {
+      "id": "5908c18c-574e-47bb-9e68-4f32525329b4",
+      "name": "Chicken wings",
+      "calories": 85,
+      "createdAt": 1790852157930
+    },
+    {
       "id": "59f3182e-bbba-4e0a-b3e0-5edfcc7b40ac",
       "name": "Bacon Burger No Bun Salad (Brookside)",
       "calories": 1800,
@@ -153,6 +159,12 @@
       "name": "Elle's Homemade Rustic Bread (slice)",
       "calories": 100,
       "createdAt": 1790375911594
+    },
+    {
+      "id": "676db4d3-fe3e-4f57-b9e2-b74a08422693",
+      "name": "Pistachios (1 cup, w/shell)",
+      "calories": 225,
+      "createdAt": 1790852219979
     },
     {
       "id": "6e18bb31-380e-4537-952e-f7147e6c9e8e",
@@ -191,6 +203,12 @@
       "name": "Pepperoni",
       "calories": 130,
       "createdAt": 1790158712476
+    },
+    {
+      "id": "b656f809-c497-4d28-98a0-faa5abf76bcc",
+      "name": "Don's Chili",
+      "calories": 250,
+      "createdAt": 1790852036598
     },
     {
       "id": "be98dcd9-a67b-4a93-b136-e765eb73f285",
@@ -353,6 +371,22 @@
       "createdAt": 1789724755233
     },
     {
+      "id": "124f921f-90db-4f72-816d-43fd1bf1d553",
+      "date": "2026-09-30",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1790852062661
+    },
+    {
       "id": "148bc041-571a-4e27-b0a9-980b0fbaf532",
       "date": "2026-09-28",
       "name": "Protein shake",
@@ -388,6 +422,22 @@
         "calories": 610
       },
       "createdAt": 1790680536189
+    },
+    {
+      "id": "17093116-6c6c-436d-96da-e4a5d6ece402",
+      "date": "2026-09-30",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Chicken wings",
+          "calories": 85,
+          "quantity": 10
+        }
+      ],
+      "totals": {
+        "calories": 850
+      },
+      "createdAt": 1790852157927
     },
     {
       "id": "189b0e67-89b4-426b-b58f-5fce6cfed6d8",
@@ -555,6 +605,22 @@
       "createdAt": 1788374615973
     },
     {
+      "id": "364e5c9f-8432-45b5-aca9-5f921cfea058",
+      "date": "2026-09-30",
+      "name": "Snack",
+      "items": [
+        {
+          "name": "Pistachios (1 cup, w/shell)",
+          "calories": 225,
+          "quantity": 2
+        }
+      ],
+      "totals": {
+        "calories": 450
+      },
+      "createdAt": 1790852219976
+    },
+    {
       "id": "377a39ab-986a-4682-a861-fd1f2a054bba",
       "date": "2026-08-30",
       "name": "Breakfast Scramble",
@@ -591,6 +657,27 @@
         "fat": 80
       },
       "createdAt": 1788092623101
+    },
+    {
+      "id": "3f10457d-5a8d-4966-a961-6c5504096d59",
+      "date": "2026-10-01",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1790852230776
     },
     {
       "id": "3f558562-a3b8-4241-a620-8ea592768b6f",
@@ -697,6 +784,27 @@
       "createdAt": 1790244807706
     },
     {
+      "id": "615a57e6-575c-4c63-a236-4af6ae06fb30",
+      "date": "2026-09-30",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1790852054561
+    },
+    {
       "id": "61bfe8e7-28be-4ace-a186-45a7cdc3720b",
       "date": "2026-09-20",
       "name": "Breakfast",
@@ -711,6 +819,22 @@
         "calories": 190
       },
       "createdAt": 1790014205689
+    },
+    {
+      "id": "6471d288-c729-465f-9f64-75d02fe6baeb",
+      "date": "2026-10-01",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1790852228543
     },
     {
       "id": "64981b68-b91c-4b75-97dd-f5740d5fc037",
@@ -1462,6 +1586,22 @@
         "calories": 150
       },
       "createdAt": 1790680533938
+    },
+    {
+      "id": "ee9bb382-bb01-4e40-9c8e-d69706645cf3",
+      "date": "2026-09-29",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Don's Chili",
+          "calories": 250,
+          "quantity": 4
+        }
+      ],
+      "totals": {
+        "calories": 1000
+      },
+      "createdAt": 1790852036595
     },
     {
       "id": "f0e6be14-b5e5-4264-91d4-ea624c41b37c",
@@ -2626,6 +2766,64 @@
       "createdAt": 1789465527648
     },
     {
+      "id": "93473fb8-7ad3-4bdd-8394-5a036d115b19",
+      "name": "daily workout",
+      "date": "2026-10-01",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "10",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes @ Level 5"
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes @ Level 5"
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/4/10"
+        }
+      ],
+      "createdAt": 1790852390492
+    },
+    {
       "id": "ae939b59-7d45-48a6-bb0b-25ec6751ddb4",
       "name": "daily workout",
       "date": "2026-09-21",
@@ -2795,6 +2993,78 @@
       "createdAt": 1790330696093
     },
     {
+      "name": "daily workout",
+      "date": "2026-09-30",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "10",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable fly",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Incline press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Preacher curl",
+          "sets": "3",
+          "reps": "10",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Bicep curl",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Bicep hammers",
+          "sets": "3",
+          "reps": "8",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "Level 4, 5 minutes"
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "Level 5, 5 minutes"
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/4/10"
+        }
+      ],
+      "id": "eeb53294-11c5-4213-9a3e-f5b6f6f13f80",
+      "createdAt": 1790764322718
+    },
+    {
       "id": "f2c6c717-a1d0-4725-9284-419feef7dd53",
       "name": "daily workout",
       "date": "2026-09-28",
@@ -2888,78 +3158,6 @@
         }
       ],
       "createdAt": 1789259537105
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-09-30",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Bench press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "10",
-          "notes": ""
-        },
-        {
-          "exercise": "Cable fly",
-          "sets": "3",
-          "reps": "10",
-          "weight": "30",
-          "notes": ""
-        },
-        {
-          "exercise": "Incline press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Preacher curl",
-          "sets": "3",
-          "reps": "10",
-          "weight": "5",
-          "notes": ""
-        },
-        {
-          "exercise": "Bicep curl",
-          "sets": "3",
-          "reps": "10",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Bicep hammers",
-          "sets": "3",
-          "reps": "8",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Stationary Bike",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "Level 4, 5 minutes"
-        },
-        {
-          "exercise": "Row Machine",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "Level 5, 5 minutes"
-        },
-        {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/4/10"
-        }
-      ],
-      "id": "eeb53294-11c5-4213-9a3e-f5b6f6f13f80",
-      "createdAt": 1790764322718
     }
   ],
   "settings": {
