@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-01T10:59:56.926Z",
-  "lastModified": 1790852390494,
+  "exportedAt": "2026-10-04T16:51:43.780Z",
+  "lastModified": 1791132689001,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -696,6 +696,27 @@
       "createdAt": 1790454462270
     },
     {
+      "id": "4430eb15-e382-4a5e-b876-e1215e24ed1c",
+      "date": "2026-10-02",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1791132552919
+    },
+    {
       "id": "50e5a0cb-fc2f-4bda-ac35-e48a7646afb4",
       "date": "2026-09-25",
       "name": "Dinner",
@@ -926,6 +947,22 @@
       "createdAt": 1789120453412
     },
     {
+      "id": "73754f83-066c-4e7e-a1b8-8088a517e6d0",
+      "date": "2026-10-03",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1791132627855
+    },
+    {
       "id": "7405454b-a950-4140-9872-a57edb6d7494",
       "date": "2026-09-13",
       "name": "Lunch",
@@ -940,6 +977,22 @@
         "calories": 1050
       },
       "createdAt": 1789316535626
+    },
+    {
+      "id": "79a6d839-4e24-4a9d-bb58-5e7b10d59928",
+      "date": "2026-10-03",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Manito's Beef Taco",
+          "calories": 350,
+          "quantity": 3
+        }
+      ],
+      "totals": {
+        "calories": 1050
+      },
+      "createdAt": 1791132615536
     },
     {
       "id": "7a29d2a1-bad4-49d1-b166-46679ceadbd6",
@@ -1065,6 +1118,22 @@
       "createdAt": 1789224863857
     },
     {
+      "id": "91d379b9-f367-44c8-841b-426de4fad2d3",
+      "date": "2026-10-02",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1791132545392
+    },
+    {
       "id": "93992912-53a1-4df1-b3f8-84b3f791e823",
       "date": "2026-09-21",
       "name": "Dinner",
@@ -1084,6 +1153,22 @@
         "calories": 980
       },
       "createdAt": 1790028112069
+    },
+    {
+      "id": "952cf481-2238-48c9-927c-06b3ea1316a7",
+      "date": "2026-10-02",
+      "name": "Snack",
+      "items": [
+        {
+          "name": "Pistachios (1 cup, w/shell)",
+          "calories": 225,
+          "quantity": 2
+        }
+      ],
+      "totals": {
+        "calories": 450
+      },
+      "createdAt": 1791132688980
     },
     {
       "id": "9d42cd3d-378b-4bc2-ae3d-18545bc73852",
@@ -1121,6 +1206,22 @@
         "calories": 190
       },
       "createdAt": 1790526219245
+    },
+    {
+      "id": "9ec283dc-4d66-420d-91b1-140b71ac23f2",
+      "date": "2026-10-04",
+      "name": "Breakfast",
+      "items": [
+        {
+          "name": "Fit Crunch Bar",
+          "calories": 190,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 190
+      },
+      "createdAt": 1791132641346
     },
     {
       "id": "a2ffc9b6-2a2c-47f1-b106-5da9624ed42a",
@@ -1555,6 +1656,22 @@
         "fat": 29.8
       },
       "createdAt": 1788375005318
+    },
+    {
+      "id": "e8b2b17c-b092-4bdb-8faf-0d39bb7e6807",
+      "date": "2026-10-02",
+      "name": "Dinner",
+      "items": [
+        {
+          "name": "Pizza",
+          "calories": 500,
+          "quantity": 4
+        }
+      ],
+      "totals": {
+        "calories": 2000
+      },
+      "createdAt": 1791132674763
     },
     {
       "id": "e8f6a967-939e-48d3-a138-4aa01643bb35",
