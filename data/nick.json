@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-05T10:11:04.311Z",
-  "lastModified": 1791195064311,
+  "exportedAt": "2026-10-05T10:13:11.937Z",
+  "lastModified": 1791195186847,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -350,6 +350,27 @@
       "createdAt": 1789904089173
     },
     {
+      "id": "06e72819-194f-454a-a2ca-1f2497bcd7f3",
+      "date": "2026-10-05",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1791195186833
+    },
+    {
       "id": "09d32734-1912-47ff-80a1-514432aa797f",
       "date": "2026-09-18",
       "name": "Lunch",
@@ -457,6 +478,22 @@
         "fat": 29.8
       },
       "createdAt": 1788374606207
+    },
+    {
+      "id": "19626bb2-7fbe-4b5d-9d26-ff85abab8028",
+      "date": "2026-10-05",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1791195181734
     },
     {
       "id": "1cad3533-cfa2-4bcf-ab2e-c67c4bda6151",
@@ -2781,6 +2818,64 @@
       "createdAt": 1790071906410
     },
     {
+      "id": "6a1c28a5-f608-4abf-b7c7-9430785c1883",
+      "name": "daily workout",
+      "date": "2026-10-05",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes @ Level 5"
+        },
+        {
+          "exercise": "Stationary Bike",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes @ Level 4"
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/4/10"
+        }
+      ],
+      "createdAt": 1791195174078
+    },
+    {
       "id": "8a517c5a-07a8-43f8-a548-6500ac81d0c5",
       "name": "daily workout",
       "date": "2026-09-08",
@@ -3275,64 +3370,6 @@
         }
       ],
       "createdAt": 1789259537105
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-10-05",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Deadlift",
-          "sets": "3",
-          "reps": "10",
-          "weight": "20",
-          "notes": ""
-        },
-        {
-          "exercise": "Leg press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "0",
-          "notes": ""
-        },
-        {
-          "exercise": "Lunges",
-          "sets": "3",
-          "reps": "5",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Squats",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Row Machine",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ Level 5"
-        },
-        {
-          "exercise": "Stationary Bike",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ Level 4"
-        },
-        {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/4/10"
-        }
-      ],
-      "id": "6a1c28a5-f608-4abf-b7c7-9430785c1883",
-      "createdAt": 1791195064311
     }
   ],
   "settings": {
