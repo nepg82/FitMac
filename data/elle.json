@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-05T10:12:18.196Z",
-  "lastModified": 1791195133525,
+  "exportedAt": "2026-10-06T10:24:08.570Z",
+  "lastModified": 1791282232699,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -2260,6 +2260,64 @@
         }
       ],
       "createdAt": 1791195058857
+    },
+    {
+      "id": "30b9f7dd-3c65-49f9-8b1e-103d978f3649",
+      "name": "daily workout",
+      "date": "2026-10-06",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Lat pulldown",
+          "sets": "3",
+          "reps": "8",
+          "weight": "90",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat row",
+          "sets": "3",
+          "reps": "10",
+          "weight": "105",
+          "notes": ""
+        },
+        {
+          "exercise": "Back Dumbell Extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Tricep extension - cable",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes @ level 4"
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes @ level 5"
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/4/10"
+        }
+      ],
+      "createdAt": 1791282232691
     },
     {
       "id": "33d9c153-7500-4b03-8a5c-26c3ba47d951",
