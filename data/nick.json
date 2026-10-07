@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-07T10:24:59.920Z",
-  "lastModified": 1791368699920,
+  "exportedAt": "2026-10-07T10:27:34.128Z",
+  "lastModified": 1791368844521,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -1458,6 +1458,27 @@
       "createdAt": 1789767573263
     },
     {
+      "id": "bdf36947-95da-41f8-86b4-e221fe223efa",
+      "date": "2026-10-07",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1791368844504
+    },
+    {
       "id": "bf12d78b-3651-4da2-8fe6-681b8dbc0f58",
       "date": "2026-09-12",
       "name": "Lunch",
@@ -1471,6 +1492,22 @@
         "calories": 350
       },
       "createdAt": 1789257298351
+    },
+    {
+      "id": "c2171124-c0c5-41c5-977e-2143ede53c85",
+      "date": "2026-10-07",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1791368842954
     },
     {
       "id": "c99e9bdf-af38-4b8f-8bc7-285e2f25702a",
@@ -1777,6 +1814,22 @@
       "createdAt": 1788138527726
     },
     {
+      "id": "f15704f2-36c1-4f02-88f8-47f06cff030e",
+      "date": "2026-10-06",
+      "name": "Protein shake",
+      "items": [
+        {
+          "name": "Fairlife",
+          "calories": 150,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 150
+      },
+      "createdAt": 1791368826857
+    },
+    {
       "id": "f3c26c5d-5184-4000-a740-ff0c43f640bd",
       "date": "2026-09-24",
       "name": "Lunch",
@@ -1836,6 +1889,27 @@
         "calories": 610
       },
       "createdAt": 1790072068805
+    },
+    {
+      "id": "fa9cac11-20b2-4ed9-923f-515fbf515c86",
+      "date": "2026-10-06",
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "One Scramble",
+          "calories": 210,
+          "quantity": 1
+        },
+        {
+          "name": "Homemade lunch",
+          "calories": 400,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "calories": 610
+      },
+      "createdAt": 1791368835631
     },
     {
       "id": "fc4f4324-4f91-4e09-83d0-7ae6b69c1073",
@@ -2818,6 +2892,64 @@
       "createdAt": 1790071906410
     },
     {
+      "id": "4faf45da-8085-4919-b33d-a1e2323e1b07",
+      "name": "daily workout",
+      "date": "2026-10-07",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Incline press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable fly",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Bicep curl",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes @ level 5"
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes @ level 5"
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/4/10"
+        }
+      ],
+      "createdAt": 1791368796903
+    },
+    {
       "id": "6a1c28a5-f608-4abf-b7c7-9430785c1883",
       "name": "daily workout",
       "date": "2026-10-05",
@@ -3183,6 +3315,64 @@
     },
     {
       "name": "daily workout",
+      "date": "2026-10-06",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Lat pulldown",
+          "sets": "3",
+          "reps": "8",
+          "weight": "90",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat row",
+          "sets": "3",
+          "reps": "10",
+          "weight": "105",
+          "notes": ""
+        },
+        {
+          "exercise": "Back Dumbell Extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Tricep extension - cable",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes @ level 4"
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes @ level 5"
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/4/10"
+        }
+      ],
+      "id": "c466f441-a5d6-45a1-8b15-3c5bc32bd59e",
+      "createdAt": 1791282238759
+    },
+    {
+      "name": "daily workout",
       "date": "2026-09-25",
       "location": "home",
       "exercises": [
@@ -3370,180 +3560,6 @@
         }
       ],
       "createdAt": 1789259537105
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-10-06",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Lat pulldown",
-          "sets": "3",
-          "reps": "8",
-          "weight": "90",
-          "notes": ""
-        },
-        {
-          "exercise": "Lat row",
-          "sets": "3",
-          "reps": "10",
-          "weight": "105",
-          "notes": ""
-        },
-        {
-          "exercise": "Back Dumbell Extension",
-          "sets": "3",
-          "reps": "10",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Tricep extension - cable",
-          "sets": "3",
-          "reps": "10",
-          "weight": "60",
-          "notes": ""
-        },
-        {
-          "exercise": "Stationary Bike",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ level 4"
-        },
-        {
-          "exercise": "Row Machine",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ level 5"
-        },
-        {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/4/10"
-        }
-      ],
-      "id": "c466f441-a5d6-45a1-8b15-3c5bc32bd59e",
-      "createdAt": 1791282238759
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-10-07",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Bench press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "0",
-          "notes": ""
-        },
-        {
-          "exercise": "Incline press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Cable fly",
-          "sets": "3",
-          "reps": "10",
-          "weight": "45",
-          "notes": ""
-        },
-        {
-          "exercise": "Bicep curl",
-          "sets": "3",
-          "reps": "10",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Stationary Bike",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ level 4"
-        },
-        {
-          "exercise": "Row Machine",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ level 5"
-        },
-        {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/4/10"
-        }
-      ],
-      "id": "4faf45da-8085-4919-b33d-a1e2323e1b07",
-      "createdAt": 1791368673264
-    },
-    {
-      "name": "daily workout",
-      "date": "2026-10-07",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Bench press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "0",
-          "notes": ""
-        },
-        {
-          "exercise": "Incline press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Cable fly",
-          "sets": "3",
-          "reps": "10",
-          "weight": "45",
-          "notes": ""
-        },
-        {
-          "exercise": "Bicep curl",
-          "sets": "3",
-          "reps": "10",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Stationary Bike",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ level 4"
-        },
-        {
-          "exercise": "Row Machine",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ level 5"
-        },
-        {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/4/10"
-        }
-      ],
-      "id": "b42cc4bb-557e-40ce-898a-3de6210171c9",
-      "createdAt": 1791368699920
     }
   ],
   "settings": {
