@@ -12,8 +12,7 @@ input:focus{outline:2px solid var(--accent);border-color:transparent}
 .btn:disabled{opacity:.45}
 #hdr{padding:10px 12px;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid var(--line)}
 #w-name{flex:2}#w-date{flex:1.4}#w-loc{flex:1.2}
-#chips{flex:1;display:flex;gap:6px;overflow-x:auto}
-.chip{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:14px;color:var(--dim);white-space:nowrap}
+.spacer{flex:1}
 #entry{padding:10px 12px;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid var(--line)}
 #cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .col{background:var(--panel);border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:6px}

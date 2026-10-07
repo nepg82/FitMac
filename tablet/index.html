@@ -14,10 +14,11 @@
   <div class="row">
     <input id="w-name" placeholder="Workout name" />
     <input id="w-date" type="date" />
-    <input id="w-loc" placeholder="Location" />
+    <input id="w-loc" list="loc-names" placeholder="Location" autocomplete="off" />
+    <datalist id="loc-names"></datalist>
   </div>
   <div class="row">
-    <div id="chips"></div>
+    <div class="spacer"></div>
     <button class="btn ghost" id="btn-log">Log</button>
     <button class="btn ghost" id="btn-settings">Setup</button>
     <button class="btn primary" id="btn-save">Save</button>

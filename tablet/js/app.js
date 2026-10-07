@@ -6,7 +6,7 @@ const uuid = () => (crypto.randomUUID ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xx
 const todayISO = () => { const d = new Date(); return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); };
 
 let cfg = JSON.parse(localStorage.getItem(LS.cfg) || 'null');
-let users = [], hist = {}, histNames = {}, histSource = '';
+let users = [], hist = {}, histLocs = [], histSource = '';
 let draft = null, editing = null, saving = false;
 
 function toast(m) { const t = $('#toast'); t.textContent = m; t.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(() => t.hidden = true, 2500); }
@@ -24,24 +24,25 @@ async function loadHistory() {
   if (!cfg) return;
   Log.add('Loading history for both users…');
   try {
-    const packed = {}, names = {};
+    const packed = {}, locs = new Set();
     for (const u of users) {
       const { json } = await GH.loadUser(u);
       const h = History.build(json);
       hist[u] = h.idx; packed[u] = History.pack(h);
-      for (const [n, c] of Object.entries(h.names)) names[n] = (names[n] || 0) + c;
+      h.locs.forEach(l => locs.add(l));
     }
-    histNames = names; histSource = 'live';
-    localStorage.setItem(LS.hist, JSON.stringify({ packed, names, at: Date.now() }));
+    histLocs = [...locs].sort(); histSource = 'live';
+    localStorage.setItem(LS.hist, JSON.stringify({ packed, at: Date.now() }));
   } catch (e) {
     const c = JSON.parse(localStorage.getItem(LS.hist) || 'null');
     if (c) {
-      for (const u of users) if (c.packed[u]) hist[u] = History.unpack(c.packed[u]).idx;
-      histNames = c.names || {}; histSource = 'cached ' + new Date(c.at).toLocaleString();
+      const locs = new Set();
+      for (const u of users) if (c.packed[u]) { const h = History.unpack(c.packed[u]); hist[u] = h.idx; h.locs.forEach(l => locs.add(l)); }
+      histLocs = [...locs].sort(); histSource = 'cached ' + new Date(c.at).toLocaleString();
       Log.add('History fetch failed — using cached copy from ' + new Date(c.at).toLocaleString(), 'warn');
     } else { histSource = 'none'; Log.add('History fetch failed and no cache: ' + e.message, 'err'); }
   }
-  renderChips(); fillDatalist(); updateHints(); renderStatus();
+  fillDatalist(); updateHints(); renderStatus();
 }
 
 // ---------- UI ----------
@@ -70,12 +71,7 @@ function fillDatalist() {
   const names = new Map();
   for (const u of users) for (const v of (hist[u] || new Map()).values()) names.set(History.key(v.name), v.name);
   $('#ex-names').innerHTML = [...names.values()].sort().map(n => `<option value="${esc(n)}">`).join('');
-}
-
-function renderChips() {
-  const top = Object.entries(histNames).sort((a, b) => b[1] - a[1]).slice(0, 6).map(e => e[0]);
-  $('#chips').innerHTML = top.map(n => `<span class="chip">${esc(n)}</span>`).join('');
-  $('#chips').querySelectorAll('.chip').forEach(c => c.onclick = () => { if (locked()) return; $('#w-name').value = draft.name = c.textContent; saveDraft(); });
+  $('#loc-names').innerHTML = histLocs.map(l => `<option value="${esc(l)}">`).join('');
 }
 
 const fmtP = p => {

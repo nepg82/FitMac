@@ -4,9 +4,9 @@ const History = (() => {
   const key = n => (n || '').trim().toLowerCase();
 
   function build(json) {
-    const idx = new Map(), names = {};
+    const idx = new Map(), locs = new Set();
     for (const s of (json && json.workoutSessions) || []) {
-      if (s.name) names[s.name] = (names[s.name] || 0) + 1;
+      if (s.location && s.location.trim()) locs.add(s.location.trim());
       for (const ex of s.exercises || []) {
         const k = key(ex.exercise); if (!k) continue;
         if (!idx.has(k)) idx.set(k, { name: ex.exercise.trim(), rows: [] });
@@ -15,7 +15,7 @@ const History = (() => {
         });
       }
     }
-    return { idx, names };
+    return { idx, locs };
   }
 
   const newer = (a, b) => (b.date + String(b.t).padStart(15, '0')).localeCompare(a.date + String(a.t).padStart(15, '0'));
@@ -36,8 +36,8 @@ const History = (() => {
   const fmtMax = r => (r.weight ? `${r.weight} × ${dash(r.reps)}` : `${dash(r.reps)} reps`) + ` · ${md(r.date)}`;
 
   // Serialize/restore for the offline cache
-  const pack = h => ({ idx: [...h.idx], names: h.names });
-  const unpack = o => ({ idx: new Map(o.idx), names: o.names });
+  const pack = h => ({ idx: [...h.idx], locs: [...h.locs] });
+  const unpack = o => ({ idx: new Map(o.idx), locs: new Set(o.locs || []) });
 
   return { key, build, summarize, fmtLast, fmtMax, pack, unpack };
 })();
