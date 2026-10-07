@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+<title>FitMac Gym</title>
+<meta name="theme-color" content="#14161C" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="../app-icons/app-icon-192.png" />
+<link rel="stylesheet" href="css/tablet.css" />
+</head>
+<body>
+<header id="hdr">
+  <div class="row">
+    <input id="w-name" placeholder="Workout name" />
+    <input id="w-date" type="date" />
+    <input id="w-loc" placeholder="Location" />
+  </div>
+  <div class="row">
+    <div id="chips"></div>
+    <button class="btn ghost" id="btn-log">Log</button>
+    <button class="btn ghost" id="btn-settings">Setup</button>
+    <button class="btn primary" id="btn-save">Save</button>
+  </div>
+</header>
+
+<section id="entry">
+  <input id="ex-name" list="ex-names" placeholder="Exercise name" autocomplete="off" />
+  <datalist id="ex-names"></datalist>
+  <div id="cols"></div>
+  <button class="btn primary wide" id="btn-add">+ Add to workout</button>
+</section>
+
+<section id="list"></section>
+<div id="status"></div>
+
+<div id="console" hidden>
+  <div class="console-bar"><b>Git activity</b><span><button class="btn ghost sm" id="log-copy">Copy</button><button class="btn ghost sm" id="log-clear">Clear</button><button class="btn ghost sm" id="log-close">Close</button></span></div>
+  <div id="console-lines"></div>
+</div>
+
+<div id="settings" class="overlay" hidden>
+  <div class="panel">
+    <h2>Setup</h2>
+    <label>Repo owner<input id="s-owner" /></label>
+    <label>Repo name<input id="s-repo" /></label>
+    <label>Branch (optional)<input id="s-branch" /></label>
+    <label>Token<input id="s-token" type="password" /></label>
+    <label>Person 1 (file name, e.g. nick)<input id="s-u1" /></label>
+    <label>Person 2 (e.g. elle)<input id="s-u2" /></label>
+    <div class="row">
+      <button class="btn primary" id="s-save">Save</button>
+      <button class="btn ghost" id="s-verify">Verify</button>
+      <button class="btn ghost" id="s-discard">Discard draft</button>
+      <button class="btn ghost" id="s-close">Close</button>
+    </div>
+  </div>
+</div>
+<div id="toast" hidden></div>
+
+<script src="js/api.js"></script>
+<script src="js/history.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
