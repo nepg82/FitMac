@@ -523,6 +523,12 @@ async function renderSettings(content) {
       <button class="btn btn-ghost btn-block" id="refresh-git-btn">Refresh from Git</button>
     </details>
 
+	<details class="card">
+	  <summary class="card-title" style="cursor:pointer;">Tablet Mode</summary>
+	  <div class="stat-label" style="margin:12px 0;">Opens the gym workout screen for both of you. Unsaved changes here are backed up first.</div>
+	  <button class="btn btn-ghost btn-block" id="tablet-mode-btn">Open Tablet Mode</button>
+	</details>
+
     <div class="btn-row" style="margin-top:4px;">
       <button class="btn btn-ghost btn-block" id="export-btn">Export Backup (JSON)</button>
     </div>
@@ -722,4 +728,15 @@ async function renderSettings(content) {
       listEl.innerHTML = `<div class="empty-state">Failed to load: ${escapeHtml(e.message)}</div>`;
     }
   };
+  
+  content.querySelector('#tablet-mode-btn').onclick = async () => {
+    const cur = await DB.getSettings();
+    if (cur.dataDirty && cur.activeUsername) {
+      if (!confirm(`"${cur.activeUsername}" has unsaved changes. Back them up before opening tablet mode?`)) return;
+      if (!(await backupNow())) return;   // backupNow shows the failure; stay here
+      showToast('Backup complete');
+    }
+    location.href = 'tablet/index.html';
+  };
+  
 }

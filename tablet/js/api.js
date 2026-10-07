@@ -4,7 +4,7 @@ const Log = (() => {
   const lines = [];
   const box = () => document.getElementById('console-lines');
   function redact(s) {
-    const t = (JSON.parse(localStorage.getItem('fitmac-tablet-cfg') || '{}')).token;
+    const t = typeof GH !== 'undefined' && GH.token();
     return t ? String(s).split(t).join('***') : String(s);
   }
   function add(msg, cls = '') {
@@ -24,12 +24,38 @@ const Log = (() => {
 
 const GH = (() => {
   const TIMEOUT = 20000;
-  const cfg = () => JSON.parse(localStorage.getItem('fitmac-tablet-cfg') || 'null');
+  // Credentials are READ from the main app's IndexedDB (same origin). Never written, never copied.
+  // Depends on db.js: database 'fitness-tracker', store 'settings', record id 'main'.
+  let current = null;
+  function readMainSettings() {
+    return new Promise(resolve => {
+      let r;
+      try { r = indexedDB.open('fitness-tracker'); } catch (_) { return resolve(null); }
+      r.onupgradeneeded = e => e.target.transaction.abort();   // DB doesn't exist yet: don't create it
+      r.onerror = () => resolve(null);
+      r.onsuccess = e => {
+        const db = e.target.result;
+        if (!db.objectStoreNames.contains('settings')) { db.close(); return resolve(null); }
+        const g = db.transaction('settings').objectStore('settings').get('main');
+        g.onsuccess = () => { db.close(); resolve(g.result || null); };
+        g.onerror = () => { db.close(); resolve(null); };
+      };
+    });
+  }
+  async function loadCfg() {
+    const s = await readMainSettings();
+    current = s && s.githubOwner && s.githubRepo && s.githubToken
+      ? { owner: s.githubOwner, repo: s.githubRepo, branch: s.githubBranch || '', token: s.githubToken } : null;
+    Log.add(current ? `GitHub settings from main app: ${current.owner}/${current.repo}${current.branch ? '@' + current.branch : ''}` : 'No GitHub settings found in main app', current ? '' : 'err');
+    return current;
+  }
+  const token = () => current && current.token;
   const q = c => (c.branch ? `?ref=${encodeURIComponent(c.branch)}` : '');
   const b64 = s => { let b = ''; new TextEncoder().encode(s).forEach(x => b += String.fromCharCode(x)); return btoa(b); };
 
   async function req(path, { method = 'GET', body, raw = false } = {}) {
-    const c = cfg();
+    if (!current) throw new Error('No GitHub settings — set them up in the main app first');
+    const c = current;
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), TIMEOUT);
     const t0 = performance.now();
@@ -62,7 +88,7 @@ const GH = (() => {
 
   // { 'nick.json': sha, ... } for the data/ folder
   async function shas() {
-    const c = cfg();
+    const c = current;
     try {
       const list = await req(`/repos/${c.owner}/${c.repo}/contents/data${q(c)}`);
       return Object.fromEntries((Array.isArray(list) ? list : []).map(f => [f.name, f.sha]));
@@ -71,7 +97,7 @@ const GH = (() => {
 
   // Returns { json, sha } — json/sha are null if the user has no file yet.
   async function loadUser(user) {
-    const c = cfg();
+    const c = current;
     const sha = (await shas())[user + '.json'];
     if (!sha) { Log.add(`${user}.json not found (new file will be created)`, 'warn'); return { json: null, sha: null }; }
     const text = await req(`/repos/${c.owner}/${c.repo}/contents/data/${user}.json${q(c)}`, { raw: true });
@@ -81,7 +107,7 @@ const GH = (() => {
   }
 
   async function putUser(user, json, sha, message) {
-    const c = cfg();
+    const c = current;
     const res = await req(`/repos/${c.owner}/${c.repo}/contents/data/${user}.json`, {
       method: 'PUT',
       body: { message, content: b64(JSON.stringify(json, null, 2)), sha: sha || undefined, branch: c.branch || undefined }
@@ -91,11 +117,11 @@ const GH = (() => {
   }
 
   async function verify() {
-    const c = cfg();
+    const c = current;
     const r = await req(`/repos/${c.owner}/${c.repo}`);
     const s = await shas();
     return { name: r.full_name, files: Object.keys(s) };
   }
 
-  return { cfg, loadUser, putUser, verify };
+  return { loadCfg, token, loadUser, putUser, verify };
 })();

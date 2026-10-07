@@ -1,11 +1,11 @@
 // app.js — FitMac Gym: log one workout for two people, write both files to GitHub.
-const LS = { cfg: 'fitmac-tablet-cfg', draft: 'fitmac-tablet-draft', hist: 'fitmac-tablet-hist' };
+const LS = { legacyCfg: 'fitmac-tablet-cfg', users: 'fitmac-tablet-users', draft: 'fitmac-tablet-draft', hist: 'fitmac-tablet-hist' };
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const uuid = () => (crypto.randomUUID ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => { const r = Math.random() * 16 | 0; return (c === 'x' ? r : (r & 3 | 8)).toString(16); }));
 const todayISO = () => { const d = new Date(); return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); };
 
-let cfg = JSON.parse(localStorage.getItem(LS.cfg) || 'null');
+let names = JSON.parse(localStorage.getItem(LS.users) || 'null') || { u1: 'nick', u2: 'elle' };
 let users = [], hist = {}, histLocs = [], histSource = '';
 let draft = null, editing = null, saving = false;
 
@@ -21,9 +21,9 @@ const locked = () => draft.sent.some(Boolean);
 
 // ---------- History ----------
 async function loadHistory() {
-  if (!cfg) return;
   Log.add('Loading history for both users…');
   try {
+    if (!(await GH.loadCfg())) throw new Error('no GitHub settings in the main app');
     const packed = {}, locs = new Set();
     for (const u of users) {
       const { json } = await GH.loadUser(u);
@@ -133,11 +133,11 @@ function addExercise() {
 // ---------- Save ----------
 async function save() {
   if (saving) return;
-  if (!cfg) return openSettings();
   if (!draft.name.trim()) return toast('Workout name is required');
   if (!users.some((_, i) => draft.exercises.some(e => e.p[i]))) return toast('Nothing to save yet');
   saving = true; $('#btn-save').disabled = true; $('#btn-save').textContent = 'Saving…';
   $('#console').hidden = false;
+  if (!(await GH.loadCfg())) { saving = false; $('#btn-save').disabled = false; $('#btn-save').textContent = 'Save'; return toast('No GitHub settings found — set them up in the main app first'); }
   Log.add(`=== Save "${draft.name}" ${draft.date} ===`);
   for (let i = 0; i < users.length; i++) {
     const u = users[i];
@@ -172,19 +172,33 @@ async function save() {
 }
 
 // ---------- Setup ----------
-function openSettings() {
-  const c = cfg || {};
-  $('#s-owner').value = c.owner || ''; $('#s-repo').value = c.repo || ''; $('#s-branch').value = c.branch || '';
-  $('#s-token').value = c.token || ''; $('#s-u1').value = c.u1 || 'nick'; $('#s-u2').value = c.u2 || 'elle';
+async function openSettings() {
+  $('#s-u1').value = names.u1; $('#s-u2').value = names.u2;
   $('#settings').hidden = false;
+  const c = await GH.loadCfg();
+  $('#s-conn').innerHTML = c
+    ? `GitHub connection: <b>${esc(c.owner)}/${esc(c.repo)}</b> (from the main app)`
+    : '<span class="err">No GitHub connection found. Open the main app on this device, go to Settings → GitHub Connection, and save it there.</span>';
 }
-const readCfg = () => ({ owner: $('#s-owner').value.trim(), repo: $('#s-repo').value.trim(), branch: $('#s-branch').value.trim(), token: $('#s-token').value.trim(), u1: $('#s-u1').value.trim().toLowerCase(), u2: $('#s-u2').value.trim().toLowerCase() });
+const cleanName = s => (s || '').trim().toLowerCase().replace(/[^a-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '');
 
 function applyCfg() {
-  users = cfg ? [cfg.u1, cfg.u2] : ['nick', 'elle'];
+  users = [names.u1, names.u2];
   buildCols(); fillDatalist(); renderList(); renderStatus();
 }
 function syncHeader() { $('#w-name').value = draft.name; $('#w-date').value = draft.date; $('#w-loc').value = draft.location; }
+
+// Leaving for the main app: offer to save an unsent workout; "leave anyway" keeps the draft on this tablet.
+async function leaveToMain() {
+  const pending = () => users.some((_, i) => !draft.sent[i] && draft.exercises.some(e => e.p[i]));
+  if (pending()) {
+    if (confirm('This workout has not been saved. Save it now before leaving?')) {
+      await save();
+      if (pending() && !confirm('Saving did not finish. Leave anyway? The draft stays on this tablet.')) return;
+    } else if (!confirm('Leave without saving? The draft stays on this tablet.')) return;
+  }
+  location.href = '../index.html';
+}
 
 // ---------- Wake lock ----------
 let wl = null;
@@ -192,6 +206,7 @@ async function keepAwake() { try { if ('wakeLock' in navigator && document.visib
 
 // ---------- Init ----------
 document.addEventListener('DOMContentLoaded', () => {
+  localStorage.removeItem(LS.legacyCfg);   // earlier build stored the token here; credentials now come from the main app only
   draft = JSON.parse(localStorage.getItem(LS.draft) || 'null') || newDraft();
   applyCfg(); syncHeader();
   $('#w-name').oninput = e => { draft.name = e.target.value; saveDraft(); };
@@ -205,20 +220,21 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#log-copy').onclick = () => navigator.clipboard.writeText(Log.text()).then(() => toast('Log copied'), () => toast('Copy failed'));
   $('#btn-settings').onclick = openSettings; $('#s-close').onclick = () => $('#settings').hidden = true;
   $('#s-save').onclick = () => {
-    const c = readCfg();
-    if (!c.owner || !c.repo || !c.token || !c.u1 || !c.u2) return toast('Fill in owner, repo, token and both names');
-    cfg = c; localStorage.setItem(LS.cfg, JSON.stringify(c));
+    const u1 = cleanName($('#s-u1').value), u2 = cleanName($('#s-u2').value);
+    if (!u1 || !u2 || u1 === u2) return toast('Enter two different names');
+    if (locked() && (u1 !== names.u1 || u2 !== names.u2)) return toast('Finish saving the workout first');
+    names = { u1, u2 }; localStorage.setItem(LS.users, JSON.stringify(names));
     $('#settings').hidden = true; hist = {}; applyCfg(); loadHistory();
   };
   $('#s-verify').onclick = async () => {
-    const prev = cfg; localStorage.setItem(LS.cfg, JSON.stringify(readCfg()));
+    if (!(await GH.loadCfg())) return toast('No GitHub connection found in the main app');
     try { const r = await GH.verify(); toast(`OK: ${r.name} (${r.files.join(', ') || 'no data files'})`); }
     catch (e) { toast('Verify failed: ' + e.message); }
-    prev ? localStorage.setItem(LS.cfg, JSON.stringify(prev)) : localStorage.removeItem(LS.cfg);
   };
+  $('#s-main').onclick = leaveToMain;
   $('#s-discard').onclick = () => { if (!confirm('Discard the current unsaved workout?')) return; draft = newDraft(draft); saveDraft(); syncHeader(); clearEntry(); renderStatus(); $('#settings').hidden = true; };
   document.addEventListener('visibilitychange', keepAwake); keepAwake();
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('service-worker.js', { scope: './' }).catch(e => Log.add('Service worker: ' + e.message, 'warn'));
   window.addEventListener('online', () => { Log.add('Back online — refreshing history'); loadHistory(); });
-  if (!cfg) openSettings(); else loadHistory();
+  loadHistory();
 });

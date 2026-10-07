@@ -43,10 +43,7 @@
 <div id="settings" class="overlay" hidden>
   <div class="panel">
     <h2>Setup</h2>
-    <label>Repo owner<input id="s-owner" /></label>
-    <label>Repo name<input id="s-repo" /></label>
-    <label>Branch (optional)<input id="s-branch" /></label>
-    <label>Token<input id="s-token" type="password" /></label>
+    <div id="s-conn" class="conn"></div>
     <label>Person 1 (file name, e.g. nick)<input id="s-u1" /></label>
     <label>Person 2 (e.g. elle)<input id="s-u2" /></label>
     <div class="row">
@@ -55,6 +52,7 @@
       <button class="btn ghost" id="s-discard">Discard draft</button>
       <button class="btn ghost" id="s-close">Close</button>
     </div>
+    <button class="btn ghost" id="s-main">Back to main app</button>
   </div>
 </div>
 <div id="toast" hidden></div>

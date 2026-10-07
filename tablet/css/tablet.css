@@ -45,3 +45,4 @@ input:focus{outline:2px solid var(--accent);border-color:transparent}
 .panel h2{margin:0}.panel label{display:flex;flex-direction:column;gap:4px;color:var(--dim);font-size:14px}
 .panel .row{flex-wrap:wrap}
 #toast{position:fixed;left:50%;bottom:70px;transform:translateX(-50%);background:var(--panel);border:1px solid var(--accent);padding:10px 16px;border-radius:8px;z-index:40}
+.conn{font-size:14px;color:var(--dim)}.conn b{color:var(--text)}

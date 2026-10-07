@@ -1,4 +1,7 @@
 // db.js — IndexedDB wrapper + data access helpers
+// NOTE: tablet/ (tablet mode) reads GitHub credentials straight from this database:
+// DB_NAME 'fitness-tracker', store 'settings', record id 'main' (githubOwner/githubRepo/githubBranch/githubToken).
+// If you rename any of those, update readMainSettings() in tablet/js/api.js.
 const DB_NAME = 'fitness-tracker';
 const DB_VERSION = 2;
 const DATA_STORES = ['foodItems', 'mealEntries', 'weightEntries', 'workoutSessions'];
