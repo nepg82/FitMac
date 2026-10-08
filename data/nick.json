@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-08T11:03:17.596Z",
-  "lastModified": 1791457334245,
+  "exportedAt": "2026-10-08T21:37:57.467Z",
+  "lastModified": 1791495477466,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -3597,6 +3597,36 @@
         }
       ],
       "createdAt": 1789259537105
+    },
+    {
+      "id": "470381ad-75ef-4adc-8f21-6aafaeb4b630",
+      "name": "daily workout",
+      "date": "2026-10-08",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Reverse Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Wall sits",
+          "sets": "3",
+          "reps": "30",
+          "weight": "",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1791495477466
     }
   ],
   "settings": {
