@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-08T21:37:59.392Z",
-  "lastModified": 1791495479392,
+  "exportedAt": "2026-10-08T21:39:29.152Z",
+  "lastModified": 1791495565011,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -3031,6 +3031,43 @@
       "createdAt": 1789724675795
     },
     {
+      "id": "ea530e9b-da6c-4318-8d45-397f0da5f4d8",
+      "name": "daily workout",
+      "date": "2026-10-08",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Reverse Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Wall sits",
+          "sets": "3",
+          "reps": "30",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Elliptical",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "20 minutes"
+        }
+      ],
+      "createdAt": 1791495564997
+    },
+    {
       "id": "f0095740-366a-48d1-adc1-6e28ba431ef1",
       "name": "Treadmill",
       "date": "2026-09-02",
@@ -3116,36 +3153,6 @@
         }
       ],
       "createdAt": 1790764290935
-    },
-    {
-      "id": "ea530e9b-da6c-4318-8d45-397f0da5f4d8",
-      "name": "daily workout",
-      "date": "2026-10-08",
-      "location": "home",
-      "exercises": [
-        {
-          "exercise": "Squats",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Reverse Lunges",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Wall sits",
-          "sets": "3",
-          "reps": "30",
-          "weight": "",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1791495479392
     }
   ],
   "settings": {
