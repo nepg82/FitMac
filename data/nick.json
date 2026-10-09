@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-08T21:38:48.761Z",
-  "lastModified": 1791495525086,
+  "exportedAt": "2026-10-09T12:24:19.417Z",
+  "lastModified": 1791548659417,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -3634,6 +3634,50 @@
         }
       ],
       "createdAt": 1789259537105
+    },
+    {
+      "id": "cd003430-b424-48ca-b94b-cb50152b1813",
+      "name": "daily workout",
+      "date": "2026-10-09",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Flutter kicks",
+          "sets": "3",
+          "reps": "20",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Glute bridges",
+          "sets": "3",
+          "reps": "15",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Side leg raises",
+          "sets": "3",
+          "reps": "15",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1791548659417
     }
   ],
   "settings": {
