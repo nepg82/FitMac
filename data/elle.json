@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-09T12:24:21.660Z",
-  "lastModified": 1791548661660,
+  "exportedAt": "2026-10-09T12:52:58.118Z",
+  "lastModified": 1791550375043,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -2335,6 +2335,64 @@
       "createdAt": 1788380437104
     },
     {
+      "id": "3b1c0d66-6b17-4654-b787-30bc97b7521a",
+      "name": "daily workout",
+      "date": "2026-10-09",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Flutter kicks",
+          "sets": "3",
+          "reps": "20",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Glute bridges",
+          "sets": "3",
+          "reps": "15",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Side leg raises",
+          "sets": "3",
+          "reps": "15",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Elliptical",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "10 minutes"
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/4/10"
+        }
+      ],
+      "createdAt": 1791550375038
+    },
+    {
       "id": "5b21d7d5-cc35-4de5-b97a-7d7d6c75cd74",
       "name": "daily workout Armory",
       "date": "2026-09-10",
@@ -3153,50 +3211,6 @@
         }
       ],
       "createdAt": 1790764290935
-    },
-    {
-      "id": "3b1c0d66-6b17-4654-b787-30bc97b7521a",
-      "name": "daily workout",
-      "date": "2026-10-09",
-      "location": "home",
-      "exercises": [
-        {
-          "exercise": "Flutter kicks",
-          "sets": "3",
-          "reps": "20",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Dead bugs",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Glute bridges",
-          "sets": "3",
-          "reps": "15",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Side leg raises",
-          "sets": "3",
-          "reps": "15",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Bird dogs",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1791548661660
     }
   ],
   "settings": {
