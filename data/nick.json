@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-13T10:09:48.437Z",
-  "lastModified": 1791886188437,
+  "exportedAt": "2026-10-13T10:50:03.109Z",
+  "lastModified": 1791888592501,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -2397,6 +2397,12 @@
       "createdAt": 1789436079366
     },
     {
+      "id": "bb871b64-06bf-4489-84cc-9266140d3a8d",
+      "date": "2026-10-13",
+      "weight": 247,
+      "createdAt": 1791888558049
+    },
+    {
       "id": "bd87c371-bc67-42cf-a04e-36f8a978c336",
       "date": "2025-05-18",
       "weight": 255,
@@ -3242,6 +3248,64 @@
       "createdAt": 1790852390492
     },
     {
+      "id": "ad4ced9a-8a5e-4e1a-b1ca-fdfd1bb2ec8c",
+      "name": "daily workout",
+      "date": "2026-10-13",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "0",
+          "notes": ""
+        },
+        {
+          "exercise": "Squat super set",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes @ level 5"
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "5 minutes @ level 5"
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "1",
+          "reps": "",
+          "weight": "",
+          "notes": "3/5/10"
+        }
+      ],
+      "createdAt": 1791888592499
+    },
+    {
       "id": "ae939b59-7d45-48a6-bb0b-25ec6751ddb4",
       "name": "daily workout",
       "date": "2026-09-21",
@@ -3692,64 +3756,6 @@
         }
       ],
       "createdAt": 1789259537105
-    },
-    {
-      "id": "ad4ced9a-8a5e-4e1a-b1ca-fdfd1bb2ec8c",
-      "name": "daily workout",
-      "date": "2026-10-13",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Deadlift",
-          "sets": "3",
-          "reps": "10",
-          "weight": "30",
-          "notes": ""
-        },
-        {
-          "exercise": "Leg press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "20",
-          "notes": ""
-        },
-        {
-          "exercise": "Lunges",
-          "sets": "3",
-          "reps": "10",
-          "weight": "0",
-          "notes": ""
-        },
-        {
-          "exercise": "Squat super set",
-          "sets": "3",
-          "reps": "10",
-          "weight": "30",
-          "notes": ""
-        },
-        {
-          "exercise": "Stationary Bike",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Row Machine",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1791886188437
     }
   ],
   "settings": {
