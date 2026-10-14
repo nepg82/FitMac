@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-13T10:11:55.458Z",
-  "lastModified": 1791886282148,
+  "exportedAt": "2026-10-14T10:34:18.131Z",
+  "lastModified": 1791974058131,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -3269,6 +3269,64 @@
         }
       ],
       "createdAt": 1790764290935
+    },
+    {
+      "id": "ab3101d3-aa9e-4883-93de-6234976a6d6b",
+      "name": "daily workout",
+      "date": "2026-10-14",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "6",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Incline press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Farmer Walks",
+          "sets": "3",
+          "reps": "1",
+          "weight": "50",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable fly",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike",
+          "sets": "1",
+          "reps": "5",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Row Machine",
+          "sets": "1",
+          "reps": "5",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "3",
+          "reps": "5",
+          "weight": "10",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1791974058130
     }
   ],
   "settings": {
