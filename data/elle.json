@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-15T10:34:47.299Z",
-  "lastModified": 1792060487299,
+  "exportedAt": "2026-10-16T09:55:42.136Z",
+  "lastModified": 1792144542136,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -3392,6 +3392,64 @@
         }
       ],
       "createdAt": 1792060487299
+    },
+    {
+      "id": "38ab5494-3bc4-4a8d-962d-ccdea75817a9",
+      "name": "daily workout",
+      "date": "2026-10-16",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Reverse crunches",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Glute bridges",
+          "sets": "3",
+          "reps": "15",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Glute bridges (weighted)",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (s/i/t)",
+          "sets": "3",
+          "reps": "5",
+          "weight": "10",
+          "notes": ""
+        },
+        {
+          "exercise": "Elliptical",
+          "sets": "1",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1792144542136
     }
   ],
   "settings": {
