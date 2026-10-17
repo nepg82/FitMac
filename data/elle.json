@@ -2034,11 +2034,11 @@
           "notes": "Jumping jacks\nJump Squats\nCurl to extension\nPush ups\nWall sit 30 sec"
         },
         {
-          "exercise": "Elliptical",
-          "sets": "1",
+          "exercise": "Elliptical (t/s/i)",
+          "sets": "20",
           "reps": "",
           "weight": "",
-          "notes": "20 minutes"
+          "notes": ""
         }
       ],
       "createdAt": 1790330674876
@@ -2092,11 +2092,11 @@
           "notes": ""
         },
         {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "20",
+          "reps": "3",
+          "weight": "3",
+          "notes": ""
         }
       ],
       "createdAt": 1789553615864
@@ -2136,11 +2136,11 @@
           "notes": ""
         },
         {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "20",
+          "reps": "3",
+          "weight": "3",
+          "notes": ""
         }
       ],
       "createdAt": 1789466255845
@@ -2194,11 +2194,11 @@
           "notes": ""
         },
         {
-          "exercise": "Treadmill",
-          "sets": "",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "20",
+          "reps": "3",
+          "weight": "3",
+          "notes": ""
         }
       ],
       "createdAt": 1790158310712
@@ -2238,25 +2238,25 @@
           "notes": ""
         },
         {
-          "exercise": "Row Machine",
-          "sets": "1",
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ Level 5"
+          "weight": "5",
+          "notes": ""
         },
         {
-          "exercise": "Stationary Bike",
-          "sets": "1",
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ Level 4"
+          "weight": "4",
+          "notes": ""
         },
         {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/4/10"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "4",
+          "notes": ""
         }
       ],
       "createdAt": 1791195058857
@@ -2296,36 +2296,36 @@
           "notes": ""
         },
         {
-          "exercise": "Stationary Bike",
-          "sets": "1",
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ level 4"
+          "weight": "4",
+          "notes": ""
         },
         {
-          "exercise": "Row Machine",
-          "sets": "1",
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ level 5"
+          "weight": "5",
+          "notes": ""
         },
         {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/4/10"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "4",
+          "notes": ""
         }
       ],
       "createdAt": 1791282232691
     },
     {
       "id": "33d9c153-7500-4b03-8a5c-26c3ba47d951",
-      "name": "Treadmill",
+      "name": "daily workout",
       "date": "2026-09-01",
       "exercises": [
         {
-          "exercise": "Treadmill",
+          "exercise": "Treadmill (t/s/i)",
           "sets": "35",
           "reps": "3",
           "weight": "5",
@@ -2376,18 +2376,18 @@
           "notes": ""
         },
         {
-          "exercise": "Elliptical",
-          "sets": "1",
+          "exercise": "Elliptical (t/s/i)",
+          "sets": "10",
           "reps": "",
           "weight": "",
-          "notes": "10 minutes"
+          "notes": ""
         },
         {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/4/10"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "4",
+          "notes": ""
         }
       ],
       "createdAt": 1791550375038
@@ -2440,11 +2440,11 @@
           "notes": ""
         },
         {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 15 minutes"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "15",
+          "reps": "3",
+          "weight": "3",
+          "notes": ""
         }
       ],
       "createdAt": 1789120275257
@@ -2483,18 +2483,18 @@
           "notes": ""
         },
         {
-          "exercise": "Row Machine",
-          "sets": "1",
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "5 minutes"
+          "weight": "5",
+          "notes": ""
         },
         {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "Speed: 3\nIncline: 4\nTime: 15 minutes"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "15",
+          "reps": "3",
+          "weight": "4",
+          "notes": ""
         }
       ],
       "id": "6a81d24e-8c1e-4cae-a358-b48eac96a0c0",
@@ -2535,11 +2535,11 @@
           "notes": ""
         },
         {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "20",
+          "reps": "3",
+          "weight": "3",
+          "notes": ""
         }
       ],
       "createdAt": 1789465521724
@@ -2578,25 +2578,25 @@
           "notes": ""
         },
         {
-          "exercise": "Stationary Bike",
-          "sets": "1",
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ Level 5"
+          "weight": "5",
+          "notes": ""
         },
         {
-          "exercise": "Row Machine",
-          "sets": "1",
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ Level 5"
+          "weight": "5",
+          "notes": ""
         },
         {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/4/10"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "4",
+          "notes": ""
         }
       ],
       "id": "9b1778db-d93e-49df-8da7-fd603707b058",
@@ -2651,11 +2651,11 @@
           "notes": ""
         },
         {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "20",
+          "reps": "3",
+          "weight": "3",
+          "notes": ""
         }
       ],
       "createdAt": 1790072212252
@@ -2687,11 +2687,11 @@
           "notes": ""
         },
         {
-          "exercise": "Elliptical",
-          "sets": "1",
+          "exercise": "Elliptical (t/s/i)",
+          "sets": "20",
           "reps": "",
           "weight": "",
-          "notes": "1/2.5 20 minutes"
+          "notes": ""
         }
       ],
       "createdAt": 1789119805408
@@ -2731,11 +2731,11 @@
           "notes": ""
         },
         {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "20",
+          "reps": "3",
+          "weight": "3",
+          "notes": ""
         }
       ],
       "createdAt": 1790244531573
@@ -2775,25 +2775,25 @@
           "notes": ""
         },
         {
-          "exercise": "Stationary Bike",
-          "sets": "1",
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ level 4"
+          "weight": "4",
+          "notes": ""
         },
         {
-          "exercise": "Row Machine",
-          "sets": "1",
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ level 5"
+          "weight": "5",
+          "notes": ""
         },
         {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/4/10"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "4",
+          "notes": ""
         }
       ],
       "createdAt": 1791368648884
@@ -2833,25 +2833,25 @@
           "notes": ""
         },
         {
-          "exercise": "Stationary Bike",
-          "sets": "1",
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ level 5"
+          "weight": "5",
+          "notes": ""
         },
         {
-          "exercise": "Row Machine",
-          "sets": "1",
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "5 minutes @ level 5"
+          "weight": "5",
+          "notes": ""
         },
         {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/5/10"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "5",
+          "notes": ""
         }
       ],
       "createdAt": 1791886282144
@@ -2898,25 +2898,25 @@
           "notes": ""
         },
         {
-          "exercise": "Stationary Bike",
-          "sets": "1",
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "Level: 4\nTime: 5 minutes"
+          "weight": "4",
+          "notes": ""
         },
         {
-          "exercise": "Row Machine",
-          "sets": "1",
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "Level 4"
+          "weight": "4",
+          "notes": ""
         },
         {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/4/10"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "4",
+          "notes": ""
         }
       ],
       "createdAt": 1790677429773
@@ -2955,11 +2955,11 @@
           "notes": ""
         },
         {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "20",
+          "reps": "3",
+          "weight": "3",
+          "notes": ""
         }
       ],
       "id": "c51ea03b-8a2f-46c8-b5d3-d50165b711c2",
@@ -2999,11 +2999,11 @@
           "notes": ""
         },
         {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "20",
+          "reps": "3",
+          "weight": "3",
+          "notes": ""
         }
       ],
       "createdAt": 1789119883470
@@ -3042,11 +3042,11 @@
           "notes": ""
         },
         {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "20",
+          "reps": "3",
+          "weight": "3",
+          "notes": ""
         },
         {
           "exercise": "Tricep push down",
@@ -3114,11 +3114,11 @@
           "notes": ""
         },
         {
-          "exercise": "Treadmill",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/3; 20 minutes"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "20",
+          "reps": "3",
+          "weight": "3",
+          "notes": ""
         }
       ],
       "createdAt": 1789639688805
@@ -3137,11 +3137,11 @@
           "notes": "Jumping jacks\nSquats\nPushups\nKettlebell swings"
         },
         {
-          "exercise": "Elliptical",
-          "sets": "1",
+          "exercise": "Elliptical (t/s/i)",
+          "sets": "20",
           "reps": "",
           "weight": "",
-          "notes": "20 minutes"
+          "notes": ""
         }
       ],
       "createdAt": 1789724675795
@@ -3174,22 +3174,22 @@
           "notes": ""
         },
         {
-          "exercise": "Elliptical",
-          "sets": "1",
+          "exercise": "Elliptical (t/s/i)",
+          "sets": "20",
           "reps": "",
           "weight": "",
-          "notes": "20 minutes"
+          "notes": ""
         }
       ],
       "createdAt": 1791495564997
     },
     {
       "id": "f0095740-366a-48d1-adc1-6e28ba431ef1",
-      "name": "Treadmill",
+      "name": "daily workout",
       "date": "2026-09-02",
       "exercises": [
         {
-          "exercise": "Treadmill",
+          "exercise": "Treadmill (t/s/i)",
           "sets": "35",
           "reps": "5",
           "weight": "3",
@@ -3247,25 +3247,25 @@
           "notes": ""
         },
         {
-          "exercise": "Stationary Bike",
-          "sets": "1",
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "Level 4, 5 minutes"
+          "weight": "4",
+          "notes": ""
         },
         {
-          "exercise": "Row Machine",
-          "sets": "1",
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
           "reps": "",
-          "weight": "",
-          "notes": "Level 5, 5 minutes"
+          "weight": "5",
+          "notes": ""
         },
         {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "1",
-          "reps": "",
-          "weight": "",
-          "notes": "3/4/10"
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "4",
+          "notes": ""
         }
       ],
       "createdAt": 1790764290935
@@ -3305,24 +3305,24 @@
           "notes": ""
         },
         {
-          "exercise": "Stationary Bike",
-          "sets": "1",
-          "reps": "5",
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
+          "reps": "",
           "weight": "5",
           "notes": ""
         },
         {
-          "exercise": "Row Machine",
-          "sets": "1",
-          "reps": "5",
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
+          "reps": "",
           "weight": "5",
           "notes": ""
         },
         {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "3",
-          "reps": "5",
-          "weight": "10",
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "5",
           "notes": ""
         }
       ],
@@ -3370,24 +3370,24 @@
           "notes": ""
         },
         {
-          "exercise": "Stationary Bike",
-          "sets": "1",
-          "reps": "5",
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
+          "reps": "",
           "weight": "5",
           "notes": ""
         },
         {
-          "exercise": "Row Machine",
-          "sets": "1",
-          "reps": "5",
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
+          "reps": "",
           "weight": "5",
           "notes": ""
         },
         {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "3",
-          "reps": "5",
-          "weight": "10",
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "5",
           "notes": ""
         }
       ],
@@ -3435,16 +3435,16 @@
           "notes": ""
         },
         {
-          "exercise": "Treadmill (s/i/t)",
-          "sets": "3",
-          "reps": "5",
-          "weight": "10",
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "5",
           "notes": ""
         },
         {
-          "exercise": "Elliptical",
-          "sets": "1",
-          "reps": "10",
+          "exercise": "Elliptical (t/s/i)",
+          "sets": "20",
+          "reps": "",
           "weight": "",
           "notes": ""
         }
