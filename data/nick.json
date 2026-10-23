@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-22T10:56:55.862Z",
-  "lastModified": 1792666615862,
+  "exportedAt": "2026-10-23T10:09:47.532Z",
+  "lastModified": 1792750187532,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -4169,6 +4169,50 @@
         }
       ],
       "createdAt": 1792666615861
+    },
+    {
+      "id": "e5f18960-9a9d-44b7-af1c-5fc4e027b3f6",
+      "name": "daily workout",
+      "date": "2026-10-23",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Reverse crunches",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Glute bridges",
+          "sets": "3",
+          "reps": "15",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Glute bridges (weighted)",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1792750187532
     }
   ],
   "settings": {
