@@ -12,6 +12,18 @@ let draft = null, editing = null, saving = false;
 function toast(m) { const t = $('#toast'); t.textContent = m; t.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(() => t.hidden = true, 2500); }
 const cap = s => s ? s[0].toUpperCase() + s.slice(1) : '';
 
+function snack(m, isErr = false) {
+  $('#snack-msg').textContent = m;
+  $('#snack').classList.toggle('err', isErr);
+  $('#snack').hidden = false;
+}
+
+function logBanner(text, cls = 'ok') {
+  const inner = `-- ${text} --`;
+  const edge = `// ${'-'.repeat(inner.length)} //`;
+  [edge, `// ${inner} //`, edge].forEach(l => Log.add(l, cls));
+}
+
 // ---------- Draft ----------
 function newDraft(keep = {}) {
   return { name: keep.name || 'daily workout', date: todayISO(), location: keep.location || '', ids: [uuid(), uuid()], sent: [false, false], exercises: [] };
@@ -136,6 +148,7 @@ async function save() {
   if (!draft.name.trim()) return toast('Workout name is required');
   if (!users.some((_, i) => draft.exercises.some(e => e.p[i]))) return toast('Nothing to save yet');
   saving = true; $('#btn-save').disabled = true; $('#btn-save').textContent = 'Saving…';
+  $('#snack').hidden = true;
   $('#console').hidden = false;
   if (!(await GH.loadCfg())) { saving = false; $('#btn-save').disabled = false; $('#btn-save').textContent = 'Save'; return toast('No GitHub settings found — set them up in the main app first'); }
   Log.add(`=== Save "${draft.name}" ${draft.date} ===`);
@@ -161,14 +174,21 @@ async function save() {
         await GH.putUser(u, data, sha, `Workout "${draft.name.trim()}" for ${u} via tablet — ${new Date().toISOString()}`);
       }
       draft.sent[i] = true; saveDraft();
-    } catch (e) { Log.add(`${u}: FAILED — ${e.message}`, 'err'); }
+      } catch (e) { Log.add(`${u}: FAILED — ${e.message}`, 'err'); }
+	    renderStatus();
+  }
+	
+  saving = false; $('#btn-save').disabled = false; $('#btn-save').textContent = 'Save';
+	
+  if (draft.sent.every(Boolean)) {
+    draft = newDraft(draft); saveDraft(); syncHeader(); clearEntry(); renderStatus();
+    snack('Workout saved for both ✓');
+    await loadHistory();
+    logBanner('WORKOUT SAVED FOR BOTH');
+  } else {
+    snack('Some saves failed — tap Save to retry', true);
     renderStatus();
   }
-  saving = false; $('#btn-save').disabled = false; $('#btn-save').textContent = 'Save';
-  if (draft.sent.every(Boolean)) {
-    Log.add('=== Both saved ===', 'ok'); toast('Workout saved for both');
-    draft = newDraft(draft); saveDraft(); syncHeader(); clearEntry(); renderStatus(); loadHistory();
-  } else { toast('Some saves failed — tap Save to retry'); renderStatus(); }
 }
 
 // ---------- Setup ----------
@@ -237,4 +257,5 @@ document.addEventListener('DOMContentLoaded', () => {
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('service-worker.js', { scope: './' }).catch(e => Log.add('Service worker: ' + e.message, 'warn'));
   window.addEventListener('online', () => { Log.add('Back online — refreshing history'); loadHistory(); });
   loadHistory();
+  $('#snack-x').onclick = () => $('#snack').hidden = true;
 });
