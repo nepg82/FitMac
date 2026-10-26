@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-23T10:09:47.532Z",
-  "lastModified": 1792750187532,
+  "exportedAt": "2026-10-26T21:22:13.807Z",
+  "lastModified": 1793049733807,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -4213,6 +4213,64 @@
         }
       ],
       "createdAt": 1792750187532
+    },
+    {
+      "id": "2a723a33-4c48-492e-860d-1468c45be12e",
+      "name": "daily workout",
+      "date": "2026-10-26",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Overhead march",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Russian Twists",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Oblique Heel Touches",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        },
+        {
+          "exercise": "Elliptical (t/s/i)",
+          "sets": "10",
+          "reps": "",
+          "weight": "",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1793049733807
     }
   ],
   "settings": {
