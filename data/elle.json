@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-26T21:22:16.370Z",
-  "lastModified": 1793049736370,
+  "exportedAt": "2026-10-27T10:51:25.178Z",
+  "lastModified": 1793098285178,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -3784,6 +3784,57 @@
         }
       ],
       "createdAt": 1793049736370
+    },
+    {
+      "id": "0c6af754-b977-4288-84d9-f0fa83891c00",
+      "name": "daily workout",
+      "date": "2026-10-26",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "50",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Glute bridges",
+          "sets": "3",
+          "reps": "15",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1793098285178
     }
   ],
   "settings": {
