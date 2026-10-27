@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-10-27T10:51:22.890Z",
-  "lastModified": 1793098282890,
+  "exportedAt": "2026-10-27T10:57:23.649Z",
+  "lastModified": 1793098630869,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -2583,6 +2583,180 @@
       "createdAt": 1789259525672
     },
     {
+      "id": "024552a9-e663-46b0-8b09-6c4150139b9e",
+      "name": "daily workout",
+      "date": "2026-10-15",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Lat row",
+          "sets": "3",
+          "reps": "10",
+          "weight": "150",
+          "notes": ""
+        },
+        {
+          "exercise": "Back Dumbell Extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "15",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat pulldown",
+          "sets": "3",
+          "reps": "10",
+          "weight": "105",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat pulldown (cable)",
+          "sets": "3",
+          "reps": "10",
+          "weight": "75",
+          "notes": ""
+        },
+        {
+          "exercise": "Bicep curl",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "5",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1792060484900
+    },
+    {
+      "id": "064ca83f-06ac-47fb-911b-db17c4a3cc42",
+      "name": "daily workout",
+      "date": "2026-10-21",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Lat row",
+          "sets": "3",
+          "reps": "10",
+          "weight": "165",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat pulldown",
+          "sets": "3",
+          "reps": "10",
+          "weight": "105",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat row (cable)",
+          "sets": "3",
+          "reps": "10",
+          "weight": "90",
+          "notes": ""
+        },
+        {
+          "exercise": "Bicep curl",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "6",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1792662367902
+    },
+    {
+      "id": "0b6faaa6-56b7-4c4d-b812-dd289892f7c0",
+      "name": "daily workout",
+      "date": "2026-10-27",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "50",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Glute bridges",
+          "sets": "3",
+          "reps": "15",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1793098630861
+    },
+    {
       "id": "113084c4-6a25-422a-ac5a-04f29cb41df8",
       "name": "Hike",
       "date": "2026-08-29",
@@ -2650,6 +2824,122 @@
       "createdAt": 1789640158648
     },
     {
+      "id": "2a723a33-4c48-492e-860d-1468c45be12e",
+      "name": "daily workout",
+      "date": "2026-10-26",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Overhead march",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Russian Twists",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Oblique Heel Touches",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        },
+        {
+          "exercise": "Elliptical (t/s/i)",
+          "sets": "10",
+          "reps": "",
+          "weight": "",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1793049733807
+    },
+    {
+      "id": "2c8beab7-5b05-45eb-98a4-5e1f19317871",
+      "name": "daily workout",
+      "date": "2026-10-14",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Incline press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Farmer Walks",
+          "sets": "3",
+          "reps": "1",
+          "weight": "55",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable fly",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "5",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1791974056065
+    },
+    {
       "id": "2d95a8d5-1ee8-45cb-8976-cd4ab9b36719",
       "name": "daily workout",
       "date": "2026-09-18",
@@ -2715,6 +3005,64 @@
         }
       ],
       "createdAt": 1789469836450
+    },
+    {
+      "id": "384fc871-a63c-4aeb-b07e-8f16a9fd7a00",
+      "name": "daily workout",
+      "date": "2026-10-19",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "50",
+          "notes": ""
+        },
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "6",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1792405131049
     },
     {
       "id": "3c709c4d-293d-4277-995e-b23c57f6aeeb",
@@ -2877,6 +3225,64 @@
       "createdAt": 1791495525076
     },
     {
+      "id": "48439925-3279-442d-97d0-16950a20cdc7",
+      "name": "daily workout",
+      "date": "2026-10-16",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Reverse crunches",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Glute bridges",
+          "sets": "3",
+          "reps": "15",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Glute bridges (weighted)",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Elliptical (t/s/i)",
+          "sets": "20",
+          "reps": "",
+          "weight": "",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1792144540149
+    },
+    {
       "id": "49f45423-3b67-4310-9d2f-e8ecae6792bd",
       "name": "daily workout",
       "date": "2026-09-11",
@@ -3028,6 +3434,64 @@
         }
       ],
       "createdAt": 1791368796903
+    },
+    {
+      "id": "686e0057-c159-49de-9697-f8ccac46960e",
+      "name": "daily workout",
+      "date": "2026-10-20",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "40",
+          "notes": ""
+        },
+        {
+          "exercise": "Incline press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable fly",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Tricep extension",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "6",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1792492079589
     },
     {
       "id": "6a1c28a5-f608-4abf-b7c7-9430785c1883",
@@ -3591,6 +4055,108 @@
       "createdAt": 1790330696093
     },
     {
+      "id": "e5f18960-9a9d-44b7-af1c-5fc4e027b3f6",
+      "name": "daily workout",
+      "date": "2026-10-23",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Bird dogs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Dead bugs",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Reverse crunches",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Glute bridges",
+          "sets": "3",
+          "reps": "15",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Glute bridges (weighted)",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1792750187532
+    },
+    {
+      "id": "eb8ad553-0ee3-49a7-910b-e6debbc9dcdd",
+      "name": "daily workout",
+      "date": "2026-10-22",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "50",
+          "notes": ""
+        },
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "6",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "5",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1792666615861
+    },
+    {
       "name": "daily workout",
       "date": "2026-09-30",
       "location": "Armory",
@@ -3756,572 +4322,6 @@
         }
       ],
       "createdAt": 1789259537105
-    },
-    {
-      "id": "2c8beab7-5b05-45eb-98a4-5e1f19317871",
-      "name": "daily workout",
-      "date": "2026-10-14",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Bench press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "30",
-          "notes": ""
-        },
-        {
-          "exercise": "Incline press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "25",
-          "notes": ""
-        },
-        {
-          "exercise": "Farmer Walks",
-          "sets": "3",
-          "reps": "1",
-          "weight": "55",
-          "notes": ""
-        },
-        {
-          "exercise": "Cable fly",
-          "sets": "3",
-          "reps": "10",
-          "weight": "60",
-          "notes": ""
-        },
-        {
-          "exercise": "Stationary Bike (t/s/i)",
-          "sets": "5",
-          "reps": "",
-          "weight": "5",
-          "notes": ""
-        },
-        {
-          "exercise": "Row Machine (t/s/i)",
-          "sets": "5",
-          "reps": "",
-          "weight": "5",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill (t/s/i)",
-          "sets": "10",
-          "reps": "3",
-          "weight": "5",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1791974056065
-    },
-    {
-      "id": "024552a9-e663-46b0-8b09-6c4150139b9e",
-      "name": "daily workout",
-      "date": "2026-10-15",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Lat row",
-          "sets": "3",
-          "reps": "10",
-          "weight": "150",
-          "notes": ""
-        },
-        {
-          "exercise": "Back Dumbell Extension",
-          "sets": "3",
-          "reps": "10",
-          "weight": "15",
-          "notes": ""
-        },
-        {
-          "exercise": "Lat pulldown",
-          "sets": "3",
-          "reps": "10",
-          "weight": "105",
-          "notes": ""
-        },
-        {
-          "exercise": "Lat pulldown (cable)",
-          "sets": "3",
-          "reps": "10",
-          "weight": "75",
-          "notes": ""
-        },
-        {
-          "exercise": "Bicep curl",
-          "sets": "3",
-          "reps": "10",
-          "weight": "25",
-          "notes": ""
-        },
-        {
-          "exercise": "Stationary Bike (t/s/i)",
-          "sets": "5",
-          "reps": "",
-          "weight": "5",
-          "notes": ""
-        },
-        {
-          "exercise": "Row Machine (t/s/i)",
-          "sets": "5",
-          "reps": "",
-          "weight": "5",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill (t/s/i)",
-          "sets": "10",
-          "reps": "3",
-          "weight": "5",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1792060484900
-    },
-    {
-      "id": "48439925-3279-442d-97d0-16950a20cdc7",
-      "name": "daily workout",
-      "date": "2026-10-16",
-      "location": "home",
-      "exercises": [
-        {
-          "exercise": "Bird dogs",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Dead bugs",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Reverse crunches",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Glute bridges",
-          "sets": "3",
-          "reps": "15",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Glute bridges (weighted)",
-          "sets": "3",
-          "reps": "10",
-          "weight": "20",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill (t/s/i)",
-          "sets": "10",
-          "reps": "3",
-          "weight": "5",
-          "notes": ""
-        },
-        {
-          "exercise": "Elliptical (t/s/i)",
-          "sets": "20",
-          "reps": "",
-          "weight": "",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1792144540149
-    },
-    {
-      "id": "384fc871-a63c-4aeb-b07e-8f16a9fd7a00",
-      "name": "daily workout",
-      "date": "2026-10-19",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Deadlift",
-          "sets": "3",
-          "reps": "10",
-          "weight": "50",
-          "notes": ""
-        },
-        {
-          "exercise": "Leg press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "30",
-          "notes": ""
-        },
-        {
-          "exercise": "Lunges",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Squats",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Row Machine (t/s/i)",
-          "sets": "5",
-          "reps": "",
-          "weight": "5",
-          "notes": ""
-        },
-        {
-          "exercise": "Stationary Bike (t/s/i)",
-          "sets": "5",
-          "reps": "",
-          "weight": "6",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill (t/s/i)",
-          "sets": "10",
-          "reps": "3",
-          "weight": "6",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1792405131049
-    },
-    {
-      "id": "686e0057-c159-49de-9697-f8ccac46960e",
-      "name": "daily workout",
-      "date": "2026-10-20",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Bench press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "40",
-          "notes": ""
-        },
-        {
-          "exercise": "Incline press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "25",
-          "notes": ""
-        },
-        {
-          "exercise": "Cable fly",
-          "sets": "3",
-          "reps": "10",
-          "weight": "60",
-          "notes": ""
-        },
-        {
-          "exercise": "Tricep extension",
-          "sets": "3",
-          "reps": "10",
-          "weight": "25",
-          "notes": ""
-        },
-        {
-          "exercise": "Stationary Bike (t/s/i)",
-          "sets": "5",
-          "reps": "",
-          "weight": "5",
-          "notes": ""
-        },
-        {
-          "exercise": "Row Machine (t/s/i)",
-          "sets": "5",
-          "reps": "",
-          "weight": "6",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill (t/s/i)",
-          "sets": "10",
-          "reps": "3",
-          "weight": "6",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1792492079589
-    },
-    {
-      "id": "064ca83f-06ac-47fb-911b-db17c4a3cc42",
-      "name": "daily workout",
-      "date": "2026-10-21",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Lat row",
-          "sets": "3",
-          "reps": "10",
-          "weight": "165",
-          "notes": ""
-        },
-        {
-          "exercise": "Lat pulldown",
-          "sets": "3",
-          "reps": "10",
-          "weight": "105",
-          "notes": ""
-        },
-        {
-          "exercise": "Lat row (cable)",
-          "sets": "3",
-          "reps": "10",
-          "weight": "90",
-          "notes": ""
-        },
-        {
-          "exercise": "Bicep curl",
-          "sets": "3",
-          "reps": "10",
-          "weight": "25",
-          "notes": ""
-        },
-        {
-          "exercise": "Stationary Bike (t/s/i)",
-          "sets": "5",
-          "reps": "",
-          "weight": "5",
-          "notes": ""
-        },
-        {
-          "exercise": "Row Machine (t/s/i)",
-          "sets": "5",
-          "reps": "",
-          "weight": "6",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill (t/s/i)",
-          "sets": "10",
-          "reps": "3",
-          "weight": "6",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1792662367902
-    },
-    {
-      "id": "eb8ad553-0ee3-49a7-910b-e6debbc9dcdd",
-      "name": "daily workout",
-      "date": "2026-10-22",
-      "location": "Armory",
-      "exercises": [
-        {
-          "exercise": "Deadlift",
-          "sets": "3",
-          "reps": "10",
-          "weight": "50",
-          "notes": ""
-        },
-        {
-          "exercise": "Leg press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "30",
-          "notes": ""
-        },
-        {
-          "exercise": "Lunges",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Squats",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Row Machine (t/s/i)",
-          "sets": "5",
-          "reps": "",
-          "weight": "6",
-          "notes": ""
-        },
-        {
-          "exercise": "Stationary Bike (t/s/i)",
-          "sets": "5",
-          "reps": "",
-          "weight": "5",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill (t/s/i)",
-          "sets": "10",
-          "reps": "3",
-          "weight": "6",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1792666615861
-    },
-    {
-      "id": "e5f18960-9a9d-44b7-af1c-5fc4e027b3f6",
-      "name": "daily workout",
-      "date": "2026-10-23",
-      "location": "home",
-      "exercises": [
-        {
-          "exercise": "Bird dogs",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Dead bugs",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Reverse crunches",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Glute bridges",
-          "sets": "3",
-          "reps": "15",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Glute bridges (weighted)",
-          "sets": "3",
-          "reps": "10",
-          "weight": "20",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1792750187532
-    },
-    {
-      "id": "2a723a33-4c48-492e-860d-1468c45be12e",
-      "name": "daily workout",
-      "date": "2026-10-26",
-      "location": "home",
-      "exercises": [
-        {
-          "exercise": "Overhead march",
-          "sets": "3",
-          "reps": "10",
-          "weight": "25",
-          "notes": ""
-        },
-        {
-          "exercise": "Russian Twists",
-          "sets": "3",
-          "reps": "10",
-          "weight": "25",
-          "notes": ""
-        },
-        {
-          "exercise": "Oblique Heel Touches",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Bird dogs",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Dead bugs",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill (t/s/i)",
-          "sets": "10",
-          "reps": "3",
-          "weight": "6",
-          "notes": ""
-        },
-        {
-          "exercise": "Elliptical (t/s/i)",
-          "sets": "10",
-          "reps": "",
-          "weight": "",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1793049733807
-    },
-    {
-      "id": "0b6faaa6-56b7-4c4d-b812-dd289892f7c0",
-      "name": "daily workout",
-      "date": "2026-10-26",
-      "location": "home",
-      "exercises": [
-        {
-          "exercise": "Leg press",
-          "sets": "3",
-          "reps": "10",
-          "weight": "30",
-          "notes": ""
-        },
-        {
-          "exercise": "Deadlift",
-          "sets": "3",
-          "reps": "10",
-          "weight": "50",
-          "notes": ""
-        },
-        {
-          "exercise": "Lunges",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Squats",
-          "sets": "3",
-          "reps": "10",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Glute bridges",
-          "sets": "3",
-          "reps": "15",
-          "weight": "",
-          "notes": ""
-        },
-        {
-          "exercise": "Treadmill (t/s/i)",
-          "sets": "10",
-          "reps": "3",
-          "weight": "6",
-          "notes": ""
-        }
-      ],
-      "createdAt": 1793098282890
     }
   ],
   "settings": {
