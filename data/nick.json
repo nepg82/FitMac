@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-02T11:19:42.682Z",
-  "lastModified": 1793618382682,
+  "exportedAt": "2026-11-03T13:00:24.757Z",
+  "lastModified": 1793710824757,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -4489,6 +4489,71 @@
         }
       ],
       "createdAt": 1793618382682
+    },
+    {
+      "id": "e68ef4fe-f1d6-4b75-8c35-c700eed75d12",
+      "name": "daily workout",
+      "date": "2026-11-03",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Cable fly",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "40",
+          "notes": ""
+        },
+        {
+          "exercise": "Midline dumbell press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Incline press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Tricep extension - cable",
+          "sets": "3",
+          "reps": "10",
+          "weight": "75",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "6",
+          "notes": ""
+        },
+        {
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "6",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1793710824757
     }
   ],
   "settings": {
