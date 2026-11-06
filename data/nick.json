@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-04T11:26:50.504Z",
-  "lastModified": 1793791610504,
+  "exportedAt": "2026-11-06T10:04:05.743Z",
+  "lastModified": 1793959445743,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -4612,6 +4612,64 @@
         }
       ],
       "createdAt": 1793791610504
+    },
+    {
+      "id": "5feb87e3-8ac1-413e-bc75-905826d35c31",
+      "name": "daily workout",
+      "date": "2026-11-05",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "50",
+          "notes": ""
+        },
+        {
+          "exercise": "Leg press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "",
+          "weight": "10",
+          "notes": ""
+        },
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "30",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "6",
+          "notes": ""
+        },
+        {
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "6",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "5",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1793959445743
     }
   ],
   "settings": {
