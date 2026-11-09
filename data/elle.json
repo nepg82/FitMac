@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-06T10:45:50.742Z",
-  "lastModified": 1793961950742,
+  "exportedAt": "2026-11-09T11:10:55.348Z",
+  "lastModified": 1794222655348,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -4241,6 +4241,50 @@
         }
       ],
       "createdAt": 1793961950742
+    },
+    {
+      "id": "1ac26c47-7b18-4fe1-b2c1-770c2348686d",
+      "name": "daily workout",
+      "date": "2026-11-09",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Wall sits",
+          "sets": "3",
+          "reps": "30",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Side leg raises",
+          "sets": "3",
+          "reps": "15",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Elliptical (t/s/i)",
+          "sets": "20",
+          "reps": "",
+          "weight": "",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1794222655348
     }
   ],
   "settings": {
