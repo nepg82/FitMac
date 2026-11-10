@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-09T11:10:53.005Z",
-  "lastModified": 1794222653005,
+  "exportedAt": "2026-11-10T11:09:04.445Z",
+  "lastModified": 1794308944445,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -4772,6 +4772,50 @@
         }
       ],
       "createdAt": 1794222653005
+    },
+    {
+      "id": "166b5c20-27eb-42c0-9e92-18869ae0252a",
+      "name": "daily workout",
+      "date": "2026-11-10",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "50",
+          "notes": ""
+        },
+        {
+          "exercise": "Banded fly",
+          "sets": "3",
+          "reps": "10",
+          "weight": "3",
+          "notes": ""
+        },
+        {
+          "exercise": "Midline dumbell press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Bicep curl",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "20",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1794308944445
     }
   ],
   "settings": {
