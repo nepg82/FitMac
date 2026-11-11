@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-10T11:09:04.445Z",
-  "lastModified": 1794308944445,
+  "exportedAt": "2026-11-11T12:19:26.495Z",
+  "lastModified": 1794399566495,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -4816,6 +4816,50 @@
         }
       ],
       "createdAt": 1794308944445
+    },
+    {
+      "id": "d8196cf3-7c47-45db-abbf-2eca17ef1adc",
+      "name": "daily workout",
+      "date": "2026-11-11",
+      "location": "home",
+      "exercises": [
+        {
+          "exercise": "Squats",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Lunges",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Deadlift",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        },
+        {
+          "exercise": "Wall sits",
+          "sets": "3",
+          "reps": "30",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "20",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1794399566495
     }
   ],
   "settings": {
