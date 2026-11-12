@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-11T12:19:26.495Z",
-  "lastModified": 1794399566495,
+  "exportedAt": "2026-11-12T11:29:13.488Z",
+  "lastModified": 1794482953488,
   "foodItems": [
     {
       "id": "00b91093-86d2-4025-9813-1591a6b34611",
@@ -4860,6 +4860,57 @@
         }
       ],
       "createdAt": 1794399566495
+    },
+    {
+      "id": "07c22298-5dd5-490b-82a9-01846de31b13",
+      "name": "daily workout",
+      "date": "2026-11-12",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Lat pulldown",
+          "sets": "3",
+          "reps": "10",
+          "weight": "105",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat row",
+          "sets": "3",
+          "reps": "10",
+          "weight": "165",
+          "notes": ""
+        },
+        {
+          "exercise": "Lat row (cable)",
+          "sets": "3",
+          "reps": "10",
+          "weight": "90",
+          "notes": ""
+        },
+        {
+          "exercise": "Stationary Bike (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "6",
+          "notes": ""
+        },
+        {
+          "exercise": "Row Machine (t/s/i)",
+          "sets": "5",
+          "reps": "",
+          "weight": "6",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1794482953488
     }
   ],
   "settings": {
