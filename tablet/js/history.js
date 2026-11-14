@@ -33,7 +33,7 @@ const History = (() => {
   const md = iso => { const [, m, d] = (iso || '').split('-').map(Number); return m ? `${m}/${d}` : ''; };
   const dash = n => (n ? n : '–');
   const fmtLast = r => `${dash(r.sets)}×${dash(r.reps)}${r.weight ? ' @ ' + r.weight : ''} · ${md(r.date)}`;
-  const fmtMax = r => (r.weight ? `${r.weight} × ${dash(r.reps)}` : `${dash(r.reps)} reps`) + ` · ${md(r.date)}`;
+  const fmtMax = fmtLast;
 
   // Serialize/restore for the offline cache
   const pack = h => ({ idx: [...h.idx], locs: [...h.locs] });
