@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "exportedAt": "2026-11-16T11:30:43.695Z",
-  "lastModified": 1794828643695,
+  "exportedAt": "2026-11-17T11:29:49.330Z",
+  "lastModified": 1794914989330,
   "foodItems": [
     {
       "id": "0361724d-6bbd-4266-84c3-2354c2fb215d",
@@ -4489,6 +4489,57 @@
         }
       ],
       "createdAt": 1794828643695
+    },
+    {
+      "id": "0f460261-0107-452c-97df-a5ae7677309f",
+      "name": "daily workout",
+      "date": "2026-11-17",
+      "location": "Armory",
+      "exercises": [
+        {
+          "exercise": "Bench press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "",
+          "notes": ""
+        },
+        {
+          "exercise": "Cable fly",
+          "sets": "3",
+          "reps": "10",
+          "weight": "45",
+          "notes": ""
+        },
+        {
+          "exercise": "Incline press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "20",
+          "notes": ""
+        },
+        {
+          "exercise": "Midline dumbell press",
+          "sets": "3",
+          "reps": "10",
+          "weight": "25",
+          "notes": ""
+        },
+        {
+          "exercise": "Treadmill (t/s/i)",
+          "sets": "10",
+          "reps": "3",
+          "weight": "6",
+          "notes": ""
+        },
+        {
+          "exercise": "Tricep pull down",
+          "sets": "3",
+          "reps": "10",
+          "weight": "60",
+          "notes": ""
+        }
+      ],
+      "createdAt": 1794914989330
     }
   ],
   "settings": {
